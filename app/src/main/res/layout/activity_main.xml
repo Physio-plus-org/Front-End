@@ -93,7 +93,7 @@
         android:layout_height="50dp"
         android:background="@drawable/circle_button"
         app:icon="@drawable/back_icon"
-        app:iconTint="#000000"
+        app:iconTint="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/guideline6"
         app:layout_constraintEnd_toStartOf="@+id/guideline7"
         app:layout_constraintStart_toStartOf="parent"
@@ -263,12 +263,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView2">
 
-        <!--<SearchView
+        <SearchView
             android:id="@+id/searchView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:iconifiedByDefault="false"
-            android:queryHint="Αναζήτηση ραντεβού" />-->
+            android:queryHint="Αναζήτηση ραντεβού" />
 
     </LinearLayout>
 
@@ -370,7 +370,8 @@
                     android:layout_height="35dp"
                     android:backgroundTint="@color/green"
                     app:cardCornerRadius="10dp"
-                    app:cardElevation="20dp">
+                    app:cardElevation="20dp"
+                    android:visibility="invisible">
 
                     <TextView
                         android:id="@+id/textView_hour2"
@@ -390,7 +391,8 @@
                     android:layout_height="35dp"
                     android:backgroundTint="@color/white"
                     app:cardCornerRadius="10dp"
-                    app:cardElevation="20dp">
+                    app:cardElevation="20dp"
+                    android:visibility="invisible">
 
                     <TextView
                         android:id="@+id/textView_des2"
@@ -408,271 +410,6 @@
             </LinearLayout>
 
 
-            // layout of 30/3 date
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:orientation="horizontal">
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/date_card3"
-                    android:layout_width="70dp"
-                    android:layout_height="35dp"
-                    app:cardCornerRadius="30dp"
-                    app:cardElevation="20dp">
-
-                    <TextView
-                        android:id="@+id/textView_date3"
-                        android:layout_width="200dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:paddingStart="20dp"
-                        android:paddingTop="8dp"
-                        android:text="30/3" />
-
-                </androidx.cardview.widget.CardView>
-
-
-                <TextView
-                    android:id="@+id/textView_hour3"
-                    android:layout_width="200dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:paddingStart="12dp"
-                    android:paddingTop="8dp" />
-
-                <TextView
-                    android:id="@+id/textView_des3"
-                    android:layout_width="200dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:fontFamily="sans-serif-medium"
-                    android:textColor="#FFFFFF" />
-            </LinearLayout>
-
-
-            // layout of 31/3 date
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:orientation="horizontal">
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/date_card4"
-                    android:layout_width="70dp"
-                    android:layout_height="35dp"
-                    app:cardCornerRadius="30dp"
-                    app:cardElevation="20dp">
-
-                    <TextView
-                        android:id="@+id/textView_date4"
-                        android:layout_width="200dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:paddingStart="20dp"
-                        android:paddingTop="8dp"
-                        android:text="31/3" />
-
-                </androidx.cardview.widget.CardView>
-
-
-                <TextView
-                    android:id="@+id/textView_hour4"
-                    android:layout_width="200dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:paddingStart="12dp"
-                    android:paddingTop="8dp" />
-
-                <TextView
-                    android:id="@+id/textView_des4"
-                    android:layout_width="200dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:fontFamily="sans-serif-medium"
-                    android:textColor="#FFFFFF" />
-            </LinearLayout>
-
-
-            // layout of 1/4 date
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:orientation="horizontal">
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/date_card5"
-                    android:layout_width="70dp"
-                    android:layout_height="35dp"
-                    app:cardCornerRadius="30dp"
-                    app:cardElevation="20dp">
-
-                    <TextView
-                        android:id="@+id/textView_date5"
-                        android:layout_width="200dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:paddingStart="20dp"
-                        android:paddingTop="8dp"
-                        android:text="1/4" />
-
-                </androidx.cardview.widget.CardView>
-
-
-                <TextView
-                    android:id="@+id/textView_hour5"
-                    android:layout_width="200dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:paddingStart="12dp"
-                    android:paddingTop="8dp" />
-
-                <TextView
-                    android:id="@+id/textView_des5"
-                    android:layout_width="200dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:fontFamily="sans-serif-medium"
-                    android:textColor="#FFFFFF" />
-            </LinearLayout>
-
-            // layout of 2/4 date
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:orientation="horizontal">
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/date_card6"
-                    android:layout_width="70dp"
-                    android:layout_height="35dp"
-                    app:cardCornerRadius="30dp"
-                    app:cardElevation="20dp">
-
-                    <TextView
-                        android:id="@+id/textView_date6"
-                        android:layout_width="200dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:paddingStart="20dp"
-                        android:paddingTop="8dp"
-                        android:text="2/4" />
-
-                </androidx.cardview.widget.CardView>
-
-
-                <TextView
-                    android:id="@+id/textView_hour6"
-                    android:layout_width="200dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:paddingStart="12dp"
-                    android:paddingTop="8dp" />
-
-                <TextView
-                    android:id="@+id/textView_des6"
-                    android:layout_width="200dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:fontFamily="sans-serif-medium"
-                    android:textColor="#FFFFFF" />
-            </LinearLayout>
-
-            // layout of 3/4 date
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:orientation="horizontal">
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/date_card7"
-                    android:layout_width="70dp"
-                    android:layout_height="35dp"
-                    app:cardCornerRadius="30dp"
-                    app:cardElevation="20dp">
-
-                    <TextView
-                        android:id="@+id/textView_date7"
-                        android:layout_width="200dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:paddingStart="20dp"
-                        android:paddingTop="8dp"
-                        android:text="3/4" />
-
-                </androidx.cardview.widget.CardView>
-
-
-                <TextView
-                    android:id="@+id/textView_hour7"
-                    android:layout_width="200dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:paddingStart="12dp"
-                    android:paddingTop="8dp" />
-
-                <TextView
-                    android:id="@+id/textView_des7"
-                    android:layout_width="200dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:fontFamily="sans-serif-medium"
-                    android:textColor="#FFFFFF" />
-            </LinearLayout>
-
-            // layout of 4/4 date
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:orientation="horizontal">
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/date_card8"
-                    android:layout_width="70dp"
-                    android:layout_height="35dp"
-                    app:cardCornerRadius="30dp"
-                    app:cardElevation="20dp">
-
-                    <TextView
-                        android:id="@+id/textView_date8"
-                        android:layout_width="200dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:paddingStart="20dp"
-                        android:paddingTop="8dp"
-                        android:text="4/4" />
-
-                </androidx.cardview.widget.CardView>
-
-
-                <TextView
-                    android:id="@+id/textView_hour8"
-                    android:layout_width="200dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:paddingStart="12dp"
-                    android:paddingTop="8dp" />
-
-                <TextView
-                    android:id="@+id/textView_des8"
-                    android:layout_width="200dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:fontFamily="sans-serif-medium"
-                    android:textColor="#FFFFFF" />
-            </LinearLayout>
 
         </LinearLayout>
 

@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Objects.requireNonNull(getSupportActionBar()).hide(); // Hide the action bar
 
-        /*SearchView searchView = findViewById(R.id.searchView);
+        SearchView searchView = findViewById(R.id.searchView);
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
                 // Filter search results here
                 return false;
             }
-        });*/
+        });
 
     }
 
