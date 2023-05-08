@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import com.example.physio_app.R;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override

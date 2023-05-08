@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.physio_plus_app'
+    namespace 'com.example.physio_app'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.physio_plus_app"
+        applicationId "com.example.physio_app"
         minSdk 24
         targetSdk 33
         versionCode 1
