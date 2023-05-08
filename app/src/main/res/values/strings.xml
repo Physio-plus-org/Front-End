@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Physio_plus_App</string>
+    <string name="requestLabel">Αίτημα Ραντεβού</string>
+    <string name="dayLabel">Επιλογή Ημέρας</string>
+    <string name="nextButton">Επόμενο</string>
+    <string name="daysLabel">Ημέρα</string>
+    <string name="hourLabel">Ωρολόγιο Πρόγραμμα</string>
+
 </resources>
