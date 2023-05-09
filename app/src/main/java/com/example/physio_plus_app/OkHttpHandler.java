@@ -22,7 +22,7 @@ public class OkHttpHandler {
 
         // Build the request body with the parameters
         MediaType mediaType = MediaType.parse("application/x-www-form-urlencoded");
-        String requestBodyString = "namePhysio=" + namePhysio + "&addressPhysio=" + addressPhysio + "&afmPhysio=" + afmPhysio;
+        String requestBodyString = "name=" + namePhysio + "&address=" + addressPhysio + "&tax_id_number=" + afmPhysio;
         RequestBody body = RequestBody.create(mediaType, requestBodyString);
 
         Request request = new Request.Builder()
