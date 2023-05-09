@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    android:backgroundTint="@color/white"
+    android:background="@color/background_color"
+    android:backgroundTint="@color/background_color"
     tools:context=".MainActivity"
     tools:ignore="ExtraText">
 
@@ -54,11 +54,11 @@
         android:layout_height="50dp"
         android:background="#00FFFFFF"
         android:backgroundTint="#00FFFFFF"
-        android:foregroundTint="@color/white"
+        android:foregroundTint="@color/background_color"
         app:icon="@drawable/calendar_icon"
         app:iconPadding="2dp"
         app:iconSize="28dp"
-        app:iconTint="@color/black"
+        app:iconTint="@color/text_color"
         app:layout_constraintBottom_toTopOf="@+id/guideline5"
         app:layout_constraintEnd_toStartOf="@+id/button_profile"
         app:layout_constraintTop_toTopOf="parent" />
@@ -69,10 +69,10 @@
         android:layout_height="50dp"
         android:background="#00FFFFFF"
         android:backgroundTint="#00FFFFFF"
-        android:foregroundTint="@color/white"
+        android:foregroundTint="@color/background_color"
         app:icon="@drawable/profile_icon_round"
         app:iconSize="32dp"
-        app:iconTint="@color/black"
+        app:iconTint="@color/text_color"
         app:layout_constraintBottom_toTopOf="@+id/guideline5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -81,7 +81,7 @@
         android:id="@+id/divider"
         android:layout_width="409dp"
         android:layout_height="1dp"
-        android:background="@color/black"
+        android:background="@color/text_color"
         app:layout_constraintBottom_toTopOf="@+id/cardView2"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="1dp" />
@@ -91,12 +91,15 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:background="@drawable/circle_button"
+        android:backgroundTint="@color/background_color"
+        android:foregroundTint="@color/background_color"
         app:icon="@drawable/back_icon"
-        app:iconTint="#000000"
+        app:iconTint="@color/text_color"
         app:layout_constraintBottom_toTopOf="@+id/guideline6"
         app:layout_constraintEnd_toStartOf="@+id/guideline7"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline5" />
+        app:layout_constraintTop_toTopOf="@+id/guideline5"
+        app:rippleColor="@color/background_color" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline6"
@@ -111,7 +114,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-medium"
         android:text="Ιστορικό"
-        android:textColor="#000000"
+        android:textColor="@color/text_color"
         android:textSize="34sp"
         android:textStyle="italic"
         app:layout_constraintBottom_toTopOf="@+id/guideline6"
@@ -147,7 +150,7 @@
         android:layout_width="350dp"
         android:layout_height="150dp"
         android:layout_margin="30dp"
-        app:cardBackgroundColor="@color/green"
+        app:cardBackgroundColor="@color/primary_color"
         app:cardCornerRadius="30dp"
         app:cardElevation="20dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline9"
@@ -277,7 +280,7 @@
                 android:backgroundTint="#00FFFFFF"
                 app:icon="@drawable/search_icon"
                 app:iconPadding="0dp"
-                app:iconTint="#000000">
+                app:iconTint="@color/text_color">
 
             </Button>
 
@@ -300,8 +303,9 @@
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="#66008563"
-        android:backgroundTint="@color/green"
+        android:background="@color/secondary_green"
+        android:backgroundTint="@color/secondary_green"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -329,6 +333,7 @@
                     android:id="@+id/date_card1"
                     android:layout_width="70dp"
                     android:layout_height="35dp"
+                    app:cardBackgroundColor="@color/background_color"
                     app:cardCornerRadius="30dp"
                     app:cardElevation="20dp">
 
@@ -365,7 +370,7 @@
             // layout of 29/3 date
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 android:orientation="horizontal">
@@ -374,6 +379,7 @@
                     android:id="@+id/date_card29_3"
                     android:layout_width="70dp"
                     android:layout_height="35dp"
+                    app:cardBackgroundColor="@color/background_color"
                     app:cardCornerRadius="30dp"
                     app:cardElevation="20dp">
 
@@ -392,7 +398,7 @@
                     android:id="@+id/date_card29_3hours"
                     android:layout_width="160dp"
                     android:layout_height="35dp"
-                    android:backgroundTint="@color/green"
+                    android:backgroundTint="@color/primary_color"
                     app:cardCornerRadius="10dp"
                     app:cardElevation="20dp">
 
@@ -412,7 +418,7 @@
                     android:id="@+id/date_card29_3des"
                     android:layout_width="160dp"
                     android:layout_height="35dp"
-                    android:backgroundTint="@color/white"
+                    android:backgroundTint="@color/background_color"
                     app:cardCornerRadius="10dp"
                     app:cardElevation="20dp">
 
@@ -425,7 +431,7 @@
                         android:paddingStart="12dp"
                         android:paddingTop="8dp"
                         android:text="Εμφάνιση σκολίωσης"
-                        android:textColor="@color/black" />
+                        android:textColor="@color/text_color" />
 
                 </androidx.cardview.widget.CardView>
 
@@ -444,6 +450,7 @@
                     android:id="@+id/date_card3"
                     android:layout_width="70dp"
                     android:layout_height="35dp"
+                    app:cardBackgroundColor="@color/background_color"
                     app:cardCornerRadius="30dp"
                     app:cardElevation="20dp">
 
@@ -489,6 +496,7 @@
                     android:id="@+id/date_card4"
                     android:layout_width="70dp"
                     android:layout_height="35dp"
+                    app:cardBackgroundColor="@color/background_color"
                     app:cardCornerRadius="30dp"
                     app:cardElevation="20dp">
 
@@ -534,6 +542,7 @@
                     android:id="@+id/date_card5"
                     android:layout_width="70dp"
                     android:layout_height="35dp"
+                    app:cardBackgroundColor="@color/background_color"
                     app:cardCornerRadius="30dp"
                     app:cardElevation="20dp">
 
@@ -578,6 +587,7 @@
                     android:id="@+id/date_card6"
                     android:layout_width="70dp"
                     android:layout_height="35dp"
+                    app:cardBackgroundColor="@color/background_color"
                     app:cardCornerRadius="30dp"
                     app:cardElevation="20dp">
 
@@ -622,6 +632,7 @@
                     android:id="@+id/date_card7"
                     android:layout_width="70dp"
                     android:layout_height="35dp"
+                    app:cardBackgroundColor="@color/background_color"
                     app:cardCornerRadius="30dp"
                     app:cardElevation="20dp">
 
@@ -666,6 +677,7 @@
                     android:id="@+id/date_card8"
                     android:layout_width="70dp"
                     android:layout_height="35dp"
+                    app:cardBackgroundColor="@color/background_color"
                     app:cardCornerRadius="30dp"
                     app:cardElevation="20dp">
 
