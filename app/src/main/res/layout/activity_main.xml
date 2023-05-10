@@ -193,11 +193,12 @@
 
 
                     <TextView
+                        android:id="@+id/name_tv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-medium"
                         android:paddingStart="8dp"
-                        android:text="Γιάννης Κονταξής"
+                        android:text="name"
                         android:textColor="#FFFFFF"
                         android:textSize="20sp" />
 
@@ -210,20 +211,22 @@
                     android:padding="5dp">
 
                     <TextView
+                        android:id="@+id/age_tv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="left"
                         android:paddingStart="3dp"
-                        android:text="22 ετών"
+                        android:text="age"
                         android:textColor="#FFFFFF"
                         android:textSize="10dp" />
 
                     <TextView
+                        android:id="@+id/birthday_tv"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_gravity="right"
                         android:paddingEnd="9dp"
-                        android:text="14 Μαρ 2001"
+                        android:text="birthday"
                         android:textAlignment="textEnd"
                         android:textColor="#FFFFFF"
                         android:textSize="10dp" />
@@ -232,20 +235,22 @@
                 </LinearLayout>
 
                 <TextView
+                    android:id="@+id/address_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingStart="8dp"
-                    android:text="Στρατού 82, Θεσσαλονίκη"
+                    android:text="address"
                     android:textColor="#FFFFFF"
                     android:textSize="10dp" />
 
                 <TextView
+                    android:id="@+id/date_tv"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:fontFamily="sans-serif-medium"
                     android:paddingStart="8dp"
                     android:paddingTop="5dp"
-                    android:text="Πέμπτη 23, 10:00 ΑΜ - 12:00 PM"
+                    android:text="date"
                     android:textColor="#CFCFCF"
                     android:textSize="11dp" />
 
@@ -384,13 +389,13 @@
                     app:cardElevation="20dp">
 
                     <TextView
-                        android:id="@+id/textView_date2"
+                        android:id="@+id/appoint_date_tv"
                         android:layout_width="200dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:paddingStart="20dp"
                         android:paddingTop="8dp"
-                        android:text="29/3" />
+                        android:text="date" />
 
                 </androidx.cardview.widget.CardView>
 
@@ -403,13 +408,13 @@
                     app:cardElevation="20dp">
 
                     <TextView
-                        android:id="@+id/textView_hour2"
+                        android:id="@+id/appoint_hour_tv"
                         android:layout_width="200dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:paddingStart="12dp"
                         android:paddingTop="8dp"
-                        android:text="08:00 AM - 09:00 AM"
+                        android:text="hours"
                         android:textColor="#FFFFFF" />
 
                 </androidx.cardview.widget.CardView>
@@ -423,14 +428,14 @@
                     app:cardElevation="20dp">
 
                     <TextView
-                        android:id="@+id/textView_des2"
+                        android:id="@+id/appoint_description_tv"
                         android:layout_width="200dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:fontFamily="sans-serif-medium"
                         android:paddingStart="12dp"
                         android:paddingTop="8dp"
-                        android:text="Εμφάνιση σκολίωσης"
+                        android:text="description"
                         android:textColor="@color/text_color" />
 
                 </androidx.cardview.widget.CardView>
