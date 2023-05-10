@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Physio_plus_App</string>
+    <string name="code">Κωδικός</string>
+    <string name="codehint">Εισαγωγή κωδικού</string>
+    <string name="name">Όνομα</string>
+    <string name="description">Περιγραφή</string>
+    <string name="price">Τιμή</string>
+    <string name="namehint">Εισαγωγή ονόματος</string>
+    <string name="deschint">Εισαγωγή περιγραφής</string>
+    <string name="pricehint">- €</string>
+    <string name="confirmation">Επιβεβαίωση</string>
+    <string name="backgroud_image">backgroud_image</string>
 </resources>
