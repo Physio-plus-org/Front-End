@@ -10,22 +10,22 @@
         android:layout_height="wrap_content"
         tools:context=".R1">
 
-    <TextView
-        android:id="@+id/titlePhysio"
-        android:layout_width="385dp"
-        android:layout_height="81dp"
-        android:layout_marginTop="19dp"
-        android:text="@string/r1_title"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="34sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.384"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/physio_logo" />
+        <TextView
+            android:id="@+id/titlePhysio"
+            android:layout_width="385dp"
+            android:layout_height="81dp"
+            android:layout_marginTop="12dp"
+            android:text="@string/r1_title"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="34sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.615"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
-    <EditText
+        <EditText
         android:id="@+id/namePhysio"
         android:layout_width="237dp"
         android:layout_height="48dp"
@@ -62,6 +62,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/addressPhysio" />
 
+ <!--
     <View
         android:id="@+id/linePhysio"
         android:layout_width="320dp"
@@ -138,6 +139,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/verify_pass"
         app:layout_constraintVertical_bias="0.761" />
+-->
+        <Button
+            android:id="@+id/r1_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:backgroundTint="@color/black"
+            android:text="@string/verification_button"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/afmPhysio"
+            app:layout_constraintVertical_bias="1.0" />
 
     <ImageView
         android:id="@+id/physio_logo"
@@ -162,6 +179,17 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="338dp"
+            android:layout_height="254dp"
+            android:layout_marginTop="28dp"
+
+            android:scaleType="fitXY"
+            app:layout_constraintTop_toBottomOf="@+id/physio_logo"
+            app:srcCompat="@drawable/petr_magera_qxe8nptjwag_unsplash"
+            tools:layout_editor_absoluteX="43dp" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
