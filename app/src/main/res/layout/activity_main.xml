@@ -198,7 +198,6 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-medium"
                         android:paddingStart="8dp"
-                        android:text="name"
                         android:textColor="#FFFFFF"
                         android:textSize="20sp" />
 
