@@ -130,18 +130,6 @@
                 app:srcCompat="@drawable/patient" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <LinearLayout
-            android:id="@+id/linearLayout"
-            android:layout_width="417dp"
-            android:layout_height="417dp"
-            android:layout_marginTop="256dp"
-            android:background="@drawable/background"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/constraintLayout9"/>
-
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout3"
             android:layout_width="409dp"
@@ -164,6 +152,18 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/adding_pat" />
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="410dp"
+            android:layout_height="379dp"
+            android:layout_marginTop="283dp"
+            android:layout_marginBottom="4dp"
+            android:background="@drawable/background"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayout3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/constraintLayout9" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </RelativeLayout>

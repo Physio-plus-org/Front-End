@@ -4,14 +4,35 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.os.StrictMode;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.SearchView;
+import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity implements SearchView.OnQueryTextListener {
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.lang.ref.WeakReference;
+import java.util.Date;
+
+import javax.net.ssl.HostnameVerifier;
+
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
+
+public class MainActivity extends AppCompatActivity  {
 
     private SearchView searchView;
     private ImageButton add_Button;
@@ -24,14 +45,25 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
     private ImageButton imageButton1;
     private ImageButton imageButton2;
 
+    private HttpHandler handler;
 
+    public String firstName;
+    public String lastName;
 
+    private final String myIP = "192.168.56.1";
+    private UserList u;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        u = new UserList(myIP);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //snew HttpHandler().SearchPatient();
         getSupportActionBar().hide();
+
+        Intent intent = getIntent();
+        String firstName = getIntent().getStringExtra("firstName");
+        String lastName = getIntent().getStringExtra("lastName");
 
         imageView1 = findViewById(R.id.imageView3);
         imageView2 = findViewById(R.id.imageView8);
@@ -43,34 +75,21 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         constraintLayout = findViewById(R.id.constraintLayout2);
         imageButton1 = findViewById(R.id.imageButton4);
         imageButton2 = findViewById(R.id.imageButton5);
-        searchView.setOnQueryTextListener(this);
-
+        //searchView.setOnQueryTextListener(this);
     }
 
 
-    @Override
-        public boolean onQueryTextSubmit(String query) {
-            // Handle search query submit
-            return true;
-        }
-
-        @Override
-        public boolean onQueryTextChange(String text) {
-            // Handle search query text change
-            text_filtering(text);
-            return true;
-        }
-
-    private void text_filtering(String text) {
-
-        String attribute = text;
-        Toast.makeText(this, attribute, Toast.LENGTH_SHORT).show();
-
-    }
 
     public void myButtonClickHandler(View view) {
-        // Do something when the button is clicked
-
+        String url= "https://" + myIP + "/logHistory.php";
+        try {
+            HttpHandler okHttpHandler = new HttpHandler();
+            okHttpHandler.phpData(url);
+            Toast.makeText(getApplicationContext(), "Selection Logged", Toast.LENGTH_SHORT).show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        /*
         add_Button.setAlpha(0.5f);
         searchView.setAlpha(0.5f);
         imageView1.setAlpha(0.5f);
@@ -82,6 +101,8 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         imageButton1.setAlpha(0.5f);
         imageButton2.setAlpha(0.5f);
 
-        Toast.makeText(this, "Button clicked!", Toast.LENGTH_SHORT).show();
+         */
     }
 }
+
+
