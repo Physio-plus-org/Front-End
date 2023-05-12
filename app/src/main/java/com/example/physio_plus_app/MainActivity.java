@@ -4,25 +4,17 @@ import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.CalendarView;
-import android.widget.DatePicker;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.sql.Date;
-import java.text.DateFormat;
-import java.text.DateFormatSymbols;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Collections;
 import java.util.List;
-import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
 
