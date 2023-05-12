@@ -11,8 +11,6 @@ import android.widget.TextView;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
-import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.gson.Gson;
 
@@ -52,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
 
         name_tv = findViewById(R.id.name_tv);
         age_tv = findViewById(R.id.age_tv);
-        birthday_tv = findViewById(R.id.birthday_tv);
+        birthday_tv = findViewById(R.id.yearsold_tv);
         address_tv = findViewById(R.id.address_tv);
         date_tv = findViewById(R.id.date_tv);
 
@@ -82,10 +80,16 @@ public class MainActivity extends AppCompatActivity {
                     try {
                         JSONObject jsonObject = new JSONObject(json);
                         String name = jsonObject.getString("name");
+                        String address = jsonObject.getString("address");
+                        String age = jsonObject.getString(("age"));
                         // Use the name variable as needed
                         Log.d("MainActivity", "Name set to: " + name);
+                        Log.d("MainActivity","Address set to:" + address);
+                        Log.d("MainActivity","Age set to:" + age);
 
                         runOnUiThread(() -> name_tv.setText(name));
+                        runOnUiThread(()->address_tv.setText(address));
+                        runOnUiThread(()->age_tv.setText(age));
                     } catch (JSONException e) {
                         // Handle JSON parsing error
                         Log.e("MainActivity", "JSON parsing error", e);
