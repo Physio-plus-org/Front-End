@@ -12,8 +12,8 @@
 
         <TextView
             android:id="@+id/titlePhysio"
-            android:layout_width="385dp"
-            android:layout_height="81dp"
+            android:layout_width="369dp"
+            android:layout_height="80dp"
             android:layout_marginTop="12dp"
             android:text="@string/r1_title"
             android:textAlignment="center"
@@ -188,7 +188,7 @@
 
             android:scaleType="fitXY"
             app:layout_constraintTop_toBottomOf="@+id/physio_logo"
-            app:srcCompat="@drawable/petr_magera_qxe8nptjwag_unsplash"
+            app:srcCompat="@drawable/r1"
             tools:layout_editor_absoluteX="43dp" />
 
 
