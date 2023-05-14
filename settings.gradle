@@ -12,5 +12,9 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
+<<<<<<< Updated upstream
 rootProject.name = "Physio_plus_App"
+=======
+rootProject.name = "physio_plus_app"
+>>>>>>> Stashed changes
 include ':app'
