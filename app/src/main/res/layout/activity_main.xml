@@ -119,12 +119,12 @@
                     android:textColor="#707070" />
 
                 <EditText
-                    android:id="@+id/address"
+                    android:id="@+id/addess"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
                     android:layout_marginTop="25dp"
+                    android:layout_marginRight="20dp"
                     android:background="@drawable/pedio"
                     android:backgroundTintMode="add"
                     android:drawableStart="@drawable/location"
@@ -150,7 +150,7 @@
                     app:srcCompat="@drawable/cancel" />
 
                 <ImageButton
-                    android:id="@+id/imageButton2"
+                    android:id="@+id/createbtn"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"

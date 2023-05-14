@@ -2,53 +2,33 @@ package com.example.physio_plus_app;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
-import android.widget.Spinner;
-import android.widget.Toast;
-
-import java.util.Date;
-import java.util.List;
+import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
-    private final String myIP = "192.168.1.89";
-    private CreatePatient cbl;
-    private RadioGroup rg;
-    private View fullusername;
-    private View Useramka;
-    private View Useraddress;
+    private final String myIP = "192.168.1.248";
 
+    Button createPatient;
+
+    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        this.fullusername = findViewById(R.id.username);
-        this.Useramka = findViewById(R.id.amka);
-        this.Useraddress = findViewById(R.id.address);
-        cbl = new CreatePatient(myIP);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-    }
-    public void Patient(View v) {
-        makeRequest();
-    }
-    protected void makeRequest() {
-        String url = "http://" + myIP + "/carsDBServices/logHistory.php?fullname=" + fullusername.toString() + "&amka=" + Useramka.toString() + "&address=" + Useraddress.toString();
-        StringRequest stringRequest = new StringRequest(
-                Request.Method.GET,
-                url,
-                null,
-                null
-        );
-        RequestQueue requestQueue = Volley.newRequestQueue(MainActivity.this);
-        requestQueue.add(stringRequest);
-        /*try {
-            OkHttpHandler okHttpHandler = new OkHttpHandler();
-            okHttpHandler.logHistory(url);
-            Toast.makeText(getApplicationContext(), "Selection Logged", Toast.LENGTH_SHORT).show();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }*/
+
+        createPatient = findViewById(R.id.createbtn);
+        createPatient.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openNewActivity();
+            }
+            private void openNewActivity() {
+                Intent intent = new Intent(getApplicationContext(), CreatePatient.class);
+                startActivity(intent);
+            }
+        });
     }
 }
