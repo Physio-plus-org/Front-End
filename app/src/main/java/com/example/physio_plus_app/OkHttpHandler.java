@@ -9,14 +9,14 @@ public class OkHttpHandler {
         StrictMode.setThreadPolicy(policy);
     }
 
-    public void loghistory(String fullnamePatient, String addressPatient, String amkaPatient) throws Exception {
-        final String URL = "http://192.168.1.248/Back-End/logHistory.php";
+    public void loghistory(String fullnamePatient, String amkaPatient, String addressPatient) throws Exception {
+        final String URL = "http://192.168.1.248/logHistory.php";
 
         OkHttpClient client = new OkHttpClient().newBuilder().build();
 
         // Build the request body with the parameters
         MediaType mediaType = MediaType.parse("application/x-www-form-urlencoded");
-        String requestBodyString = "fullname=" + fullnamePatient + "&amka=" + addressPatient + "&address=" + amkaPatient;
+        String requestBodyString = "fullname=" + fullnamePatient + "&amka=" + amkaPatient + "&address=" + addressPatient;
         RequestBody body = RequestBody.create(mediaType, requestBodyString);
 
         Request request = new Request.Builder()

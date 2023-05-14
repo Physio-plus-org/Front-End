@@ -30,16 +30,16 @@ public class CreatePatient extends AppCompatActivity {
         CreatePatientbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String namePhysio = fullnamePatient.getText().toString();
-                String addressPhysio = addressPatient.getText().toString();
-                String afmPhysio = CreatePatientbtn.getText().toString();
+                String namePatient = fullnamePatient.getText().toString();
+                String addressofPatient = addressPatient.getText().toString();
+                String amkaPatient = CreatePatientbtn.getText().toString();
 
                 // Create an instance of OKHttpHandler
                 OkHttpHandler okHttpHandler = new OkHttpHandler();
 
-                // Call the psfCreate method with the obtained data
+                // Call the CreatePatient method with the obtained data
                 try {
-                    okHttpHandler.loghistory(namePhysio, addressPhysio, afmPhysio);
+                    okHttpHandler.loghistory(namePatient, amkaPatient, addressofPatient);
 
 
                     Toast.makeText(CreatePatient.this, "Data written to database", Toast.LENGTH_SHORT).show();
