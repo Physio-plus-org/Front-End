@@ -1,8 +1,6 @@
 package com.example.physio_plus_app;
 
-import android.content.Context;
 import android.os.*;
-import android.widget.Toast;
 
 import org.json.*;
 import java.util.*;
@@ -15,14 +13,13 @@ public class OkHttpHandler {
         StrictMode.setThreadPolicy(policy);
     }
 
-    public void psfCreate(String namePhysio, String addressPhysio, String afmPhysio) throws Exception {
+    public String psfCreate(String namePhysio, String addressPhysio, String afmPhysio) throws Exception {
         final String URL = "http://10.140.7.254/r1/r1.php";
 
-        OkHttpClient client = new OkHttpClient().newBuilder().build();
+        OkHttpClient client = new OkHttpClient();
 
-        // Build the request body with the parameters
         MediaType mediaType = MediaType.parse("application/x-www-form-urlencoded");
-        String requestBodyString = "name=" + namePhysio + "&address=" + addressPhysio + "&tax_id_number=" + afmPhysio;
+        String requestBodyString = "tax_id_number=" + afmPhysio + "&name=" + namePhysio + "&address=" + addressPhysio;
         RequestBody body = RequestBody.create(mediaType, requestBodyString);
 
         Request request = new Request.Builder()
@@ -34,10 +31,7 @@ public class OkHttpHandler {
 
         // Handle the response as needed
         // For example, you can get the response body as a string:
-        String responseBody = response.body().string();
-
-
+        return response.body().string();
     }
 
 }
-

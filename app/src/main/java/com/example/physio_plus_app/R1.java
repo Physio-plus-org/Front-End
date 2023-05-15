@@ -49,14 +49,26 @@ public class R1 extends AppCompatActivity {
 
                 // Call the psfCreate method with the obtained data
                 try {
-                    okHttpHandler.psfCreate(namePhysio, addressPhysio, afmPhysio);
+                    String response = okHttpHandler.psfCreate(namePhysio, addressPhysio, afmPhysio);
 
+                    if (response.equals("Tax ID number already exists")) {
+                        Toast.makeText(R1.this, "Tax ID number already exists", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(R1.this, "Data written to database", Toast.LENGTH_SHORT).show();
 
-                    Toast.makeText(R1.this, "Data written to database", Toast.LENGTH_SHORT).show();
+                        // Clear the EditText fields
+                        namePhysioEditText.getText().clear();
+                        addressPhysioEditText.getText().clear();
+                        afmPhysioEditText.getText().clear();
+                    }
+
                 } catch (Exception e) {
                     e.printStackTrace();
                     Toast.makeText(R1.this, "Error writing data to database", Toast.LENGTH_SHORT).show();
                 }
+
+
+
             }
         });
     }

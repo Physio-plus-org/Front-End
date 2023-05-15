@@ -3,8 +3,8 @@
 
     //R1 Enter
     <string name="r1EnterButtonPSF">Π.Σ.Φ.</string>
-    <string name="r1EnterButtonPhysio">Φυσιοθεραπευτήριο</string>
-    <string name="r1EnterButtonPat">Ασθενής</string>
+    <string name="r1EnterButtonPhysio">Φυσιοθεραπευτηριο</string>
+    <string name="r1EnterButtonPat">Ασθενης</string>
 
     //R1 User-pass
     <string name="passReminder">Ξεχάσατε τον κωδικό σας;</string>
@@ -17,7 +17,7 @@
     <string name="username">Όνομα Χρήστη</string>
     <string name="user_pass">Συνθηματικό</string>
     <string name="verification_pass">Επιβεβαίωση Συθνθηματικού</string>
-    <string name="verification_button">Επιβεβαίωση</string>
+    <string name="verification_button">Επιβεβαιωση</string>
     <string name="title_activity_scrolling">ScrollingActivity</string>
     <string name="large_text">
         "Material is the metaphor.\n\n"
