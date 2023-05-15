@@ -173,7 +173,8 @@
                         android:minWidth="48dp"
                         android:minHeight="48dp"
                         android:onClick="onCalendarClick"
-                        app:srcCompat="@drawable/baseline_calendar_month_24" />
+                        app:srcCompat="@drawable/baseline_calendar_month_24"
+                        app:tint="?android:attr/textColorPrimary"/>
 
                 </LinearLayout>
 
