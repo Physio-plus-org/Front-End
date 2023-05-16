@@ -5,11 +5,14 @@
         android:icon="@drawable/baselinecalendarmonth_24"
         android:titleTextColor="@android:color/white"
         android:title=""
+        android:state_focused="true"
+        android:color="@color/lightwhite"
         />
     <item
         android:id="@+id/money"
         android:icon="@drawable/baselineeuro24"
         android:title=""
+        android:state_focused="true"
+        android:color="@color/lightwhite"
        />
-
 </menu>

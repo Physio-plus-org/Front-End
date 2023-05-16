@@ -3,13 +3,18 @@ package com.example.physio_plus_app;
 
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -33,16 +38,35 @@ public class MainActivity2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
+        //start of actionBar
+        ActionBar actionBar;
+        actionBar = getSupportActionBar();
+
+        actionBar.setDisplayShowCustomEnabled(true);
+        LayoutInflater inflater=(LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View view = inflater.inflate(R.layout.custom_image,null);
+        actionBar.setCustomView(view);
+
+        // Define ColorDrawable object and parse color
+        // using parseColor method
+        // with color hash code as its parameter
+        ColorDrawable colorDrawable
+                = new ColorDrawable(Color.parseColor("white"));
+
+        // Set BackgroundDrawable
+        actionBar.setBackgroundDrawable(colorDrawable);
+        //end of actionBar
+
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.calendar);
 
-//       TextView dateTextView = findViewById(R.id.dayNumberLabel);
-//        String selectedDate = getIntent().getStringExtra("selectedDate");
-//        dateTextView.setText(selectedDate);
+       TextView dateTextView = findViewById(R.id.dayNameLabel);
+        String selectedDate = getIntent().getStringExtra("dayName");
+        dateTextView.setText(selectedDate);
 
-        TextView dayNameText = findViewById(R.id.dayNameLabel);
-        String selectedDay = getIntent().getStringExtra("dayName");
-        dayNameText.setText(selectedDay);
+//        TextView dayNameText = findViewById(R.id.dayNameLabel);
+//        String selectedDay = getIntent().getStringExtra("selectedDate");
+//        dayNameText.setText(selectedDay);
 
 
 
