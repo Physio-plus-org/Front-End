@@ -83,3 +83,13 @@ lint/generated/
 lint/outputs/
 lint/tmp/
 # lint/reports/
+
+*.lock
+
+.tmp/
+android/
+
+caches/
+wrapper/
+native/
+daemon/
