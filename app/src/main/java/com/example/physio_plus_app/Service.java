@@ -22,7 +22,7 @@ public class Service {
 
     public void show(EditText resultView) {
         String prevText = resultView.getText().toString();
-        prevText += String.format(Locale.getDefault(), "Title: %s\tCost: %.2f\nDescription: %s%n", this.serviceTitle, this.serviceCost, this.serviceDescription);
+        prevText += String.format(Locale.getDefault(), "Title: %s\nCost: %.2f\nDescription: %s%n", this.serviceTitle, this.serviceCost, this.serviceDescription);
         resultView.setText(prevText);
     }
 }

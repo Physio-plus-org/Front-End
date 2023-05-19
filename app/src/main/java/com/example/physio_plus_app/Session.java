@@ -19,7 +19,9 @@ public class Session {
     private String sessionNotes;
     public Session(JSONObject jsonObject) throws JSONException, ParseException {
         this.sessionId = Integer.parseInt(jsonObject.get("id").toString());
-        this.sessionDate = new SimpleDateFormat("dd/MM/yy", new Locale("greek")).parse(jsonObject.get("date").toString());
+//        String[] date_details = jsonObject.getJSONArray("date").toString().split("-");
+        this.sessionDate = java.sql.Date.valueOf(jsonObject.get("date").toString());
+        //new SimpleDateFormat("yyyy-MM-dd", new Locale("greek")).parse(jsonObject.get("date").toString());
         this.sessionNotes = jsonObject.get("notes").toString();
         JSONArray jsonArrayServices = jsonObject.getJSONArray("services");
         for (int i = 0; i < jsonArrayServices.length(); i++) {
