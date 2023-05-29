@@ -9,45 +9,26 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class CreatePatient extends AppCompatActivity {
-    private Button CreatePatientbtn;
-    private EditText fullnamePatient;
-    private EditText addressPatient;
-    private EditText amkaPatient;
+public class CreatePatient {
 
+    private String fullnamePatient;
+    private String addressPatient;
+    private String amkaPatient;
 
-    @SuppressLint("WrongViewCast")
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    public CreatePatient(String f, String a, String am){
+        this.fullnamePatient = f;
+        this.addressPatient = a;
+        this.amkaPatient = am;
+    }
+    public String getAddressPatient() {
+        return addressPatient;
+    }
 
-        CreatePatientbtn = findViewById(R.id.createbtn);
-        fullnamePatient = findViewById(R.id.username);
-        addressPatient = findViewById(R.id.addess);
-        amkaPatient = findViewById(R.id.amka);
+    public String getFullnamePatient() {
+        return fullnamePatient;
+    }
 
-        CreatePatientbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String namePatient = fullnamePatient.getText().toString();
-                String addressofPatient = addressPatient.getText().toString();
-                String amkaPatient = CreatePatientbtn.getText().toString();
-
-                // Create an instance of OKHttpHandler
-                OkHttpHandler okHttpHandler = new OkHttpHandler();
-
-                // Call the CreatePatient method with the obtained data
-                try {
-                    okHttpHandler.loghistory(namePatient, amkaPatient, addressofPatient);
-
-
-                    Toast.makeText(CreatePatient.this, "Data written to database", Toast.LENGTH_SHORT).show();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                    Toast.makeText(CreatePatient.this, "Error writing data to database", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
+    public String getAmkaPatient() {
+        return amkaPatient;
     }
 }
