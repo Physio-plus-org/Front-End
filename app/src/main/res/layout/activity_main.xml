@@ -100,7 +100,7 @@
                     android:drawableStart="@drawable/account"
                     android:drawablePadding="8dp"
                     android:padding="8sp"
-                    android:text="@string/name_label"
+                    android:hint="@string/name_label"
                     android:textColor="#707070" />
 
                 <EditText
@@ -115,7 +115,7 @@
                     android:drawableStart="@drawable/amka"
                     android:drawablePadding="8dp"
                     android:padding="8sp"
-                    android:text="@string/amka_label"
+                    android:hint="@string/amka_label"
                     android:textColor="#707070" />
 
                 <EditText
@@ -130,7 +130,7 @@
                     android:drawableStart="@drawable/location"
                     android:drawablePadding="8dp"
                     android:padding="8sp"
-                    android:text="@string/address_label"
+                    android:hint="@string/address_label"
                     android:textColor="#707070" />
 
             </LinearLayout>

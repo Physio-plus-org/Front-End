@@ -38,8 +38,8 @@ public class MainActivity extends AppCompatActivity {
 
                 // Call the CreatePatient method with the obtained data
                 try {
-                    okHttpHandler.loghistory(namePatient, amPatient, addressofPatient);
-
+                    String response = okHttpHandler.loghistory(namePatient, amPatient, addressofPatient);
+                    Toast.makeText(MainActivity.this, response, Toast.LENGTH_LONG).show();
                 } catch (Exception e) {
                     throw new RuntimeException(e);
                 }
