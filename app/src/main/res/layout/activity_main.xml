@@ -317,7 +317,7 @@
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline8"
         app:layout_constraintVertical_bias="1.0"
@@ -347,7 +347,7 @@
                     app:cardElevation="20dp">
 
                     <TextView
-                        android:id="@+id/textView_date"
+                        android:id="@+id/date_text1"
                         android:layout_width="200dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -393,7 +393,7 @@
                     app:cardElevation="20dp">
 
                     <TextView
-                        android:id="@+id/appoint_date_tv"
+                        android:id="@+id/date_text2"
                         android:layout_width="200dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -464,7 +464,7 @@
                     app:cardElevation="20dp">
 
                     <TextView
-                        android:id="@+id/textView_date3"
+                        android:id="@+id/date_text3"
                         android:layout_width="200dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -510,7 +510,7 @@
                     app:cardElevation="20dp">
 
                     <TextView
-                        android:id="@+id/textView_date4"
+                        android:id="@+id/date_text4"
                         android:layout_width="200dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -556,7 +556,7 @@
                     app:cardElevation="20dp">
 
                     <TextView
-                        android:id="@+id/textView_date5"
+                        android:id="@+id/date_text5"
                         android:layout_width="200dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -601,7 +601,7 @@
                     app:cardElevation="20dp">
 
                     <TextView
-                        android:id="@+id/textView_date6"
+                        android:id="@+id/date_text6"
                         android:layout_width="200dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -646,7 +646,7 @@
                     app:cardElevation="20dp">
 
                     <TextView
-                        android:id="@+id/textView_date7"
+                        android:id="@+id/date_text7"
                         android:layout_width="200dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -674,50 +674,8 @@
                     android:textColor="#FFFFFF" />
             </LinearLayout>
 
-            // layout of 4/4 date
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:orientation="horizontal">
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/date_card8"
-                    android:layout_width="70dp"
-                    android:layout_height="35dp"
-                    app:cardBackgroundColor="@color/background_color"
-                    app:cardCornerRadius="30dp"
-                    app:cardElevation="20dp">
-
-                    <TextView
-                        android:id="@+id/textView_date8"
-                        android:layout_width="200dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:paddingStart="20dp"
-                        android:paddingTop="8dp"
-                        android:text="4/4" />
-
-                </androidx.cardview.widget.CardView>
 
 
-                <TextView
-                    android:id="@+id/textView_hour8"
-                    android:layout_width="200dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:paddingStart="12dp"
-                    android:paddingTop="8dp" />
-
-                <TextView
-                    android:id="@+id/textView_des8"
-                    android:layout_width="200dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:fontFamily="sans-serif-medium"
-                    android:textColor="#FFFFFF" />
-            </LinearLayout>
 
         </LinearLayout>
 

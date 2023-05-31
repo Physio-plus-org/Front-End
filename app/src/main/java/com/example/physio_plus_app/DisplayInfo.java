@@ -23,7 +23,6 @@ public class DisplayInfo {
 
     TextView name_tv;
     TextView age_tv;
-    TextView birthday_tv;
     TextView address_tv;
     TextView date_tv;
 
@@ -39,7 +38,6 @@ public class DisplayInfo {
         this.address_tv = address;
         this.age_tv = age;
         this.url = url;
-        this.currentDate = currentDate;
         date_tv.setText(currentDate);
         this.client = client;
 
