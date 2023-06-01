@@ -60,7 +60,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="364dp"
+                android:layout_height="456dp"
                 android:background="@drawable/top_background_gradiunt"
                 android:orientation="vertical"
                 tools:ignore="MissingConstraints">
@@ -93,14 +93,29 @@
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
                     android:layout_marginTop="25dp"
+                    android:layout_marginRight="20dp"
                     android:background="@drawable/pedio"
                     android:backgroundTintMode="add"
                     android:drawableStart="@drawable/account"
                     android:drawablePadding="8dp"
+                    android:hint="Όνομα"
                     android:padding="8sp"
-                    android:hint="@string/name_label"
+                    android:textColor="#707070" />
+
+                <EditText
+                    android:id="@+id/surname"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/pedio"
+                    android:backgroundTintMode="add"
+                    android:drawableStart="@drawable/account"
+                    android:drawablePadding="8dp"
+                    android:hint="Επίθετο"
+                    android:padding="8sp"
                     android:textColor="#707070" />
 
                 <EditText
@@ -108,14 +123,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
                     android:layout_marginTop="25dp"
+                    android:layout_marginRight="20dp"
                     android:background="@drawable/pedio"
                     android:backgroundTintMode="add"
                     android:drawableStart="@drawable/amka"
                     android:drawablePadding="8dp"
-                    android:padding="8sp"
                     android:hint="@string/amka_label"
+                    android:padding="8sp"
                     android:textColor="#707070" />
 
                 <EditText
@@ -129,8 +144,8 @@
                     android:backgroundTintMode="add"
                     android:drawableStart="@drawable/location"
                     android:drawablePadding="8dp"
-                    android:padding="8sp"
                     android:hint="@string/address_label"
+                    android:padding="8sp"
                     android:textColor="#707070" />
 
             </LinearLayout>

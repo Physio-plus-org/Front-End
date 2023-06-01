@@ -11,12 +11,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class CreatePatient {
 
-    private String fullnamePatient;
+    private String namePatient;
+    private String surnamePatient;
     private String addressPatient;
     private String amkaPatient;
 
-    public CreatePatient(String f, String a, String am){
-        this.fullnamePatient = f;
+    public CreatePatient(String f, String s, String a, String am){
+        this.namePatient = f;
+        this.surnamePatient = s;
         this.addressPatient = a;
         this.amkaPatient = am;
     }
@@ -24,9 +26,11 @@ public class CreatePatient {
         return addressPatient;
     }
 
-    public String getFullnamePatient() {
-        return fullnamePatient;
+    public String getnamePatient() {
+        return namePatient;
     }
+
+    public String getSurnamePatient(){return surnamePatient;}
 
     public String getAmkaPatient() {
         return amkaPatient;

@@ -14,14 +14,15 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
     private final String myIP = "192.168.1.248";
 
-    EditText fullnamePatient,addressPatient,amkaPatient;
+    EditText name_Patient,surname_Patient,addressPatient,amkaPatient;
     ImageButton createPatient;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        fullnamePatient = (EditText) findViewById(R.id.username);
+        name_Patient = (EditText) findViewById(R.id.username);
+        surname_Patient = (EditText) findViewById(R.id.surname);
         addressPatient = (EditText) findViewById(R.id.addess);
         amkaPatient = (EditText) findViewById(R.id.amka);
         createPatient = (ImageButton) findViewById(R.id.createbtn);
@@ -29,7 +30,8 @@ public class MainActivity extends AppCompatActivity {
         createPatient.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String namePatient = fullnamePatient.getText().toString();
+                String namePatient = name_Patient.getText().toString();
+                String surnamePatient = surname_Patient.getText().toString();
                 String addressofPatient = addressPatient.getText().toString();
                 String amPatient = amkaPatient.getText().toString();
 
@@ -38,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
 
                 // Call the CreatePatient method with the obtained data
                 try {
-                    String response = okHttpHandler.loghistory(namePatient, amPatient, addressofPatient);
+                    String response = okHttpHandler.loghistory(namePatient,surnamePatient, amPatient, addressofPatient);
                     Toast.makeText(MainActivity.this, response, Toast.LENGTH_LONG).show();
                 } catch (Exception e) {
                     throw new RuntimeException(e);
