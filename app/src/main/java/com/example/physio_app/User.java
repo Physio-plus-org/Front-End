@@ -1,14 +1,16 @@
 package com.example.physio_app;
 
-public class User {
+import java.io.Serializable;
+
+public class User implements Serializable {
     private String firstName;
     private String lastName;
-    private String AMKA;
+    private String Amka;
 
-    public User(String firstName, String lastName, String AMKA) {
+    public User(String firstName, String lastName, String Amka) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.AMKA = AMKA;
+        this.Amka = Amka;
     }
 
 
@@ -20,7 +22,7 @@ public class User {
         return lastName;
     }
     public String getAMKA() {
-        return AMKA;
+        return Amka;
     }
 
 
