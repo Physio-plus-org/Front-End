@@ -116,7 +116,7 @@
                 android:ems="10"
                 android:hint="@string/deschint"
                 android:inputType="text"
-                android:minHeight="48dp"
+                android:minHeight="120dp"
                 android:padding="10dp"
                 android:textAlignment="textStart"
                 android:textColorHint="@color/light_grey" />
