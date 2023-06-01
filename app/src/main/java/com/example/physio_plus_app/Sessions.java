@@ -1,5 +1,6 @@
 package com.example.physio_plus_app;
 
+import android.os.StrictMode;
 import android.util.Log;
 import android.widget.ScrollView;
 
@@ -16,6 +17,7 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -36,11 +38,13 @@ public class Sessions {
         this.url = url;
         this.client = client;
         this.dataList = new ArrayList<>();
+
     }
 
     public void addData() {
 
         Log.d("Sessions", "addData called!");
+
 
         Request request = new Request.Builder().url(url).build();
 
@@ -76,6 +80,7 @@ public class Sessions {
                 }
 
                 response.close();
+                Log.d("Sessions", "Responce closed");
             }
         });
     }

@@ -55,7 +55,6 @@ public class MainActivity extends AppCompatActivity {
 
 
         url1 = "http://192.168.56.1/displaypatients.php";
-        url2 = "http://192.268.56.1/displaysessions.php";
 
         client = new OkHttpClient();
         client2 = new OkHttpClient();
@@ -63,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
         Log.d("Main Activity", "DisplayInfo is running without problems");
 
         recyclerView = findViewById(R.id.recyclerView);
-        sessions = new Sessions(url2, client2);
+        sessions = new Sessions(url1, client2);
         sessions.setRecyclerView(recyclerView);
         Log.d("Main Activity", "Sessions is running without problems");
 

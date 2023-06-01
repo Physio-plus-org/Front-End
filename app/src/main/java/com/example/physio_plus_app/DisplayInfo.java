@@ -1,5 +1,6 @@
 package com.example.physio_plus_app;
 
+import android.os.StrictMode;
 import android.util.Log;
 import android.widget.TextView;
 
@@ -41,6 +42,7 @@ public class DisplayInfo {
         date_tv.setText(currentDate);
         this.client = client;
 
+
         Request request = new Request.Builder().url(url).build();
 
         client.newCall(request).enqueue(new Callback() {
@@ -79,6 +81,7 @@ public class DisplayInfo {
                     Log.e("MainActivity", "Error response: " + response.code());
                 }
                 response.close();
+                Log.d("DisplayInfo", "Responce closed");
             }
 
 
