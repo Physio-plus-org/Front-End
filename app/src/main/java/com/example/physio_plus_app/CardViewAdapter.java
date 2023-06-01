@@ -8,6 +8,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.List;
 
 public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.ViewHolder> {
@@ -27,18 +30,31 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+
         String data = dataList.get(position);
-        holder.text_View.setText(data);
+
+        try{
+            JSONObject jsonObject = new JSONObject(data);
+            holder.date_text.setText(jsonObject.getString("date"));
+            holder.date_text.setText(jsonObject.getString("hours"));
+            holder.date_text.setText(jsonObject.getString("notes"));
+        }
+        catch(JSONException e){
+            e.printStackTrace();
+        }
+
     }
 
 
     public static class ViewHolder extends RecyclerView.ViewHolder{
 
-        TextView text_View;
+        TextView date_text, hours_text, notes_text;
 
         public ViewHolder(View itemView){
             super(itemView);
-            text_View = itemView.findViewById(R.id.date_text);
+            date_text = itemView.findViewById(R.id.date_text);
+            hours_text = itemView.findViewById(R.id.hours_text);
+            notes_text = itemView.findViewById(R.id.notes_text);
         }
 
     }

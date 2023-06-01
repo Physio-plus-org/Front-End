@@ -73,6 +73,8 @@ public class Sessions {
                             dataList.add(data);
                         }
 
+                        updateDataList();
+
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
@@ -96,4 +98,10 @@ public class Sessions {
         recyclerView.setAdapter(adapter);
 
     }
+
+    public void updateDataList(){
+        adapter.notifyDataSetChanged();
+        Log.d("Sessions", "Data List: " + dataList.toString());
+    }
+
 }

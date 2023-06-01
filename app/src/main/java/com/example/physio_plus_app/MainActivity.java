@@ -63,10 +63,11 @@ public class MainActivity extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.recyclerView);
         sessions = new Sessions(url1, client2);
+        sessions.addData();
         sessions.setRecyclerView(recyclerView);
         Log.d("Main Activity", "Sessions is running without problems");
 
-        sessions.addData();
+
     }
 
 
