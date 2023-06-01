@@ -15,7 +15,7 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.ViewHo
     private List<String> dataList;
 
     public CardViewAdapter(List<String> dataList){
-
+        this.dataList = dataList;
     }
 
     @NonNull
@@ -31,10 +31,6 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.ViewHo
         holder.text_View.setText(data);
     }
 
-    @Override
-    public int getItemCount() {
-        return dataList.size();
-    }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{
 
@@ -46,4 +42,10 @@ public class CardViewAdapter extends RecyclerView.Adapter<CardViewAdapter.ViewHo
         }
 
     }
+
+    @Override
+    public int getItemCount() {
+        return dataList.size();
+    }
+
 }

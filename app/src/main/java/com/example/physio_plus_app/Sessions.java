@@ -2,7 +2,6 @@ package com.example.physio_plus_app;
 
 import android.util.Log;
 import android.widget.ScrollView;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -21,39 +20,28 @@ import java.util.List;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.OkHttpClient;
-import okhttp3.Response;
 import okhttp3.Request;
+import okhttp3.Response;
 
+public class Sessions {
 
+    private RecyclerView recyclerView;
+    private CardViewAdapter adapter;
+    private List<String> dataList;
 
-public class Sessions extends AppCompatActivity {
-
-   private RecyclerView recyclerView;
-   private CardViewAdapter adapter;
-   private List<String> dataList = new ArrayList<>();
-
-   String url;
-   OkHttpClient client;
+    private String url;
+    private OkHttpClient client;
 
     public Sessions(String url, OkHttpClient client) {
         this.url = url;
         this.client = client;
-
-        setContentView(R.layout.activity_main);
-
-        ScrollView scrollView = findViewById(R.id.scroll_view);
-
-
-        recyclerView = findViewById(R.id.recyclerView);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new CardViewAdapter(dataList);
-        recyclerView.setAdapter(adapter);
-
-        // PHP call
-        addData();
+        this.dataList = new ArrayList<>();
     }
 
-    private void addData() {
+    public void addData() {
+
+        Log.d("Sessions", "addData called!");
+
         Request request = new Request.Builder().url(url).build();
 
         client.newCall(request).enqueue(new Callback() {
@@ -76,16 +64,10 @@ public class Sessions extends AppCompatActivity {
 
                         for (int i = 0; i < jsonArray.length(); i++) {
                             JSONObject jsonObject = jsonArray.getJSONObject(i);
-                            String data = jsonObject.getString("your_key"); // Replace "your_key" with the appropriate key from your JSON response
+                            String data = jsonObject.getString("date"); // Replace "your_key" with the appropriate key from your JSON response
                             dataList.add(data);
                         }
 
-                        runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                adapter.notifyDataSetChanged();
-                            }
-                        });
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
@@ -96,5 +78,16 @@ public class Sessions extends AppCompatActivity {
                 response.close();
             }
         });
+    }
+
+    public void setRecyclerView(RecyclerView recyclerView){
+
+        Log.d("Sessions","setRecyclerView called!");
+
+        this.recyclerView = recyclerView;
+        recyclerView.setLayoutManager(new LinearLayoutManager(recyclerView.getContext()));
+        adapter = new CardViewAdapter(dataList);
+        recyclerView.setAdapter(adapter);
+
     }
 }

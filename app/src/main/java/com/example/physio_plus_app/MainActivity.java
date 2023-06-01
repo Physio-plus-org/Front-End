@@ -1,6 +1,7 @@
 package com.example.physio_plus_app;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 
 import android.os.Bundle;
@@ -30,11 +31,13 @@ public class MainActivity extends AppCompatActivity {
     TextView address_tv;
     TextView date_tv;
 
+    RecyclerView recyclerView;
 
     public DisplayInfo handler;
     public Sessions sessions;
     String url1, url2;
 
+    OkHttpClient client,client2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,10 +57,17 @@ public class MainActivity extends AppCompatActivity {
         url1 = "http://192.168.56.1/displaypatients.php";
         url2 = "http://192.268.56.1/displaysessions.php";
 
-        OkHttpClient client = new OkHttpClient();
+        client = new OkHttpClient();
+        client2 = new OkHttpClient();
         handler = new DisplayInfo(url1, client ,name_tv, age_tv, address_tv, date_tv);
-        sessions = new Sessions(url2, client);
+        Log.d("Main Activity", "DisplayInfo is running without problems");
 
+        recyclerView = findViewById(R.id.recyclerView);
+        sessions = new Sessions(url2, client2);
+        sessions.setRecyclerView(recyclerView);
+        Log.d("Main Activity", "Sessions is running without problems");
+
+        sessions.addData();
     }
 
 
