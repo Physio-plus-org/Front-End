@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     tools:context=".MonthPickerFragment">
 
 
     <com.harrywhewell.scrolldatepicker.MonthScrollDatePicker
         android:id="@+id/month_date_picker"
-        android:layout_width="399dp"
-        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_height="99dp"
         android:layout_gravity="center"
         android:layout_marginStart="0dp"
         android:layout_marginTop="0dp"
@@ -17,4 +17,4 @@
         android:layout_marginBottom="31dp"
         android:background="@drawable/round_warning" />
 
-</FrameLayout>
+</RelativeLayout>

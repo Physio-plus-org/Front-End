@@ -6,6 +6,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -24,11 +26,18 @@ import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
 import java.util.ArrayList;
+import java.util.Locale;
 
 
 public class MainActivity2 extends AppCompatActivity {
 
+
+    ArrayList<HourModel> hourModel = new ArrayList<>();
 
 
 
@@ -37,6 +46,9 @@ public class MainActivity2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
+
+        Locale locale = new Locale("el", "GR");
+        Locale.setDefault(locale);
 
         //start of actionBar
         ActionBar actionBar;
@@ -61,8 +73,31 @@ public class MainActivity2 extends AppCompatActivity {
         bottomNavigationView.setSelectedItemId(R.id.calendar);
 
        TextView dateTextView = findViewById(R.id.dayNameLabel);
-        String selectedDate = getIntent().getStringExtra("dayName");
-        dateTextView.setText(selectedDate);
+       Bundle bundle = getIntent().getExtras();
+       String selectedDay = bundle.getString("dayPicked");
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            LocalDate curDate = LocalDate.now();
+
+            DateTimeFormatter grDateFormatter = DateTimeFormatter.ofLocalizedDate(FormatStyle.FULL).withLocale(locale);
+            String grFormattedDate = curDate.format(grDateFormatter);
+            System.out.println("Current Date: " + grFormattedDate);
+        }
+
+        dateTextView.setText(selectedDay);
+
+
+
+
+
+
+//        RecyclerView recyclerView = findViewById(R.id.hourRecyclerView);
+//
+//        setUpHourModel();
+//
+//        RecyclerViewAdapter adapter = new RecyclerViewAdapter(this, hourModel);
+//        recyclerView.setAdapter(adapter);
+//        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
 
 //        TextView dayNameText = findViewById(R.id.dayNameLabel);
 //        String selectedDay = getIntent().getStringExtra("selectedDate");
@@ -90,7 +125,7 @@ public class MainActivity2 extends AppCompatActivity {
         });
 
 
-       ListView listView = findViewById(R.id.listView);
+       ListView listView = findViewById(R.id.hourlistView);
         ArrayList<String> dataList = new ArrayList<>();
 
 
@@ -170,6 +205,15 @@ public class MainActivity2 extends AppCompatActivity {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
+
+    public void setUpHourModel(){
+        String[] hourTime = getResources().getStringArray(R.array.hour_array);
+
+        for (int i = 0; i<hourTime.length; i++){
+            hourModel.add(new HourModel(hourTime[i]));
+        }
+    }
+
 
 
 }

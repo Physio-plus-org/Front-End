@@ -3,17 +3,24 @@ package com.example.physio_plus_app;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentResultListener;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.harrywhewell.scrolldatepicker.DayScrollDatePicker;
+import com.harrywhewell.scrolldatepicker.OnDateSelectedListener;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.temporal.ChronoField;
+import java.time.ZoneId;
+import java.util.Date;
+import java.util.Locale;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -62,6 +69,9 @@ public class DayPickerFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+        Locale locale = new Locale("EL");
+        Locale.setDefault(locale);
+
     }
 
     @Override
@@ -70,7 +80,8 @@ public class DayPickerFragment extends Fragment {
         final View view = inflater.inflate(R.layout.fragment_day_picker, container, false);
 
 
-
+        Locale locale = new Locale("EL");
+        Locale.setDefault(locale);
         int monthPicked = Integer.parseInt(getArguments().getString("monthPicked"));
         int yearPicked = Integer.parseInt(getArguments().getString("yearPicked"));
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
@@ -94,4 +105,34 @@ public class DayPickerFragment extends Fragment {
 
         return view;
     }
-}
+
+    public void onResume() {
+        super.onResume();
+
+        dayPicker.getSelectedDate(new OnDateSelectedListener() {
+            @Override
+            public void onDateSelected(@Nullable Date date) {
+
+                if (date != null) {
+
+                    Bundle result = new Bundle();
+                    LocalDate localDate = null;
+
+                    if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+
+                        localDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+                        String day = String.valueOf(localDate.getDayOfWeek());
+                        result.putString("dayPicked", day);
+                        String month = String.valueOf((localDate.getMonthValue()));
+                        result.putString("monthPicked", month);
+                        result.putLong("date", localDate.getLong(ChronoField.DAY_OF_WEEK));
+                        getParentFragmentManager().setFragmentResult("dayPickedResult", result);
+                    }
+                }
+
+
+
+            }
+        });
+    }
+    }

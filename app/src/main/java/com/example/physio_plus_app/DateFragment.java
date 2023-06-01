@@ -1,5 +1,6 @@
 package com.example.physio_plus_app;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -76,6 +77,16 @@ public class DateFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
+
+        getChildFragmentManager().setFragmentResultListener("dayPickedResult", this, new FragmentResultListener() {
+            @Override
+            public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle bundle) {
+
+                Intent intent = new Intent(getActivity(), MainActivity2.class);
+                intent.putExtras(bundle);
+                startActivity(intent);
+            }
+        });
 
 
     }

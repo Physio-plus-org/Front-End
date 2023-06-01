@@ -22,6 +22,9 @@ import java.util.Calendar;
 import java.util.Locale;
 
 import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentResultListener;
 import androidx.fragment.app.FragmentTransaction;
 
 
@@ -44,7 +47,7 @@ import java.util.List;
 import java.util.Locale;
 public class MainActivity extends AppCompatActivity{
 
-    private Button button;
+//    private Button button;
 
 
 
@@ -53,6 +56,8 @@ public class MainActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+//        button= findViewById(R.id.buttonNext);
+        Bundle args = new Bundle();
         //start of actionBar
         ActionBar actionBar;
         actionBar = getSupportActionBar();
@@ -73,6 +78,8 @@ public class MainActivity extends AppCompatActivity{
         //end of actionBar
         Locale locale = new Locale("EL");
         Locale.setDefault(locale);
+
+
 
 
 //        // Begin the transaction
@@ -146,20 +153,48 @@ public class MainActivity extends AppCompatActivity{
 //                    // Get the name of the day
 //                    SimpleDateFormat sdf = new SimpleDateFormat("EEEE", Locale.getDefault());
 //                    String dayName = sdf.format(date);
+//        DayPickerFragment dayPickerFragment= new DayPickerFragment();
+//        dayPickerFragment.getChildFragmentManager().setFragmentResultListener("requestKey", this, new FragmentResultListener(){
 //
+//            @Override
+//            public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle result) {
+//                String dayPicked = result.getString("dayPicked");
+//                String monthPicked = result.getString("monthPicked");
+//            }
+//        });
 //                    button.setOnClickListener(new View.OnClickListener() {
 //                        @Override
 //                        public void onClick(View v) {
-//                            // Pass the selected date and day name to the next activity
+//                            Bundle bundle = new Bundle();
+//                            DayPickerFragment dayPickerFragment= new DayPickerFragment();
+//                            dayPickerFragment.getChildFragmentManager().
+//                                    setFragmentResultListener("requestKey",this, new FragmentResultListener(){
+//
+//                                @Override
+//                                public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle result) {
+//                                    String dayPicked = result.getString("dayPicked");
+//                                    String monthPicked = result.getString("monthPicked");
+//                                }
+//                            });
+//
 //                            Intent intent = new Intent(MainActivity.this, MainActivity2.class);
-//                            intent.putExtra("selectedDate", date);
-//                            intent.putExtra("dayName", dayName);
+//                            intent.putExtra("dayPicked", dayPickerFragment.getArguments());
 //                            startActivity(intent);
 //                        }
 //                    });
 //                }
 //            }
 //        });
+
+//        button.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//               openActivity2();
+//            }
+//        });
+
+
 
 
 

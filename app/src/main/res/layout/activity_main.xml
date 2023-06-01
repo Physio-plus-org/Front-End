@@ -77,48 +77,49 @@
             android:textSize="18sp"
             android:textStyle="bold" />
 
+
+        <!--        <Button-->
+<!--            android:id="@+id/buttonNext"-->
+<!--            android:layout_width="127dp"-->
+<!--            android:layout_height="63dp"-->
+<!--            android:layout_alignParentEnd="true"-->
+<!--            android:layout_alignParentBottom="true"-->
+<!--            android:layout_marginTop="6dp"-->
+<!--            android:layout_marginEnd="8dp"-->
+<!--            android:layout_marginBottom="13dp"-->
+<!--            android:backgroundTint="@color/orange"-->
+<!--            android:text="@string/nextButton" />-->
+
         <View
+            android:id="@+id/view2"
             android:layout_width="wrap_content"
             android:layout_height="1dp"
             android:layout_below="@+id/dayLabelId"
-            android:layout_marginTop="7dp"
+            android:layout_marginTop="63dp"
             android:background="@color/lightgrey" />
-
-
 
         <View
+            android:id="@+id/view1"
             android:layout_width="wrap_content"
             android:layout_height="1dp"
-            android:layout_above="@+id/buttonNext"
-            android:layout_marginBottom="25dp"
-            android:background="@color/lightgrey" />
-
-        <Button
-            android:id="@+id/buttonNext"
-            android:layout_width="127dp"
-            android:layout_height="63dp"
-            android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginTop="6dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="13dp"
-            android:backgroundTint="@color/orange"
-            android:text="@string/nextButton" />
+            android:layout_marginBottom="81dp"
+            android:background="@color/lightgrey" />
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/fragmentContainerView"
             android:name="com.example.physio_plus_app.DateFragment"
-            android:layout_width="376dp"
-            android:layout_height="157dp"
-            android:layout_above="@+id/buttonNext"
-            android:layout_below="@+id/dayLabelId"
+            android:layout_width="421dp"
+            android:layout_height="138dp"
+            android:layout_below="@+id/view2"
+            android:layout_alignBottom="@+id/view1"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="21dp"
-            android:layout_marginEnd="24dp"
-            android:layout_marginBottom="49dp"
-            tools:layout="@layout/fragment_date" />
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginEnd="-9dp"
+            android:layout_marginBottom="5dp"
+            tools:layout="@layout/fragment_month_picker" />
 
 
     </RelativeLayout>
