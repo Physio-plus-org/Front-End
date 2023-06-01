@@ -68,7 +68,8 @@ public class Sessions {
 
                         for (int i = 0; i < jsonArray.length(); i++) {
                             JSONObject jsonObject = jsonArray.getJSONObject(i);
-                            String data = jsonObject.getString("date"); // Replace "your_key" with the appropriate key from your JSON response
+                            String data = jsonObject.getString("date");
+                            Log.d("SessionsActivity","date updated");
                             dataList.add(data);
                         }
 
