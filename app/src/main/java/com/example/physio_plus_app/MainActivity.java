@@ -30,11 +30,10 @@ public class MainActivity extends AppCompatActivity {
     TextView address_tv;
     TextView date_tv;
 
-    TextView date1, date2, date3, date4, date5, date6, date7;
 
     public DisplayInfo handler;
     public Sessions sessions;
-    String url;
+    String url1, url2;
 
 
     @Override
@@ -50,19 +49,14 @@ public class MainActivity extends AppCompatActivity {
         address_tv = findViewById(R.id.address_tv);
         date_tv = findViewById(R.id.date_tv);
 
-        date1 = findViewById(R.id.date_text1);
-        date2 = findViewById(R.id.date_text2);
-        date3 = findViewById(R.id.date_text3);
-        date4 = findViewById(R.id.date_text4);
-        date5 = findViewById(R.id.date_text5);
-        date6 = findViewById(R.id.date_text6);
-        date7 = findViewById(R.id.date_text7);
 
-        url = "http://192.168.56.1/displaypatients.php";
+
+        url1 = "http://192.168.56.1/displaypatients.php";
+        url2 = "http://192.268.56.1/displaysessions.php";
 
         OkHttpClient client = new OkHttpClient();
-        handler = new DisplayInfo(url, client ,name_tv, age_tv, address_tv, date_tv);
-        sessions = new Sessions(date1, date2, date3, date4, date5, date6, date7);
+        handler = new DisplayInfo(url1, client ,name_tv, age_tv, address_tv, date_tv);
+        sessions = new Sessions(url2, client);
 
     }
 

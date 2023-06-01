@@ -1,21 +1,100 @@
 package com.example.physio_plus_app;
 
+import android.util.Log;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
-public class Sessions {
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-   TextView date1, date2, date3, date4, date5, date6, date7;
+import com.google.gson.Gson;
 
-   public Sessions(TextView date1, TextView date2, TextView date3, TextView date4, TextView date5, TextView date6, TextView date7){
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
-       this.date1 = date1;
-       this.date2 = date2;
-       this.date3 = date3;
-       this.date4 = date4;
-       this.date5 = date5;
-       this.date6 = date6;
-       this.date7 = date7;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
-   }
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.OkHttpClient;
+import okhttp3.Response;
+import okhttp3.Request;
 
+
+
+public class Sessions extends AppCompatActivity {
+
+   private RecyclerView recyclerView;
+   private CardViewAdapter adapter;
+   private List<String> dataList = new ArrayList<>();
+
+   String url;
+   OkHttpClient client;
+
+    public Sessions(String url, OkHttpClient client) {
+        this.url = url;
+        this.client = client;
+
+        setContentView(R.layout.activity_main);
+
+        ScrollView scrollView = findViewById(R.id.scroll_view);
+
+
+        recyclerView = findViewById(R.id.recyclerView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        adapter = new CardViewAdapter(dataList);
+        recyclerView.setAdapter(adapter);
+
+        // PHP call
+        addData();
+    }
+
+    private void addData() {
+        Request request = new Request.Builder().url(url).build();
+
+        client.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+                Log.d("SessionsActivity", "Call failure! " + e.getMessage());
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                Log.d("SessionsActivity", "Call Responded!");
+
+                if (response.isSuccessful()) {
+                    String json = response.body().string();
+                    Gson gson = new Gson();
+                    Log.d("SessionsActivity", "Server response: " + json);
+
+                    try {
+                        JSONArray jsonArray = new JSONArray(json);
+
+                        for (int i = 0; i < jsonArray.length(); i++) {
+                            JSONObject jsonObject = jsonArray.getJSONObject(i);
+                            String data = jsonObject.getString("your_key"); // Replace "your_key" with the appropriate key from your JSON response
+                            dataList.add(data);
+                        }
+
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                adapter.notifyDataSetChanged();
+                            }
+                        });
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                } else {
+                    Log.e("SessionsActivity", "Error response: " + response.code());
+                }
+
+                response.close();
+            }
+        });
+    }
 }
