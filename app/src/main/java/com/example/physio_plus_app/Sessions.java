@@ -30,7 +30,7 @@ public class Sessions {
         this.verticalLayout = verticalLayout;
     }
 
-    public void fetchSessions() {
+    public void displaySessions() {
         Request request = new Request.Builder()
                 .url(url)
                 .build();
@@ -75,11 +75,8 @@ public class Sessions {
 
     private void handleResponse(String responseData) {
         try {
-            // Parse the JSON response
+
             JSONObject patientObject = new JSONObject(responseData);
-            String name = patientObject.getString("name");
-            String age = patientObject.getString("age");
-            String address = patientObject.getString("address");
 
             JSONArray sessionsArray = patientObject.getJSONArray("sessions");
             for (int i = 0; i < sessionsArray.length(); i++) {
@@ -88,9 +85,9 @@ public class Sessions {
                 String hours = sessionObject.getString("hours");
                 String notes = sessionObject.getString("notes");
 
+                // Modifying the date in order to obtain just the day and month
                 String MDdate = date.substring(5);
 
-                // Create a new CardView for each set of data
                 createCardView(MDdate, hours, notes);
             }
 

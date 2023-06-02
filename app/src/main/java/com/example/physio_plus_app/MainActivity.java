@@ -1,7 +1,6 @@
 package com.example.physio_plus_app;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.RecyclerView;
 
 
 import android.os.Bundle;
@@ -10,18 +9,7 @@ import android.util.Log;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.google.gson.Gson;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.IOException;
-import okhttp3.Call;
-import okhttp3.Callback;
 import okhttp3.OkHttpClient;
-import okhttp3.Response;
-
-
 
 
 public class MainActivity extends AppCompatActivity {
@@ -66,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         sessions = new Sessions(url1, client2, verticalLayout);
-        sessions.fetchSessions();
+        sessions.displaySessions();
 
 
         Log.d("Main Activity", "Sessions is running without problems");
