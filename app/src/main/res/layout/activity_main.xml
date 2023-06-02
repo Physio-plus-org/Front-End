@@ -87,7 +87,7 @@
         tools:layout_editor_absoluteX="1dp" />
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@id/cardView2"
@@ -99,11 +99,11 @@
             android:id="@+id/back_button"
             android:layout_width="50dp"
             android:layout_height="match_parent"
-            android:layout_marginStart="20dp"
+            android:layout_weight="1"
             android:background="@drawable/circle_button"
             android:backgroundTint="@color/background_color"
             android:foregroundTint="@color/background_color"
-            android:gravity="start"
+            android:gravity="center"
             app:icon="@drawable/back_icon"
             app:iconTint="@color/text_color"
             app:rippleColor="@color/background_color" />
@@ -112,13 +112,30 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
-            android:layout_marginEnd="10dp"
+            android:layout_weight="1"
+            android:layout_marginStart="0dp"
+            android:layout_marginEnd="0dp"
             android:fontFamily="sans-serif-medium"
             android:text="Ιστορικό"
+            android:textAlignment="center"
             android:textColor="@color/text_color"
             android:textSize="30sp"
             android:textStyle="italic" />
+
+        <Button
+            android:id="@+id/useless_button"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:visibility="invisible"
+            android:layout_marginStart="0dp"
+            android:background="@drawable/circle_button"
+            android:backgroundTint="@color/background_color"
+            android:foregroundTint="@color/background_color"
+            android:gravity="end"
+            app:icon="@drawable/back_icon"
+            app:iconTint="@color/text_color"
+            app:rippleColor="@color/background_color" />
 
     </LinearLayout>
 
