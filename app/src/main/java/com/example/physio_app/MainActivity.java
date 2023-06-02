@@ -8,13 +8,6 @@ import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonArrayRequest;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
 
 
 import android.annotation.SuppressLint;
@@ -38,8 +31,15 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 
 
 public class MainActivity extends AppCompatActivity implements MyAdapter.UserClickListener {
@@ -59,10 +59,8 @@ public class MainActivity extends AppCompatActivity implements MyAdapter.UserCli
     RecyclerView recyclerView;
     MyAdapter adapter;
     List<User> userList;
-    //List<User> filteredList;
 
 
-    private final String url = "http://192.168.56.1/logHistory.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,32 +98,69 @@ public class MainActivity extends AppCompatActivity implements MyAdapter.UserCli
         userList = new ArrayList<>();
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         recyclerView.setVerticalScrollBarEnabled(true);
-        //recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         adapter = new MyAdapter(userList,MainActivity.this,this::clicked_user);
         recyclerView.setAdapter(adapter);
 
-
-        //loadUsers();
-
         setUsersInfo();
         prepareRecyclerView();
 
     }
-    //Arxiko gemisma listas me users
-    public void setUsersInfo(){
-        userList.add(new User("John", "Kontaxis", " 0100000000"));
-        userList.add(new User("Elisavet", "Kanidou", " 0200000000"));
-        userList.add(new User("Nikos", "Sakellaris", " 0300000000"));
-        userList.add(new User("Kostas", "Thomson", " 0400000000"));
-        userList.add(new User("Eleftheria", "Taggili", " 0500000000"));
-        userList.add(new User("Christos", "Giamakidis", " 0600000000"));
-        userList.add(new User("Stelia", "Spryridopoulou", " 0700000000"));
-        userList.add(new User("Stathis", "Iosifidis", " 0800000000"));
-        userList.add(new User("Vasilis", "Tsavalias", " 0900000000"));
-    }
 
+    public void setUsersInfo(){
+
+        OkHttpClient client = new OkHttpClient();
+
+        String url = "http://192.168.56.1/logHistory.php";
+        Request request = new Request.Builder()
+                .url(url)
+                .build();
+
+        client.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+                e.printStackTrace();
+                Log.d(TAG, "Something went wrong");
+            }
+
+
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                if (response.isSuccessful()) {
+                    final String responseBody = response.body().string();
+
+                    try {
+                        JSONArray jsonArray = new JSONArray(responseBody);
+
+                        if (jsonArray.length() > 0) {
+
+                            for(int i = 0; i < jsonArray.length(); i++){
+                                JSONObject jsonObject = jsonArray.getJSONObject(i);
+                                String firstName = jsonObject.optString("first_name");
+                                String lastName = jsonObject.optString("last_name");
+                                String Amka = jsonObject.optString("soc_sec_reg_num");
+
+                                User user = new User(firstName, lastName, Amka);
+                                userList.add(user);
+                            }
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                        Log.d(TAG, "Fetching Data failed!");
+                    }
+
+                } else {
+                    Log.d(TAG, "Error occurred!");
+                }
+            }
+        });
+
+
+
+
+    }
 
     public void prepareRecyclerView(){
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false);
@@ -144,8 +179,8 @@ public class MainActivity extends AppCompatActivity implements MyAdapter.UserCli
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        int id = item.getItemId();
-        if(id == R.id.searchView){
+        int item_id = item.getItemId();
+        if(item_id == R.id.searchView){
             return true;
         }
         return super.onOptionsItemSelected(item);

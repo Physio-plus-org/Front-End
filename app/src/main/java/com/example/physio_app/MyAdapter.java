@@ -93,18 +93,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.UserViewHolder> im
         holder.firstname_text.setText(user.getFirstName());
         holder.lastname_text.setText(user.getLastName());
         holder.amka_text.setText(user.getAMKA());
+        holder.itemView.setOnClickListener(v -> userClickListener.clicked_user(user));
 
-        String firstname_text = user.getFirstName();
-        String lastname_text = user.getLastName();
-        //String prefix = firstname_text.charAt(0) +""+ lastname_text.charAt(0);
-
-
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                userClickListener.clicked_user(user);
-            }
-        });
     }
 
     @Override
