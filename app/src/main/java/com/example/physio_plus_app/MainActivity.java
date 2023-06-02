@@ -1,6 +1,5 @@
 package com.example.physio_plus_app;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,49 +12,23 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Button;
-import android.widget.CalendarView;
-import android.widget.Toast;
 
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Locale;
-
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentResultListener;
-import androidx.fragment.app.FragmentTransaction;
-
-
-import android.graphics.RectF;
-import android.os.Bundle;
-import android.util.Log;
-import android.widget.Button;
-import android.widget.Toast;
 
 
 //import com.cheesecake.mytoxictraits.Week.ThisLocalizedWeek;
 
-
-import com.harrywhewell.scrolldatepicker.DayScrollDatePicker;
-
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.Date;
-import java.util.List;
-import java.util.Locale;
 public class MainActivity extends AppCompatActivity{
 
-//    private Button button;
-
-
+    //    private Button button;
+    private  final String myIP = "192.168.2.6";
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 //        button= findViewById(R.id.buttonNext);
         Bundle args = new Bundle();
         //start of actionBar
@@ -80,125 +53,14 @@ public class MainActivity extends AppCompatActivity{
         Locale.setDefault(locale);
 
 
-
-
-//        // Begin the transaction
-//        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-//        ft.replace(R.id.fragmentContainerView, DateFragment.class, null);
-//        ft.commit();
-
-
-//        LocalDateTime myDateObj = null;
-//        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-//            myDateObj = LocalDateTime.now();
-//        }
-//
-//        DateTimeFormatter myDayObj = null;
-//        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-//            myDayObj = DateTimeFormatter.ofPattern("dd");
-//        }
-//        DateTimeFormatter mymonthObj = null;
-//        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-//            mymonthObj = DateTimeFormatter.ofPattern("MM");
-//        }
-//        DateTimeFormatter myyearObj = null;
-//        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-//            myyearObj = DateTimeFormatter.ofPattern("yyyy");
-//        }
-//
-//        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-//            String formattedDay = myDateObj.format(myDayObj);
-//        }
-//        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-//            String formattedMonth = myDateObj.format(mymonthObj);
-//        }
-//        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-//            String formattedyear = myDateObj.format(myyearObj);
-//        }
-
-
-//        mPicker = findViewById(R.id.day_date_picker);
-//        //logic behind weekview
-//        final ThisLocalizedWeek usWeek = new ThisLocalizedWeek(Locale.US);
-//        System.out.println(usWeek);
-//        // The English (United States) week starts on SUNDAY and ends on SATURDAY
-//        System.out.println(usWeek.getFirstDay());
-//        System.out.println(usWeek.getLastDay());
-//        Log.d("TAG", "First day: " + usWeek.getFirstDay());
-//        //mPicker.setEndDate(day+7, month, year);
-//        String maindate = String.valueOf(usWeek.getFirstDay());
-//        int startdate = Integer.parseInt(maindate.substring(8, 10));
-//        Log.d("TAG", "First day: " + startdate);
-//        int startmonth = Integer.parseInt(maindate.substring(5, 7));
-//        Log.d("TAG", "First month: " + startmonth);
-//        int startyear = Integer.parseInt(maindate.substring(0, 4));
-//        Log.d("TAG", "First year: " + startyear);
-//        mPicker.setStartDate(startdate, startmonth, startyear);
-//
-//
-//        String enddate = String.valueOf(usWeek.getLastDay());
-//        int endday = Integer.parseInt(enddate.substring(8, 10));
-//        Log.d("TAG", "endday: " + endday);
-//        int endmonth = Integer.parseInt(enddate.substring(5, 7));
-//        Log.d("TAG", "endmonth: " + endmonth);
-//        int endyear = Integer.parseInt(enddate.substring(0, 4));
-//        Log.d("TAG", "endyear: " + endyear);
-//
-//        mPicker.setEndDate(endday, endmonth, endyear);
-//        Button button = findViewById(R.id.buttonNext);
-//        mPicker.getSelectedDate(new OnDateSelectedListener() {
-//            @Override
-//            public void onDateSelected(@Nullable Date date) {
-//                if (date != null) {
-//                    // Get the name of the day
-//                    SimpleDateFormat sdf = new SimpleDateFormat("EEEE", Locale.getDefault());
-//                    String dayName = sdf.format(date);
-//        DayPickerFragment dayPickerFragment= new DayPickerFragment();
-//        dayPickerFragment.getChildFragmentManager().setFragmentResultListener("requestKey", this, new FragmentResultListener(){
-//
-//            @Override
-//            public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle result) {
-//                String dayPicked = result.getString("dayPicked");
-//                String monthPicked = result.getString("monthPicked");
-//            }
-//        });
-//                    button.setOnClickListener(new View.OnClickListener() {
-//                        @Override
-//                        public void onClick(View v) {
-//                            Bundle bundle = new Bundle();
-//                            DayPickerFragment dayPickerFragment= new DayPickerFragment();
-//                            dayPickerFragment.getChildFragmentManager().
-//                                    setFragmentResultListener("requestKey",this, new FragmentResultListener(){
-//
-//                                @Override
-//                                public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle result) {
-//                                    String dayPicked = result.getString("dayPicked");
-//                                    String monthPicked = result.getString("monthPicked");
-//                                }
-//                            });
-//
-//                            Intent intent = new Intent(MainActivity.this, MainActivity2.class);
-//                            intent.putExtra("dayPicked", dayPickerFragment.getArguments());
-//                            startActivity(intent);
-//                        }
-//                    });
-//                }
-//            }
-//        });
-
-//        button.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//               openActivity2();
-//            }
-//        });
-
-
-
-
-
-
+        String url = "http://"+myIP+"/physio_app_db/TestPrint.php?range_start=2023-04-01&range_end=2023-07-01";
+        try {
+            OkHttpHandler okHttpHandler = new OkHttpHandler();
+            okHttpHandler.testPrint(url);
+            System.out.println("Main Activity testPrint");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
     }
 
@@ -206,4 +68,6 @@ public class MainActivity extends AppCompatActivity{
         Intent intent = new Intent(this, MainActivity2.class);
         startActivity(intent);
     }
+
+
 }

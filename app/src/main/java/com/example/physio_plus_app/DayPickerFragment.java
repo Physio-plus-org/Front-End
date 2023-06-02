@@ -2,12 +2,9 @@ package com.example.physio_plus_app;
 
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentResultListener;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,7 +13,7 @@ import com.harrywhewell.scrolldatepicker.DayScrollDatePicker;
 import com.harrywhewell.scrolldatepicker.OnDateSelectedListener;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoField;
 import java.time.ZoneId;
 import java.util.Date;
@@ -126,6 +123,9 @@ public class DayPickerFragment extends Fragment {
                         String month = String.valueOf((localDate.getMonthValue()));
                         result.putString("monthPicked", month);
                         result.putLong("date", localDate.getLong(ChronoField.DAY_OF_WEEK));
+                        DateTimeFormatter myFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+                        String dateFull = localDate.format(myFormat);
+                        result.putString("dateFull", dateFull);
                         getParentFragmentManager().setFragmentResult("dayPickedResult", result);
                     }
                 }
@@ -135,4 +135,4 @@ public class DayPickerFragment extends Fragment {
             }
         });
     }
-    }
+}
