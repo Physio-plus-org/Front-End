@@ -333,9 +333,8 @@
             android:id="@+id/verticalLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_gravity="center"
+            android:layout_gravity="start|center_horizontal"
             android:orientation="vertical">
-
 
         </LinearLayout>
 
