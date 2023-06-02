@@ -24,7 +24,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center|start"
-        android:layout_marginStart="150dp"
+        android:layout_marginStart="80dp"
         android:padding="8dp"
         android:text="hours"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"

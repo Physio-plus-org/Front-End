@@ -1,23 +1,16 @@
 package com.example.physio_plus_app;
 
-import android.os.StrictMode;
 import android.util.Log;
-import android.widget.ScrollView;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
-import com.google.gson.Gson;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.CopyOnWriteArrayList;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -27,81 +20,84 @@ import okhttp3.Response;
 
 public class Sessions {
 
-    private RecyclerView recyclerView;
-    private CardViewAdapter adapter;
-    private List<String> dataList;
-
     private String url;
     private OkHttpClient client;
+    private LinearLayout verticalLayout;
 
-    public Sessions(String url, OkHttpClient client) {
+    public Sessions(String url, OkHttpClient client, LinearLayout verticalLayout) {
         this.url = url;
         this.client = client;
-        this.dataList = new ArrayList<>();
-
+        this.verticalLayout = verticalLayout;
     }
 
-    public void addData() {
-
-        Log.d("Sessions", "addData called!");
-
-
-        Request request = new Request.Builder().url(url).build();
+    public void fetchSessions() {
+        Request request = new Request.Builder()
+                .url(url)
+                .build();
 
         client.newCall(request).enqueue(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
-                Log.d("SessionsActivity", "Call failure! " + e.getMessage());
+                e.printStackTrace();
             }
 
             @Override
             public void onResponse(Call call, Response response) throws IOException {
-                Log.d("SessionsActivity", "Call Responded!");
-
                 if (response.isSuccessful()) {
-                    String json = response.body().string();
-                    Gson gson = new Gson();
-                    Log.d("SessionsActivity", "Server response: " + json);
-
-                    try {
-                        JSONArray jsonArray = new JSONArray(json);
-
-                        for (int i = 0; i < jsonArray.length(); i++) {
-                            JSONObject jsonObject = jsonArray.getJSONObject(i);
-                            String data = jsonObject.getString("date");
-                            Log.d("SessionsActivity","date updated");
-                            dataList.add(data);
+                    final String responseData = response.body().string();
+                    verticalLayout.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            handleResponse(responseData);
                         }
-
-                        updateDataList();
-
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
+                    });
                 } else {
-                    Log.e("SessionsActivity", "Error response: " + response.code());
+                    Log.e("Sessions", "Error response: " + response.code());
                 }
-
-                response.close();
-                Log.d("Sessions", "Responce closed");
             }
         });
     }
 
-    public void setRecyclerView(RecyclerView recyclerView){
+    private void createCardView(String date, String hours, String notes) {
+        LayoutInflater inflater = LayoutInflater.from(verticalLayout.getContext());
+        View cardViewLayout = inflater.inflate(R.layout.card_view_layout, verticalLayout, false);
 
-        Log.d("Sessions","setRecyclerView called!");
+        TextView dateText = cardViewLayout.findViewById(R.id.date_text);
+        TextView hoursText = cardViewLayout.findViewById(R.id.hours_text);
+        TextView notesText = cardViewLayout.findViewById(R.id.notes_text);
 
-        this.recyclerView = recyclerView;
-        recyclerView.setLayoutManager(new LinearLayoutManager(recyclerView.getContext()));
-        adapter = new CardViewAdapter(dataList);
-        recyclerView.setAdapter(adapter);
+        dateText.setText(date);
+        hoursText.setText(hours);
+        notesText.setText(notes);
 
+        verticalLayout.addView(cardViewLayout);
     }
 
-    public void updateDataList(){
-        adapter.notifyDataSetChanged();
-        Log.d("Sessions", "Data List: " + dataList.toString());
+    private void handleResponse(String responseData) {
+        try {
+            // Parse the JSON response
+            JSONObject patientObject = new JSONObject(responseData);
+            String name = patientObject.getString("name");
+            String age = patientObject.getString("age");
+            String address = patientObject.getString("address");
+
+            JSONArray sessionsArray = patientObject.getJSONArray("sessions");
+            for (int i = 0; i < sessionsArray.length(); i++) {
+                JSONObject sessionObject = sessionsArray.getJSONObject(i);
+                String date = sessionObject.getString("date");
+                String hours = sessionObject.getString("hours");
+                String notes = sessionObject.getString("notes");
+
+                String MDdate = date.substring(5);
+
+                // Create a new CardView for each set of data
+                createCardView(MDdate, hours, notes);
+            }
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
 
 }
+

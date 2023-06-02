@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 
 import android.util.Log;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
@@ -31,11 +32,12 @@ public class MainActivity extends AppCompatActivity {
     TextView address_tv;
     TextView date_tv;
 
-    RecyclerView recyclerView;
+    LinearLayout verticalLayout;
+
 
     public DisplayInfo handler;
     public Sessions sessions;
-    String url1, url2;
+    String url1;
 
     OkHttpClient client,client2;
 
@@ -51,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
         age_tv = findViewById(R.id.age_tv);
         address_tv = findViewById(R.id.address_tv);
         date_tv = findViewById(R.id.date_tv);
+        verticalLayout = findViewById(R.id.verticalLayout);
 
 
 
@@ -61,10 +64,11 @@ public class MainActivity extends AppCompatActivity {
         handler = new DisplayInfo(url1, client ,name_tv, age_tv, address_tv, date_tv);
         Log.d("Main Activity", "DisplayInfo is running without problems");
 
-        recyclerView = findViewById(R.id.recyclerView);
-        sessions = new Sessions(url1, client2);
-        sessions.addData();
-        sessions.setRecyclerView(recyclerView);
+
+        sessions = new Sessions(url1, client2, verticalLayout);
+        sessions.fetchSessions();
+
+
         Log.d("Main Activity", "Sessions is running without problems");
 
 
