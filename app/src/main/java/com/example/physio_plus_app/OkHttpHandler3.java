@@ -5,23 +5,20 @@ import android.os.*;
 import java.io.IOException;
 
 import okhttp3.*;
-public class OkHttpHandler {
-    public OkHttpHandler() {
-        StrictMode.ThreadPolicy policy = new
-                StrictMode.ThreadPolicy.Builder().permitAll().build();
-        StrictMode.setThreadPolicy(policy);
-    }
+public abstract class OkHttpHandler3 {
+    public static StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
 
-    public String loghistory(String namePatient,String surnamePatient, String amkaPatient, String addressPatient) throws IOException {
+    public static String loghistory(ParamsR3 params) throws IOException {
+        StrictMode.setThreadPolicy(policy);
         final String URL = "http://192.168.1.248/logHistory.php";
 
         OkHttpClient client = new OkHttpClient().newBuilder().build();
 
         FormBody.Builder builder = new FormBody.Builder();
-        builder.add("namep", namePatient);
-        builder.add("surname", surnamePatient);
-        builder.add("soc_sec_reg_num", amkaPatient);
-        builder.add("address", addressPatient);
+        builder.add("namep", params.getnamePatient());
+        builder.add("surname", params.getSurnamePatient());
+        builder.add("soc_sec_reg_num", params.getAmkaPatient());
+        builder.add("address", params.getAddressPatient());
 
         RequestBody body = builder.build();
         Request request = new Request.Builder()
@@ -30,7 +27,6 @@ public class OkHttpHandler {
                 .build();
 
         Response response = client.newCall(request).execute();
-
         String responseBody = response.body().string();
         return responseBody;
     }

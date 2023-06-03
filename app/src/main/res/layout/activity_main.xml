@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".R3">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -170,7 +170,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:backgroundTint="#008563"
-                    android:onClick="Patient"
+                    android:onClick="onClick"
                     app:srcCompat="@drawable/save" />
             </LinearLayout>
         </LinearLayout>
