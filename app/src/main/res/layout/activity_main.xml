@@ -104,6 +104,7 @@
             android:backgroundTint="@color/background_color"
             android:foregroundTint="@color/background_color"
             android:gravity="center"
+            android:onClick="OnClick"
             app:icon="@drawable/back_icon"
             app:iconTint="@color/text_color"
             app:rippleColor="@color/background_color" />
