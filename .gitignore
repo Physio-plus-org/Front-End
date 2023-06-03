@@ -84,7 +84,7 @@ lint/outputs/
 lint/tmp/
 # lint/reports/
 
-cashes/
+caches/
 .tmp/
 wrapper/
 native/
