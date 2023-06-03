@@ -161,6 +161,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:backgroundTint="@color/black"
+                    android:onClick="onClick"
                     android:text="@string/confirmation"
                     android:textAllCaps="false" />
             </FrameLayout>
