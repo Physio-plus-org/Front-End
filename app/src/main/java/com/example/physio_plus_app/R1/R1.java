@@ -1,8 +1,7 @@
-package com.example.physio_plus_app;
+package com.example.physio_plus_app.R1;
 
 import static android.app.PendingIntent.getActivity;
 
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -11,14 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import java.io.IOException;
-
-import okhttp3.FormBody;
-import okhttp3.MediaType;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.RequestBody;
-import okhttp3.Response;
+import com.example.physio_plus_app.R;
 
 
 public class R1 extends AppCompatActivity {
