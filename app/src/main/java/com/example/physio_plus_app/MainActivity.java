@@ -1,6 +1,7 @@
 package com.example.physio_plus_app;
 
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.util.Log;
@@ -36,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Gson gson;
     private OkHttpClient client;
-    private StrictMode.ThreadPolicy policy = new  StrictMode.ThreadPolicy.Builder().permitAll().build();
+    private StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
 
     private static final int MAX_APPOINTMENTS = 3;
 
@@ -45,12 +46,11 @@ public class MainActivity extends AppCompatActivity {
     private static final String UPCOMING_APPOINTMENTS_URL = "http://192.168.1.7/physio-backend/fetch_upcomingAppoint.php";
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        TextView highlightText= findViewById(R.id.RequestAppoint);
+        TextView highlightText = findViewById(R.id.RequestAppoint);
         View calendarTopBar = findViewById(R.id.calendarTopBar);
         StrictMode.setThreadPolicy(policy);
 
@@ -58,12 +58,9 @@ public class MainActivity extends AppCompatActivity {
         cardContainer = findViewById(R.id.cardContainer);
 
 
-
-
-        Log.d(TAG,"ON CREATE CALL");
+        Log.d(TAG, "ON CREATE CALL");
         gson = new Gson();
         client = new OkHttpClient();
-
 
 
         setCalendarTopBarClickListener(calendarTopBar);
@@ -73,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setCalendarTopBarClickListener(View calendarTopBar) {
-        Log.d(TAG,"SETCALENDAR CALLED");
+        Log.d(TAG, "SETCALENDAR CALLED");
         calendarTopBar.setOnClickListener(v -> fetchUpcomingAppointmentsForDropdown());
 
     }
@@ -128,7 +125,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
     private void showAppointmentDropdown(List<Appointment> appointments) {
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
         builder.setTitle("Επερχόμενα Ραντεβού");
@@ -176,8 +172,6 @@ public class MainActivity extends AppCompatActivity {
     private void redirectToAppointmentsPage() {
         recreate();
     }
-
-
 
 
     private void testConnection() {
@@ -266,7 +260,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private List<Appointment> parseAppointmentsFromJson(String json) {
-        Type listType = new TypeToken<List<Appointment>>() {}.getType();
+        Type listType = new TypeToken<List<Appointment>>() {
+        }.getType();
         try {
             return gson.fromJson(json, listType);
         } catch (Exception e) {
@@ -313,7 +308,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void showAppointmentDialog(Appointment appointment) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this,R.style.AlertDialogTheme);
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this, R.style.AlertDialogTheme);
         builder.setTitle("Απόφαση Ραντεβού");
         builder.setIcon(R.drawable.baseline_access_time_24);
 
@@ -375,7 +370,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(@NonNull Call call, @NonNull Response response) {
                 // Handle network request success
-                try (response) {
+                try {
                     if (response.isSuccessful()) {
                         // Process the response if needed
                         assert response.body() != null;
@@ -387,8 +382,11 @@ public class MainActivity extends AppCompatActivity {
                     }
                 } catch (IOException e) {
                     Log.e(TAG, "Exception occurred while processing network response: " + e.getMessage());
+                } finally {
+                    response.close();
                 }
             }
         });
     }
+
 }
