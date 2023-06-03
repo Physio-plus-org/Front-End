@@ -14,16 +14,11 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.SearchView;
-import android.widget.Toast;
-
 
 
 import org.json.JSONArray;
@@ -42,7 +37,7 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 
-public class MainActivity extends AppCompatActivity implements MyAdapter.UserClickListener {
+public class R5 extends AppCompatActivity implements MyAdapter.UserClickListener {
 
     private SearchView searchView;
     private ImageButton add_Button;
@@ -66,7 +61,7 @@ public class MainActivity extends AppCompatActivity implements MyAdapter.UserCli
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main_r5);
         getSupportActionBar().hide();
 
         imageView1 = findViewById(R.id.imageView3);
@@ -100,67 +95,71 @@ public class MainActivity extends AppCompatActivity implements MyAdapter.UserCli
         recyclerView.setVerticalScrollBarEnabled(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        adapter = new MyAdapter(userList,MainActivity.this,this::clicked_user);
+        adapter = new MyAdapter(userList, R5.this,this::clicked_user);
         recyclerView.setAdapter(adapter);
 
-        setUsersInfo();
+        try {
+            OkHttpHandlerR5.setUsersInfo();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
         prepareRecyclerView();
 
     }
 
-    public void setUsersInfo(){
-
-        OkHttpClient client = new OkHttpClient();
-
-        String url = "http://192.168.56.1/logHistory.php";
-        Request request = new Request.Builder()
-                .url(url)
-                .build();
-
-        client.newCall(request).enqueue(new Callback() {
-            @Override
-            public void onFailure(Call call, IOException e) {
-                e.printStackTrace();
-                Log.d(TAG, "Something went wrong");
-            }
-
-
-
-            @Override
-            public void onResponse(Call call, Response response) throws IOException {
-                if (response.isSuccessful()) {
-                    final String responseBody = response.body().string();
-
-                    try {
-                        JSONArray jsonArray = new JSONArray(responseBody);
-
-                        if (jsonArray.length() > 0) {
-
-                            for(int i = 0; i < jsonArray.length(); i++){
-                                JSONObject jsonObject = jsonArray.getJSONObject(i);
-                                String firstName = jsonObject.optString("first_name");
-                                String lastName = jsonObject.optString("last_name");
-                                String Amka = jsonObject.optString("soc_sec_reg_num");
-
-                                User user = new User(firstName, lastName, Amka);
-                                userList.add(user);
-                            }
-                        }
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                        Log.d(TAG, "Fetching Data failed!");
-                    }
-
-                } else {
-                    Log.d(TAG, "Error occurred!");
-                }
-            }
-        });
-
-
-
-
-    }
+//    public void setUsersInfo(){
+//
+//        OkHttpClient client = new OkHttpClient();
+//
+//        String url = "http://192.168.56.1/logHistory.php";
+//        Request request = new Request.Builder()
+//                .url(url)
+//                .build();
+//
+//        client.newCall(request).enqueue(new Callback() {
+//            @Override
+//            public void onFailure(Call call, IOException e) {
+//                e.printStackTrace();
+//                Log.d(TAG, "Something went wrong");
+//            }
+//
+//
+//
+//            @Override
+//            public void onResponse(Call call, Response response) throws IOException {
+//                if (response.isSuccessful()) {
+//                    final String responseBody = response.body().string();
+//
+//                    try {
+//                        JSONArray jsonArray = new JSONArray(responseBody);
+//
+//                        if (jsonArray.length() > 0) {
+//
+//                            for(int i = 0; i < jsonArray.length(); i++){
+//                                JSONObject jsonObject = jsonArray.getJSONObject(i);
+//                                String firstName = jsonObject.optString("first_name");
+//                                String lastName = jsonObject.optString("last_name");
+//                                String Amka = jsonObject.optString("soc_sec_reg_num");
+//
+//                                User user = new User(firstName, lastName, Amka);
+//                                userList.add(user);
+//                            }
+//                        }
+//                    } catch (JSONException e) {
+//                        e.printStackTrace();
+//                        Log.d(TAG, "Fetching Data failed!");
+//                    }
+//
+//                } else {
+//                    Log.d(TAG, "Error occurred!");
+//                }
+//            }
+//        });
+//
+//
+//
+//
+//    }
 
     public void prepareRecyclerView(){
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false);
