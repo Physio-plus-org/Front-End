@@ -1,4 +1,4 @@
-package com.example.physio_plus_app.R2;
+package com.example.physio_plus_app;
 
 import android.os.Bundle;
 import android.view.View;
@@ -6,8 +6,6 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.example.physio_plus_app.R;
 
 import java.io.IOException;
 

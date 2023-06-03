@@ -1,4 +1,4 @@
-package com.example.physio_plus_app.R2;
+package com.example.physio_plus_app;
 
 import android.os.StrictMode;
 
