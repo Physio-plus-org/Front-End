@@ -44,12 +44,9 @@ public class R1 extends AppCompatActivity {
                 String addressPhysio = addressPhysioEditText.getText().toString();
                 String afmPhysio = afmPhysioEditText.getText().toString();
 
-                // Create an instance of OKHttpHandler
-                OkHttpHandler okHttpHandler = new OkHttpHandler();
-
                 // Call the psfCreate method with the obtained data
                 try {
-                    String response = okHttpHandler.psfCreate(namePhysio, addressPhysio, afmPhysio);
+                    String response = OkHttpHandler.psfCreate(namePhysio, addressPhysio, afmPhysio);
 
                     if (response.equals("Tax ID number already exists")) {
                         Toast.makeText(R1.this, "Tax ID number already exists", Toast.LENGTH_SHORT).show();

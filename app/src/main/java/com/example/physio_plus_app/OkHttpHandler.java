@@ -6,15 +6,12 @@ import org.json.*;
 import java.util.*;
 import okhttp3.*;
 
-public class OkHttpHandler {
+public abstract class OkHttpHandler {
+    private static final StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
 
-    public OkHttpHandler() {
-        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+    public static String psfCreate(String namePhysio, String addressPhysio, String afmPhysio) throws Exception {
         StrictMode.setThreadPolicy(policy);
-    }
-
-    public String psfCreate(String namePhysio, String addressPhysio, String afmPhysio) throws Exception {
-        final String URL = "http://10.140.7.254/r1/r1.php";
+        final String URL = "http://192.168.1.6/r1/r1.php";
 
         OkHttpClient client = new OkHttpClient();
 
