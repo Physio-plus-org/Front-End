@@ -12,7 +12,7 @@ import android.widget.TextView;
 import okhttp3.OkHttpClient;
 
 
-public class MainActivity extends AppCompatActivity {
+public class R4 extends AppCompatActivity {
 
     TextView name_tv;
     TextView age_tv;
