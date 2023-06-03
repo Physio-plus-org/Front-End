@@ -1,8 +1,9 @@
 package com.example.physio_plus_app;
 
 import android.os.Bundle;
-import android.view.View;
-import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.LinearLayout.LayoutParams;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,24 +15,25 @@ import java.text.ParseException;
 import java.util.Hashtable;
 
 public class MainActivity extends AppCompatActivity {
-    private EditText patient_id;
-    private EditText resultView;
     private FinancialHistory financialHistory;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        this.patient_id = findViewById(R.id.name);
-        this.resultView = findViewById(R.id.resultView);
-        this.patient_id.setText("279869537922");
+        Request();
+        ShowFinancialHistory();
     }
 
-    public void onSubmit(View view) {
+    protected void ShowFinancialHistory() {
+        LinearLayout linearLayout = (LinearLayout) findViewById(R.id.main_ll);
+        financialHistory.show(linearLayout);
+    }
+
+    protected void Request() {
         try {
             Hashtable<String, String> params = new Hashtable<>();
-            params.put("patient_id", patient_id.getText().toString());
+            params.put("patient_id", "279869537922"); //!!!THIS IS FOR TESTING
             this.financialHistory = FinancialHttpHandler.makeRequest(params);
-            this.financialHistory.show(this.resultView);
             Toast.makeText(this, "Done", Toast.LENGTH_SHORT).show();
         } catch (ServerResponseException e) {
             Toast.makeText(this, "Page not found", Toast.LENGTH_SHORT).show();

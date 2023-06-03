@@ -1,6 +1,7 @@
 package com.example.physio_plus_app;
 
-import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -13,9 +14,14 @@ public class PhysioCenter {
         this.name = jsonObject.get("name").toString();
     }
 
-    public void show(EditText resultView) {
-        String prevText = resultView.getText().toString();
-        prevText += String.format("Center: %s\n", this.name);
-        resultView.setText(prevText);
+    public void show(LinearLayout linearLayout) {
+        TextView textView = new TextView(linearLayout.getContext());
+        textView.setLayoutParams(new LinearLayout.LayoutParams(
+                        LinearLayout.LayoutParams.WRAP_CONTENT,
+                        LinearLayout.LayoutParams.WRAP_CONTENT
+                )
+        );
+        textView.setText(this.name);
+        linearLayout.addView(textView);
     }
 }

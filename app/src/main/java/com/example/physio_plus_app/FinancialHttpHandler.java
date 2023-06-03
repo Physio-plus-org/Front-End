@@ -10,7 +10,7 @@ import java.text.ParseException;
 import java.util.Hashtable;
 
 public abstract class FinancialHttpHandler extends HttpHandler {
-    public static final String ip = "192.168.1.75";
+    public static final String ip = "192.168.1.6";
     public static FinancialHistory makeRequest(Hashtable<String, String> params) throws ServerResponseException, JSONException, IOException, ParseException {
         String url = "http://" + ip + "/requestFinance.php";
         Log.d("url", url);

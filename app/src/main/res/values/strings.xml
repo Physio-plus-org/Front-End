@@ -4,4 +4,5 @@
     <string name="search">Search</string>
     <string name="patient_id">Patient ID</string>
     <string name="results">Results</string>
+    <string name="financial_history_screen_title">Ιστορικό Συναλλαγών</string>
 </resources>

@@ -1,12 +1,6 @@
 package com.example.physio_plus_app;
 
-import android.widget.EditText;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.text.ParseException;
+import android.widget.LinearLayout;
 
 public class FinancialMove {
     private PhysioCenter physioCenter;
@@ -16,8 +10,11 @@ public class FinancialMove {
         this.session = session;
     }
 
-    public void show(EditText resultView) {
-        this.physioCenter.show(resultView);
-        this.session.show(resultView);
+    public void show(LinearLayout linearLayout) {
+        LinearLayout fm_linearLayout = new LinearLayout(linearLayout.getContext());
+        fm_linearLayout.setOrientation(LinearLayout.VERTICAL);
+        this.physioCenter.show(fm_linearLayout);
+        this.session.show(fm_linearLayout);
+        linearLayout.addView(fm_linearLayout);
     }
 }

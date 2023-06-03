@@ -1,6 +1,6 @@
 package com.example.physio_plus_app;
 
-import android.widget.EditText;
+import android.widget.LinearLayout;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -23,9 +23,9 @@ public class FinancialHistory {
             this.history.add(move);
         }
     }
-    public void show(EditText resultView) {
+    public void show(LinearLayout linearLayout) {
         for (FinancialMove move : this.history) {
-            move.show(resultView);
+            move.show(linearLayout);
         }
     }
 }
