@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 import android.util.Log;
+import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -63,7 +64,9 @@ public class R4 extends AppCompatActivity {
     }
 
 
+    public void OnClick(View view){
 
+    }
 
 
 
