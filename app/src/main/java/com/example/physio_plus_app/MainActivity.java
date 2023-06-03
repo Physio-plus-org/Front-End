@@ -313,7 +313,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void showAppointmentDialog(Appointment appointment) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this,R.style.AlertDialogTheme);
         builder.setTitle("Απόφαση Ραντεβού");
         builder.setIcon(R.drawable.baseline_access_time_24);
 

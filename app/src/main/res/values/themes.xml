@@ -14,4 +14,8 @@
     </style>
 
     <style name="Theme.PhysioPlusApp" parent="Base.Theme.PhysioPlusApp" />
+    <style name="AlertDialogTheme" parent="Theme.MaterialComponents.Light.Dialog.Alert">
+        <item name="buttonBarButtonStyle">@style/AlertDialogButtonStyle</item>
+    </style>
+
 </resources>

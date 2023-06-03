@@ -6,6 +6,14 @@
 <!--        <item  name="SecondaryDarkGrey">#1c1c1c</item>-->
 <!--        <item  name="AccentBrightRed">#ff5c5c</item>-->
 <!--        <item  name="AccentOrange">#f0ad4e</item>-->
+
         <item name="android:tint">@color/PrimaryGreen</item>
     </style>
+    <style name="AlertDialogButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textColor">@color/cancelButton</item>
+        <item name="backgroundTint">@color/acceptButton</item>
+    </style>
+
+
+
 </resources>
