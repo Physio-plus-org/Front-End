@@ -14,7 +14,7 @@ public class R3 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main_r3);
 
         name_Patient = findViewById(R.id.username);
         surname_Patient = findViewById(R.id.surname);

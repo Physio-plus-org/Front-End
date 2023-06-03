@@ -27,7 +27,7 @@ public abstract class OkHttpHandler3 {
                 .build();
 
         Response response = client.newCall(request).execute();
-        String responseBody = response.body().string();
-        return responseBody;
+        assert response.body() != null;
+        return response.body().string();
     }
 }
