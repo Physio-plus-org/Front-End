@@ -1,21 +1,18 @@
 package com.example.physio_plus_app;
 
 
-import android.graphics.Color;
 import android.os.Bundle;
+import android.os.StrictMode;
+import android.util.Log;
+import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.text.Spannable;
-import android.text.SpannableString;
-import android.text.style.ForegroundColorSpan;
-import android.util.Log;
-import android.view.View;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -35,15 +32,17 @@ import okhttp3.Response;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
-    private LinearLayout cardContainer;
+    private RelativeLayout cardContainer;
+
     private Gson gson;
     private OkHttpClient client;
+    private StrictMode.ThreadPolicy policy = new  StrictMode.ThreadPolicy.Builder().permitAll().build();
 
     private static final int MAX_APPOINTMENTS = 3;
 
     private static final String MOVE_TO_ACCEPTED_URL = "http://192.168.1.7/physio-backend/move_to_accepted.php";
     private static final String TESTCON_URL = "http://192.168.1.7/physio-backend/verify_connection.php";
-    private static final String UPCOMING_APPOINTMENTS_URL = "http://192.168.1.7/physio-backend/fetch_appointments.php";
+    private static final String UPCOMING_APPOINTMENTS_URL = "http://192.168.1.7/physio-backend/fetch_upcomingAppoint.php";
 
 
 
@@ -53,14 +52,20 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         TextView highlightText= findViewById(R.id.RequestAppoint);
         View calendarTopBar = findViewById(R.id.calendarTopBar);
+        StrictMode.setThreadPolicy(policy);
+
+
+        cardContainer = findViewById(R.id.cardContainer);
 
 
 
+
+        Log.d(TAG,"ON CREATE CALL");
         gson = new Gson();
         client = new OkHttpClient();
 
 
-        setHighlightedText(highlightText);
+
         setCalendarTopBarClickListener(calendarTopBar);
         testConnection();
         fetchUpcomingAppointments();
@@ -68,13 +73,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setCalendarTopBarClickListener(View calendarTopBar) {
+        Log.d(TAG,"SETCALENDAR CALLED");
         calendarTopBar.setOnClickListener(v -> fetchUpcomingAppointmentsForDropdown());
 
     }
 
     private void fetchUpcomingAppointmentsForDropdown() {
+        Log.d(TAG, "FETCHDROPDOWN CALLED");
         Request request = new Request.Builder()
                 .url(UPCOMING_APPOINTMENTS_URL)
+                .get()
                 .build();
 
         client.newCall(request).enqueue(new Callback() {
@@ -82,6 +90,7 @@ public class MainActivity extends AppCompatActivity {
             public void onFailure(@NonNull Call call, IOException e) {
                 // Handle network request failure
                 Log.e(TAG, "Failed to fetch upcoming appointments for dropdown: " + e.getMessage());
+                e.printStackTrace();
                 runOnUiThread(() -> Toast.makeText(MainActivity.this, "Failed to fetch upcoming appointments", Toast.LENGTH_SHORT).show());
             }
 
@@ -95,10 +104,16 @@ public class MainActivity extends AppCompatActivity {
                         // Process the response data
                         runOnUiThread(() -> {
                             // Update UI with the fetched data
-                            // For example, parse the JSON response and create a dropdown list
-                            List<Appointment> appointments = parseAppointmentsFromJson(responseData);
-                            assert appointments != null;
-                            showAppointmentDropdown(appointments);
+                            try {
+                                List<Appointment> appointments = parseAppointmentsFromJson(responseData);
+                                if (appointments != null) {
+                                    showAppointmentDropdown(appointments);
+                                } else {
+                                    Log.e(TAG, "Failed to parse appointment data from JSON");
+                                }
+                            } catch (Exception e) {
+                                Log.e(TAG, "Exception occurred while parsing JSON: " + e.getMessage());
+                            }
                         });
                     } else {
                         // Handle unsuccessful response
@@ -111,6 +126,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+
 
     private void showAppointmentDropdown(List<Appointment> appointments) {
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
@@ -161,19 +178,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    private void setHighlightedText(TextView textView) {
-        String fullText = "Αιτήματα Ραντεβού";
-        String highlightedText = "Ραντεβού";
 
-        SpannableString spannableString = new SpannableString(fullText);
-        int startIndex = fullText.indexOf(highlightedText);
-        int endIndex = startIndex + highlightedText.length();
-
-        ForegroundColorSpan foregroundColorSpan = new ForegroundColorSpan(Color.GREEN);
-        spannableString.setSpan(foregroundColorSpan, startIndex, endIndex, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-
-        textView.setText(spannableString);
-    }
 
     private void testConnection() {
         Request request = new Request.Builder()
@@ -274,6 +279,12 @@ public class MainActivity extends AppCompatActivity {
         // Clear the cardContainer
         cardContainer.removeAllViews();
 
+        // Check for null appointments list
+        if (appointments == null) {
+            Log.e(TAG, "Appointments list is null");
+            return;
+        }
+
         // Iterate through the appointments list and create/update the appointment cards
         for (Appointment appointment : appointments) {
             try {
@@ -288,23 +299,25 @@ public class MainActivity extends AppCompatActivity {
                 textTime.setText(appointment.getTime());
                 textPatientName.setText(appointment.getPatientName());
 
-                // Set OnClickListener on appointment TextView
+                // Set OnClickListener on appointment card
                 appointmentCard.setOnClickListener(v -> showAppointmentDialog(appointment));
 
                 // Add the appointment card to the cardContainer
                 cardContainer.addView(appointmentCard);
             } catch (Exception e) {
                 Log.e(TAG, "Exception occurred while populating appointment cards: " + e.getMessage());
+                e.printStackTrace();
             }
         }
     }
+
 
     private void showAppointmentDialog(Appointment appointment) {
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
         builder.setTitle("Απόφαση Ραντεβού");
         builder.setIcon(R.drawable.baseline_access_time_24);
 
-        builder.setMessage("Θέλετε να πραγματοποιήσετε το ραντεβου σας " + appointment.getDate() +
+        builder.setMessage("Θέλετε να πραγματοποιήσετε το ραντεβού σας " + appointment.getDate() +
                 "\n ,την ώρα  " + appointment.getTime() +
                 "\n, για τον ασθενή " + appointment.getPatientName() + " ;");
         builder.setPositiveButton("Accept", (dialog, which) -> {
@@ -312,10 +325,13 @@ public class MainActivity extends AppCompatActivity {
             // You can perform any necessary operations when the appointment is accepted
             acceptAppointment(appointment);
         });
-        builder.setNegativeButton("Άκυρο", null);
+        builder.setNegativeButton("Άκυρο", (dialog, which) -> {
+            dialog.dismiss();
+        });
         builder.setCancelable(false);
         builder.create().show();
     }
+
 
     private void acceptAppointment(Appointment appointment) {
         // Update the TextView with a green border

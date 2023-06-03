@@ -27,14 +27,30 @@
             android:showAsAction="ifRoom" />
 
         <!-- Dynamic  highlighted Text for appointments -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/aitimata"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/aitimata"
+                android:textSize="18sp"
+                android:gravity="end"
+                android:textColor="@android:color/darker_gray"
+                android:layout_marginBottom="30dp" />
         <TextView
-            android:id="@+id/placeholderText"
+            android:id="@+id/radevou"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/placeholder"
+            android:text="@string/radevou"
+            android:layout_weight="1"
             android:textSize="18sp"
-            android:textColor="@android:color/darker_gray"
+            android:textColor="@color/PrimaryGreen"
             android:layout_marginBottom="30dp" />
+    </LinearLayout>
 
 <!--        &lt;!&ndash; Appointment Card 1 &ndash;&gt;-->
 <!--        <include layout="@layout/appointment_card"-->
