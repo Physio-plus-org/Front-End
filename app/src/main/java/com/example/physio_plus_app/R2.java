@@ -32,7 +32,7 @@ public class R2 extends AppCompatActivity {
         d = desc.getText().toString();
         p = price.getText().toString();
         try {
-            OkHttpHandler.insertData(new Params(n,d,c,p));
+            OkHttpHandlerR2.insertData(new ParamsR2(n,d,c,p));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

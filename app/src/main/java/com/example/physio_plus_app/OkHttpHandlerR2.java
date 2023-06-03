@@ -9,9 +9,9 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
 
-public abstract class OkHttpHandler {
+public abstract class OkHttpHandlerR2 {
     private static final StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-    public static void insertData(Params params) throws IOException {
+    public static void insertData(ParamsR2 params) throws IOException {
         StrictMode.setThreadPolicy(policy);
         final String myIP = "192.168.1.6";
         String url = "http://"+myIP+"/request.php";

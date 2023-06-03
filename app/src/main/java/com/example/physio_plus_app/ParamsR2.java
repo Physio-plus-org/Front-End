@@ -1,8 +1,8 @@
 package com.example.physio_plus_app;
 
-public class Params {
+public class ParamsR2 {
     private String title, desc, code, price;
-    public Params(String t, String d, String c, String p) {
+    public ParamsR2(String t, String d, String c, String p) {
         this.title = t;
         this.desc = d;
         this.code = c;
