@@ -1,11 +1,16 @@
 package com.example.physio_plus_app;
 
 
-import android.net.Uri;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.StrictMode;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.style.StyleSpan;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -14,6 +19,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -35,9 +41,10 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
     private RelativeLayout cardContainer;
 
+    TextView redBubble;
     private Gson gson;
     private OkHttpClient client;
-    private StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+    private final StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
 
     private static final int MAX_APPOINTMENTS = 3;
 
@@ -50,15 +57,16 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        TextView highlightText = findViewById(R.id.RequestAppoint);
         View calendarTopBar = findViewById(R.id.calendarTopBar);
         StrictMode.setThreadPolicy(policy);
 
 
         cardContainer = findViewById(R.id.cardContainer);
 
+        redBubble = findViewById(R.id.redBubbleText);
+        redBubble.setVisibility(View.GONE);
 
-        Log.d(TAG, "ON CREATE CALL");
+
         gson = new Gson();
         client = new OkHttpClient();
 
@@ -70,13 +78,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setCalendarTopBarClickListener(View calendarTopBar) {
-        Log.d(TAG, "SETCALENDAR CALLED");
+
         calendarTopBar.setOnClickListener(v -> fetchUpcomingAppointmentsForDropdown());
 
     }
 
     private void fetchUpcomingAppointmentsForDropdown() {
-        Log.d(TAG, "FETCHDROPDOWN CALLED");
+
         Request request = new Request.Builder()
                 .url(UPCOMING_APPOINTMENTS_URL)
                 .get()
@@ -84,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
 
         client.newCall(request).enqueue(new Callback() {
             @Override
-            public void onFailure(@NonNull Call call, IOException e) {
+            public void onFailure(@NonNull Call call, @NonNull IOException e) {
                 // Handle network request failure
                 Log.e(TAG, "Failed to fetch upcoming appointments for dropdown: " + e.getMessage());
                 e.printStackTrace();
@@ -130,37 +138,55 @@ public class MainActivity extends AppCompatActivity {
         builder.setTitle("Επερχόμενα Ραντεβού");
         builder.setIcon(R.drawable.baseline_access_time_24);
 
-        if (appointments.size() > MAX_APPOINTMENTS) {
+        int upcomingAppointmentsCount = appointments.size();
 
-            String[] appointmentItems = new String[appointments.size() + 1];
-            for (int i = 0; i < appointments.size(); i++) {
+
+        if (upcomingAppointmentsCount > 0) {
+            redBubble.setVisibility(View.VISIBLE);
+            redBubble.setText(String.valueOf(upcomingAppointmentsCount));
+        } else {
+            redBubble.setVisibility(View.GONE);
+        }
+        String separator = "\n⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯\n";
+
+
+
+        String[] appointmentItems;
+        if (upcomingAppointmentsCount > MAX_APPOINTMENTS) {
+            appointmentItems = new String[upcomingAppointmentsCount];
+            for (int i = 0; i < MAX_APPOINTMENTS; i++) {
                 Appointment appointment = appointments.get(i);
                 String appointmentText = appointment.getPatientName() + " - " + appointment.getDate() + " - " + appointment.getTime();
-                appointmentItems[i] = appointmentText;
+                appointmentItems[i] = appointmentText + separator;
+
             }
-            appointmentItems[appointments.size()] = "Δείτε περισσότερα";
+
+            // Make the "Δείτε περισσότερα" text bold
+            String seeMoreText = "Δείτε περισσότερα";
+            SpannableString spannableSeeMoreText = new SpannableString(seeMoreText);
+            spannableSeeMoreText.setSpan(new StyleSpan(Typeface.BOLD), 0, seeMoreText.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+            appointmentItems[MAX_APPOINTMENTS] = spannableSeeMoreText.toString();
+
+
+
 
             builder.setItems(appointmentItems, (dialog, which) -> {
-                if (which == appointments.size()) {
+                if (which == MAX_APPOINTMENTS) {
 
                     redirectToAppointmentsPage();
                 } else {
-                    // Handle selected appointment, show appointment dialog or perform other actions
                     Appointment selectedAppointment = appointments.get(which);
                     showAppointmentDialog(selectedAppointment);
                 }
             });
         } else {
-            // Less than or equal to three appointments, display all appointment details
-            String[] appointmentItems = new String[appointments.size()];
-            for (int i = 0; i < appointments.size(); i++) {
+            appointmentItems = new String[upcomingAppointmentsCount];
+            for (int i = 0; i < upcomingAppointmentsCount; i++) {
                 Appointment appointment = appointments.get(i);
                 String appointmentText = appointment.getPatientName() + " - " + appointment.getDate() + " - " + appointment.getTime();
-                appointmentItems[i] = appointmentText;
+                appointmentItems[i] = appointmentText + separator;
             }
-
             builder.setItems(appointmentItems, (dialog, which) -> {
-                // Handle selected appointment, show appointment dialog or perform other actions
                 Appointment selectedAppointment = appointments.get(which);
                 showAppointmentDialog(selectedAppointment);
             });
@@ -168,6 +194,7 @@ public class MainActivity extends AppCompatActivity {
 
         builder.show();
     }
+
 
     private void redirectToAppointmentsPage() {
         recreate();
@@ -181,7 +208,7 @@ public class MainActivity extends AppCompatActivity {
 
         client.newCall(request).enqueue(new Callback() {
             @Override
-            public void onFailure(@NonNull Call call, IOException e) {
+            public void onFailure(@NonNull Call call, @NonNull IOException e) {
                 // Handle network request failure
                 Log.e(TAG, "Failed to test connection: " + e.getMessage());
                 runOnUiThread(() -> Toast.makeText(MainActivity.this, "Failed to test connection", Toast.LENGTH_SHORT).show());
@@ -211,7 +238,7 @@ public class MainActivity extends AppCompatActivity {
 
         client.newCall(request).enqueue(new Callback() {
             @Override
-            public void onFailure(@NonNull Call call, IOException e) {
+            public void onFailure(@NonNull Call call, @NonNull IOException e) {
                 // Handle network request failure
                 Log.e(TAG, "Failed to fetch upcoming appointments: " + e.getMessage());
                 runOnUiThread(() -> Toast.makeText(MainActivity.this, "Failed to fetch upcoming appointments", Toast.LENGTH_SHORT).show());
@@ -232,20 +259,7 @@ public class MainActivity extends AppCompatActivity {
                             assert appointments != null;
                             populateAppointmentCards(appointments);
 
-                            // Get the count of upcoming appointments
-                            int upcomingAppointmentsCount = appointments.size();
 
-                            // Locate the red bubble view
-                            TextView redBubble = findViewById(R.id.redBubbleText);
-
-                            if (upcomingAppointmentsCount > 0) {
-                                // There are upcoming appointments, display the red bubble and set the number text
-                                redBubble.setVisibility(View.VISIBLE);
-                                redBubble.setText(String.valueOf(upcomingAppointmentsCount));
-                            } else {
-                                // No upcoming appointments, hide the red bubble
-                                redBubble.setVisibility(View.GONE);
-                            }
                         });
                     } else {
                         // Handle unsuccessful response
@@ -271,8 +285,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void populateAppointmentCards(List<Appointment> appointments) {
-        // Clear the cardContainer
-        cardContainer.removeAllViews();
+        // Clear the appointmentCardsContainer
+        LinearLayout appointmentCardsContainer = findViewById(R.id.appointmentCardsContainer);
+        appointmentCardsContainer.removeAllViews();
 
         // Check for null appointments list
         if (appointments == null) {
@@ -283,7 +298,7 @@ public class MainActivity extends AppCompatActivity {
         // Iterate through the appointments list and create/update the appointment cards
         for (Appointment appointment : appointments) {
             try {
-                View appointmentCard = getLayoutInflater().inflate(R.layout.appointment_card, cardContainer, false);
+                View appointmentCard = getLayoutInflater().inflate(R.layout.appointment_card, appointmentCardsContainer, false);
 
                 // Populate the appointment card with data from the appointment object
                 TextView textDate = appointmentCard.findViewById(R.id.textDate);
@@ -291,20 +306,37 @@ public class MainActivity extends AppCompatActivity {
                 TextView textPatientName = appointmentCard.findViewById(R.id.textPatientName);
 
                 textDate.setText(appointment.getDate());
-                textTime.setText(appointment.getTime());
                 textPatientName.setText(appointment.getPatientName());
+
+                // Apply custom text appearance
+                textDate.setTypeface(Typeface.create("sans-serif-medium", Typeface.NORMAL));
+                textTime.setTypeface(Typeface.create("sans-serif-light", Typeface.NORMAL));
+                textPatientName.setTypeface(Typeface.create("sans-serif", Typeface.ITALIC));
+                textPatientName.setTextSize(18);
+
+                // Set text colors
+                textDate.setTextColor(ContextCompat.getColor(this, R.color.PrimaryGreen));
+                textTime.setTextColor(getResources().getColor(R.color.PrimaryGreen));
+                textPatientName.setTextColor(Color.BLACK);
 
                 // Set OnClickListener on appointment card
                 appointmentCard.setOnClickListener(v -> showAppointmentDialog(appointment));
 
-                // Add the appointment card to the cardContainer
-                cardContainer.addView(appointmentCard);
+                // Add the appointment card to the appointmentCardsContainer with appropriate layout parameters
+                LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                layoutParams.setMargins(10, 10, 10, 50); // Add bottom margin to create spacing between cards
+                appointmentCard.setLayoutParams(layoutParams);
+
+                // Add the appointment card to the appointmentCardsContainer
+                appointmentCardsContainer.addView(appointmentCard);
             } catch (Exception e) {
                 Log.e(TAG, "Exception occurred while populating appointment cards: " + e.getMessage());
                 e.printStackTrace();
             }
         }
     }
+
+
 
 
     private void showAppointmentDialog(Appointment appointment) {
@@ -320,9 +352,7 @@ public class MainActivity extends AppCompatActivity {
             // You can perform any necessary operations when the appointment is accepted
             acceptAppointment(appointment);
         });
-        builder.setNegativeButton("Άκυρο", (dialog, which) -> {
-            dialog.dismiss();
-        });
+        builder.setNegativeButton("Άκυρο", (dialog, which) -> dialog.dismiss());
         builder.setCancelable(false);
         builder.create().show();
     }
@@ -339,8 +369,11 @@ public class MainActivity extends AppCompatActivity {
                     // Apply the green border to the appointment card
                     appointmentCard.setBackgroundResource(R.drawable.roundedshape_accepted);
 
+                    appointmentCard.setClickable(false);
+
                     // Send the patient name back to the server
                     sendPatientNameToServer(appointment.getPatientName());
+
 
                     break;
                 }
@@ -362,7 +395,7 @@ public class MainActivity extends AppCompatActivity {
 
         client.newCall(request).enqueue(new Callback() {
             @Override
-            public void onFailure(@NonNull Call call, IOException e) {
+            public void onFailure(@NonNull Call call, @NonNull IOException e) {
                 // Handle network request failure
                 Log.e(TAG, "Failed to send patient name: " + e.getMessage());
             }
@@ -370,7 +403,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(@NonNull Call call, @NonNull Response response) {
                 // Handle network request success
-                try {
+                try (response) {
                     if (response.isSuccessful()) {
                         // Process the response if needed
                         assert response.body() != null;
@@ -382,8 +415,6 @@ public class MainActivity extends AppCompatActivity {
                     }
                 } catch (IOException e) {
                     Log.e(TAG, "Exception occurred while processing network response: " + e.getMessage());
-                } finally {
-                    response.close();
                 }
             }
         });

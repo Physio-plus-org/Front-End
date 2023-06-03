@@ -26,7 +26,7 @@
             android:title=""
             android:showAsAction="ifRoom" />
 
-        <!-- Dynamic  highlighted Text for appointments -->
+        <!-- Dynamic highlighted Text for appointments -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -41,66 +41,27 @@
                 android:gravity="end"
                 android:textColor="@android:color/darker_gray"
                 android:layout_marginBottom="30dp" />
-        <TextView
-            android:id="@+id/radevou"
-            android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/radevou"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/radevou"
+                android:layout_weight="1"
+                android:textSize="18sp"
+                android:textColor="@color/PrimaryGreen"
+                android:layout_marginBottom="30dp" />
+        </LinearLayout>
+
+        <!-- Container for appointment cards -->
+        <LinearLayout
+            android:id="@+id/appointmentCardsContainer"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/radevou"
-            android:layout_weight="1"
-            android:textSize="18sp"
-            android:textColor="@color/PrimaryGreen"
-            android:layout_marginBottom="30dp" />
-    </LinearLayout>
+            android:orientation="vertical">
 
-<!--        &lt;!&ndash; Appointment Card 1 &ndash;&gt;-->
-<!--        <include layout="@layout/appointment_card"-->
-<!--            android:id="@+id/appointmentCard1"-->
-<!--            android:layout_width="350dp"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginTop="8dp"-->
-<!--            android:layout_marginBottom="8dp" />-->
+            <!-- Appointment cards will be dynamically added here -->
 
-<!--        &lt;!&ndash; Appointment Card 2 &ndash;&gt;-->
-<!--        <include layout="@layout/appointment_card"-->
-<!--            android:id="@+id/appointmentCard2"-->
-<!--            android:layout_width="350dp"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginTop="8dp"-->
-<!--            android:layout_marginBottom="8dp" />-->
-
-
-
-<!--        &lt;!&ndash; Appointment Card 3 &ndash;&gt;-->
-<!--        <include layout="@layout/appointment_card"-->
-<!--            android:id="@+id/appointmentCard3"-->
-<!--            android:layout_width="350dp"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginTop="8dp"-->
-<!--            android:layout_marginBottom="8dp"/>-->
-
-<!--        &lt;!&ndash; Appointment Card 4 &ndash;&gt;-->
-<!--        <include layout="@layout/appointment_card"-->
-<!--            android:id="@+id/appointmentCard3"-->
-<!--            android:layout_width="350dp"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginTop="8dp"-->
-<!--            android:layout_marginBottom="8dp"/>-->
-
-<!--        &lt;!&ndash; Appointment Card 5 &ndash;&gt;-->
-<!--        <include layout="@layout/appointment_card"-->
-<!--            android:id="@+id/appointmentCard4"-->
-<!--            android:layout_width="350dp"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginTop="8dp"-->
-<!--            android:layout_marginBottom="8dp"/>-->
-
-<!--        <include layout="@layout/appointment_card"-->
-<!--            android:id="@+id/appointmentCard5"-->
-<!--            android:layout_width="350dp"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginTop="8dp"-->
-<!--            android:layout_marginBottom="8dp"/>-->
-
+        </LinearLayout>
 
     </LinearLayout>
 </ScrollView>

@@ -6,6 +6,19 @@
     android:background="@android:color/white"
     android:padding="8dp">
 
+    <!-- Appointment information -->
+    <TextView
+        android:id="@+id/textAppointmentInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:textAppearanceMedium" />
+
+    <!-- Horizontal line separator -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray" />
+
 
 
 </LinearLayout>
