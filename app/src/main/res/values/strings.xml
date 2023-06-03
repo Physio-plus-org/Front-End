@@ -1,3 +1,33 @@
 <resources>
-    <string name="app_name">Physio_plus_App</string>
+    <string name="app_name">Physio</string>
+    <string name="profile">Profile</string>
+    <string name="physiologo">physiologo</string>
+    <string name="physiotext">PhysioText</string>
+    <string name="goback" />
+    <string name="physio">Physio</string>
+    <string name="logo">logo</string>
+    <string name="placeholder">Placeholder</string>
+    <string name="orologioProgramma">Ωρολόγιο Πρόγραμμα</string>
+    <string name="_9_00">9:00</string>
+    <string name="_10_00">10:00</string>
+    <string name="_11_00">11:00</string>
+    <string name="_12_00">12:00</string>
+    <string name="_13_00">13:00</string>
+    <string name="_14_00">14:00</string>
+    <string name="_15_00">15:00</string>
+    <string name="_16_00">16:00</string>
+    <string name="_17_00">17:00</string>
+    <string name="_18_00">18:00</string>
+    <string name="_19_00">19:00</string>
+    <string name="_20_00">20:00</string>
+    <string name="_21_00">21:00</string>
+    <string name="_22_00">22:00</string>
+    <string name="backbutton">backButton</string>
+    <string name="calendarButton" />
+    <string name="euroButton" />
+    <string name="plusSign" />
+    <string name="april_3_monday">April 3, Monday</string>
+    <string name="_10_00_pm">10:00 pm</string>
+    <string name="milios_filios">Milios Filios</string>
+    <string name="todo">TODO</string>
 </resources>

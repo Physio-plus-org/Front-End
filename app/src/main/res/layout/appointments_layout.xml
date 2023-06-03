@@ -1,0 +1,90 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="center_horizontal"
+        android:backgroundTint="#FFFFFF">
+
+        <ImageView
+            android:id="@+id/goback"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_gravity="start|top"
+            android:contentDescription="@string/goback"
+            android:src="@drawable/goback"
+            android:text="@string/backbutton"
+            android:title=""
+            android:showAsAction="ifRoom" />
+
+        <!-- Dynamic  highlighted Text for appointments -->
+        <TextView
+            android:id="@+id/placeholderText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/placeholder"
+            android:textSize="18sp"
+            android:textColor="@android:color/darker_gray"
+            android:layout_marginBottom="30dp" />
+
+<!--        &lt;!&ndash; Appointment Card 1 &ndash;&gt;-->
+<!--        <include layout="@layout/appointment_card"-->
+<!--            android:id="@+id/appointmentCard1"-->
+<!--            android:layout_width="350dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="8dp"-->
+<!--            android:layout_marginBottom="8dp" />-->
+
+<!--        &lt;!&ndash; Appointment Card 2 &ndash;&gt;-->
+<!--        <include layout="@layout/appointment_card"-->
+<!--            android:id="@+id/appointmentCard2"-->
+<!--            android:layout_width="350dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="8dp"-->
+<!--            android:layout_marginBottom="8dp" />-->
+
+
+
+<!--        &lt;!&ndash; Appointment Card 3 &ndash;&gt;-->
+<!--        <include layout="@layout/appointment_card"-->
+<!--            android:id="@+id/appointmentCard3"-->
+<!--            android:layout_width="350dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="8dp"-->
+<!--            android:layout_marginBottom="8dp"/>-->
+
+<!--        &lt;!&ndash; Appointment Card 4 &ndash;&gt;-->
+<!--        <include layout="@layout/appointment_card"-->
+<!--            android:id="@+id/appointmentCard3"-->
+<!--            android:layout_width="350dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="8dp"-->
+<!--            android:layout_marginBottom="8dp"/>-->
+
+<!--        &lt;!&ndash; Appointment Card 5 &ndash;&gt;-->
+<!--        <include layout="@layout/appointment_card"-->
+<!--            android:id="@+id/appointmentCard4"-->
+<!--            android:layout_width="350dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="8dp"-->
+<!--            android:layout_marginBottom="8dp"/>-->
+
+<!--        <include layout="@layout/appointment_card"-->
+<!--            android:id="@+id/appointmentCard5"-->
+<!--            android:layout_width="350dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="8dp"-->
+<!--            android:layout_marginBottom="8dp"/>-->
+
+
+    </LinearLayout>
+</ScrollView>
