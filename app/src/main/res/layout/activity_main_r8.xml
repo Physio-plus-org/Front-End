@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:minWidth="48dp"
     android:minHeight="48dp"
-    tools:context=".MainActivity">
+    tools:context=".R8">
 
     <ScrollView
         android:layout_width="match_parent"

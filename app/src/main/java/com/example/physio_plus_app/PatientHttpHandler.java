@@ -5,7 +5,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-public abstract class PatientHttpHandler extends HttpHandler{
+public abstract class PatientHttpHandler extends HttpHandlerR8 {
     static ArrayList<Patient> request(String url, RequestParams params) throws Exception {
         JSONArray jsonArray = makeRequest(url, params);
         if (jsonArray == null) return null;

@@ -5,7 +5,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-public abstract class ServiceHttpHandler extends HttpHandler {
+public abstract class ServiceHttpHandler extends HttpHandlerR8 {
     static ArrayList<Service> request(String url, RequestParams params) throws Exception {
         JSONArray jsonArray = makeRequest(url, params);
         if (jsonArray == null) return null;

@@ -16,7 +16,7 @@ import java.util.Calendar;
 import java.util.Collections;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class R8 extends AppCompatActivity {
 
     private TextView nameTextView;
     private TextView personalNumberTextView;
@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main_r8);
 
         this.nameTextView = findViewById(R.id.full_name);
         this.personalNumberTextView = findViewById(R.id.personal_number);
@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
     public void onCalendarClick(View view) {
         Calendar c = Calendar.getInstance();
         DatePickerDialog dpDialog = new DatePickerDialog (
-                MainActivity.this,
+                R8.this,
                 (view1, year, month, dayOfMonth) -> dateTextView.setText(getString(R.string.date_value, dayOfMonth, (month+1), year)),
                 c.get(Calendar.YEAR),
                 c.get(Calendar.MONTH),
