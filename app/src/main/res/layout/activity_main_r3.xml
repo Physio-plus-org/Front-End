@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".R3.R3">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="57dp"
+                android:orientation="horizontal"
+                tools:ignore="MissingConstraints">
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="198dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/physio_logo_1_r3"/>
+
+                <ImageButton
+                    android:id="@+id/imageButton5"
+                    android:layout_width="76dp"
+                    android:layout_height="65dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/white"
+                    app:srcCompat="@drawable/calendar_r3" />
+
+                <ImageButton
+                    android:id="@+id/imageButton6"
+                    android:layout_width="68dp"
+                    android:layout_height="65dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/white"
+                    app:srcCompat="@drawable/person_r3" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="156dp"
+                tools:ignore="MissingConstraints">
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/_682091152593_r3" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="456dp"
+                android:background="@drawable/top_background_gradiunt_r3"
+                android:orientation="vertical"
+                tools:ignore="MissingConstraints">
+                <!-- app:layout_gravity="center_horizontal"-->
+
+
+                <TextView
+                    android:id="@+id/loginTest"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="@string/create_label"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="36sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/login"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/patient_label"
+                    android:textAlignment="center"
+                    android:textColor="#008563"
+                    android:textSize="36sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/username"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/pedio_r3"
+                    android:backgroundTintMode="add"
+                    android:drawableStart="@drawable/account_r3"
+                    android:drawablePadding="8dp"
+                    android:hint="Όνομα"
+                    android:padding="8sp"
+                    android:textColor="#707070" />
+
+                <EditText
+                    android:id="@+id/surname"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/pedio_r3"
+                    android:backgroundTintMode="add"
+                    android:drawableStart="@drawable/account_r3"
+                    android:drawablePadding="8dp"
+                    android:hint="Επίθετο"
+                    android:padding="8sp"
+                    android:textColor="#707070" />
+
+                <EditText
+                    android:id="@+id/amka"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/pedio_r3"
+                    android:backgroundTintMode="add"
+                    android:drawableStart="@drawable/amka_r3"
+                    android:drawablePadding="8dp"
+                    android:hint="@string/amka_label"
+                    android:padding="8sp"
+                    android:textColor="#707070" />
+
+                <EditText
+                    android:id="@+id/addess"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/pedio_r3"
+                    android:backgroundTintMode="add"
+                    android:drawableStart="@drawable/location_r3"
+                    android:drawablePadding="8dp"
+                    android:hint="@string/address_label"
+                    android:padding="8sp"
+                    android:textColor="#707070" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="63dp"
+                tools:ignore="MissingConstraints">
+
+                <ImageButton
+                    android:id="@+id/imageButton4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:backgroundTint="#008563"
+                    app:srcCompat="@drawable/cancel_r3" />
+
+                <ImageButton
+                    android:id="@+id/createbtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:backgroundTint="#008563"
+                    android:onClick="onClick"
+                    app:srcCompat="@drawable/save_r3" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
