@@ -9,14 +9,14 @@ import android.widget.Button;
 
 import com.example.physio_plus_app.R1.R1;
 
-public class MainActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
 
     Button psfBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login);
 
         psfBtn = findViewById(R.id.r1EnterButtonPSF);
 
