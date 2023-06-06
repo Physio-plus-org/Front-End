@@ -65,7 +65,7 @@
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/r1_enter_title"
-        app:srcCompat="@drawable/physio_logo" />
+        app:srcCompat="@drawable/physio_logo_r1" />
 
     <Button
         android:id="@+id/r1EnterButtonPat"

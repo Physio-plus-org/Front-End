@@ -165,7 +165,7 @@
         app:layout_constraintHorizontal_bias="0.565"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/physio_logo" />
+        app:srcCompat="@drawable/physio_logo_r1" />
 
     <ImageButton
         android:id="@+id/backButton"
@@ -173,8 +173,8 @@
         android:layout_height="48dp"
         android:layout_marginTop="4dp"
         android:contentDescription="Back"
-        android:background="@drawable/back_button_round"
-        android:src="@drawable/back_arrow"
+        android:background="@drawable/back_button_round_r1"
+        android:src="@drawable/back_arrow_r1"
         app:layout_constraintEnd_toStartOf="@+id/physio_logo"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
