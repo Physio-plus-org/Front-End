@@ -88,5 +88,5 @@ caches/
 .tmp/
 wrapper/
 native/
-android/
 daemon/
+android/
