@@ -1,14 +1,14 @@
-package com.example.physio_plus_app;
-
-import androidx.appcompat.app.AppCompatActivity;
-
+package com.example.physio_plus_app.R4;
 
 import android.os.Bundle;
-
 import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.physio_plus_app.R;
 
 import okhttp3.OkHttpClient;
 
@@ -33,7 +33,7 @@ public class R4 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_r4);
         getSupportActionBar().hide(); // Hide the action bar
 
         Log.d("MainActivity", "onCreate method called");

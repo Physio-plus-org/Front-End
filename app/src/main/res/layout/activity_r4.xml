@@ -6,8 +6,8 @@
     android:layout_height="match_parent"
     android:background="@color/background_color"
     android:backgroundTint="@color/background_color"
-    tools:context=".R4"
     tools:ignore="ExtraText">
+<!--    tools:context=".R4.R4"-->
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
@@ -32,7 +32,7 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/physio_logo" />
+        app:srcCompat="@drawable/physio_logo_r4" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline4"
@@ -55,7 +55,7 @@
         android:background="#00FFFFFF"
         android:backgroundTint="#00FFFFFF"
         android:foregroundTint="@color/white"
-        app:icon="@drawable/calendar_icon"
+        app:icon="@drawable/calendar_icon_r4"
         app:iconPadding="2dp"
         app:iconSize="28dp"
         app:iconTint="@color/black"
@@ -70,7 +70,7 @@
         android:background="#00FFFFFF"
         android:backgroundTint="#00FFFFFF"
         android:foregroundTint="@color/white"
-        app:icon="@drawable/profile_icon_round"
+        app:icon="@drawable/profile_icon_round_r4"
         app:iconSize="32dp"
         app:iconTint="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/guideline5"
@@ -86,7 +86,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/physio_logo" />
+        app:srcCompat="@drawable/physio_logo_r4" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline4"
@@ -109,7 +109,7 @@
         android:background="#00FFFFFF"
         android:backgroundTint="#00FFFFFF"
         android:foregroundTint="@color/background_color"
-        app:icon="@drawable/calendar_icon"
+        app:icon="@drawable/calendar_icon_r4"
         app:iconPadding="2dp"
         app:iconSize="28dp"
         app:iconTint="@color/text_color"
@@ -121,8 +121,8 @@
         android:id="@+id/back_button"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:background="@drawable/circle_button"
-        app:icon="@drawable/back_icon"
+        android:background="@drawable/circle_button_r4"
+        app:icon="@drawable/back_icon_r4"
         app:iconTint="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/guideline6"
         app:layout_constraintEnd_toStartOf="@+id/guideline7"
@@ -284,7 +284,7 @@
                 android:layout_width="100dp"
                 android:layout_height="120dp"
                 android:background="#00FFFFFF"
-                app:icon="@drawable/profile_icon"
+                app:icon="@drawable/profile_icon_r4"
                 app:iconGravity="textTop"
                 app:iconPadding="0dp"
                 app:iconSize="120dp"
@@ -314,17 +314,16 @@
 <!--                    android:paddingTop="10dp">-->
 
 
-<!--                    <TextView-->
-<!--                        android:id="@+id/name_tv"-->
-<!--                        android:text="Name Surname"-->
                     <TextView
+                        android:id="@+id/name_tv"
+                        android:text="Name Surname"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-medium"
                         android:paddingStart="8dp"
-                        android:text="Γιάννης Κονταξής"
                         android:textColor="#FFFFFF"
                         android:textSize="20sp" />
+<!--                        android:text="Γιάννης Κονταξής"-->
 
                 </LinearLayout>
 
@@ -334,14 +333,13 @@
                     android:orientation="horizontal"
                     android:padding="5dp">
 
-<!--                        android:id="@+id/age_tv"-->
-<!--                        android:text="age"-->
                     <TextView
+                        android:id="@+id/age_tv"
+                        android:text="age"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="left"
                         android:paddingStart="3dp"
-                        android:text="22 ετών"
                         android:textColor="#FFFFFF"
                         android:textSize="10dp" />
 
@@ -366,28 +364,23 @@
 
                 </LinearLayout>
 
-<!--                    android:id="@+id/address_tv"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:paddingStart="8dp"-->
-<!--                    android:text="address"-->
                 <TextView
+                    android:id="@+id/address_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingStart="8dp"
-                    android:text="Στρατού 82, Θεσσαλονίκη"
+                    android:text="address"
                     android:textColor="#FFFFFF"
                     android:textSize="10dp" />
 
-<!--                    android:id="@+id/date_tv"-->
-<!--                    android:text="date"-->
                 <TextView
+                    android:id="@+id/date_tv"
+                    android:text="date"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:fontFamily="sans-serif-medium"
                     android:paddingStart="8dp"
                     android:paddingTop="5dp"
-                    android:text="Πέμπτη 23, 10:00 ΑΜ - 12:00 PM"
                     android:textColor="#CFCFCF"
                     android:textSize="11dp" />
 
@@ -499,9 +492,14 @@
         //layout of scroll view
 
         <LinearLayout
+            android:id="@+id/verticalLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start|center_horizontal"
             android:orientation="vertical">
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="vertical">-->
 
             //layout of 28/3 date
 
@@ -619,11 +617,6 @@
 
             </LinearLayout>
 
-<!--            android:id="@+id/verticalLayout"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:layout_gravity="start|center_horizontal"-->
-<!--            android:orientation="vertical">-->
         </LinearLayout>
 
 

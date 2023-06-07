@@ -1,10 +1,12 @@
-package com.example.physio_plus_app;
+package com.example.physio_plus_app.R4;
 
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.example.physio_plus_app.R;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -60,7 +62,7 @@ public class Sessions {
 
     private void createCardView(String date, String hours, String notes) {
         LayoutInflater inflater = LayoutInflater.from(verticalLayout.getContext());
-        View cardViewLayout = inflater.inflate(R.layout.card_view_layout, verticalLayout, false);
+        View cardViewLayout = inflater.inflate(R.layout.card_view_layout_r4, verticalLayout, false);
 
         TextView dateText = cardViewLayout.findViewById(R.id.date_text);
         TextView hoursText = cardViewLayout.findViewById(R.id.hours_text);
