@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    android:backgroundTint="@color/white"
-    tools:context=".MainActivity"
+    android:background="@color/background_color"
+    android:backgroundTint="@color/background_color"
+    tools:context=".R4"
     tools:ignore="ExtraText">
 
     <androidx.constraintlayout.widget.Guideline
@@ -85,6 +85,36 @@
         app:layout_constraintBottom_toTopOf="@+id/cardView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/physio_logo" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="188dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="80dp" />
+
+    <Button
+        android:id="@+id/button_calendar"
+        android:layout_width="70dp"
+        android:layout_height="50dp"
+        android:background="#00FFFFFF"
+        android:backgroundTint="#00FFFFFF"
+        android:foregroundTint="@color/background_color"
+        app:icon="@drawable/calendar_icon"
+        app:iconPadding="2dp"
+        app:iconSize="28dp"
+        app:iconTint="@color/text_color"
+        app:layout_constraintBottom_toTopOf="@+id/guideline5"
+        app:layout_constraintEnd_toStartOf="@+id/button_profile"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
@@ -120,6 +150,82 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline5" />
 
+<!--        android:id="@+id/button_profile"-->
+<!--        android:layout_width="70dp"-->
+<!--        android:layout_height="50dp"-->
+<!--        android:background="#00FFFFFF"-->
+<!--        android:backgroundTint="#00FFFFFF"-->
+<!--        android:foregroundTint="@color/background_color"-->
+<!--        app:icon="@drawable/profile_icon_round"-->
+<!--        app:iconSize="32dp"-->
+<!--        app:iconTint="@color/text_color"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/guideline5"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--    <View-->
+<!--        android:id="@+id/divider"-->
+<!--        android:layout_width="409dp"-->
+<!--        android:layout_height="1dp"-->
+<!--        android:background="@color/text_color"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/cardView2"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        tools:layout_editor_absoluteX="1dp" />-->
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        app:layout_constraintBottom_toTopOf="@id/cardView2"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/guideline5">-->
+
+<!--        <Button-->
+<!--            android:id="@+id/back_button"-->
+<!--            android:layout_width="50dp"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_weight="1"-->
+<!--            android:background="@drawable/circle_button"-->
+<!--            android:backgroundTint="@color/background_color"-->
+<!--            android:foregroundTint="@color/background_color"-->
+<!--            android:gravity="center"-->
+<!--            android:onClick="OnClick"-->
+<!--            app:icon="@drawable/back_icon"-->
+<!--            app:iconTint="@color/text_color"-->
+<!--            app:rippleColor="@color/background_color" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/textView"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="1"-->
+<!--            android:layout_marginStart="0dp"-->
+<!--            android:layout_marginEnd="0dp"-->
+<!--            android:fontFamily="sans-serif-medium"-->
+<!--            android:text="Ιστορικό"-->
+<!--            android:textAlignment="center"-->
+<!--            android:textColor="@color/text_color"-->
+<!--            android:textSize="30sp"-->
+<!--            android:textStyle="italic" />-->
+
+<!--        <Button-->
+<!--            android:id="@+id/useless_button"-->
+<!--            android:layout_width="50dp"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_weight="1"-->
+<!--            android:visibility="invisible"-->
+<!--            android:layout_marginStart="0dp"-->
+<!--            android:background="@drawable/circle_button"-->
+<!--            android:backgroundTint="@color/background_color"-->
+<!--            android:foregroundTint="@color/background_color"-->
+<!--            android:gravity="end"-->
+<!--            app:icon="@drawable/back_icon"-->
+<!--            app:iconTint="@color/text_color"-->
+<!--            app:rippleColor="@color/background_color" />-->
+
+<!--    </LinearLayout>-->
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline7"
         android:layout_width="wrap_content"
@@ -135,6 +241,11 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="419dp" />
 
+<!--        app:layout_constraintGuide_begin="80dp" /><![CDATA[/>-->
+
+
+<!--    ]]>-->
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline9"
         android:layout_width="wrap_content"
@@ -142,8 +253,7 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="333dp" />
 
-
-
+<!--        app:layout_constraintGuide_begin="323dp" />-->
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView2"
@@ -157,12 +267,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline6">
+<!--        app:cardBackgroundColor="@color/primary_color"-->
+<!--        app:cardCornerRadius="20dp"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/textView">-->
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:padding="16dp">
+<!--            android:padding="5dp"-->
+<!--            android:paddingLeft="10dp">-->
 
             <Button
                 android:id="@+id/photo_button"
@@ -178,6 +293,9 @@
                 app:layout_constraintEnd_toStartOf="@+id/guideline7"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/guideline5" />
+<!--                android:layout_height="wrap_content"-->
+<!--                android:background="#00FFFFFF"-->
+<!--                android:paddingLeft="25dp"-->
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -192,6 +310,13 @@
                     android:orientation="horizontal">
 
 
+<!--                    android:orientation="horizontal"-->
+<!--                    android:paddingTop="10dp">-->
+
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/name_tv"-->
+<!--                        android:text="Name Surname"-->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -209,6 +334,8 @@
                     android:orientation="horizontal"
                     android:padding="5dp">
 
+<!--                        android:id="@+id/age_tv"-->
+<!--                        android:text="age"-->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -218,6 +345,14 @@
                         android:textColor="#FFFFFF"
                         android:textSize="10dp" />
 
+<!--                        android:id="@+id/yearsold_tv"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:layout_gravity="right"-->
+<!--                        android:paddingStart="5dp"-->
+<!--                        android:paddingEnd="9dp"-->
+<!--                        android:text="ετών"-->
+<!--                        android:textAlignment="textStart"-->
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -231,6 +366,11 @@
 
                 </LinearLayout>
 
+<!--                    android:id="@+id/address_tv"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:paddingStart="8dp"-->
+<!--                    android:text="address"-->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -239,6 +379,8 @@
                     android:textColor="#FFFFFF"
                     android:textSize="10dp" />
 
+<!--                    android:id="@+id/date_tv"-->
+<!--                    android:text="date"-->
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -285,6 +427,74 @@
         app:layout_constraintTop_toTopOf="@+id/guideline8"
         app:layout_constraintVertical_bias="1.0"
         tools:ignore="MissingConstraints">
+<!--    </androidx.cardview.widget.CardView>-->
+
+<!--    <LinearLayout-->
+<!--        android:id="@+id/linearLayout_headings"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="5dp"-->
+<!--        android:baselineAligned="false"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:gravity="center"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/textView5">-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Ημ/νια"-->
+<!--            android:textAlignment="textEnd"-->
+<!--            android:textColor="@color/primary_color"-->
+<!--            android:textSize="10dp">-->
+
+<!--        </TextView>-->
+
+<!--        <TextView-->
+<!--            android:layout_width="120dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Ώρες"-->
+<!--            android:textAlignment="center"-->
+<!--            android:textColor="@color/primary_color"-->
+<!--            android:textSize="10dp">-->
+
+<!--        </TextView>-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/notes_textView"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Σημειώσεις"-->
+<!--            android:textColor="@color/primary_color"-->
+<!--            android:textSize="10dp">-->
+
+<!--        </TextView>-->
+
+
+<!--    </LinearLayout>-->
+
+<!--    <View-->
+<!--        android:id="@+id/divider2"-->
+<!--        android:layout_width="409dp"-->
+<!--        android:layout_height="1dp"-->
+<!--        android:background="@color/secondary_green"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/linearLayout_headings"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/textView5"-->
+<!--        tools:layout_editor_absoluteX="1dp" />-->
+
+<!--    <ScrollView-->
+<!--        android:id="@+id/scroll_view"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:background="@color/secondary_green"-->
+<!--        android:backgroundTint="@color/secondary_green"-->
+<!--        android:visibility="visible"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/linearLayout_headings"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="1.0"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
 
         //layout of scroll view
 
@@ -409,12 +619,27 @@
 
             </LinearLayout>
 
-
-
+<!--            android:id="@+id/verticalLayout"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_gravity="start|center_horizontal"-->
+<!--            android:orientation="vertical">-->
         </LinearLayout>
 
 
     </ScrollView>
+
+<!--    <TextView-->
+<!--        android:id="@+id/textView5"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Ολοκληρωμένα ραντεβού"-->
+<!--        android:textColor="@color/text_color"-->
+<!--        android:textSize="15dp"-->
+<!--        android:textStyle="bold"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/guideline9" />-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
