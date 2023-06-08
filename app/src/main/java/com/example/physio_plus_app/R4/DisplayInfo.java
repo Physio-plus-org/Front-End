@@ -1,10 +1,7 @@
 package com.example.physio_plus_app.R4;
 
-import android.os.StrictMode;
 import android.util.Log;
 import android.widget.TextView;
-
-import com.google.gson.Gson;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -56,7 +53,6 @@ public class DisplayInfo {
                 Log.d("MainActivity","Call Responded!");
                 if (response.isSuccessful()) {
                     String json = response.body().string();
-                    Gson gson = new Gson();
                     Log.d("MainActivity", "Server response: " + json);
 
                     try {
