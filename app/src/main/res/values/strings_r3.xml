@@ -1,8 +1,0 @@
-<resources>
-    <string name="app_name">Physio_plus_App</string>
-    <string name="create_label">Δημιουργία</string>
-    <string name="patient_label">Ασθενή</string>
-    <string name="name_label">Ονοματεπώνυμο</string>
-    <string name="amka_label">ΑΜΚΑ</string>
-    <string name="address_label">Διεύθυνση</string>
-</resources>

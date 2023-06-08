@@ -72,7 +72,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
-                    android:text="@string/create_label"
+                    android:text="@string/r3_create_label"
                     android:textAlignment="center"
                     android:textColor="@color/black"
                     android:textSize="36sp"
@@ -82,7 +82,7 @@
                     android:id="@+id/login"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/patient_label"
+                    android:text="@string/r3_patient_label"
                     android:textAlignment="center"
                     android:textColor="#008563"
                     android:textSize="36sp"
@@ -129,7 +129,7 @@
                     android:backgroundTintMode="add"
                     android:drawableStart="@drawable/amka_r3"
                     android:drawablePadding="8dp"
-                    android:hint="@string/amka_label"
+                    android:hint="@string/r3_amka_label"
                     android:padding="8sp"
                     android:textColor="#707070" />
 
@@ -144,7 +144,7 @@
                     android:backgroundTintMode="add"
                     android:drawableStart="@drawable/location_r3"
                     android:drawablePadding="8dp"
-                    android:hint="@string/address_label"
+                    android:hint="@string/r3_address_label"
                     android:padding="8sp"
                     android:textColor="#707070" />
 

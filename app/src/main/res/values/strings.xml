@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Physio_plus_App</string>
 
+<!--R1-->
     //R1 Enter
     <string name="r1EnterButtonPSF">Π.Σ.Φ.</string>
     <string name="r1EnterButtonPhysio">Φυσιοθεραπευτηριο</string>
@@ -109,4 +110,23 @@
         "when a user tries to pick up one of cards.\n\n"
     </string>
     <string name="action_settings">Settings</string>
+
+<!--R2-->
+    <string name="r2_code">Κωδικός</string>
+    <string name="r2_codehint">Εισαγωγή κωδικού</string>
+    <string name="r2_name">Όνομα</string>
+    <string name="r2_description">Περιγραφή</string>
+    <string name="r2_price">Τιμή</string>
+    <string name="r2_namehint">Εισαγωγή ονόματος</string>
+    <string name="r2_deschint">Εισαγωγή περιγραφής</string>
+    <string name="r2_pricehint">- €</string>
+    <string name="r2_confirmation">Επιβεβαίωση</string>
+    <string name="r2_backgroud_image">backgroud_image</string>
+
+<!--R3-->
+    <string name="r3_create_label">Δημιουργία</string>
+    <string name="r3_patient_label">Ασθενή</string>
+    <string name="r3_name_label">Ονοματεπώνυμο</string>
+    <string name="r3_amka_label">ΑΜΚΑ</string>
+    <string name="r3_address_label">Διεύθυνση</string>
 </resources>

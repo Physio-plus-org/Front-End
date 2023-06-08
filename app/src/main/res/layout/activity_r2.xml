@@ -32,7 +32,7 @@
                     android:id="@+id/app_bar_image"
                     android:layout_width="match_parent"
                     android:layout_height="449dp"
-                    android:contentDescription="@string/backgroud_image"
+                    android:contentDescription="@string/r2_backgroud_image"
 
                     android:scaleType="centerCrop"
                     android:src="@drawable/physio_r2"
@@ -54,7 +54,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
                 android:layout_marginTop="20dp"
-                android:text="@string/code"
+                android:text="@string/r2_code"
                 android:textStyle="italic" />
 
             <EditText
@@ -66,7 +66,7 @@
                 android:layout_marginEnd="20dp"
                 android:background="@drawable/textview_boarder_r2"
                 android:ems="10"
-                android:hint="@string/codehint"
+                android:hint="@string/r2_codehint"
                 android:inputType="text"
                 android:minHeight="48dp"
                 android:padding="10dp"
@@ -78,7 +78,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
                 android:layout_marginTop="10dp"
-                android:text="@string/name"
+                android:text="@string/r2_name"
                 android:textStyle="italic" />
 
             <EditText
@@ -90,7 +90,7 @@
                 android:layout_marginEnd="20dp"
                 android:background="@drawable/textview_boarder_r2"
                 android:ems="10"
-                android:hint="@string/namehint"
+                android:hint="@string/r2_namehint"
                 android:inputType="text"
                 android:minHeight="48dp"
                 android:padding="10dp"
@@ -102,7 +102,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
                 android:layout_marginTop="10dp"
-                android:text="@string/description"
+                android:text="@string/r2_description"
                 android:textStyle="italic" />
 
             <EditText
@@ -114,7 +114,7 @@
                 android:layout_marginEnd="20dp"
                 android:background="@drawable/textview_boarder_r2"
                 android:ems="10"
-                android:hint="@string/deschint"
+                android:hint="@string/r2_deschint"
                 android:inputType="text"
                 android:minHeight="120dp"
                 android:padding="10dp"
@@ -127,7 +127,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
                 android:layout_marginTop="10dp"
-                android:text="@string/price"
+                android:text="@string/r2_price"
                 android:textStyle="italic" />
 
             <EditText
@@ -139,7 +139,7 @@
                 android:layout_marginEnd="20dp"
                 android:background="@drawable/textview_boarder_r2"
                 android:ems="10"
-                android:hint="@string/pricehint"
+                android:hint="@string/r2_pricehint"
                 android:inputType="text"
                 android:minHeight="48dp"
                 android:padding="10dp"
@@ -162,7 +162,7 @@
                     android:layout_gravity="center"
                     android:backgroundTint="@color/black"
                     android:onClick="onClick"
-                    android:text="@string/confirmation"
+                    android:text="@string/r2_confirmation"
                     android:textAllCaps="false" />
             </FrameLayout>
 
