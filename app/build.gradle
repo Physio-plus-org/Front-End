@@ -3,6 +3,7 @@ plugins {
 }
 
 android {
+    namespace 'com.example.physio_plus_app'
     compileSdk 33
 
     defaultConfig {
@@ -25,7 +26,6 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-    namespace 'com.example.physio_plus_app'
 }
 
 dependencies {
