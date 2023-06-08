@@ -1,4 +1,4 @@
-package com.example.physio_app;
+package com.example.physio_plus_app.R5;
 
 import static android.content.ContentValues.TAG;
 
@@ -20,6 +20,8 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.SearchView;
 
+
+import com.example.physio_plus_app.R;
 
 import org.json.JSONArray;
 import org.json.JSONException;

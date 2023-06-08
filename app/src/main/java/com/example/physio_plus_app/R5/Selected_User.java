@@ -1,10 +1,12 @@
-package com.example.physio_app;
+package com.example.physio_plus_app.R5;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.physio_plus_app.R;
 
 public class Selected_User extends AppCompatActivity  {
 
@@ -14,7 +16,7 @@ public class Selected_User extends AppCompatActivity  {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.selected_user);
+        setContentView(R.layout.selected_user_r5);
         infos = findViewById(R.id.userinfos);
         intent = getIntent();
 
