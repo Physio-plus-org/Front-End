@@ -7,4 +7,16 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!--Physio + Colours -->
+<!--R1-->
+    <color name="green">#008563</color>
+    <color name="orange">#F0AD4E</color>
+    <color name="blue">#2B00BC</color>
+    <color name="dark_grey">#707070</color>
+    <color name="light_grey">#C4C4C4</color>
+    <color name="green_yes">#0CDB0C</color>
+    <color name="red_no">#F95F5F</color>
+<!--R2-->
+    <color name="transparent">#00000000</color>
 </resources>

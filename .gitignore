@@ -86,7 +86,7 @@ lint/tmp/
 
 caches/
 .tmp/
-native/
 wrapper/
+native/
 daemon/
 android/
