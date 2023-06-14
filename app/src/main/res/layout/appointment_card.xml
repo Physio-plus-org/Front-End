@@ -1,0 +1,41 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/roundedshape"
+    android:elevation="8dp"
+    android:padding="16dp">
+
+    <!-- Date -->
+    <TextView
+        android:id="@+id/textDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="April 3, Monday"
+        android:textSize="18sp"
+        android:textColor="#000000" />
+
+    <!-- Time -->
+    <TextView
+        android:id="@+id/textTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="10:00 pm"
+        android:textSize="16sp"
+        android:textColor="#666666"
+        android:layout_marginTop="8dp" />
+
+    <!-- Patient Name -->
+    <TextView
+        android:id="@+id/textPatientName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Milios Filios"
+        android:textSize="20sp"
+        android:textColor="#000000"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp"
+        android:gravity="center" />
+
+</LinearLayout>
