@@ -6,9 +6,9 @@
                 android:topRightRadius="130dp"
                 android:bottomRightRadius="45dp"
                 android:bottomLeftRadius="25dp" />
-            <solid android:color="@color/SecondaryLightGrey" /> <!-- Set the desired background color -->
+            <solid android:color="@color/dark_grey" /> <!-- Set the desired background color -->
             <stroke
-                android:color="@color/PrimaryGreen"
+                android:color="@color/green"
                 android:width="4dp" /> <!-- Set the desired border color and width -->
         </shape>
     </item>

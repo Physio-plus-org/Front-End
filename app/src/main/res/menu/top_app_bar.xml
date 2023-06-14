@@ -14,7 +14,7 @@
         android:id="@+id/physiologo"
         android:contentDescription="@string/physiologo"
         android:icon="@drawable/physiologo"
-        android:iconTint="@color/PrimaryGreen"
+        android:iconTint="@color/green"
         android:title=""
         app:showAsAction="ifRoom"></item>
 
@@ -23,7 +23,7 @@
         android:id="@+id/text"
         android:contentDescription="@string/physiotext"
         android:icon="@drawable/physiotext"
-        android:iconTint="@color/PrimaryGreen"
+        android:iconTint="@color/green"
         android:title=""
         app:showAsAction="ifRoom"
         ></item>

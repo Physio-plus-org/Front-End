@@ -34,7 +34,8 @@
                     android:layout_height="65dp"
                     android:layout_weight="1"
                     android:backgroundTint="@color/white"
-                    app:srcCompat="@drawable/calendar_r3" />
+                    app:srcCompat="@drawable/calendar_r3"
+                    android:contentDescription="TODO" />
 
                 <ImageButton
                     android:id="@+id/imageButton6"
@@ -42,7 +43,8 @@
                     android:layout_height="65dp"
                     android:layout_weight="1"
                     android:backgroundTint="@color/white"
-                    app:srcCompat="@drawable/person_r3" />
+                    app:srcCompat="@drawable/person_r3"
+                    android:contentDescription="TODO" />
             </LinearLayout>
 
             <LinearLayout
@@ -99,7 +101,7 @@
                     android:backgroundTintMode="add"
                     android:drawableStart="@drawable/account_r3"
                     android:drawablePadding="8dp"
-                    android:hint="Όνομα"
+                    android:hint="@string/Όνομα"
                     android:padding="8sp"
                     android:textColor="#707070" />
 
@@ -114,7 +116,7 @@
                     android:backgroundTintMode="add"
                     android:drawableStart="@drawable/account_r3"
                     android:drawablePadding="8dp"
-                    android:hint="Επίθετο"
+                    android:hint="@string/Επίθετο"
                     android:padding="8sp"
                     android:textColor="#707070" />
 
@@ -131,7 +133,9 @@
                     android:drawablePadding="8dp"
                     android:hint="@string/r3_amka_label"
                     android:padding="8sp"
-                    android:textColor="#707070" />
+                    android:textColor="#707070"
+                    android:autofillHints=""
+                   />
 
                 <EditText
                     android:id="@+id/addess"
@@ -146,7 +150,9 @@
                     android:drawablePadding="8dp"
                     android:hint="@string/r3_address_label"
                     android:padding="8sp"
-                    android:textColor="#707070" />
+                    android:textColor="#707070"
+                    android:autofillHints=""
+                    android:inputType="" />
 
             </LinearLayout>
 
@@ -162,7 +168,8 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:backgroundTint="#008563"
-                    app:srcCompat="@drawable/cancel_r3" />
+                    app:srcCompat="@drawable/cancel_r3"
+                    android:contentDescription="TODO" />
 
                 <ImageButton
                     android:id="@+id/createbtn"
@@ -171,7 +178,8 @@
                     android:layout_weight="1"
                     android:backgroundTint="#008563"
                     android:onClick="onClick"
-                    app:srcCompat="@drawable/save_r3" />
+                    app:srcCompat="@drawable/save_r3"
+                    android:contentDescription="TODO" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

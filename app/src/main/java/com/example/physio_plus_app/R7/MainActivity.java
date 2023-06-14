@@ -1,4 +1,4 @@
-package com.example.physio_plus_app;
+package com.example.physio_plus_app.R7;
 
 
 import android.graphics.Color;
@@ -21,6 +21,8 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import com.example.physio_plus_app.Appointment;
+import com.example.physio_plus_app.R;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 

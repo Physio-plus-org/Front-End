@@ -19,7 +19,7 @@
             android:layout_centerVertical="true"
             android:layout_marginStart="30dp"
             android:contentDescription="@string/physiologo"
-            android:iconTint="@color/PrimaryGreen"
+            android:iconTint="@color/green"
             android:src="@drawable/physiologo"
             android:title=""
             app:showAsAction="ifRoom">
@@ -35,7 +35,7 @@
             android:layout_centerVertical="true"
             android:layout_toEndOf="@id/physiologo"
             android:contentDescription="@string/physiotext"
-            android:iconTint="@color/PrimaryGreen"
+            android:iconTint="@color/green"
             android:src="@drawable/physiotext"
             android:text="@string/physio"
             android:textSize="30sp"
@@ -55,7 +55,7 @@
             android:paddingEnd="34dp"
             android:paddingStart="0dp"
             android:contentDescription="@string/plusSign"
-            android:iconTint="@color/PrimaryGreen"
+            android:iconTint="@color/green"
             android:src="@drawable/baseline_add_24"
             android:title=""
             app:showAsAction="ifRoom">

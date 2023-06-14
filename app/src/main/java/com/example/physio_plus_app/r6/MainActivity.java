@@ -23,7 +23,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.TimeZone;
 
-public class MainActivity extends AppCompatActivity implements SelectListener {
+public class MainActivity extends AppCompatActivity implements com.example.physio_plus_app.SelectListener {
     private final String myIP = "192.168.1.100";
 
     @Override
@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity implements SelectListener {
         setContentView(R.layout.activity_main);
         Locale locale = new Locale("EL", "GR");
         Locale.setDefault(locale);
-        RequestEvent request = new RequestEvent();
+        com.example.physio_plus_app.RequestEvent request = new com.example.physio_plus_app.RequestEvent();
 
         final CollapsibleCalendar collapsibleCalendar = findViewById(R.id.calendarView);
         collapsibleCalendar.setCalendarListener(new CollapsibleCalendar.CalendarListener() {

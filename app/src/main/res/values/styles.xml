@@ -7,11 +7,11 @@
 <!--        <item  name="AccentBrightRed">#ff5c5c</item>-->
 <!--        <item  name="AccentOrange">#f0ad4e</item>-->
 
-        <item name="android:tint">@color/PrimaryGreen</item>
+        <item name="android:tint">@color/green</item>
     </style>
     <style name="AlertDialogButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
-        <item name="android:textColor">@color/cancelButton</item>
-        <item name="backgroundTint">@color/acceptButton</item>
+        <item name="android:textColor">@color/red_no</item>
+        <item name="backgroundTint">@color/green_yes</item>
     </style>
 
 
