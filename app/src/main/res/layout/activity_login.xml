@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".LoginActivity">
+
+    <Button
+        android:id="@+id/r1EnterButtonPSF"
+        android:layout_width="392dp"
+        android:layout_height="97dp"
+        android:layout_marginTop="22dp"
+        android:layout_weight="1"
+        android:backgroundTint="@color/black"
+        android:text="@string/r1EnterButtonPSF"
+        android:textSize="60sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.473"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/r1_enter_image" />
+
+    <Button
+        android:id="@+id/r1EnterButtonPhysio"
+        android:layout_width="392dp"
+        android:layout_height="97dp"
+        android:layout_marginTop="24dp"
+        android:layout_weight="1"
+        android:backgroundTint="@color/green"
+        android:text="@string/r1EnterButtonPhysio"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.473"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/r1EnterButtonPSF" />
+
+    <TextView
+        android:id="@+id/r1_enter_title"
+        android:layout_width="338dp"
+        android:layout_height="134dp"
+        android:layout_marginTop="8dp"
+        android:layout_weight="1"
+        android:text="@string/r1_enter_title"
+        android:textAlignment="center"
+        android:textColor="@color/green"
+        android:textSize="48sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/r1_enter_image"
+        android:layout_width="326dp"
+        android:layout_height="125dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/r1_enter_title"
+        app:srcCompat="@drawable/physio_logo_r1" />
+
+    <Button
+        android:id="@+id/r1EnterButtonPat"
+        android:layout_width="392dp"
+        android:layout_height="97dp"
+        android:layout_marginTop="27dp"
+        android:layout_weight="1"
+        android:backgroundTint="@color/orange"
+        android:text="@string/r1EnterButtonPat"
+        android:textAlignment="center"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.473"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/r1EnterButtonPhysio" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
