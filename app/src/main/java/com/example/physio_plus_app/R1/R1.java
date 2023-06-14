@@ -1,10 +1,13 @@
 package com.example.physio_plus_app.R1;
 
 import static android.app.PendingIntent.getActivity;
+import static android.content.ContentValues.TAG;
+import static android.webkit.ConsoleMessage.MessageLevel.LOG;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -22,7 +25,13 @@ public class R1 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_r1);
+        try {
+            setContentView(R.layout.activity_r1);
+        }catch (Exception e) {
+            Log.e(TAG,"im here");
+        }
+
+
 
         r1Button = findViewById(R.id.r1_button);
         namePhysioEditText = findViewById(R.id.namePhysio);
