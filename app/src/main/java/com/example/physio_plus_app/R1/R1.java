@@ -29,36 +29,33 @@ public class R1 extends AppCompatActivity {
         addressPhysioEditText = findViewById(R.id.addressPhysio);
         afmPhysioEditText = findViewById(R.id.afmPhysio);
 
-        r1Button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String namePhysio = namePhysioEditText.getText().toString();
-                String addressPhysio = addressPhysioEditText.getText().toString();
-                String afmPhysio = afmPhysioEditText.getText().toString();
+        r1Button.setOnClickListener(v -> {
+            String namePhysio = namePhysioEditText.getText().toString();
+            String addressPhysio = addressPhysioEditText.getText().toString();
+            String afmPhysio = afmPhysioEditText.getText().toString();
 
-                // Call the psfCreate method with the obtained data
-                try {
-                    String response = OkHttpHandler.psfCreate(namePhysio, addressPhysio, afmPhysio);
+            // Call the psfCreate method with the obtained data
+            try {
+                String response = OkHttpHandler.psfCreate(namePhysio, addressPhysio, afmPhysio);
 
-                    if (response.equals("Tax ID number already exists")) {
-                        Toast.makeText(R1.this, "Tax ID number already exists", Toast.LENGTH_SHORT).show();
-                    } else {
-                        Toast.makeText(R1.this, "Data written to database", Toast.LENGTH_SHORT).show();
+                if (response.equals("Tax ID number already exists")) {
+                    Toast.makeText(R1.this, "Tax ID number already exists", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(R1.this, "Data written to database", Toast.LENGTH_SHORT).show();
 
-                        // Clear the EditText fields
-                        namePhysioEditText.getText().clear();
-                        addressPhysioEditText.getText().clear();
-                        afmPhysioEditText.getText().clear();
-                    }
-
-                } catch (Exception e) {
-                    e.printStackTrace();
-                    Toast.makeText(R1.this, "Error writing data to database", Toast.LENGTH_SHORT).show();
+                    // Clear the EditText fields
+                    namePhysioEditText.getText().clear();
+                    addressPhysioEditText.getText().clear();
+                    afmPhysioEditText.getText().clear();
                 }
 
-
-
+            } catch (Exception e) {
+                e.printStackTrace();
+                Toast.makeText(R1.this, "Error writing data to database", Toast.LENGTH_SHORT).show();
             }
+
+
+
         });
     }
 }
