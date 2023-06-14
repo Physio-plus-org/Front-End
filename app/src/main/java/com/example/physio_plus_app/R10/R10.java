@@ -2,8 +2,6 @@ package com.example.physio_plus_app;
 
 import android.os.Bundle;
 import android.widget.LinearLayout;
-import android.widget.LinearLayout.LayoutParams;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,7 +12,7 @@ import java.io.IOException;
 import java.text.ParseException;
 import java.util.Hashtable;
 
-public class MainActivity extends AppCompatActivity {
+public class R10 extends AppCompatActivity {
     private FinancialHistory financialHistory;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

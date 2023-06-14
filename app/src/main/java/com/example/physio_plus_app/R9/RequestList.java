@@ -1,8 +1,8 @@
 package com.example.physio_plus_app;
 
 import org.joda.time.format.DateTimeFormat;
-import org.joda.time.format.DateTimeFormatter;
 
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 public class RequestList {
@@ -14,7 +14,7 @@ public class RequestList {
         String url = "http://"+ip+"/physio_app_db/requestCreate.php?range_start="+ range_start +"&range_end="+range_end;
 
         try {
-            OkHttpHandler okHttpHandler = new OkHttpHandler();
+            com.example.physio_plus_app.OkHttpHandler okHttpHandler = new OkHttpHandler();
             this.requestList = okHttpHandler.testPrint(url);
         } catch (Exception e) {
             e.printStackTrace();

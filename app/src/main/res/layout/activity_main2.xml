@@ -10,7 +10,7 @@
         android:id="@+id/bottom_navigation"
         android:layout_width="413dp"
         android:layout_height="54dp"
-        android:background="@color/orange"
+        android:background="@color/white"
         app:itemIconTint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -40,7 +40,7 @@
             android:layout_alignParentEnd="true"
             android:layout_marginStart="29dp"
             android:layout_marginEnd="117dp"
-            android:text="@string/hourLabel"
+            android:text="hour label"
             android:textSize="18sp"
             android:textStyle="bold" />
 
