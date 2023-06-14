@@ -6,13 +6,136 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="414dp"
+        android:layout_height="467dp"
+        android:layout_marginTop="-10dp"
+        android:layout_marginBottom="-10dp"
+        app:layout_constraintBottom_toTopOf="@+id/relativeLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.825"
+        app:srcCompat="@drawable/petr_magera_qxe8nptjwag_unsplash1"
+        android:contentDescription="@string/basicimage" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="415dp"
+        android:layout_height="407dp"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/roundly_background"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+
+        <TextView
+            android:id="@+id/requestLabelId"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="36dp"
+            android:layout_marginEnd="279dp"
+            android:text="@string/requestLabel"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/requestLabelId2"
+            android:layout_width="139dp"
+            android:layout_height="51dp"
+            android:layout_above="@+id/dayLabelId"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="37dp"
+            android:layout_marginEnd="171dp"
+            android:layout_marginBottom="0dp"
+            android:text="@string/reguest2Label"
+            android:textColor="@color/orange"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/dayLabelId"
+            android:layout_width="145dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/requestLabelId"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="252dp"
+            android:text="@string/dayLabel"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+
+        <!--        <Button-->
+        <!--            android:id="@+id/buttonNext"-->
+        <!--            android:layout_width="127dp"-->
+        <!--            android:layout_height="63dp"-->
+        <!--            android:layout_alignParentEnd="true"-->
+        <!--            android:layout_alignParentBottom="true"-->
+        <!--            android:layout_marginTop="6dp"-->
+        <!--            android:layout_marginEnd="8dp"-->
+        <!--            android:layout_marginBottom="13dp"-->
+        <!--            android:backgroundTint="@color/orange"-->
+        <!--            android:text="@string/nextButton" />-->
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:layout_below="@+id/dayLabelId"
+            android:layout_marginTop="63dp"
+            android:background="@color/lightgrey" />
+
+        <View
+            android:id="@+id/view1"
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="81dp"
+            android:background="@color/lightgrey" />
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fragmentContainerView"
+            android:name="com.example.physio_plus_app.DateFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/view2"
+            android:layout_alignBottom="@+id/view1"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="5dp"
+            tools:layout="@layout/fragment_month_picker" />
+
+
+    </RelativeLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="413dp"
+        android:layout_height="54dp"
+        android:layout_marginEnd="8dp"
+        android:background="@color/orange"
+        app:itemIconTint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:menu="@menu/bottomnavigationmenu" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

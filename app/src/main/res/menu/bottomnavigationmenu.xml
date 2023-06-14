@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/calendar"
+        android:icon="@drawable/baselinecalendarmonth_24"
+        android:titleTextColor="@android:color/white"
+        android:title=""
+        android:state_focused="true"
+        android:color="@color/lightwhite"
+        />
+    <item
+        android:id="@+id/money"
+        android:icon="@drawable/baselineeuro24"
+        android:title=""
+        android:state_focused="true"
+        android:color="@color/lightwhite"
+       />
+</menu>
