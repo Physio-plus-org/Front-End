@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="PrimaryGreen">#008563</color>
+    <color name="SecondaryLightGrey">#e1e1e1</color>
+    <color name="SecondaryDarkGrey">#1c1c1c</color>
+    <color name="AccentBrightRed">#ff5c5c</color>
+    <color name="AccentOrange">#f0ad4e</color>
+    <color name="acceptButton">#00FF00</color> <!-- Set your desired accept button color -->
+    <color name="cancelButton">#FF0000</color> <!-- Set your desired cancel button color -->
+
+</resources>
