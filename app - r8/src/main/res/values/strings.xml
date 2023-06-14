@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Physio_plus_App</string>
+    <string name="screen_title_first">Προσθήκη</string>
+    <string name="screen_title_second">Ραντεβού</string>
+    <string name="info_title">Στοιχεία Ασθενή</string>
+    <string name="full_name">Ονοματεπώνυμο</string>
+    <string name="personal_number">ΑΜΚΑ</string>
+    <string name="menu_title">Καταγραφή Ενεργειών</string>
+    <string name="service_title">Παροχές</string>
+    <string name="notes_hint">Σημειώσεις</string>
+    <string name="button_text">Καταχωρηση</string>
+    <string name="cost_hint">Κόστος</string>
+    <string name="date_hint">HH/MM/EE</string>
+    <string name="calendar_button">calendar_button</string>
+    <string name="date_value">%1$d/%2$d/%3$d</string>
+    <string name="spinner_prompt">Επιλέξτε Παροχή</string>
+</resources>
