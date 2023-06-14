@@ -34,34 +34,34 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/physio_logo_r4" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="188dp" />
+<!--    <androidx.constraintlayout.widget.Guideline-->
+<!--        android:id="@+id/guideline4"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="vertical"-->
+<!--        app:layout_constraintGuide_begin="188dp" />-->
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="80dp" />
+<!--    <androidx.constraintlayout.widget.Guideline-->
+<!--        android:id="@+id/guideline5"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        app:layout_constraintGuide_begin="80dp" />-->
 
-    <Button
-        android:id="@+id/button_calendar"
-        android:layout_width="70dp"
-        android:layout_height="50dp"
-        android:background="#00FFFFFF"
-        android:backgroundTint="#00FFFFFF"
-        android:foregroundTint="@color/white"
-        app:icon="@drawable/calendar_icon_r4"
-        app:iconPadding="2dp"
-        app:iconSize="28dp"
-        app:iconTint="@color/black"
-        app:layout_constraintBottom_toTopOf="@+id/guideline5"
-        app:layout_constraintEnd_toStartOf="@+id/button_profile"
-        app:layout_constraintTop_toTopOf="parent" />
+<!--    <Button-->
+<!--        android:id="@+id/button_calendar"-->
+<!--        android:layout_width="70dp"-->
+<!--        android:layout_height="50dp"-->
+<!--        android:background="#00FFFFFF"-->
+<!--        android:backgroundTint="#00FFFFFF"-->
+<!--        android:foregroundTint="@color/white"-->
+<!--        app:icon="@drawable/calendar_icon_r4"-->
+<!--        app:iconPadding="2dp"-->
+<!--        app:iconSize="28dp"-->
+<!--        app:iconTint="@color/black"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/guideline5"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/button_profile"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
 
     <Button
         android:id="@+id/button_profile"
