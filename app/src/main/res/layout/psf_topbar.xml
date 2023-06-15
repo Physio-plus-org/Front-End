@@ -24,7 +24,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_gravity="center">
 
 
                 <ImageView
@@ -32,6 +33,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:foregroundGravity="center"
+                    android:layout_gravity="center"
                     android:src="@drawable/go_back_button" />
 
                 <ImageView
@@ -41,13 +44,14 @@
                     android:layout_weight="1"
                     app:srcCompat="@drawable/physio_logo_r1" />
 
-                <Button
-                    android:id="@+id/calendar_btn"
+
+                <ImageView
+                    android:id="@+id/decoy_view"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Button"
-                    android:visibility="gone"/>
+                    android:src="@drawable/go_back_button"
+                    android:visibility="invisible"/>
 
                 <Button
                     android:id="@+id/profile_btn"
@@ -62,9 +66,10 @@
 
         </androidx.cardview.widget.CardView>
 
-        <LinearLayout
+        <View
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"></LinearLayout>
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"/>
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
