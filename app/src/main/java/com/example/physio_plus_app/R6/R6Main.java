@@ -29,9 +29,9 @@ public class R6Main extends AppCompatActivity implements com.example.physio_plus
         setContentView(R.layout.activity_main_r7);
         Locale locale = new Locale("EL", "GR");
         Locale.setDefault(locale);
-        com.example.physio_plus_app.RequestEvent request = new com.example.physio_plus_app.RequestEvent();
+       RequestEvent request = new RequestEvent();
 
-        final CollapsibleCalendar collapsibleCalendar = findViewById(R.id.calendarView);
+        final CollapsibleCalendar collapsibleCalendar = findViewById(R.id.calendarId);
         collapsibleCalendar.setCalendarListener(new CollapsibleCalendar.CalendarListener() {
             @Override
             public void onDayChanged() {
