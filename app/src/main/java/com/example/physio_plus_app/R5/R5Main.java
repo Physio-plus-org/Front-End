@@ -125,12 +125,14 @@ public class R5Main extends AppCompatActivity implements MyAdapter.UserClickList
 
 
 
-
+        calendarButton.setOnClickListener(v ->  CalendarFootbarButtonClickListener());
+        profileButton.setOnClickListener(v->addProfileFootbarButtonClickListener());
+//        goBackButtonClickListener(goBackButton);
 
 
     }
 
-    private void CalendarFootbarButtonClickListener(ImageView calendarButton) {
+    private void CalendarFootbarButtonClickListener() {
         Intent i = new Intent(R5Main.this, com.example.physio_plus_app.R6.R6Main.class );
         startActivity(i);
 
@@ -144,7 +146,7 @@ public class R5Main extends AppCompatActivity implements MyAdapter.UserClickList
 
     }
 
-    private void addProfileFootbarButtonClickListener(ImageView profileButton) {
+    private void addProfileFootbarButtonClickListener() {
         Intent i = new Intent(R5Main.this, com.example.physio_plus_app.R3.R3Main.class );
         startActivity(i);
 

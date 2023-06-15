@@ -55,12 +55,15 @@
     </RelativeLayout>
 
     <RelativeLayout
+        android:id="@+id/calendarViewContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/weekly_program_title"
-        android:background="@drawable/shape"
-        android:layout_margin="10dp"
-        android:id="@+id/calendarViewContainer">
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/shape">
 
         <com.shrikanthravi.collapsiblecalendarview.widget.CollapsibleCalendar
             android:id="@+id/calendarView"
@@ -87,7 +90,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/bottom_navigation"
+
         android:layout_below="@id/calendarViewContainer"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
@@ -136,15 +139,45 @@
             android:layout_marginBottom="15dp" />
     </RelativeLayout>
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigation"
-        android:layout_width="match_parent"
-        android:layout_height="55dp"
+    <LinearLayout
         android:background="@color/green"
-        app:itemIconTint="@color/white"
-        app:itemRippleColor="@color/green"
-        app:itemActiveIndicatorStyle="@style/ThemeOverlay.MaterialComponents.Toolbar.Primary"
-        android:layout_alignParentBottom="true"
-        app:menu="@menu/bottomnavigation" />
+        android:id="@+id/footerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentBottom="true">
+
+        <ImageView
+            android:id="@+id/calendarFootbar"
+            android:layout_width="195dp"
+            android:layout_height="60dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/footerroundedshape"
+            android:src="@drawable/baseline_calendar_month_24"
+            android:title=""
+            android:clickable="true"
+            app:showAsAction="ifRoom"></ImageView>
+
+
+        <ImageView
+            android:id="@+id/addPatientFootbar"
+            android:layout_width="195dp"
+            android:layout_height="60dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/footerroundedshape"
+            android:src="@drawable/baseline_person_add_24"
+            android:title=""
+            android:clickable="true"
+            app:showAsAction="ifRoom"></ImageView>
+
+
+    </LinearLayout>
+
 
 </RelativeLayout>

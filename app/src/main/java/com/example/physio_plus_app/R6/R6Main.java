@@ -6,11 +6,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.physio_plus_app.R;
+import com.example.physio_plus_app.R3.R3Main;
 import com.shrikanthravi.collapsiblecalendarview.data.Day;
 import com.shrikanthravi.collapsiblecalendarview.widget.CollapsibleCalendar;
 
@@ -23,15 +26,20 @@ import java.util.Locale;
 public class R6Main extends AppCompatActivity implements SelectListener {
     private final String myIP = "192.168.1.100";
 
+    private ImageView calendarButton;
+    private ImageView profileButton;
+
+    private ImageView goBackButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_r7);
+        setContentView(R.layout.activity_main_r6);
         Locale locale = new Locale("EL", "GR");
         Locale.setDefault(locale);
        RequestEvent request = new RequestEvent();
 
-        final CollapsibleCalendar collapsibleCalendar = findViewById(R.id.calendarId);
+        final CollapsibleCalendar collapsibleCalendar = findViewById(R.id.calendarView);
         collapsibleCalendar.setCalendarListener(new CollapsibleCalendar.CalendarListener() {
             @Override
             public void onDayChanged() {
@@ -90,6 +98,35 @@ public class R6Main extends AppCompatActivity implements SelectListener {
         createEvents(date_now, savedInstanceState);
         greekDateHandler(date_now);
 
+
+        calendarButton = findViewById(R.id.calendarFootbar);
+        profileButton = findViewById(R.id.addPatientFootbar);
+//        goBackButton = findViewById(R.id.goback);
+
+
+        calendarButton.setOnClickListener(v ->  CalendarFootbarButtonClickListener());
+        profileButton.setOnClickListener(v->addProfileFootbarButtonClickListener());
+//        goBackButton.setOnClickListener(v->goBackButtonClickListener());
+
+    }
+
+
+    private void CalendarFootbarButtonClickListener() {
+        recreate();
+
+
+    }
+
+    private void goBackButtonClickListener(ImageView goBackButton) {
+        Intent i = new Intent(R6Main.this, com.example.physio_plus_app.R6.R6Main.class );
+        startActivity(i);
+
+
+    }
+
+    private void addProfileFootbarButtonClickListener() {
+        Intent i = new Intent(R6Main.this, com.example.physio_plus_app.R3.R3Main.class );
+        startActivity(i);
 
 
     }

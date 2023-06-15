@@ -153,6 +153,7 @@
             android:background="@drawable/footerroundedshape"
             android:src="@drawable/baseline_calendar_month_24"
             android:title=""
+            android:clickable="true"
             app:showAsAction="ifRoom"></ImageView>
 
 
@@ -167,6 +168,7 @@
             android:background="@drawable/footerroundedshape"
             android:src="@drawable/baseline_person_add_24"
             android:title=""
+            android:clickable="true"
             app:showAsAction="ifRoom"></ImageView>
 
 

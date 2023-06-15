@@ -88,9 +88,9 @@ public class R7Main extends AppCompatActivity {
 
         CalendarTopBarClickListener(calendarTopBar);
 
-        CalendarFootbarButtonClickListener(calendarButton);
-        addProfileFootbarButtonClickListener(profileButton);
-        goBackButtonClickListener(goBackButton);
+        calendarButton.setOnClickListener(v ->  CalendarFootbarButtonClickListener());
+        profileButton.setOnClickListener(v->addProfileFootbarButtonClickListener());
+        goBackButton.setOnClickListener(v->goBackButtonClickListener());
 
 
         testConnection();
@@ -103,21 +103,21 @@ public class R7Main extends AppCompatActivity {
         recreate();
     }
 
-    private void CalendarFootbarButtonClickListener(ImageView calendarButton) {
+    private void CalendarFootbarButtonClickListener() {
         Intent i = new Intent(R7Main.this, com.example.physio_plus_app.R6.R6Main.class );
         startActivity(i);
 
 
     }
 
-    private void goBackButtonClickListener(ImageView goBackButton) {
+    private void goBackButtonClickListener() {
         Intent i = new Intent(R7Main.this, com.example.physio_plus_app.R6.R6Main.class );
         startActivity(i);
 
 
     }
 
-    private void addProfileFootbarButtonClickListener(ImageView profileButton) {
+    private void addProfileFootbarButtonClickListener() {
         Intent i = new Intent(R7Main.this, com.example.physio_plus_app.R3.R3Main.class );
         startActivity(i);
 
