@@ -41,7 +41,7 @@ import okhttp3.Response;
 
 
 public class R7Main extends AppCompatActivity {
-    private static final String TAG = "R6Main";
+    private static final String TAG = "R7Main";
     private RelativeLayout cardContainer;
 
     private ImageView calendarButton;

@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-public class R6Main extends AppCompatActivity implements com.example.physio_plus_app.SelectListener {
+public class R6Main extends AppCompatActivity implements SelectListener {
     private final String myIP = "192.168.1.100";
 
     @Override
