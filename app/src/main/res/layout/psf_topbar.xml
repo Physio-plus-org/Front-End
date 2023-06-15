@@ -32,8 +32,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    app:icon="@drawable/back_arrow_r1"
-                    app:iconTint="@color/black" />
+                    android:src="@drawable/go_back_button"/>
 
                 <ImageView
                     android:id="@+id/imageView4"
