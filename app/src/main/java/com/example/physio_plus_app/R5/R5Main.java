@@ -121,7 +121,7 @@ public class R5Main extends AppCompatActivity implements MyAdapter.UserClickList
 
         calendarButton = findViewById(R.id.calendarFootbar);
         profileButton = findViewById(R.id.addPatientFootbar);
-        goBackButton = findViewById(R.id.goback);
+//        goBackButton = findViewById(R.id.goback);
 
 
 
@@ -131,21 +131,21 @@ public class R5Main extends AppCompatActivity implements MyAdapter.UserClickList
     }
 
     private void CalendarFootbarButtonClickListener(ImageView calendarButton) {
-        Intent i = new Intent(R7Main.this, com.example.physio_plus_app.R6.R6Main.class );
+        Intent i = new Intent(R5Main.this, com.example.physio_plus_app.R6.R6Main.class );
         startActivity(i);
 
 
     }
 
     private void goBackButtonClickListener(ImageView goBackButton) {
-        Intent i = new Intent(R7Main.this, com.example.physio_plus_app.R6.R6Main.class );
+        Intent i = new Intent(R5Main.this, com.example.physio_plus_app.R6.R6Main.class );
         startActivity(i);
 
 
     }
 
     private void addProfileFootbarButtonClickListener(ImageView profileButton) {
-        Intent i = new Intent(R7Main.this, com.example.physio_plus_app.R3.R3Main.class );
+        Intent i = new Intent(R5Main.this, com.example.physio_plus_app.R3.R3Main.class );
         startActivity(i);
 
 
