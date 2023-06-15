@@ -18,6 +18,7 @@ public class R2 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().hide(); // Hide the action bar
         setContentView(R.layout.activity_main_r2);
 
         code = findViewById(R.id.codein);

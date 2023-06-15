@@ -1,17 +1,14 @@
 package com.example.physio_plus_app.R1;
 
-import static android.app.PendingIntent.getActivity;
 import static android.content.ContentValues.TAG;
-import static android.webkit.ConsoleMessage.MessageLevel.LOG;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.physio_plus_app.R;
 
@@ -25,6 +22,7 @@ public class R1 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().hide(); // Hide the action bar
         try {
             setContentView(R.layout.activity_r1);
         }catch (Exception e) {
