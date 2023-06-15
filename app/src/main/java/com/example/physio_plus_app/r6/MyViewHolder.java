@@ -1,4 +1,4 @@
-package com.example.physio_plus_app;
+package com.example.physio_plus_app.r6;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -12,6 +12,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.physio_plus_app.R;
 
 
 public class MyViewHolder extends RecyclerView.ViewHolder {

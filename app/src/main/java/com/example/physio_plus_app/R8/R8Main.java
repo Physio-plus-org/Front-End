@@ -1,4 +1,4 @@
-package com.example.physio_plus_app;
+package com.example.physio_plus_app.R8;
 
 import android.app.DatePickerDialog;
 import android.os.Bundle;
@@ -10,13 +10,15 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.physio_plus_app.R;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Collections;
 import java.util.List;
 
-public class R8 extends AppCompatActivity {
+public class R8Main extends AppCompatActivity {
 
     private TextView nameTextView;
     private TextView personalNumberTextView;
@@ -82,7 +84,7 @@ public class R8 extends AppCompatActivity {
     public void onCalendarClick(View view) {
         Calendar c = Calendar.getInstance();
         DatePickerDialog dpDialog = new DatePickerDialog (
-                R8.this,
+                R8Main.this,
                 (view1, year, month, dayOfMonth) -> dateTextView.setText(getString(R.string.date_value, dayOfMonth, (month+1), year)),
                 c.get(Calendar.YEAR),
                 c.get(Calendar.MONTH),

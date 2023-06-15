@@ -1,7 +1,9 @@
-package com.example.physio_plus_app;
+package com.example.physio_plus_app.R8;
 
 import android.os.StrictMode;
 import android.util.Log;
+
+import com.example.physio_plus_app.R8.RequestParams;
 
 import org.json.JSONArray;
 

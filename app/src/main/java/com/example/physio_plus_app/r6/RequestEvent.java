@@ -1,4 +1,4 @@
-package com.example.physio_plus_app;
+package com.example.physio_plus_app.r6;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -21,7 +21,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
-import com.example.physio_plus_app.Appointment;
+import com.example.physio_plus_app.R7.Appointment;
 import com.example.physio_plus_app.R;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -317,8 +317,8 @@ public class MainActivity extends AppCompatActivity {
                 textPatientName.setTextSize(18);
 
                 // Set text colors
-                textDate.setTextColor(ContextCompat.getColor(this, R.color.PrimaryGreen));
-                textTime.setTextColor(getResources().getColor(R.color.PrimaryGreen));
+                textDate.setTextColor(ContextCompat.getColor(this, R.color.green));
+                textTime.setTextColor(getResources().getColor(R.color.green));
                 textPatientName.setTextColor(Color.BLACK);
 
                 // Set OnClickListener on appointment card
@@ -342,7 +342,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void showAppointmentDialog(Appointment appointment) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this, R.style.AlertDialogTheme);
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this, R.style.AlertDialogButtonStyle);
         builder.setTitle("Απόφαση Ραντεβού");
         builder.setIcon(R.drawable.baseline_access_time_24);
 

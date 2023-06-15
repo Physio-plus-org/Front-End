@@ -1,4 +1,4 @@
-package com.example.physio_plus_app;
+package com.example.physio_plus_app.r6;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -9,6 +9,9 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.physio_plus_app.R;
+import com.example.physio_plus_app.r6.MyViewHolder;
 
 import java.util.List;
 

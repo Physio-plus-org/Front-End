@@ -1,4 +1,6 @@
-package com.example.physio_plus_app;
+package com.example.physio_plus_app.r6;
+
+import android.os.Build;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -42,7 +44,8 @@ public class Event {
 
     public String getDateString() {
         //TODO return String. LocalTimeFormatter
-        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("HH:mm");
+        DateTimeFormatter dateTimeFormatter = null;
+        dateTimeFormatter = DateTimeFormatter.ofPattern("HH:mm");
         dateString = date_time.format(dateTimeFormatter);
         return dateString;
     }

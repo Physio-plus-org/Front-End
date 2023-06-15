@@ -1,6 +1,9 @@
-package com.example.physio_plus_app;
+package com.example.physio_plus_app.r6;
 
 import android.os.StrictMode;
+
+import com.example.physio_plus_app.R;
+import com.example.physio_plus_app.r6.Event;
 
 import org.json.JSONArray;
 import org.json.JSONException;
