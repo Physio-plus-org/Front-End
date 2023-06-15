@@ -6,7 +6,7 @@
                 android:topRightRadius="130dp"
                 android:bottomRightRadius="45dp"
                 android:bottomLeftRadius="25dp" />
-            <solid android:color="@color/colorAccent" /> <!-- Set the desired background color -->
+            <solid android:color="@color/green" /> <!-- Set the desired background color -->
         </shape>
     </item>
     <item android:top="8dp" android:right="8dp">

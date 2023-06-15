@@ -72,7 +72,8 @@
                 android:layout_height="match_parent"
                 android:src="@drawable/baseline_calendar_today_24"
                 android:clickable="true"
-                android:contentDescription="@string/todo">
+                android:contentDescription="@string/todo"
+                android:focusable="true">
             </ImageView>
 
             <!-- Red Bubble -->

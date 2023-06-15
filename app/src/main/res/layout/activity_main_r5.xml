@@ -5,7 +5,7 @@
     android:id="@+id/relative_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".R5">
+    tools:context=".R5.R5">
 
 
     <ScrollView

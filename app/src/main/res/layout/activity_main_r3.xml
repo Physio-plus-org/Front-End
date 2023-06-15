@@ -133,7 +133,8 @@
                     android:drawablePadding="8dp"
                     android:hint="@string/amka_label"
                     android:padding="8sp"
-                    android:textColor="#707070" />
+                    android:textColor="#707070"
+                    tools:ignore="Autofill,TextFields" />
 
                 <EditText
                     android:id="@+id/addess"
@@ -148,7 +149,8 @@
                     android:drawablePadding="8dp"
                     android:hint="@string/address_label"
                     android:padding="8sp"
-                    android:textColor="#707070" />
+                    android:textColor="#707070"
+                    tools:ignore="Autofill,TextFields" />
 
             </LinearLayout>
 
