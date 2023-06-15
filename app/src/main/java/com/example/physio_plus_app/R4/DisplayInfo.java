@@ -45,15 +45,15 @@ public class DisplayInfo {
         client.newCall(request).enqueue(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
-                Log.d("MainActivity","Call failure!"+ e.getMessage());
+                Log.d("R6Main","Call failure!"+ e.getMessage());
             }
 
             @Override
             public void onResponse(Call call, Response response) throws IOException {
-                Log.d("MainActivity","Call Responded!");
+                Log.d("R6Main","Call Responded!");
                 if (response.isSuccessful()) {
                     String json = response.body().string();
-                    Log.d("MainActivity", "Server response: " + json);
+                    Log.d("R6Main", "Server response: " + json);
 
                     try {
                         JSONObject jsonObject = new JSONObject(json);
@@ -61,20 +61,20 @@ public class DisplayInfo {
                         String address = jsonObject.getString("address");
                         String age = jsonObject.getString(("age"));
                         // Use the name variable as needed
-                        Log.d("MainActivity", "Name set to: " + name);
-                        Log.d("MainActivity","Address set to:" + address);
-                        Log.d("MainActivity","Age set to:" + age);
+                        Log.d("R6Main", "Name set to: " + name);
+                        Log.d("R6Main","Address set to:" + address);
+                        Log.d("R6Main","Age set to:" + age);
 
                         name_tv.post(()->name_tv.setText(name));
                         address_tv.post(()->address_tv.setText(address));
                         age_tv.post(()->age_tv.setText(age));
                     } catch (JSONException e) {
                         // Handle JSON parsing error
-                        Log.e("MainActivity", "JSON parsing error", e);
+                        Log.e("R6Main", "JSON parsing error", e);
                     }
                 } else {
                     //code
-                    Log.e("MainActivity", "Error response: " + response.code());
+                    Log.e("R6Main", "Error response: " + response.code());
                 }
                 response.close();
                 Log.d("DisplayInfo", "Responce closed");

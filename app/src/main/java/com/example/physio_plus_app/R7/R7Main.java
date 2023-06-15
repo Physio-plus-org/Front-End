@@ -1,6 +1,7 @@
 package com.example.physio_plus_app.R7;
 
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -11,6 +12,7 @@ import android.text.style.StyleSpan;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -21,7 +23,6 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
-import com.example.physio_plus_app.R7.Appointment;
 import com.example.physio_plus_app.R;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -39,12 +40,19 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 
 
-public class MainActivity extends AppCompatActivity {
-    private static final String TAG = "MainActivity";
+public class R7Main extends AppCompatActivity {
+    private static final String TAG = "R6Main";
     private RelativeLayout cardContainer;
 
-    TextView redBubble;
+    private ImageView calendarButton;
+    private ImageView profileButton;
+
+    private ImageView goBackButton;
+
+    private TextView redBubble;
     private Gson gson;
+
+
     private OkHttpClient client;
     private final StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
 
@@ -58,12 +66,17 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main_r7);
         View calendarTopBar = findViewById(R.id.calendarTopBar);
         StrictMode.setThreadPolicy(policy);
 
 
         cardContainer = findViewById(R.id.cardContainer);
+
+        calendarButton = findViewById(R.id.calendarFootbar);
+        profileButton = findViewById(R.id.addPatientFootbar);
+        goBackButton = findViewById(R.id.goback);
+
 
         redBubble = findViewById(R.id.redBubbleText);
         redBubble.setVisibility(View.GONE);
@@ -73,17 +86,89 @@ public class MainActivity extends AppCompatActivity {
         client = new OkHttpClient();
 
 
-        setCalendarTopBarClickListener(calendarTopBar);
+        CalendarTopBarClickListener(calendarTopBar);
+
+        CalendarFootbarButtonClickListener(calendarButton);
+        addProfileFootbarButtonClickListener(profileButton);
+        goBackButtonClickListener(goBackButton);
+
+
         testConnection();
         fetchUpcomingAppointments();
 
+
     }
 
-    private void setCalendarTopBarClickListener(View calendarTopBar) {
+    private void redirectToAppointmentsPage() {
+        recreate();
+    }
+
+    private void CalendarFootbarButtonClickListener(ImageView calendarButton) {
+        Intent i = new Intent(R7Main.this, com.example.physio_plus_app.R6.R6Main.class );
+        startActivity(i);
+
+
+    }
+
+    private void goBackButtonClickListener(ImageView goBackButton) {
+        Intent i = new Intent(R7Main.this, com.example.physio_plus_app.R6.R6Main.class );
+        startActivity(i);
+
+
+    }
+
+    private void addProfileFootbarButtonClickListener(ImageView profileButton) {
+        Intent i = new Intent(R7Main.this, com.example.physio_plus_app.R3.R3Main.class );
+        startActivity(i);
+
+
+    }
+
+
+    private void CalendarTopBarClickListener(View calendarTopBar) {
 
         calendarTopBar.setOnClickListener(v -> fetchUpcomingAppointmentsForDropdown());
 
     }
+    private void addPatientFootbarButtonClickListener(ImageView calendarButton) {
+        Intent i = new Intent(R7Main.this, com.example.physio_plus_app.R6.R6Main.class );
+        startActivity(i);
+
+
+    }
+
+
+
+
+    private void testConnection() {
+        Request request = new Request.Builder()
+                .url(TESTCON_URL)
+                .build();
+
+        client.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(@NonNull Call call, @NonNull IOException e) {
+                // Handle network request failure
+                Log.e(TAG, "Failed to test connection: " + e.getMessage());
+                runOnUiThread(() -> Toast.makeText(R7Main.this, "Failed to test connection", Toast.LENGTH_SHORT).show());
+            }
+
+            @Override
+            public void onResponse(@NonNull Call call, @NonNull Response response) {
+                // Handle network request success
+                if (response.isSuccessful()) {
+                    // Connection is successful
+                    Log.d(TAG, "Connection test successful");
+                    runOnUiThread(() -> Toast.makeText(R7Main.this, "Connection test successful", Toast.LENGTH_SHORT).show());
+                } else {
+                    // Connection is unsuccessful
+                    Log.e(TAG, "Failed to test connection. Response code: " + response.code());
+                    runOnUiThread(() -> Toast.makeText(R7Main.this, "Failed to test connection", Toast.LENGTH_SHORT).show());
+                }
+            }
+        });
+    }
+
 
     private void fetchUpcomingAppointmentsForDropdown() {
 
@@ -98,7 +183,7 @@ public class MainActivity extends AppCompatActivity {
                 // Handle network request failure
                 Log.e(TAG, "Failed to fetch upcoming appointments for dropdown: " + e.getMessage());
                 e.printStackTrace();
-                runOnUiThread(() -> Toast.makeText(MainActivity.this, "Failed to fetch upcoming appointments", Toast.LENGTH_SHORT).show());
+                runOnUiThread(() -> Toast.makeText(R7Main.this, "Failed to fetch upcoming appointments", Toast.LENGTH_SHORT).show());
             }
 
             @Override
@@ -125,7 +210,7 @@ public class MainActivity extends AppCompatActivity {
                     } else {
                         // Handle unsuccessful response
                         Log.e(TAG, "Failed to fetch upcoming appointments for dropdown. Response code: " + response.code());
-                        runOnUiThread(() -> Toast.makeText(MainActivity.this, "Failed to fetch upcoming appointments", Toast.LENGTH_SHORT).show());
+                        runOnUiThread(() -> Toast.makeText(R7Main.this, "Failed to fetch upcoming appointments", Toast.LENGTH_SHORT).show());
                     }
                 } catch (IOException e) {
                     Log.e(TAG, "Exception occurred while processing network response: " + e.getMessage());
@@ -136,7 +221,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void showAppointmentDropdown(List<Appointment> appointments) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        AlertDialog.Builder builder = new AlertDialog.Builder(R7Main.this);
         builder.setTitle("Επερχόμενα Ραντεβού");
         builder.setIcon(R.drawable.baseline_access_time_24);
 
@@ -198,41 +283,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    private void redirectToAppointmentsPage() {
-        recreate();
-    }
-
-
-    private void testConnection() {
-        Request request = new Request.Builder()
-                .url(TESTCON_URL)
-                .build();
-
-        client.newCall(request).enqueue(new Callback() {
-            @Override
-            public void onFailure(@NonNull Call call, @NonNull IOException e) {
-                // Handle network request failure
-                Log.e(TAG, "Failed to test connection: " + e.getMessage());
-                runOnUiThread(() -> Toast.makeText(MainActivity.this, "Failed to test connection", Toast.LENGTH_SHORT).show());
-            }
-
-            @Override
-            public void onResponse(@NonNull Call call, @NonNull Response response) {
-                // Handle network request success
-                if (response.isSuccessful()) {
-                    // Connection is successful
-                    Log.d(TAG, "Connection test successful");
-                    runOnUiThread(() -> Toast.makeText(MainActivity.this, "Connection test successful", Toast.LENGTH_SHORT).show());
-                } else {
-                    // Connection is unsuccessful
-                    Log.e(TAG, "Failed to test connection. Response code: " + response.code());
-                    runOnUiThread(() -> Toast.makeText(MainActivity.this, "Failed to test connection", Toast.LENGTH_SHORT).show());
-                }
-            }
-        });
-    }
-
-
     private void fetchUpcomingAppointments() {
         Request request = new Request.Builder()
                 .url(UPCOMING_APPOINTMENTS_URL)
@@ -243,7 +293,7 @@ public class MainActivity extends AppCompatActivity {
             public void onFailure(@NonNull Call call, @NonNull IOException e) {
                 // Handle network request failure
                 Log.e(TAG, "Failed to fetch upcoming appointments: " + e.getMessage());
-                runOnUiThread(() -> Toast.makeText(MainActivity.this, "Failed to fetch upcoming appointments", Toast.LENGTH_SHORT).show());
+                runOnUiThread(() -> Toast.makeText(R7Main.this, "Failed to fetch upcoming appointments", Toast.LENGTH_SHORT).show());
             }
 
             @Override
@@ -266,7 +316,7 @@ public class MainActivity extends AppCompatActivity {
                     } else {
                         // Handle unsuccessful response
                         Log.e(TAG, "Failed to fetch upcoming appointments. Response code: " + response.code());
-                        runOnUiThread(() -> Toast.makeText(MainActivity.this, "Failed to fetch upcoming appointments", Toast.LENGTH_SHORT).show());
+                        runOnUiThread(() -> Toast.makeText(R7Main.this, "Failed to fetch upcoming appointments", Toast.LENGTH_SHORT).show());
                     }
                 } catch (IOException e) {
                     Log.e(TAG, "Exception occurred while processing network response: " + e.getMessage());
@@ -300,7 +350,7 @@ public class MainActivity extends AppCompatActivity {
         // Iterate through the appointments list and create/update the appointment cards
         for (Appointment appointment : appointments) {
             try {
-                View appointmentCard = getLayoutInflater().inflate(R.layout.appointment_card, appointmentCardsContainer, false);
+                View appointmentCard = getLayoutInflater().inflate(R.layout.appointment_card_r7, appointmentCardsContainer, false);
 
                 // Populate the appointment card with data from the appointment object
                 TextView textDate = appointmentCard.findViewById(R.id.textDate);
@@ -338,11 +388,8 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-
-
-
     private void showAppointmentDialog(Appointment appointment) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this, R.style.AlertDialogButtonStyle);
+        AlertDialog.Builder builder = new AlertDialog.Builder(R7Main.this, R.style.AlertDialogButtonStyle);
         builder.setTitle("Απόφαση Ραντεβού");
         builder.setIcon(R.drawable.baseline_access_time_24);
 
@@ -421,5 +468,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+
 
 }
