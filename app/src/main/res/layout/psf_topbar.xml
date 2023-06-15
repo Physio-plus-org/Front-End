@@ -27,12 +27,12 @@
                 android:orientation="horizontal">
 
 
-                <Button
-                    android:id="@+id/button3"
+                <ImageView
+                    android:id="@+id/back_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:src="@drawable/go_back_button"/>
+                    android:src="@drawable/go_back_button" />
 
                 <ImageView
                     android:id="@+id/imageView4"
@@ -42,7 +42,7 @@
                     app:srcCompat="@drawable/physio_logo_r1" />
 
                 <Button
-                    android:id="@+id/button2"
+                    android:id="@+id/calendar_btn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -50,7 +50,7 @@
                     android:visibility="gone"/>
 
                 <Button
-                    android:id="@+id/button"
+                    android:id="@+id/profile_btn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
