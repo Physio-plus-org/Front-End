@@ -3,10 +3,43 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="bottom|center_horizontal"
     android:orientation="horizontal"
-    android:layout_gravity="bottom|center_horizontal">
+    android:background="@color/black"
+    android:id="@+id/footerLayout"
+    android:layout_alignParentBottom="true">
 
-    
+
+
+
+    <ImageView
+        android:id="@+id/physiocenter_btn"
+        android:layout_width="195dp"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/footerroundedshape"
+        android:src="@drawable/baseline_local_hospital_24"
+        android:title=""
+        app:showAsAction="ifRoom"></ImageView>
+
+
+    <ImageView
+        android:id="@+id/physio_btn"
+        android:layout_width="195dp"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/footerroundedshape"
+        android:src="@drawable/baseline_sports_gymnastics_24"
+        android:title=""
+        app:showAsAction="ifRoom"></ImageView>
+
 
 </LinearLayout>
