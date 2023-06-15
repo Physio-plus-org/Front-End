@@ -13,9 +13,6 @@
         android:orientation="vertical">
 
 
-
-
-
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/appbar"
 
@@ -33,19 +30,8 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <ImageButton
-                        android:id="@+id/backButton"
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
-                        android:layout_marginTop="24dp"
-                        android:background="@drawable/go_back_button"
-                        android:contentDescription="@string/back"
-                        app:layout_constraintEnd_toStartOf="@+id/physio_logo"
-                        app:layout_constraintHorizontal_bias="0.0"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                    android:layout_height="match_parent"
+                    android:src="@layout/psf_topbar">
                 </LinearLayout>
 
                 <ImageView
