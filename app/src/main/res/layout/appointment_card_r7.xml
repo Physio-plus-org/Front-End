@@ -12,7 +12,7 @@
         android:id="@+id/textDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="April 3, Monday"
+        android:text="@string/april_3_monday"
         android:textSize="18sp"
         android:textColor="#000000" />
 
@@ -21,9 +21,9 @@
         android:id="@+id/textTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="10:00 pm"
+        android:text="@string/_10_00_pm"
         android:textSize="16sp"
-        android:textColor="#666666"
+        android:textColor="#FFFFFF"
         android:layout_marginTop="8dp" />
 
     <!-- Patient Name -->
@@ -31,7 +31,7 @@
         android:id="@+id/textPatientName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Milios Filios"
+        android:text="@string/milios_filios"
         android:textSize="20sp"
         android:textColor="#000000"
         android:layout_gravity="center_horizontal"

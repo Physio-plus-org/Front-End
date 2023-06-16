@@ -72,7 +72,7 @@
                 android:layout_height="match_parent"
                 android:src="@drawable/baseline_calendar_today_24"
                 android:clickable="true"
-                android:contentDescription="@string/todo"
+                android:contentDescription="@string/calendar_icon"
                 android:focusable="true">
             </ImageView>
 
@@ -145,8 +145,8 @@
             android:id="@+id/calendarFootbar"
             android:layout_width="195dp"
             android:layout_height="60dp"
-            android:layout_alignParentStart="true"
-            android:layout_centerVertical="true"
+
+
             android:layout_marginStart="5dp"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="10dp"
@@ -154,6 +154,7 @@
             android:src="@drawable/baseline_calendar_month_24"
             android:title=""
             android:clickable="true"
+            android:contentDescription="@string/calendar_footbar"
             app:showAsAction="ifRoom"></ImageView>
 
 
@@ -161,14 +162,13 @@
             android:id="@+id/addPatientFootbar"
             android:layout_width="195dp"
             android:layout_height="60dp"
-            android:layout_alignParentStart="true"
-            android:layout_centerVertical="true"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="10dp"
             android:background="@drawable/footerroundedshape"
             android:src="@drawable/baseline_person_add_24"
             android:title=""
             android:clickable="true"
+            android:contentDescription="@string/patient_footbar"
             app:showAsAction="ifRoom"></ImageView>
 
 
