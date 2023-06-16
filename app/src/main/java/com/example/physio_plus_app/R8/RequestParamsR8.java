@@ -1,12 +1,12 @@
-package com.example.physio_plus_app;
+package com.example.physio_plus_app.R8;
 
 import java.util.Hashtable;
 import java.util.Iterator;
 import java.util.List;
 
-public class RequestParams {
+public class RequestParamsR8 {
     private Hashtable<String, String> params;
-    public RequestParams() {
+    public RequestParamsR8() {
         this.params = new Hashtable<>();
     }
     public void add(String key, String value) {

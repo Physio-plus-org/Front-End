@@ -1,15 +1,15 @@
-package com.example.physio_plus_app;
+package com.example.physio_plus_app.R8;
 
 import androidx.annotation.NonNull;
 
 import java.util.Locale;
 
-public class Service {
+public class ServiceR8 {
     private final String title;
     private final String description;
     private final String code;
     private final double cost;
-    public Service(String title, String description, String code, double cost) {
+    public ServiceR8(String title, String description, String code, double cost) {
         this.title = title;
         this.description = description;
         this.code = code;

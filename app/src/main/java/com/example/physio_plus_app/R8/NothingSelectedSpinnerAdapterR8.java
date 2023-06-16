@@ -1,4 +1,4 @@
-package com.example.physio_plus_app;
+package com.example.physio_plus_app.R8;
 
 import android.content.Context;
 import android.database.DataSetObserver;
@@ -12,7 +12,7 @@ import android.widget.SpinnerAdapter;
  * Decorator Adapter to allow a Spinner to show a 'Nothing Selected...' initially
  * displayed instead of the first choice in the Adapter.
  */
-public class NothingSelectedSpinnerAdapter implements SpinnerAdapter, ListAdapter {
+public class NothingSelectedSpinnerAdapterR8 implements SpinnerAdapter, ListAdapter {
 
     protected static final int EXTRA = 1;
     protected SpinnerAdapter adapter;
@@ -29,7 +29,7 @@ public class NothingSelectedSpinnerAdapter implements SpinnerAdapter, ListAdapte
      * you want text grayed out like a prompt...
      * @param context
      */
-    public NothingSelectedSpinnerAdapter(
+    public NothingSelectedSpinnerAdapterR8(
             SpinnerAdapter spinnerAdapter,
             int nothingSelectedLayout, Context context) {
 
@@ -48,8 +48,8 @@ public class NothingSelectedSpinnerAdapter implements SpinnerAdapter, ListAdapte
      * the dropdown.
      * @param context
      */
-    public NothingSelectedSpinnerAdapter(SpinnerAdapter spinnerAdapter,
-                                         int nothingSelectedLayout, int nothingSelectedDropdownLayout, Context context) {
+    public NothingSelectedSpinnerAdapterR8(SpinnerAdapter spinnerAdapter,
+                                           int nothingSelectedLayout, int nothingSelectedDropdownLayout, Context context) {
         this.adapter = spinnerAdapter;
         this.context = context;
         this.nothingSelectedLayout = nothingSelectedLayout;

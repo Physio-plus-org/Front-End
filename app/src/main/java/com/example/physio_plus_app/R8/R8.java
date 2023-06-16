@@ -1,4 +1,4 @@
-package com.example.physio_plus_app;
+package com.example.physio_plus_app.R8;
 
 import android.app.DatePickerDialog;
 import android.os.Bundle;
@@ -9,6 +9,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.physio_plus_app.R;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -21,8 +23,8 @@ public class R8 extends AppCompatActivity {
     private TextView nameTextView;
     private TextView personalNumberTextView;
     private Spinner servicesSpinner;
-    private ArrayAdapter<Service> dataAdapter;
-   private final ArrayList<Service> servicesList = new ArrayList<>();
+    private ArrayAdapter<ServiceR8> dataAdapter;
+   private final ArrayList<ServiceR8> servicesList = new ArrayList<>();
     private TextView notesTextView;
     private TextView dateTextView;
     private final String HOST = "192.168.1.7";
@@ -30,7 +32,7 @@ public class R8 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_r8);
+        setContentView(R.layout.activity_r8);
 
         this.nameTextView = findViewById(R.id.full_name);
         this.personalNumberTextView = findViewById(R.id.personal_number);
@@ -42,9 +44,9 @@ public class R8 extends AppCompatActivity {
         /*this.dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);*/
         /*this.servicesSpinner.setAdapter(this.dataAdapter);*/
         this.servicesSpinner.setAdapter(
-                new NothingSelectedSpinnerAdapter(
+                new NothingSelectedSpinnerAdapterR8(
                         this.dataAdapter,
-                        R.layout.no_item,
+                        R.layout.no_item_r8,
                         //R.layout.contact_spinner_nothing_selected_dropdown, // Optional
                         this
                 )
@@ -67,12 +69,12 @@ public class R8 extends AppCompatActivity {
     }
     protected void SubmitRegistry() throws Exception {
         String url = urlRoot + "registerAction.php";
-        RequestParams params = new RequestParams();
+        RequestParamsR8 params = new RequestParamsR8();
         params.add("date", formatDate(this.dateTextView.getText().toString()));
         params.add("note", this.notesTextView.getText().toString());
         params.add("service_id", this.servicesList.get(this.servicesSpinner.getSelectedItemPosition()).getCode());
         params.add("patient_id", this.personalNumberTextView.getText().toString());
-        RegistryHttpHandler.request(url, params);
+        RegistryHttpHandlerR8.request(url, params);
     }
     protected String formatDate(String dateText) {
         List<String> dateList = Arrays.asList(dateText.split("/"));
@@ -90,7 +92,7 @@ public class R8 extends AppCompatActivity {
         );
         dpDialog.show();
     }
-    protected void PatientInformationSetting(Patient patient) {
+    protected void PatientInformationSetting(PatientR8 patient) {
         String fullName = patient.getFullName();
         String pNumber = patient.getIdNumber();
         this.nameTextView.setText(fullName);
@@ -98,20 +100,20 @@ public class R8 extends AppCompatActivity {
     }
     protected void PatientInitializationRequest() throws Exception {
         String url = this.urlRoot + "patientRequest.php";
-        RequestParams params = new RequestParams();
+        RequestParamsR8 params = new RequestParamsR8();
         params.add("patient_id", "*");
-        ArrayList<Patient> patients = PatientHttpHandler.request(url, params);
+        ArrayList<PatientR8> patients = PatientHttpHandlerR8.request(url, params);
         if (patients == null) throw new Exception();
         PatientInformationSetting(patients.get(0));
     }
-    protected void ServicesSpinnerPopulation(ArrayList<Service> services) {
+    protected void ServicesSpinnerPopulation(ArrayList<ServiceR8> services) {
         this.servicesList.clear();
         this.servicesList.addAll(services);
         this.dataAdapter.notifyDataSetChanged();
     }
     protected void ServicesInitializationRequest() throws Exception {
         String url = this.urlRoot + "serviceRequest.php";
-        ArrayList<Service> services = ServiceHttpHandler.request(url, null);
+        ArrayList<ServiceR8> services = ServiceHttpHandlerR8.request(url, null);
         if (services == null) throw new Exception();
         ServicesSpinnerPopulation(services);
     }
