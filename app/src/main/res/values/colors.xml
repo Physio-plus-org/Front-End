@@ -48,4 +48,8 @@
     <color name="black">#FF000000</color>
 
     <color name="transparent">#00FFFFFF</color>
+<!--R9-->
+    <color name="light_white">#ADFFFFFF</color>
+    <color name="orange">#F0AD4E</color>
+    <color name="light_orange">#B7ECAD55</color>
 </resources>

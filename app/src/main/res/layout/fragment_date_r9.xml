@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/child_fragment_container"
+    tools:context=".R9.DateFragmentR9">
+
+<!--    <androidx.fragment.app.FragmentContainerView-->
+<!--        android:id="@+id/fragmentContainerView"-->
+<!--        android:name="com.example.physio_plus_app.MonthPickerFragmentR9R9"-->
+<!--        android:layout_width="412dp"-->
+<!--        android:layout_height="191dp"-->
+<!--        android:layout_above="@+id/buttonNext"-->
+<!--        android:layout_below="@+id/dayLabelId"-->
+<!--        android:layout_alignParentStart="true"-->
+<!--        android:layout_alignParentEnd="true"-->
+<!--        android:layout_marginStart="3dp"-->
+<!--        android:layout_marginTop="15dp"-->
+<!--        android:layout_marginEnd="0dp"-->
+<!--        android:layout_marginBottom="21dp"-->
+<!--        tools:layout="@layout/fragment_month_picker" />-->
+
+
+<!--    <androidx.fragment.app.FragmentContainerView-->
+<!--        android:id="@+id/fragmentContainerView2"-->
+<!--        android:name="com.example.physio_plus_app.MonthPickerFragmentR9R9"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="176dp"-->
+<!--        tools:layout="@layout/fragment_month_picker" />-->
+</FrameLayout>
