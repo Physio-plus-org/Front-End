@@ -13,5 +13,5 @@ dependencyResolutionManagement {
         maven { url 'https://jitpack.io' }
     }
 }
-rootProject.name = "Physio_plus_App"
+rootProject.name = "physio_plus_app"
 include ':app'
