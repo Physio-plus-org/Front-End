@@ -85,11 +85,10 @@ lint/tmp/
 # lint/reports/
 
 *.lock
-
-.tmp/
-android/
-
+jdks/
 caches/
+.tmp/
 wrapper/
 native/
 daemon/
+android/

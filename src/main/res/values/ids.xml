@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="appointmentCard" type="id" />
+    <item name="dateTextView" type="id" />
+    <item name="timeTextView" type="id" />
+    <item name="patientTextView" type="id" />
+    <item name="textPatientName" type="id" />
+    <item name="textTime" type="id" />
+    <item name="textDate" type="id" />
+    <item name="RequestAppoint" type="id" />
+    <item name="appointment1" type="id" />
+    <item name="appointment2" type="id" />
+    <item name="appointment3" type="id" />
+</resources>
