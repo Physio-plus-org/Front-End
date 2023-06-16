@@ -58,7 +58,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/weekly_program_title"
-        android:background="@drawable/shape_r6"
+        android:background="@drawable/r6_shape"
         android:layout_margin="10dp"
         android:id="@+id/calendarViewContainer">
 
@@ -93,7 +93,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="20dp"
-        android:background="@drawable/roundly_light_view_r6">
+        android:background="@drawable/r6_roundly_light_view">
 
         <TextView
             android:layout_width="wrap_content"

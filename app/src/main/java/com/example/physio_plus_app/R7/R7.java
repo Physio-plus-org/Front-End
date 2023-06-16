@@ -57,7 +57,7 @@ public class R7 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_r7);
+        setContentView(R.layout.r7_activity);
         View calendarTopBar = findViewById(R.id.calendarTopBar);
         StrictMode.setThreadPolicy(policy);
 
@@ -137,7 +137,7 @@ public class R7 extends AppCompatActivity {
     private void showAppointmentDropdown(List<AppointmentR7> appointments) {
         AlertDialog.Builder builder = new AlertDialog.Builder(R7.this);
         builder.setTitle("Επερχόμενα Ραντεβού");
-        builder.setIcon(R.drawable.baseline_access_time_24_r7);
+        builder.setIcon(R.drawable.r7_baseline_access_time_24);
 
         int upcomingAppointmentsCount = appointments.size();
 
@@ -299,7 +299,7 @@ public class R7 extends AppCompatActivity {
         // Iterate through the appointments list and create/update the appointment cards
         for (AppointmentR7 appointment : appointments) {
             try {
-                View appointmentCard = getLayoutInflater().inflate(R.layout.appointment_card_r7, appointmentCardsContainer, false);
+                View appointmentCard = getLayoutInflater().inflate(R.layout.r7_appointment_card, appointmentCardsContainer, false);
 
                 // Populate the appointment card with data from the appointment object
                 TextView textDate = appointmentCard.findViewById(R.id.textDate);
@@ -343,7 +343,7 @@ public class R7 extends AppCompatActivity {
     private void showAppointmentDialog(AppointmentR7 appointment) {
         AlertDialog.Builder builder = new AlertDialog.Builder(R7.this, R.style.AlertDialogTheme);
         builder.setTitle("Απόφαση Ραντεβού");
-        builder.setIcon(R.drawable.baseline_access_time_24_r7);
+        builder.setIcon(R.drawable.r7_baseline_access_time_24);
 
         builder.setMessage("Θέλετε να πραγματοποιήσετε το ραντεβού σας " + appointment.getDate() +
                 "\n ,την ώρα  " + appointment.getTime() +
@@ -368,7 +368,7 @@ public class R7 extends AppCompatActivity {
             try {
                 if (textPatientName.getText().toString().equals(appointment.getPatientName())) {
                     // Apply the green border to the appointment card
-                    appointmentCard.setBackgroundResource(R.drawable.roundedshape_accepted_r7);
+                    appointmentCard.setBackgroundResource(R.drawable.r7_roundedshape_accepted);
 
                     appointmentCard.setClickable(false);
 

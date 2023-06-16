@@ -16,7 +16,7 @@ public class Selected_User extends AppCompatActivity  {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.selected_user_r5);
+        setContentView(R.layout.r5_selected_user);
         infos = findViewById(R.id.userinfos);
         intent = getIntent();
 

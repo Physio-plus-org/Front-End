@@ -21,7 +21,7 @@
             android:layout_marginStart="10dp"
             android:layout_gravity="start|top"
             android:contentDescription="@string/goback"
-            android:src="@drawable/goback_r7"
+            android:src="@drawable/r7_goback"
             android:text="@string/backbutton"
             android:title=""
             android:showAsAction="ifRoom" />

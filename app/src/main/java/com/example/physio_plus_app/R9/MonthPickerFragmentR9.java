@@ -77,7 +77,7 @@ public class MonthPickerFragmentR9 extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        final View view = inflater.inflate(R.layout.fragment_month_picker_r9, container, false);
+        final View view = inflater.inflate(R.layout.r9_fragment_month_picker, container, false);
 
         MonthPicker = view.findViewById(R.id.month_date_picker);
         // Set Start Month

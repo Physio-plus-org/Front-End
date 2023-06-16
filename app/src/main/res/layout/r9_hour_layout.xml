@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     android:layout_marginTop="10dp"
     android:id="@+id/HourRelativeLayout"
-    android:background="@drawable/round_hourtable_r9"
+    android:background="@drawable/r9_round_hourtable"
     android:backgroundTint="@color/white">
 
     <TextView

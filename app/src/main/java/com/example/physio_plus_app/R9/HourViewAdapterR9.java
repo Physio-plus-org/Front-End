@@ -33,7 +33,7 @@ public class HourViewAdapterR9 extends RecyclerView.Adapter<HourViewHolderR9> {
     @NonNull
     @Override
     public HourViewHolderR9 onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new HourViewHolderR9(LayoutInflater.from(context).inflate(R.layout.hour_layout_r9, parent, false));
+        return new HourViewHolderR9(LayoutInflater.from(context).inflate(R.layout.r9_hour_layout, parent, false));
     }
 
     @Override

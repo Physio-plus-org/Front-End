@@ -18,7 +18,7 @@ public class R2 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_r2);
+        setContentView(R.layout.r2_activity);
 
         code = findViewById(R.id.codein);
         name = findViewById(R.id.namein);

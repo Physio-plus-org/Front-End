@@ -29,7 +29,7 @@ public class R9 extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_r9);
+        setContentView(R.layout.r9_activity);
 
 //        button= findViewById(R.id.buttonNext);
         Bundle args = new Bundle();
@@ -39,7 +39,7 @@ public class R9 extends AppCompatActivity{
 
         actionBar.setDisplayShowCustomEnabled(true);
         LayoutInflater inflater=(LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View view = inflater.inflate(R.layout.custom_image_r9,null);
+        View view = inflater.inflate(R.layout.r9_custom_image,null);
         actionBar.setCustomView(view);
 
         // Define ColorDrawable object and parse color

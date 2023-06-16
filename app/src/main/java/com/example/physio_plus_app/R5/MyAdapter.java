@@ -75,7 +75,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.UserViewHolder> im
     @Override
     public UserViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(context);
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_r5, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.r5_list, parent, false);
         /*
         RecyclerView recyclerView = (RecyclerView) parent;
         int recyclerViewWidth = recyclerView.getWidth();

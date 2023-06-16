@@ -63,7 +63,7 @@ public class R5 extends AppCompatActivity implements MyAdapter.UserClickListener
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_r5);
+        setContentView(R.layout.r5_activity);
         getSupportActionBar().hide();
 
         imageView1 = findViewById(R.id.imageView3);

@@ -68,7 +68,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:layout_marginEnd="8dp"
-                    android:background="@drawable/rectangle_curved_shape_r8">
+                    android:background="@drawable/r8_rectangle_curved_shape">
 
                     <TextView
                         android:id="@+id/info_title"
@@ -124,7 +124,7 @@
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="32dp"
-                android:background="@drawable/break_line_shape_r8" />
+                android:background="@drawable/r8_break_line_shape" />
 
             <LinearLayout
                 android:id="@+id/lower_linear_layout"
@@ -173,7 +173,7 @@
                         android:minWidth="48dp"
                         android:minHeight="48dp"
                         android:onClick="onCalendarClick"
-                        app:srcCompat="@drawable/baseline_calendar_month_24_r8"
+                        app:srcCompat="@drawable/r8_baseline_calendar_month_24"
                         app:tint="?android:attr/textColorPrimary"/>
 
                 </LinearLayout>
@@ -207,7 +207,7 @@
                     android:layout_marginTop="16dp"
                     android:layout_marginEnd="8dp"
                     android:autofillHints="true"
-                    android:background="@drawable/rectangle_curved_shape_r8"
+                    android:background="@drawable/r8_rectangle_curved_shape"
                     android:ems="10"
                     android:gravity="start|top"
                     android:hint="@string/notes_hint"

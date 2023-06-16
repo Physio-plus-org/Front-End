@@ -26,7 +26,7 @@
                     android:layout_width="198dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    app:srcCompat="@drawable/physio_logo_1_r3"/>
+                    app:srcCompat="@drawable/r3_physio_logo_1"/>
 
                 <ImageButton
                     android:id="@+id/imageButton5"
@@ -34,7 +34,7 @@
                     android:layout_height="65dp"
                     android:layout_weight="1"
                     android:backgroundTint="@color/white"
-                    app:srcCompat="@drawable/calendar_r3" />
+                    app:srcCompat="@drawable/r3_calendar" />
 
                 <ImageButton
                     android:id="@+id/imageButton6"
@@ -42,7 +42,7 @@
                     android:layout_height="65dp"
                     android:layout_weight="1"
                     android:backgroundTint="@color/white"
-                    app:srcCompat="@drawable/person_r3" />
+                    app:srcCompat="@drawable/r3_person" />
             </LinearLayout>
 
             <LinearLayout
@@ -55,13 +55,13 @@
                     android:id="@+id/imageView"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    app:srcCompat="@drawable/_682091152593_r3" />
+                    app:srcCompat="@drawable/r3_682091152593" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="456dp"
-                android:background="@drawable/top_background_gradiunt_r3"
+                android:background="@drawable/r3_top_background_gradiunt"
                 android:orientation="vertical"
                 tools:ignore="MissingConstraints">
                 <!-- app:layout_gravity="center_horizontal"-->
@@ -95,9 +95,9 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="25dp"
                     android:layout_marginRight="20dp"
-                    android:background="@drawable/pedio_r3"
+                    android:background="@drawable/r3_pedio"
                     android:backgroundTintMode="add"
-                    android:drawableStart="@drawable/account_r3"
+                    android:drawableStart="@drawable/r3_account"
                     android:drawablePadding="8dp"
                     android:hint="Όνομα"
                     android:padding="8sp"
@@ -110,9 +110,9 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="25dp"
                     android:layout_marginRight="20dp"
-                    android:background="@drawable/pedio_r3"
+                    android:background="@drawable/r3_pedio"
                     android:backgroundTintMode="add"
-                    android:drawableStart="@drawable/account_r3"
+                    android:drawableStart="@drawable/r3_account"
                     android:drawablePadding="8dp"
                     android:hint="Επίθετο"
                     android:padding="8sp"
@@ -125,9 +125,9 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="25dp"
                     android:layout_marginRight="20dp"
-                    android:background="@drawable/pedio_r3"
+                    android:background="@drawable/r3_pedio"
                     android:backgroundTintMode="add"
-                    android:drawableStart="@drawable/amka_r3"
+                    android:drawableStart="@drawable/r3_amka"
                     android:drawablePadding="8dp"
                     android:hint="@string/r3_amka_label"
                     android:padding="8sp"
@@ -140,9 +140,9 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="25dp"
                     android:layout_marginRight="20dp"
-                    android:background="@drawable/pedio_r3"
+                    android:background="@drawable/r3_pedio"
                     android:backgroundTintMode="add"
-                    android:drawableStart="@drawable/location_r3"
+                    android:drawableStart="@drawable/r3_location"
                     android:drawablePadding="8dp"
                     android:hint="@string/r3_address_label"
                     android:padding="8sp"
@@ -162,7 +162,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:backgroundTint="#008563"
-                    app:srcCompat="@drawable/cancel_r3" />
+                    app:srcCompat="@drawable/r3_cancel" />
 
                 <ImageButton
                     android:id="@+id/createbtn"
@@ -171,7 +171,7 @@
                     android:layout_weight="1"
                     android:backgroundTint="#008563"
                     android:onClick="onClick"
-                    app:srcCompat="@drawable/save_r3" />
+                    app:srcCompat="@drawable/r3_save" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

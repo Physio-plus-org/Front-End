@@ -26,7 +26,7 @@ public class R6 extends AppCompatActivity implements SelectListenerR6 {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_r6);
+        setContentView(R.layout.r6_activity);
         Locale locale = new Locale("EL", "GR");
         Locale.setDefault(locale);
         RequestEventR6 request = new RequestEventR6();
@@ -160,7 +160,7 @@ public class R6 extends AppCompatActivity implements SelectListenerR6 {
         alertDialog.setOnShowListener(new DialogInterface.OnShowListener() {
             @Override
             public void onShow(DialogInterface dialog) {
-                alertDialog.getWindow().setBackgroundDrawableResource(R.drawable.roundly_light_view_r6);
+                alertDialog.getWindow().setBackgroundDrawableResource(R.drawable.r6_roundly_light_view);
             }
         });
         alertDialog.show();

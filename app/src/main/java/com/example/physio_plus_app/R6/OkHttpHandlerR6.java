@@ -20,7 +20,7 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 
 public class OkHttpHandlerR6 {
-    final int image = R.drawable.baseline_person_24_r6;
+    final int image = R.drawable.r6_baseline_person_24;
     public OkHttpHandlerR6() {
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);

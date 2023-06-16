@@ -44,7 +44,7 @@ public class DateFragmentR9 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        final View view = inflater.inflate(R.layout.fragment_date_r9, container, false);
+        final View view = inflater.inflate(R.layout.r9_fragment_date, container, false);
         FragmentManager fragmentManager = getChildFragmentManager();
         fragmentManager.beginTransaction()
                 .replace(R.id.child_fragment_container, MonthPickerFragmentR9.class, null)

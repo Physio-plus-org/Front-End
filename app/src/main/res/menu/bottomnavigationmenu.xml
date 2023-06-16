@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/calendar"
-        android:icon="@drawable/baselinecalendarmonth_24_r9"
+        android:icon="@drawable/r9_baselinecalendarmonth_24"
         android:titleTextColor="@android:color/white"
         android:title=""
         android:state_focused="true"
@@ -10,7 +10,7 @@
         />
     <item
         android:id="@+id/money"
-        android:icon="@drawable/baselineeuro24_r9"
+        android:icon="@drawable/r9_baselineeuro24"
         android:title=""
         android:state_focused="true"
         android:color="@color/light_white"

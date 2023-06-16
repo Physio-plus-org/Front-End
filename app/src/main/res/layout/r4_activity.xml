@@ -32,7 +32,7 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/physio_logo_r4" />
+        app:srcCompat="@drawable/r4_physio_logo" />
 
 <!--    <androidx.constraintlayout.widget.Guideline-->
 <!--        android:id="@+id/guideline4"-->
@@ -70,7 +70,7 @@
         android:background="#00FFFFFF"
         android:backgroundTint="#00FFFFFF"
         android:foregroundTint="@color/white"
-        app:icon="@drawable/profile_icon_round_r4"
+        app:icon="@drawable/r4_profile_icon_round"
         app:iconSize="32dp"
         app:iconTint="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/guideline5"
@@ -86,7 +86,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/physio_logo_r4" />
+        app:srcCompat="@drawable/r4_physio_logo" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline4"
@@ -109,7 +109,7 @@
         android:background="#00FFFFFF"
         android:backgroundTint="#00FFFFFF"
         android:foregroundTint="@color/background_color"
-        app:icon="@drawable/calendar_icon_r4"
+        app:icon="@drawable/r4_calendar_icon"
         app:iconPadding="2dp"
         app:iconSize="28dp"
         app:iconTint="@color/text_color"
@@ -121,8 +121,8 @@
         android:id="@+id/back_button"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:background="@drawable/circle_button_r4"
-        app:icon="@drawable/back_icon_r4"
+        android:background="@drawable/r4_circle_button"
+        app:icon="@drawable/r4_back_icon"
         app:iconTint="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/guideline6"
         app:layout_constraintEnd_toStartOf="@+id/guideline7"
@@ -284,7 +284,7 @@
                 android:layout_width="100dp"
                 android:layout_height="120dp"
                 android:background="#00FFFFFF"
-                app:icon="@drawable/profile_icon_r4"
+                app:icon="@drawable/r4_profile_icon"
                 app:iconGravity="textTop"
                 app:iconPadding="0dp"
                 app:iconSize="120dp"

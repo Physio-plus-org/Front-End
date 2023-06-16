@@ -32,7 +32,7 @@ public class R8 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_r8);
+        setContentView(R.layout.r8_activity);
 
         this.nameTextView = findViewById(R.id.full_name);
         this.personalNumberTextView = findViewById(R.id.personal_number);
@@ -46,7 +46,7 @@ public class R8 extends AppCompatActivity {
         this.servicesSpinner.setAdapter(
                 new NothingSelectedSpinnerAdapterR8(
                         this.dataAdapter,
-                        R.layout.no_item_r8,
+                        R.layout.r8_no_item,
                         //R.layout.contact_spinner_nothing_selected_dropdown, // Optional
                         this
                 )

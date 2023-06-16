@@ -32,7 +32,7 @@ public class MyAdapterR6 extends RecyclerView.Adapter<MyViewHolderR6> {
     @NonNull
     @Override
     public MyViewHolderR6 onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new MyViewHolderR6(LayoutInflater.from(context).inflate(R.layout.event_view_r6, parent, false));
+        return new MyViewHolderR6(LayoutInflater.from(context).inflate(R.layout.r6_event_view, parent, false));
     }
 
     @Override

@@ -30,7 +30,7 @@
                     android:layout_height="77dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/logo_image_r5" />
+                    app:srcCompat="@drawable/r5_logo_image" />
 
                 <ImageView
                     android:id="@+id/imageView8"
@@ -41,7 +41,7 @@
                     app:layout_constraintStart_toEndOf="@+id/imageView3"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.478"
-                    app:srcCompat="@drawable/calendar_r5" />
+                    app:srcCompat="@drawable/r5_calendar" />
 
                 <ImageView
                     android:id="@+id/imageView9"
@@ -51,7 +51,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/imageView8"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/profile_r5" />
+                    app:srcCompat="@drawable/r5_profile" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -72,7 +72,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/physio_image_r5" />
+                    app:srcCompat="@drawable/r5_physio_image" />
 
                 <ImageView
                     android:id="@+id/imageView10"
@@ -84,7 +84,7 @@
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toEndOf="@+id/searchView"
                     app:layout_constraintTop_toTopOf="@+id/imageView7"
-                    app:srcCompat="@drawable/filters_r5" />
+                    app:srcCompat="@drawable/r5_filters" />
 
                 <SearchView
                     android:id="@+id/searchView"
@@ -92,7 +92,7 @@
                     android:layout_height="35dp"
                     android:layout_marginStart="40dp"
                     android:layout_marginTop="200dp"
-                    android:background="@drawable/search_r5"
+                    android:background="@drawable/r5_search"
                     android:scrollbars="vertical"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/imageView7" />
@@ -121,7 +121,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.0"
-                    app:srcCompat="@drawable/calendar_footer_r5" />
+                    app:srcCompat="@drawable/r5_calendar_footer" />
 
                 <ImageButton
                     android:id="@+id/imageButton5"
@@ -134,7 +134,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.0"
-                    app:srcCompat="@drawable/patient_r5" />
+                    app:srcCompat="@drawable/r5_patient" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.Guideline
@@ -149,7 +149,7 @@
                 android:layout_width="410dp"
                 android:layout_height="330dp"
                 android:layout_marginTop="264dp"
-                android:background="@drawable/background_r5"
+                android:background="@drawable/r5_background"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
@@ -171,7 +171,7 @@
                     android:id="@+id/add_Button"
                     android:layout_width="70dp"
                     android:layout_height="62dp"
-                    android:background="@drawable/add_button_r5"
+                    android:background="@drawable/r5_add_button"
                     android:backgroundTint="#6ABD53"
                     android:contentDescription="b"
                     android:onClick="myButtonClickHandler"
@@ -179,7 +179,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/adding_pat_r5" />
+                    app:srcCompat="@drawable/r5_adding_pat" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

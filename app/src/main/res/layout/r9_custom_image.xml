@@ -6,6 +6,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_centerInParent="true"
-        android:src="@drawable/physio_r9"></ImageView>
+        android:src="@drawable/r9_physio"></ImageView>
 
 </RelativeLayout>

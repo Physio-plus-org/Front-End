@@ -44,7 +44,7 @@ public class R9_2 extends AppCompatActivity implements SelectListenerR9 {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_r9_2);
+        setContentView(R.layout.r9_2_activity);
 
         Locale locale = new Locale("EL", "GR");
         Locale.setDefault(locale);
@@ -54,7 +54,7 @@ public class R9_2 extends AppCompatActivity implements SelectListenerR9 {
         actionBar = getSupportActionBar();
         actionBar.setDisplayShowCustomEnabled(true);
         LayoutInflater inflater=(LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View view = inflater.inflate(R.layout.custom_image_r9,null);
+        View view = inflater.inflate(R.layout.r9_custom_image,null);
         actionBar.setCustomView(view);
 
         // Define ColorDrawable object and parse color
@@ -138,7 +138,7 @@ public class R9_2 extends AppCompatActivity implements SelectListenerR9 {
 
 
 
-        builder.setIcon(R.drawable.baselinewarning24_r9);
+        builder.setIcon(R.drawable.r9_baselinewarning24);
 
 
 
@@ -206,7 +206,7 @@ public class R9_2 extends AppCompatActivity implements SelectListenerR9 {
             @Override
             public void onShow(DialogInterface dialogInterface) {
                 alertDialog.getWindow().setBackgroundDrawableResource
-                        (R.drawable.round_warning_r9);
+                        (R.drawable.r9_round_warning);
             }
         });
         alertDialog.show();

@@ -22,7 +22,7 @@ public class R1 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_r1);
+        setContentView(R.layout.r1_activity);
 
         r1Button = findViewById(R.id.r1_button);
         namePhysioEditText = findViewById(R.id.namePhysio);

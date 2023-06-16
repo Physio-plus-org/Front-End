@@ -33,7 +33,7 @@ public class R4 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_r4);
+        setContentView(R.layout.r4_activity);
         getSupportActionBar().hide(); // Hide the action bar
 
         Log.d("MainActivity", "onCreate method called");

@@ -19,7 +19,7 @@ public class R10 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_r10);
+        setContentView(R.layout.r10_activity);
         Request();
         ShowFinancialHistory();
     }

@@ -75,7 +75,7 @@ public class DayPickerFragmentR9 extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        final View view = inflater.inflate(R.layout.fragment_day_picker_r9, container, false);
+        final View view = inflater.inflate(R.layout.r9_fragment_day_picker, container, false);
 
 
         Locale locale = new Locale("EL");
