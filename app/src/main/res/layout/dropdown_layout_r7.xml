@@ -6,7 +6,7 @@
     android:background="@android:color/white"
     android:padding="8dp">
 
-    <!-- Appointment information -->
+    <!-- AppointmentR7 information -->
     <TextView
         android:id="@+id/textAppointmentInfo"
         android:layout_width="match_parent"

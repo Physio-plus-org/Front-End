@@ -1,13 +1,13 @@
-package com.example.physio_plus_app;
+package com.example.physio_plus_app.R7;
 
 
-public class Appointment {
+public class AppointmentR7 {
 
     private String date;
     private String time;
     private String patientName;
 
-    public Appointment(String date, String time, String patientName) {
+    public AppointmentR7(String date, String time, String patientName) {
         this.date = date;
         this.time = time;
         this.patientName = patientName;

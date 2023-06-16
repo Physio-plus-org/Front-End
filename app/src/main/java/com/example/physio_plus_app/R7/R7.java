@@ -1,4 +1,4 @@
-package com.example.physio_plus_app;
+package com.example.physio_plus_app.R7;
 
 
 import android.graphics.Color;
@@ -21,6 +21,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import com.example.physio_plus_app.R;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -37,8 +38,8 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 
 
-public class MainActivity extends AppCompatActivity {
-    private static final String TAG = "MainActivity";
+public class R7 extends AppCompatActivity {
+    private static final String TAG = "R7";
     private RelativeLayout cardContainer;
 
     TextView redBubble;
@@ -56,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_r7);
         View calendarTopBar = findViewById(R.id.calendarTopBar);
         StrictMode.setThreadPolicy(policy);
 
@@ -96,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
                 // Handle network request failure
                 Log.e(TAG, "Failed to fetch upcoming appointments for dropdown: " + e.getMessage());
                 e.printStackTrace();
-                runOnUiThread(() -> Toast.makeText(MainActivity.this, "Failed to fetch upcoming appointments", Toast.LENGTH_SHORT).show());
+                runOnUiThread(() -> Toast.makeText(R7.this, "Failed to fetch upcoming appointments", Toast.LENGTH_SHORT).show());
             }
 
             @Override
@@ -110,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
                         runOnUiThread(() -> {
                             // Update UI with the fetched data
                             try {
-                                List<Appointment> appointments = parseAppointmentsFromJson(responseData);
+                                List<AppointmentR7> appointments = parseAppointmentsFromJson(responseData);
                                 if (appointments != null) {
                                     showAppointmentDropdown(appointments);
                                 } else {
@@ -123,7 +124,7 @@ public class MainActivity extends AppCompatActivity {
                     } else {
                         // Handle unsuccessful response
                         Log.e(TAG, "Failed to fetch upcoming appointments for dropdown. Response code: " + response.code());
-                        runOnUiThread(() -> Toast.makeText(MainActivity.this, "Failed to fetch upcoming appointments", Toast.LENGTH_SHORT).show());
+                        runOnUiThread(() -> Toast.makeText(R7.this, "Failed to fetch upcoming appointments", Toast.LENGTH_SHORT).show());
                     }
                 } catch (IOException e) {
                     Log.e(TAG, "Exception occurred while processing network response: " + e.getMessage());
@@ -133,10 +134,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    private void showAppointmentDropdown(List<Appointment> appointments) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+    private void showAppointmentDropdown(List<AppointmentR7> appointments) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(R7.this);
         builder.setTitle("Επερχόμενα Ραντεβού");
-        builder.setIcon(R.drawable.baseline_access_time_24);
+        builder.setIcon(R.drawable.baseline_access_time_24_r7);
 
         int upcomingAppointmentsCount = appointments.size();
 
@@ -155,7 +156,7 @@ public class MainActivity extends AppCompatActivity {
         if (upcomingAppointmentsCount > MAX_APPOINTMENTS) {
             appointmentItems = new String[upcomingAppointmentsCount];
             for (int i = 0; i < MAX_APPOINTMENTS; i++) {
-                Appointment appointment = appointments.get(i);
+                AppointmentR7 appointment = appointments.get(i);
                 String appointmentText = appointment.getPatientName() + " - " + appointment.getDate() + " - " + appointment.getTime();
                 appointmentItems[i] = appointmentText + separator;
 
@@ -175,19 +176,19 @@ public class MainActivity extends AppCompatActivity {
 
                     redirectToAppointmentsPage();
                 } else {
-                    Appointment selectedAppointment = appointments.get(which);
+                    AppointmentR7 selectedAppointment = appointments.get(which);
                     showAppointmentDialog(selectedAppointment);
                 }
             });
         } else {
             appointmentItems = new String[upcomingAppointmentsCount];
             for (int i = 0; i < upcomingAppointmentsCount; i++) {
-                Appointment appointment = appointments.get(i);
+                AppointmentR7 appointment = appointments.get(i);
                 String appointmentText = appointment.getPatientName() + " - " + appointment.getDate() + " - " + appointment.getTime();
                 appointmentItems[i] = appointmentText + separator;
             }
             builder.setItems(appointmentItems, (dialog, which) -> {
-                Appointment selectedAppointment = appointments.get(which);
+                AppointmentR7 selectedAppointment = appointments.get(which);
                 showAppointmentDialog(selectedAppointment);
             });
         }
@@ -211,7 +212,7 @@ public class MainActivity extends AppCompatActivity {
             public void onFailure(@NonNull Call call, @NonNull IOException e) {
                 // Handle network request failure
                 Log.e(TAG, "Failed to test connection: " + e.getMessage());
-                runOnUiThread(() -> Toast.makeText(MainActivity.this, "Failed to test connection", Toast.LENGTH_SHORT).show());
+                runOnUiThread(() -> Toast.makeText(R7.this, "Failed to test connection", Toast.LENGTH_SHORT).show());
             }
 
             @Override
@@ -220,11 +221,11 @@ public class MainActivity extends AppCompatActivity {
                 if (response.isSuccessful()) {
                     // Connection is successful
                     Log.d(TAG, "Connection test successful");
-                    runOnUiThread(() -> Toast.makeText(MainActivity.this, "Connection test successful", Toast.LENGTH_SHORT).show());
+                    runOnUiThread(() -> Toast.makeText(R7.this, "Connection test successful", Toast.LENGTH_SHORT).show());
                 } else {
                     // Connection is unsuccessful
                     Log.e(TAG, "Failed to test connection. Response code: " + response.code());
-                    runOnUiThread(() -> Toast.makeText(MainActivity.this, "Failed to test connection", Toast.LENGTH_SHORT).show());
+                    runOnUiThread(() -> Toast.makeText(R7.this, "Failed to test connection", Toast.LENGTH_SHORT).show());
                 }
             }
         });
@@ -241,7 +242,7 @@ public class MainActivity extends AppCompatActivity {
             public void onFailure(@NonNull Call call, @NonNull IOException e) {
                 // Handle network request failure
                 Log.e(TAG, "Failed to fetch upcoming appointments: " + e.getMessage());
-                runOnUiThread(() -> Toast.makeText(MainActivity.this, "Failed to fetch upcoming appointments", Toast.LENGTH_SHORT).show());
+                runOnUiThread(() -> Toast.makeText(R7.this, "Failed to fetch upcoming appointments", Toast.LENGTH_SHORT).show());
             }
 
             @Override
@@ -255,7 +256,7 @@ public class MainActivity extends AppCompatActivity {
                         runOnUiThread(() -> {
                             // Update UI with the fetched data
                             // For example, parse the JSON response and populate the appointment cards
-                            List<Appointment> appointments = parseAppointmentsFromJson(responseData);
+                            List<AppointmentR7> appointments = parseAppointmentsFromJson(responseData);
                             assert appointments != null;
                             populateAppointmentCards(appointments);
 
@@ -264,7 +265,7 @@ public class MainActivity extends AppCompatActivity {
                     } else {
                         // Handle unsuccessful response
                         Log.e(TAG, "Failed to fetch upcoming appointments. Response code: " + response.code());
-                        runOnUiThread(() -> Toast.makeText(MainActivity.this, "Failed to fetch upcoming appointments", Toast.LENGTH_SHORT).show());
+                        runOnUiThread(() -> Toast.makeText(R7.this, "Failed to fetch upcoming appointments", Toast.LENGTH_SHORT).show());
                     }
                 } catch (IOException e) {
                     Log.e(TAG, "Exception occurred while processing network response: " + e.getMessage());
@@ -273,8 +274,8 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private List<Appointment> parseAppointmentsFromJson(String json) {
-        Type listType = new TypeToken<List<Appointment>>() {
+    private List<AppointmentR7> parseAppointmentsFromJson(String json) {
+        Type listType = new TypeToken<List<AppointmentR7>>() {
         }.getType();
         try {
             return gson.fromJson(json, listType);
@@ -284,7 +285,7 @@ public class MainActivity extends AppCompatActivity {
         return null;
     }
 
-    private void populateAppointmentCards(List<Appointment> appointments) {
+    private void populateAppointmentCards(List<AppointmentR7> appointments) {
         // Clear the appointmentCardsContainer
         LinearLayout appointmentCardsContainer = findViewById(R.id.appointmentCardsContainer);
         appointmentCardsContainer.removeAllViews();
@@ -296,9 +297,9 @@ public class MainActivity extends AppCompatActivity {
         }
 
         // Iterate through the appointments list and create/update the appointment cards
-        for (Appointment appointment : appointments) {
+        for (AppointmentR7 appointment : appointments) {
             try {
-                View appointmentCard = getLayoutInflater().inflate(R.layout.appointment_card, appointmentCardsContainer, false);
+                View appointmentCard = getLayoutInflater().inflate(R.layout.appointment_card_r7, appointmentCardsContainer, false);
 
                 // Populate the appointment card with data from the appointment object
                 TextView textDate = appointmentCard.findViewById(R.id.textDate);
@@ -339,10 +340,10 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    private void showAppointmentDialog(Appointment appointment) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this, R.style.AlertDialogTheme);
+    private void showAppointmentDialog(AppointmentR7 appointment) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(R7.this, R.style.AlertDialogTheme);
         builder.setTitle("Απόφαση Ραντεβού");
-        builder.setIcon(R.drawable.baseline_access_time_24);
+        builder.setIcon(R.drawable.baseline_access_time_24_r7);
 
         builder.setMessage("Θέλετε να πραγματοποιήσετε το ραντεβού σας " + appointment.getDate() +
                 "\n ,την ώρα  " + appointment.getTime() +
@@ -358,7 +359,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    private void acceptAppointment(Appointment appointment) {
+    private void acceptAppointment(AppointmentR7 appointment) {
         // Update the TextView with a green border
         for (int i = 0; i < cardContainer.getChildCount(); i++) {
             View appointmentCard = cardContainer.getChildAt(i);
@@ -367,7 +368,7 @@ public class MainActivity extends AppCompatActivity {
             try {
                 if (textPatientName.getText().toString().equals(appointment.getPatientName())) {
                     // Apply the green border to the appointment card
-                    appointmentCard.setBackgroundResource(R.drawable.roundedshape_accepted);
+                    appointmentCard.setBackgroundResource(R.drawable.roundedshape_accepted_r7);
 
                     appointmentCard.setClickable(false);
 
