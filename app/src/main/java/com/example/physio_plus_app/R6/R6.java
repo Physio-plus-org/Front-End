@@ -6,8 +6,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.physio_plus_app.R;
@@ -22,6 +24,20 @@ import java.util.Locale;
 
 public class R6 extends AppCompatActivity implements SelectListenerR6 {
     private final String myIP = "192.168.1.100";
+
+
+    /* Topbar */
+
+    private ImageView PhysiologoTopbarButton;
+    private ImageView profileTopbarButton;
+    private ImageView notifTopbarButton;
+    private ImageView goBackButton;
+
+    /* Footbar */
+    private ImageView calendarFootbarButton;
+    private ImageView addPatientFootbarButton;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,7 +108,42 @@ public class R6 extends AppCompatActivity implements SelectListenerR6 {
 
 
 
+        PhysiologoTopbarButton = findViewById((R.id.PhysioLogoTopbar));
+        profileTopbarButton = findViewById((R.id.profileTopbar));
+        goBackButton = findViewById(R.id.goback);
+
+        calendarFootbarButton = findViewById(R.id.calendarFootbar);
+        addPatientFootbarButton = findViewById(R.id.addPatientFootbar);
+
+
+
+
+        PhysiologoTopbarButton.setOnClickListener(v->{
+            Intent i = new Intent(R6Main.this, DefaultScreen.class );
+            startActivity(i);
+        });
+
+        profileTopbarButton.setOnClickListener(v->{
+            Intent i = new Intent(R6Main.this, Profile.class );
+            startActivity(i);
+        });
+
+        goBackButton.setOnClickListener(v -> finish());
+
+
+        addPatientFootbarButton.setOnClickListener((v->{
+            Intent i = new Intent(R6Main.this, R3Main.class );
+            startActivity(i);
+
+        }));
+        calendarFootbarButton.setOnClickListener(v->{
+            Intent i = new Intent(CurrentActivity.this, R6Main.class);
+            startActivity(i);
+        });
+
     }
+
+
 
     private List<String> dateHandler(LocalDateTime dateTime){
         List<String> dates = new ArrayList<>();
