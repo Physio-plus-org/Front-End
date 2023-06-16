@@ -1,6 +1,6 @@
-package com.example.physio_plus_app;
+package com.example.physio_plus_app.R6;
 
-public interface SelectListener {
+public interface SelectListenerR6 {
     default void onRemoveItemClicked(int eventID) {}
     default void onCompleteItemClicked(int eventID){}
 }

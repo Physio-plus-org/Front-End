@@ -1,9 +1,6 @@
-package com.example.physio_plus_app;
+package com.example.physio_plus_app.R6;
 
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -12,9 +9,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.physio_plus_app.R;
 
 
-public class MyViewHolder extends RecyclerView.ViewHolder {
+public class MyViewHolderR6 extends RecyclerView.ViewHolder {
 
     private final String myIP = "192.168.1.100";
     ImageView imageView;
@@ -24,7 +22,7 @@ public class MyViewHolder extends RecyclerView.ViewHolder {
     Context context;
 
 
-    public MyViewHolder(@NonNull View itemView) {
+    public MyViewHolderR6(@NonNull View itemView) {
         super(itemView);
         imageView = itemView.findViewById(R.id.imageView);
         patientView = itemView.findViewById(R.id.patient_name);
@@ -55,7 +53,7 @@ public class MyViewHolder extends RecyclerView.ViewHolder {
 //                String url = "http://"+myIP+"/physio_stl/requestCompleted.php?id=" + id[1];
 //                String response = null;
 //                try {
-//                    OkHttpHandler okHttpHandler = new OkHttpHandler();
+//                    OkHttpHandlerR6 okHttpHandler = new OkHttpHandlerR6();
 //                    response = okHttpHandler.requestCompleted(url);
 //                } catch (Exception e) {
 //                    e.printStackTrace();

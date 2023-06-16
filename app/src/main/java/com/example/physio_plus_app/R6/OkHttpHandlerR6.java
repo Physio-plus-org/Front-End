@@ -1,6 +1,8 @@
-package com.example.physio_plus_app;
+package com.example.physio_plus_app.R6;
 
 import android.os.StrictMode;
+
+import com.example.physio_plus_app.R;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -17,15 +19,15 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 
-public class OkHttpHandler {
-    final int image = R.drawable.baseline_person_24;
-    public OkHttpHandler() {
+public class OkHttpHandlerR6 {
+    final int image = R.drawable.baseline_person_24_r6;
+    public OkHttpHandlerR6() {
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
     }
 
-    List<Event> reqEvents(String url) throws Exception {
-        ArrayList<Event> events = new ArrayList<>();
+    List<EventR6> reqEvents(String url) throws Exception {
+        ArrayList<EventR6> events = new ArrayList<>();
         OkHttpClient client = new OkHttpClient().newBuilder().build();
         RequestBody body = RequestBody.create(" ", MediaType.parse("text/plain"));
         Request request = new Request.Builder().url(url).method("POST", body).build();
@@ -44,7 +46,7 @@ public class OkHttpHandler {
                 String patient_id = json.getString("patient_id");
                 LocalDateTime date_time = LocalDateTime.parse(json.getString("date_time"), f);
                 String status = json.getString("status");
-                events.add(new Event(event_id, physio_center, patient_id, date_time, status, image));
+                events.add(new EventR6(event_id, physio_center, patient_id, date_time, status, image));
             }
         } catch (JSONException e) {
             e.printStackTrace();

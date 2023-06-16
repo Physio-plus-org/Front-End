@@ -1,9 +1,9 @@
-package com.example.physio_plus_app;
+package com.example.physio_plus_app.R6;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class Event {
+public class EventR6 {
 
     int event_id;
     String physio_center;
@@ -15,7 +15,7 @@ public class Event {
 
 
 
-    public Event(int event_id, String physio_center, String patient_id,  LocalDateTime date_time, String status, int image) {
+    public EventR6(int event_id, String physio_center, String patient_id, LocalDateTime date_time, String status, int image) {
         this.patient_id = patient_id;
         this.event_id = event_id;
         this.physio_center = physio_center;

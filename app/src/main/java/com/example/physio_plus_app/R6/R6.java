@@ -1,38 +1,35 @@
-package com.example.physio_plus_app;
+package com.example.physio_plus_app.R6;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.AlertDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import com.example.physio_plus_app.R;
 import com.shrikanthravi.collapsiblecalendarview.data.Day;
 import com.shrikanthravi.collapsiblecalendarview.widget.CollapsibleCalendar;
 
-import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
-import java.util.TimeZone;
 
-public class MainActivity extends AppCompatActivity implements SelectListener {
+public class R6 extends AppCompatActivity implements SelectListenerR6 {
     private final String myIP = "192.168.1.100";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_r6);
         Locale locale = new Locale("EL", "GR");
         Locale.setDefault(locale);
-        RequestEvent request = new RequestEvent();
+        RequestEventR6 request = new RequestEventR6();
 
         final CollapsibleCalendar collapsibleCalendar = findViewById(R.id.calendarView);
         collapsibleCalendar.setCalendarListener(new CollapsibleCalendar.CalendarListener() {
@@ -108,16 +105,16 @@ public class MainActivity extends AppCompatActivity implements SelectListener {
     }
 
     private void createEvents(LocalDateTime dateTime, Bundle bundle){
-        RequestEvent request = new RequestEvent();
+        RequestEventR6 request = new RequestEventR6();
         List<String> dates;
         dates = dateHandler(dateTime);
 
-        List<Event> events;
+        List<EventR6> events;
         events = request.requestEvents(dates.get(0),dates.get(1));
 
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
-        recyclerView.setAdapter(new MyAdapter(getApplicationContext(), events, this, bundle));
+        recyclerView.setAdapter(new MyAdapterR6(getApplicationContext(), events, this, bundle));
     }
 
     private void greekDateHandler(LocalDateTime dateTime){
@@ -131,7 +128,7 @@ public class MainActivity extends AppCompatActivity implements SelectListener {
 
     @Override
     public void onRemoveItemClicked(int eventID){
-        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        AlertDialog.Builder builder = new AlertDialog.Builder(R6.this);
 
         builder.setTitle("Προσοχή!");
         builder.setMessage("Είστε σίγουρος ότι θέλετε να διαγράψετε το ραντεβού;");
@@ -145,7 +142,7 @@ public class MainActivity extends AppCompatActivity implements SelectListener {
             String url = "http://"+myIP+"/physio_stl/requestCancel.php?id=" + eventID;
             String response = null;
             try {
-                OkHttpHandler okHttpHandler = new OkHttpHandler();
+                OkHttpHandlerR6 okHttpHandler = new OkHttpHandlerR6();
                 response = okHttpHandler.requestCancel(url);
                 System.out.println(response);
                 overridePendingTransition(0,0);
@@ -163,7 +160,7 @@ public class MainActivity extends AppCompatActivity implements SelectListener {
         alertDialog.setOnShowListener(new DialogInterface.OnShowListener() {
             @Override
             public void onShow(DialogInterface dialog) {
-                alertDialog.getWindow().setBackgroundDrawableResource(R.drawable.roundly_light_view);
+                alertDialog.getWindow().setBackgroundDrawableResource(R.drawable.roundly_light_view_r6);
             }
         });
         alertDialog.show();
@@ -174,7 +171,7 @@ public class MainActivity extends AppCompatActivity implements SelectListener {
         String url = "http://"+myIP+"/physio_stl/requestCompleted.php?id=" + eventID;
         String response = null;
         try {
-            OkHttpHandler okHttpHandler = new OkHttpHandler();
+            OkHttpHandlerR6 okHttpHandler = new OkHttpHandlerR6();
             response = okHttpHandler.requestCompleted(url);
             System.out.println(response);
             overridePendingTransition(0,0);

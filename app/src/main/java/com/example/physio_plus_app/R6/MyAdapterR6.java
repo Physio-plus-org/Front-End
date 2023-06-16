@@ -1,4 +1,4 @@
-package com.example.physio_plus_app;
+package com.example.physio_plus_app.R6;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -10,17 +10,19 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.physio_plus_app.R;
+
 import java.util.List;
 
-public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
+public class MyAdapterR6 extends RecyclerView.Adapter<MyViewHolderR6> {
 
 
     Context context;
-    List<Event> events;
+    List<EventR6> events;
     Bundle bundle;
-    SelectListener listener;
+    SelectListenerR6 listener;
 
-    public MyAdapter(Context context, List<Event> events, SelectListener listener, Bundle bundle) {
+    public MyAdapterR6(Context context, List<EventR6> events, SelectListenerR6 listener, Bundle bundle) {
         this.context = context;
         this.events = events;
         this.listener = listener;
@@ -29,12 +31,12 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
 
     @NonNull
     @Override
-    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new MyViewHolder(LayoutInflater.from(context).inflate(R.layout.event_view, parent, false));
+    public MyViewHolderR6 onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        return new MyViewHolderR6(LayoutInflater.from(context).inflate(R.layout.event_view_r6, parent, false));
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, @SuppressLint("RecyclerView") int position) {
+    public void onBindViewHolder(@NonNull MyViewHolderR6 holder, @SuppressLint("RecyclerView") int position) {
         holder.patientView.setText(events.get(position).getPatient_id());
         int eventIDraw = events.get(position).getEvent_id();
         System.out.println(eventIDraw+"<--");

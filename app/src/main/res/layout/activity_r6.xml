@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".MainActivity">
+    tools:context=".R6.R6">
 
     <TextView
         android:layout_width="match_parent"
@@ -58,7 +58,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/weekly_program_title"
-        android:background="@drawable/shape"
+        android:background="@drawable/shape_r6"
         android:layout_margin="10dp"
         android:id="@+id/calendarViewContainer">
 
@@ -93,7 +93,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="20dp"
-        android:background="@drawable/roundly_light_view">
+        android:background="@drawable/roundly_light_view_r6">
 
         <TextView
             android:layout_width="wrap_content"
@@ -103,7 +103,7 @@
             android:textColor="@color/black"
             android:id="@+id/upcoming_eventA"
 
-            android:text="@string/upcoming_eventΑ"/>
+            android:text="@string/upcoming_eventΑ_r6"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -113,7 +113,7 @@
             android:layout_toEndOf="@id/upcoming_eventA"
             android:id="@+id/upcoming_eventB"
             android:textColor="@color/black"
-            android:text="@string/upcoming_eventΒ"/>
+            android:text="@string/upcoming_eventΒ_r6"/>
 
         <TextView
             android:layout_width="wrap_content"
