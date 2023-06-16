@@ -6,10 +6,10 @@ import android.widget.TextView;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class PhysioCenter {
+public class PhysioCenterR10 {
     private String centerId;
     private String name;
-    public PhysioCenter(JSONObject jsonObject) throws JSONException {
+    public PhysioCenterR10(JSONObject jsonObject) throws JSONException {
         this.centerId = jsonObject.get("tax_id_number").toString();
         this.name = jsonObject.get("name").toString();
     }

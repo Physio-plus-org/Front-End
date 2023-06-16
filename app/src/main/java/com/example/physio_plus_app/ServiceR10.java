@@ -8,13 +8,13 @@ import org.json.JSONObject;
 
 import java.util.Locale;
 
-public class Service {
+public class ServiceR10 {
     private String serviceCode;
     private String serviceTitle;
     private String serviceDescription;
     private double serviceCost;
 
-    public Service(JSONObject jsonObject) throws JSONException {
+    public ServiceR10(JSONObject jsonObject) throws JSONException {
         this.serviceTitle = jsonObject.get("title").toString();
         this.serviceCode = jsonObject.get("code").toString();
         this.serviceDescription = jsonObject.get("description").toString();

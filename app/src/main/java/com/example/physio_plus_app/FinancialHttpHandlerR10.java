@@ -9,14 +9,14 @@ import java.io.IOException;
 import java.text.ParseException;
 import java.util.Hashtable;
 
-public abstract class FinancialHttpHandler extends HttpHandler {
+public abstract class FinancialHttpHandlerR10 extends HttpHandlerR10 {
     public static final String ip = "192.168.1.6";
-    public static FinancialHistory makeRequest(Hashtable<String, String> params) throws ServerResponseException, JSONException, IOException, ParseException {
+    public static FinancialHistoryR10 makeRequest(Hashtable<String, String> params) throws ServerResponseExceptionR10, JSONException, IOException, ParseException {
         String url = "http://" + ip + "/requestFinance.php";
         Log.d("url", url);
         JSONArray jsonArray = request(url, params);
         Log.w("jsonArray", jsonArray.toString());
-        FinancialHistory financialHistory = new FinancialHistory();
+        FinancialHistoryR10 financialHistory = new FinancialHistoryR10();
         financialHistory.MapJsonArray(jsonArray);
         return financialHistory;
     }

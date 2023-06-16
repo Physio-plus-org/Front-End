@@ -9,22 +9,22 @@ import org.json.JSONObject;
 import java.text.ParseException;
 import java.util.ArrayList;
 
-public class FinancialHistory {
-    private ArrayList<FinancialMove> history;
-    public FinancialHistory() {
+public class FinancialHistoryR10 {
+    private ArrayList<FinancialMoveR10> history;
+    public FinancialHistoryR10() {
         this.history = new ArrayList<>();
     }
     public void MapJsonArray(JSONArray jsonArray) throws JSONException, ParseException {
         for (int i = 0; i < jsonArray.length(); i++) {
             JSONObject jsonMove = jsonArray.getJSONObject(i);
-            PhysioCenter center = new PhysioCenter(jsonMove.getJSONObject("center"));
-            Session session = new Session(jsonMove.getJSONObject("session"));
-            FinancialMove move = new FinancialMove(center, session);
+            PhysioCenterR10 center = new PhysioCenterR10(jsonMove.getJSONObject("center"));
+            SessionR10 session = new SessionR10(jsonMove.getJSONObject("session"));
+            FinancialMoveR10 move = new FinancialMoveR10(center, session);
             this.history.add(move);
         }
     }
     public void show(LinearLayout linearLayout) {
-        for (FinancialMove move : this.history) {
+        for (FinancialMoveR10 move : this.history) {
             move.show(linearLayout);
         }
     }

@@ -12,13 +12,13 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Locale;
 
-public class Session {
+public class SessionR10 {
     private int sessionId;
-    private ArrayList<Service> services = new ArrayList<>();
+    private ArrayList<ServiceR10> services = new ArrayList<>();
     private Date sessionDate;
     private String sessionNotes;
     private double sessionCost;
-    public Session(JSONObject jsonObject) throws JSONException, ParseException {
+    public SessionR10(JSONObject jsonObject) throws JSONException, ParseException {
         this.sessionId = Integer.parseInt(jsonObject.get("id").toString());
 //        String[] date_details = jsonObject.getJSONArray("date").toString().split("-");
         this.sessionDate = java.sql.Date.valueOf(jsonObject.get("date").toString());
@@ -27,10 +27,10 @@ public class Session {
         JSONArray jsonArrayServices = jsonObject.getJSONArray("services");
         for (int i = 0; i < jsonArrayServices.length(); i++) {
             JSONObject jsonService = jsonArrayServices.getJSONObject(i);
-            services.add(new Service(jsonService));
+            services.add(new ServiceR10(jsonService));
         }
         this.sessionCost = 0;
-        for (Service service : this.services) {
+        for (ServiceR10 service : this.services) {
             this.sessionCost += service.getServiceCost();
         }
     }
@@ -38,7 +38,7 @@ public class Session {
     public void show(LinearLayout linearLayout) {
         LinearLayout ser_linearLayout = new LinearLayout(linearLayout.getContext());
         ser_linearLayout.setOrientation(LinearLayout.VERTICAL);
-        for (Service service : this.services) {
+        for (ServiceR10 service : this.services) {
             service.show(ser_linearLayout);
         }
         TextView textView = new TextView(linearLayout.getContext());

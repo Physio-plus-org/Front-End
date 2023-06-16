@@ -2,8 +2,6 @@ package com.example.physio_plus_app;
 
 import android.os.Bundle;
 import android.widget.LinearLayout;
-import android.widget.LinearLayout.LayoutParams;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,12 +12,12 @@ import java.io.IOException;
 import java.text.ParseException;
 import java.util.Hashtable;
 
-public class MainActivity extends AppCompatActivity {
-    private FinancialHistory financialHistory;
+public class R10 extends AppCompatActivity {
+    private FinancialHistoryR10 financialHistory;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_r10);
         Request();
         ShowFinancialHistory();
     }
@@ -33,9 +31,9 @@ public class MainActivity extends AppCompatActivity {
         try {
             Hashtable<String, String> params = new Hashtable<>();
             params.put("patient_id", "279869537922"); //!!!THIS IS FOR TESTING
-            this.financialHistory = FinancialHttpHandler.makeRequest(params);
+            this.financialHistory = FinancialHttpHandlerR10.makeRequest(params);
             Toast.makeText(this, "Done", Toast.LENGTH_SHORT).show();
-        } catch (ServerResponseException e) {
+        } catch (ServerResponseExceptionR10 e) {
             Toast.makeText(this, "Page not found", Toast.LENGTH_SHORT).show();
             throw new RuntimeException(e);
         } catch (JSONException e) {

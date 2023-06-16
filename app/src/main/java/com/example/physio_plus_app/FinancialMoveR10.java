@@ -2,10 +2,10 @@ package com.example.physio_plus_app;
 
 import android.widget.LinearLayout;
 
-public class FinancialMove {
-    private PhysioCenter physioCenter;
-    private Session session;
-    public FinancialMove(PhysioCenter physioCenter, Session session) {
+public class FinancialMoveR10 {
+    private PhysioCenterR10 physioCenter;
+    private SessionR10 session;
+    public FinancialMoveR10(PhysioCenterR10 physioCenter, SessionR10 session) {
         this.physioCenter = physioCenter;
         this.session = session;
     }
