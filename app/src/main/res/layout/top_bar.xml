@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -24,48 +23,86 @@
 
 
             <ImageView
-                android:id="@+id/back_button"
+                android:id="@+id/goback"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_weight="1"
                 android:foregroundGravity="center"
                 android:minWidth="50dp"
+                android:contentDescription="goback"
                 android:src="@drawable/back_button" />
 
 
             <ImageView
-                android:id="@+id/imageView4"
+                android:id="@+id/PhysiologoTopbar"
                 android:layout_width="200dp"
                 android:layout_height="60dp"
                 android:layout_weight="1"
                 app:srcCompat="@drawable/physio_logo_topbar" />
 
 
-            <Button
-                android:id="@+id/button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:background="@color/white"
-                android:backgroundTint="@color/white"
-                android:gravity="center|center_horizontal"
-                app:icon="@drawable/r4_calendar_icon"
-                app:iconGravity="textEnd"
-                app:iconTint="@color/black" />
+
+
+
+
+
+
+
+
+
+                <Button
+                    android:id="@+id/calendarTopBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:backgroundTint="@color/white"
+                    android:gravity="center|center_horizontal"
+                    app:icon="@drawable/r4_calendar_icon"
+                    app:iconGravity="textEnd"
+                    android:contentDescription="notiftopbar"
+                    app:iconTint="@color/black" />
+
+                <TextView
+                    android:id="@+id/redBubbleText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end|top"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_toEndOf="@id/PhysiologoTopbar"
+                    android:contentDescription="redbubble"
+                    android:background="@drawable/r7_red_circle"
+                    android:padding="4dp"
+                    android:textColor="#FFFFFF"
+                    android:textSize="12sp"
+                    android:visibility="visible" />
 
             <Button
+                android:id="@+id/ProfilePatientTopbar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_weight="1"
                 android:gravity="center|center_horizontal"
                 app:icon="@drawable/r3_person"
+                android:contentDescription="profilepatient"
                 app:iconGravity="textStart" />
+
+
+
+
+
+
 
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@drawable/divider_line" />
 
 </LinearLayout>

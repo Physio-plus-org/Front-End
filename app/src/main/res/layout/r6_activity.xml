@@ -5,10 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     tools:context=".R6.R6">
+<ScrollView
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent">
 
+
+    <include layout="@layout/top_bar"></include>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginVertical="90dp"
         android:id="@+id/welcome_text"
         android:textSize="18dp"
         android:text="Καλωσήρθατε"
@@ -136,15 +142,50 @@
             android:layout_marginBottom="15dp" />
     </RelativeLayout>
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigation"
+
+    <RelativeLayout
+        android:background="@color/PrimaryGreen"
+        android:id="@+id/footerLayout"
         android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:background="@color/green"
-        app:itemIconTint="@color/white"
-        app:itemRippleColor="@color/light_green"
-        app:itemActiveIndicatorStyle="@style/App.Custom.Indicator"
-        android:layout_alignParentBottom="true"
-        app:menu="@menu/bottomnavigation" />
+        android:layout_height="70dp"
+        android:layout_alignParentBottom="true">
+
+        <ImageView
+            android:id="@+id/calendarFootbar"
+            android:layout_width="200dp"
+            android:layout_height="60dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginBottom="40dp"
+            android:background="@drawable/r7_footerroundedshape"
+            android:contentDescription="@string/goback"
+            android:src="@drawable/r7_baseline_calendar_month_24"
+            android:text="@string/calendarButton"
+            android:title=""
+            app:showAsAction="ifRoom"></ImageView>
+
+
+        <ImageView
+            android:id="@+id/addPatientFootbar"
+            android:layout_width="230dp"
+            android:layout_height="60dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="208dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="40dp"
+            android:background="@drawable/r7_footerroundedshape"
+            android:contentDescription="@string/goback"
+            android:src="@drawable/r7_baseline_person_24"
+            android:text="@string/calendarButton"
+            android:title=""
+            app:showAsAction="ifRoom"></ImageView>
+
+
+
+    </RelativeLayout>
 
 </RelativeLayout>

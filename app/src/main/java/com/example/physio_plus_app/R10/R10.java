@@ -1,6 +1,8 @@
 package com.example.physio_plus_app.R10;
 
 import android.os.Bundle;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
@@ -22,6 +24,12 @@ public class R10 extends AppCompatActivity {
         setContentView(R.layout.r10_activity);
         Request();
         ShowFinancialHistory();
+
+        /* Topbar */
+        ImageView physiologoTopbarButton = findViewById((R.id.PhysiologoTopbar));
+        Button profileTopbarButton = findViewById((R.id.ProfilePatientTopbar));
+        Button notifTopbarButton = findViewById(R.id.calendarTopBar);
+        ImageView goBackButton = findViewById(R.id.goback);
     }
 
     protected void ShowFinancialHistory() {
@@ -52,4 +60,6 @@ public class R10 extends AppCompatActivity {
             throw new RuntimeException(e);
         }
     }
+
+
 }

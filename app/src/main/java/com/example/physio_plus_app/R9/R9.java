@@ -12,6 +12,8 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
 
 import com.example.physio_plus_app.R;
 
@@ -64,12 +66,20 @@ public class R9 extends AppCompatActivity{
             e.printStackTrace();
         }
 
+        /* Topbar */
+        ImageView physiologoTopbarButton = findViewById((R.id.PhysiologoTopbar));
+        Button profileTopbarButton = findViewById((R.id.ProfilePatientTopbar));
+        Button notifTopbarButton = findViewById(R.id.calendarTopBar);
+        ImageView goBackButton = findViewById(R.id.goback);
+
     }
 
     private void openActivity2() {
         Intent intent = new Intent(this, R9_2.class);
         startActivity(intent);
     }
+
+
 
 
 }

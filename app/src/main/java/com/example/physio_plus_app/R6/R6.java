@@ -9,6 +9,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -28,10 +29,7 @@ public class R6 extends AppCompatActivity implements SelectListenerR6 {
 
     /* Topbar */
 
-    private ImageView PhysiologoTopbarButton;
-    private ImageView profileTopbarButton;
-    private ImageView notifTopbarButton;
-    private ImageView goBackButton;
+
 
     /* Footbar */
     private ImageView calendarFootbarButton;
@@ -108,12 +106,15 @@ public class R6 extends AppCompatActivity implements SelectListenerR6 {
 
 
 
-        PhysiologoTopbarButton = findViewById((R.id.PhysioLogoTopbar));
-        profileTopbarButton = findViewById((R.id.profileTopbar));
-        goBackButton = findViewById(R.id.goback);
+        /* Topbar */
+        ImageView physiologoTopbarButton = findViewById((R.id.PhysiologoTopbar));
+        Button profileTopbarButton = findViewById((R.id.ProfilePatientTopbar));
+        Button notifTopbarButton = findViewById(R.id.calendarTopBar);
+        ImageView goBackButton = findViewById(R.id.goback);
 
-        calendarFootbarButton = findViewById(R.id.calendarFootbar);
-        addPatientFootbarButton = findViewById(R.id.addPatientFootbar);
+        /* Footbar */
+        ImageView calendarFootbarButton = findViewById(R.id.calendarFootbar);
+        ImageView addPatientFootbarButton = findViewById(R.id.addPatientFootbar);
 
 
 

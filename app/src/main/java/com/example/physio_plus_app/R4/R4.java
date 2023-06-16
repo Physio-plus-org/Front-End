@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -20,10 +21,7 @@ public class R4 extends AppCompatActivity {
 
     /* Topbar */
 
-    private ImageView PhysiologoTopbarButton;
-    private ImageView profileTopbarButton;
-    private ImageView notifTopbarButton;
-    private ImageView goBackButton;
+
     TextView name_tv;
     TextView age_tv;
 
@@ -70,9 +68,11 @@ public class R4 extends AppCompatActivity {
         Log.d("Main Activity", "Sessions is running without problems");
 
 
-        PhysiologoTopbarButton = findViewById((R.id.PhysioLogoTopbar));
-        profileTopbarButton = findViewById((R.id.profileTopbar));
-        goBackButton = findViewById(R.id.goback);
+        /* Topbar */
+        ImageView physiologoTopbarButton = findViewById((R.id.PhysiologoTopbar));
+        Button profileTopbarButton = findViewById((R.id.ProfilePatientTopbar));
+        Button notifTopbarButton = findViewById(R.id.calendarTopBar);
+        ImageView goBackButton = findViewById(R.id.goback);
 
 
         PhysiologoTopbarButton.setOnClickListener(v->{

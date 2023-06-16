@@ -9,15 +9,21 @@
     android:minHeight="48dp"
     tools:context=".R8.R8">
 
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+
 
         <LinearLayout
             android:id="@+id/content_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
+            <include layout="@layout/top_bar"></include>
+
 
             <LinearLayout
                 android:id="@+id/upper_linear_layout"

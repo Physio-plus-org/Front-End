@@ -9,6 +9,7 @@
     tools:ignore="ExtraText">
 <!--    tools:context=".R4.R4"-->
 
+    <include layout="@layout/top_bar"></include>
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
         android:layout_width="wrap_content"
@@ -23,16 +24,7 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="-4dp" />
 
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="155dp"
-        android:layout_height="59dp"
-        android:background="#00FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/guideline5"
-        app:layout_constraintEnd_toStartOf="@+id/guideline4"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/r4_physio_logo" />
+
 
 <!--    <androidx.constraintlayout.widget.Guideline-->
 <!--        android:id="@+id/guideline4"-->
@@ -63,30 +55,9 @@
 <!--        app:layout_constraintEnd_toStartOf="@+id/button_profile"-->
 <!--        app:layout_constraintTop_toTopOf="parent" />-->
 
-    <Button
-        android:id="@+id/button_profile"
-        android:layout_width="70dp"
-        android:layout_height="50dp"
-        android:background="#00FFFFFF"
-        android:backgroundTint="#00FFFFFF"
-        android:foregroundTint="@color/white"
-        app:icon="@drawable/r4_profile_icon_round"
-        app:iconSize="32dp"
-        app:iconTint="@color/black"
-        app:layout_constraintBottom_toTopOf="@+id/guideline5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <View
-        android:id="@+id/divider"
-        android:layout_width="409dp"
-        android:layout_height="1dp"
-        android:background="@color/black"
-        app:layout_constraintBottom_toTopOf="@+id/cardView2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/r4_physio_logo" />
+
+
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline4"

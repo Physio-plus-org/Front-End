@@ -12,6 +12,7 @@ import android.text.style.StyleSpan;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -23,6 +24,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import com.example.physio_plus_app.Patientprofile.patientProfile;
 import com.example.physio_plus_app.R;
 import com.example.physio_plus_app.R3.R3;
 import com.example.physio_plus_app.R6.R6;
@@ -42,19 +44,14 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 
 
+@SuppressWarnings("ALL")
 public class R7 extends AppCompatActivity {
 
 
     /* Topbar */
 
-    private ImageView PhysiologoTopbarButton;
-    private ImageView profileTopbarButton;
-    private ImageView notifTopbarButton;
-    private ImageView goBackButton;
 
-    /* Footbar */
-    private ImageView calendarFootbarButton;
-    private ImageView addPatientFootbarButton;
+
     private static final String TAG = "R7";
     private RelativeLayout cardContainer;
 
@@ -74,7 +71,7 @@ public class R7 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.r7_activity);
-        View calendarTopBar = findViewById(R.id.calendarTopBar);
+        Button calendarTopBar = findViewById(R.id.calendarTopBar);
         StrictMode.setThreadPolicy(policy);
 
 
@@ -93,18 +90,18 @@ public class R7 extends AppCompatActivity {
         fetchUpcomingAppointments();
 
 
+        ImageView physiologoTopbarButton = findViewById((R.id.PhysiologoTopbar));
+        Button profileTopbarButton = findViewById((R.id.ProfilePatientTopbar));
+        ImageView goBackButton = findViewById(R.id.goback);
 
-        PhysiologoTopbarButton = findViewById((R.id.PhysiologoTopbar));
-        profileTopbarButton = findViewById((R.id.ProfilePatientTopbar));
-        goBackButton = findViewById(R.id.goback);
-
-        calendarFootbarButton = findViewById(R.id.calendarFootbar);
-        addPatientFootbarButton = findViewById(R.id.addPatientFootbar);
-
-
+        /* Footbar */
+        ImageView calendarFootbarButton = findViewById(R.id.calendarFootbar);
+        ImageView addPatientFootbarButton = findViewById(R.id.addPatientFootbar);
 
 
-        PhysiologoTopbarButton.setOnClickListener(v->{
+
+
+        physiologoTopbarButton.setOnClickListener(v->{
             Intent i = new Intent(R7.this, R6.class );
             startActivity(i);
         });

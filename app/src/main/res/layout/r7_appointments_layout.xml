@@ -12,41 +12,31 @@
         android:gravity="center_horizontal"
         android:backgroundTint="#FFFFFF">
 
-        <ImageView
-            android:id="@+id/goback"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="10dp"
-            android:layout_marginStart="10dp"
-            android:layout_gravity="start|top"
-            android:contentDescription="@string/goback"
-            android:src="@drawable/r7_goback"
-            android:text="@string/backbutton"
-            android:title=""
-            android:showAsAction="ifRoom" />
+
 
         <!-- Dynamic highlighted Text for appointments -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
             <TextView
                 android:id="@+id/aitimata"
-                android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/aitimata"
-                android:textSize="18sp"
+                android:layout_marginBottom="30dp"
+                android:layout_weight="1"
                 android:gravity="end"
-                android:textColor="@android:color/darker_gray"
-                android:layout_marginBottom="30dp" />
+                android:text="@string/aitimata"
+                android:textColor="#757575"
+                android:textSize="18sp" />
             <TextView
                 android:id="@+id/radevou"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/radevou"
                 android:layout_weight="1"
+                android:layout_marginStart="10dp"
                 android:textSize="18sp"
                 android:textColor="@color/PrimaryGreen"
                 android:layout_marginBottom="30dp" />

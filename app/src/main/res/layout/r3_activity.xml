@@ -15,35 +15,10 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="57dp"
-                android:orientation="horizontal"
-                tools:ignore="MissingConstraints">
 
-                <ImageView
-                    android:id="@+id/imageView2"
-                    android:layout_width="198dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    app:srcCompat="@drawable/physio_logo_topbar"/>
+            <include layout="@layout/top_bar"></include>
 
-                <ImageButton
-                    android:id="@+id/imageButton5"
-                    android:layout_width="76dp"
-                    android:layout_height="65dp"
-                    android:layout_weight="1"
-                    android:backgroundTint="@color/white"
-                    app:srcCompat="@drawable/r3_calendar" />
 
-                <ImageButton
-                    android:id="@+id/imageButton6"
-                    android:layout_width="68dp"
-                    android:layout_height="65dp"
-                    android:layout_weight="1"
-                    android:backgroundTint="@color/white"
-                    app:srcCompat="@drawable/r3_person" />
-            </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/linearLayout2"

@@ -16,6 +16,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.SearchView;
@@ -45,10 +46,7 @@ public class R5 extends AppCompatActivity implements MyAdapter.UserClickListener
 
     /* Topbar */
 
-    private ImageView PhysiologoTopbarButton;
-    private ImageView profileTopbarButton;
-    private ImageView notifTopbarButton;
-    private ImageView goBackButton;
+
     private SearchView searchView;
     private ImageButton add_Button;
     private ImageView imageView1;
@@ -120,9 +118,11 @@ public class R5 extends AppCompatActivity implements MyAdapter.UserClickListener
 
 
 
-        PhysiologoTopbarButton = findViewById((R.id.PhysioLogoTopbar));
-        profileTopbarButton = findViewById((R.id.profileTopbar));
-        goBackButton = findViewById(R.id.goback);
+        /* Topbar */
+        ImageView physiologoTopbarButton = findViewById((R.id.PhysiologoTopbar));
+        Button profileTopbarButton = findViewById((R.id.ProfilePatientTopbar));
+        Button notifTopbarButton = findViewById(R.id.calendarTopBar);
+        ImageView goBackButton = findViewById(R.id.goback);
 
         PhysiologoTopbarButton.setOnClickListener(v->{
             Intent i = new Intent(R5.this, R6.class );
