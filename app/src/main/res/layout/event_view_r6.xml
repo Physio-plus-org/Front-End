@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:background="@drawable/shape_event_r6">
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/patient_name"
+        android:layout_toStartOf="@id/confirmEventButton"
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:text="Name"/>
+
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/date"
+        android:layout_toStartOf="@id/confirmEventButton"
+        android:layout_below="@id/patient_name"
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/black"
+        android:text="Date"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/event_id"
+        android:layout_toStartOf="@id/confirmEventButton"
+        android:layout_below="@id/date"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="5dp"
+        android:textColor="@color/black"
+        android:text="Event ID"/>
+
+    <Button
+        android:id="@+id/confirmEventButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_centerVertical="true"
+        android:layout_margin="5dp"
+        android:layout_toStartOf="@id/cancelEventButton"
+        android:background="@drawable/baseline_done_outline_24_r6"
+        android:visibility="invisible" />
+
+    <Button
+        android:id="@+id/cancelEventButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_toStartOf="@id/imageView"
+        android:background="@drawable/baseline_delete_outline_24_r6"
+        android:visibility="invisible" />
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="2dp"-->
+<!--        android:layout_below="@id/date"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:background="@color/black"/>-->
+
+
+</RelativeLayout>
