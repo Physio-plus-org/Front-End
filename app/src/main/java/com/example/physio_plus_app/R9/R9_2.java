@@ -1,4 +1,4 @@
-package com.example.physio_plus_app;
+package com.example.physio_plus_app.R9;
 
 
 
@@ -19,29 +19,24 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import com.example.physio_plus_app.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.time.format.FormatStyle;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
-import java.util.Random;
 
 
-public class MainActivity2 extends AppCompatActivity implements SelectListener {
+public class R9_2 extends AppCompatActivity implements SelectListenerR9 {
     private  final String myIP = "192.168.2.6";
-    private RequestList requestList;
+    private RequestListR9 requestList;
 
-    ArrayList<HourModel> hourModel = new ArrayList<>();
+    ArrayList<HourModelR9> hourModel = new ArrayList<>();
 
 
 
@@ -49,7 +44,7 @@ public class MainActivity2 extends AppCompatActivity implements SelectListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
+        setContentView(R.layout.activity_r9_2);
 
         Locale locale = new Locale("EL", "GR");
         Locale.setDefault(locale);
@@ -59,7 +54,7 @@ public class MainActivity2 extends AppCompatActivity implements SelectListener {
         actionBar = getSupportActionBar();
         actionBar.setDisplayShowCustomEnabled(true);
         LayoutInflater inflater=(LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View view = inflater.inflate(R.layout.custom_image,null);
+        View view = inflater.inflate(R.layout.custom_image_r9,null);
         actionBar.setCustomView(view);
 
         // Define ColorDrawable object and parse color
@@ -115,7 +110,7 @@ public class MainActivity2 extends AppCompatActivity implements SelectListener {
             range_end = localDate.format(myFormat);
         }
 
-        requestList = new RequestList(myIP, range_start, range_end);
+        requestList = new RequestListR9(myIP, range_start, range_end);
 
 
         RecyclerView hourRecyclerView = findViewById(R.id.hourRecyclerView);
@@ -125,12 +120,12 @@ public class MainActivity2 extends AppCompatActivity implements SelectListener {
         }
 
         hourRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        hourRecyclerView.setAdapter(new HourViewAdapter(getApplicationContext(),hours,this, bundle));
+        hourRecyclerView.setAdapter(new HourViewAdapterR9(getApplicationContext(),hours,this, bundle));
 
     }
 
     private void openActivity1() {
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, R9.class);
         startActivity(intent);
     }
 
@@ -139,11 +134,11 @@ public class MainActivity2 extends AppCompatActivity implements SelectListener {
     @Override
     public void onItemCklicked(String hourModel, Bundle bundle) {
         // Create the object of AlertDialog Builder class
-        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity2.this);
+        AlertDialog.Builder builder = new AlertDialog.Builder(R9_2.this);
 
 
 
-        builder.setIcon(R.drawable.baselinewarning24);
+        builder.setIcon(R.drawable.baselinewarning24_r9);
 
 
 
@@ -188,11 +183,11 @@ public class MainActivity2 extends AppCompatActivity implements SelectListener {
 
                 // Οταν ενωθουν θα εχει τα στοιχεια, για τωρα γινεται random
 
-                RequestObject myReq = new RequestObject("999999999", "404116263213", req, "UPCOMING");
+                RequestObjectR9 myReq = new RequestObjectR9("999999999", "404116263213", req, "UPCOMING");
                 String test = myReq.toJSON();
                 System.out.println(test);
 
-                OkHttpHandler myHandler = new OkHttpHandler();
+                OkHttpHandlerR9 myHandler = new OkHttpHandlerR9();
                 try {
                     myHandler.sendRequestDate(test);
                 } catch (Exception e) {
@@ -211,7 +206,7 @@ public class MainActivity2 extends AppCompatActivity implements SelectListener {
             @Override
             public void onShow(DialogInterface dialogInterface) {
                 alertDialog.getWindow().setBackgroundDrawableResource
-                        (R.drawable.round_warning);
+                        (R.drawable.round_warning_r9);
             }
         });
         alertDialog.show();

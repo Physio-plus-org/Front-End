@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".R9.R9">
 
 
     <ImageView
@@ -19,15 +19,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.825"
-        app:srcCompat="@drawable/petr_magera_qxe8nptjwag_unsplash1"
-        android:contentDescription="@string/basicimage" />
+        app:srcCompat="@drawable/petr_magera_qxe8nptjwag_unsplash1_r9"
+        android:contentDescription="@string/basic_image" />
 
     <RelativeLayout
         android:id="@+id/relativeLayout"
         android:layout_width="415dp"
         android:layout_height="407dp"
         android:layout_marginTop="60dp"
-        android:background="@drawable/roundly_background"
+        android:background="@drawable/roundly_background_r9"
         app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -58,7 +58,7 @@
             android:layout_marginTop="37dp"
             android:layout_marginEnd="171dp"
             android:layout_marginBottom="0dp"
-            android:text="@string/reguest2Label"
+            android:text="@string/request_2_Label"
             android:textColor="@color/orange"
             android:textSize="24sp"
             android:textStyle="bold" />
@@ -96,7 +96,7 @@
             android:layout_height="1dp"
             android:layout_below="@+id/dayLabelId"
             android:layout_marginTop="63dp"
-            android:background="@color/lightgrey" />
+            android:background="@color/light_grey" />
 
         <View
             android:id="@+id/view1"
@@ -104,11 +104,11 @@
             android:layout_height="1dp"
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="81dp"
-            android:background="@color/lightgrey" />
+            android:background="@color/light_grey" />
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/fragmentContainerView"
-            android:name="com.example.physio_plus_app.DateFragment"
+            android:name="com.example.physio_plus_app.R9.DateFragmentR9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/view2"
@@ -119,7 +119,7 @@
             android:layout_marginTop="5dp"
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="5dp"
-            tools:layout="@layout/fragment_month_picker" />
+            tools:layout="@layout/fragment_month_picker_r9" />
 
 
     </RelativeLayout>

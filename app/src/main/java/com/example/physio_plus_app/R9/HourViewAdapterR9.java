@@ -1,4 +1,4 @@
-package com.example.physio_plus_app;
+package com.example.physio_plus_app.R9;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -10,19 +10,20 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.ArrayList;
+import com.example.physio_plus_app.R;
+
 import java.util.List;
 
-public class HourViewAdapter extends RecyclerView.Adapter<HourViewHolder> {
+public class HourViewAdapterR9 extends RecyclerView.Adapter<HourViewHolderR9> {
 
     Context context;
     List<String> hours;
-    SelectListener listener;
+    SelectListenerR9 listener;
     Bundle bundle;
 
 
 
-    public HourViewAdapter(Context context, List<String> hours,SelectListener listener, Bundle bundle) {
+    public HourViewAdapterR9(Context context, List<String> hours, SelectListenerR9 listener, Bundle bundle) {
         this.context = context;
         this.hours = hours;
         this.listener=listener;
@@ -31,12 +32,12 @@ public class HourViewAdapter extends RecyclerView.Adapter<HourViewHolder> {
 
     @NonNull
     @Override
-    public HourViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new HourViewHolder(LayoutInflater.from(context).inflate(R.layout.hour_layout, parent, false));
+    public HourViewHolderR9 onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        return new HourViewHolderR9(LayoutInflater.from(context).inflate(R.layout.hour_layout_r9, parent, false));
     }
 
     @Override
-    public void onBindViewHolder(@NonNull HourViewHolder holder, @SuppressLint("RecyclerView") int position) {
+    public void onBindViewHolder(@NonNull HourViewHolderR9 holder, @SuppressLint("RecyclerView") int position) {
         holder.hourView.setText(hours.get(position));
         holder.HourRelativeLayout.setOnClickListener(new View.OnClickListener() {
             @Override

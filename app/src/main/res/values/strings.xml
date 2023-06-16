@@ -1,14 +1,14 @@
 <resources>
     <string name="app_name">Physio_plus_App</string>
     <string name="requestLabel">Αίτημα</string>
-    <string name="reguest2Label">Ραντεβού</string>
+    <string name="request_2_Label">Ραντεβού</string>
     <string name="dayLabel">Επιλογή Ημέρας</string>
     <string name="nextButton">Επόμενο</string>
     <string name="daysLabel">Ημέρα</string>
     <string name="hourLabel">Ωρολόγιο Πρόγραμμα</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="basicimage">BasicImage</string>
+    <string name="basic_image">BasicImage</string>
 
     <string-array name="hour_array">
         <item>9:00</item>

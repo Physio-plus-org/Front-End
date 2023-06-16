@@ -1,4 +1,4 @@
-package com.example.physio_plus_app;
+package com.example.physio_plus_app.R9;
 
 import android.os.StrictMode;
 
@@ -8,7 +8,6 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
@@ -18,17 +17,17 @@ import java.util.ArrayList;
 
 import okhttp3.*;
 
-public class OkHttpHandler {
+public class OkHttpHandlerR9 {
 
     private  final String myIP = "192.168.2.6";
 
-    public OkHttpHandler() {
+    public OkHttpHandlerR9() {
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
     }
 
-    ArrayList<RequestObj> testPrint(String url) throws Exception {
-        ArrayList<RequestObj> reqList = new ArrayList<>();
+    ArrayList<RequestObjR9> testPrint(String url) throws Exception {
+        ArrayList<RequestObjR9> reqList = new ArrayList<>();
         OkHttpClient client = new OkHttpClient().newBuilder().build();
         RequestBody body = RequestBody.create(" ", MediaType.parse("text/plain"));
         Request request = new Request.Builder().url(url).method("POST", body).build();
@@ -47,7 +46,7 @@ public class OkHttpHandler {
                 String physio_center = json.getString("physio_center");
                 String patient_id = json.getString("patient_id");
                 LocalDateTime date_time = f.parseLocalDateTime(json.getString("date_time"));
-                reqList.add(new RequestObj(id, physio_center, patient_id, date_time));
+                reqList.add(new RequestObjR9(id, physio_center, patient_id, date_time));
             }
         } catch (JSONException e) {
             e.printStackTrace();

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity2">
+    tools:context=".R9.R9_2">
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
@@ -24,7 +24,7 @@
         android:layout_height="470dp"
         android:layout_marginStart="4dp"
         android:layout_marginEnd="4dp"
-        android:background="@drawable/round_hourtable"
+        android:background="@drawable/round_hourtable_r9"
         app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.571"

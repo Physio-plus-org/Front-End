@@ -1,4 +1,4 @@
-package com.example.physio_plus_app;
+package com.example.physio_plus_app.R9;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.ActionBar;
@@ -13,12 +13,14 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 
+import com.example.physio_plus_app.R;
+
 import java.util.Locale;
 
 
 //import com.cheesecake.mytoxictraits.Week.ThisLocalizedWeek;
 
-public class MainActivity extends AppCompatActivity{
+public class R9 extends AppCompatActivity{
 
     //    private Button button;
     private  final String myIP = "192.168.2.6";
@@ -27,7 +29,7 @@ public class MainActivity extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_r9);
 
 //        button= findViewById(R.id.buttonNext);
         Bundle args = new Bundle();
@@ -37,7 +39,7 @@ public class MainActivity extends AppCompatActivity{
 
         actionBar.setDisplayShowCustomEnabled(true);
         LayoutInflater inflater=(LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View view = inflater.inflate(R.layout.custom_image,null);
+        View view = inflater.inflate(R.layout.custom_image_r9,null);
         actionBar.setCustomView(view);
 
         // Define ColorDrawable object and parse color
@@ -55,7 +57,7 @@ public class MainActivity extends AppCompatActivity{
 
         String url = "http://"+myIP+"/physio_app_db/TestPrint.php?range_start=2023-04-01&range_end=2023-07-01";
         try {
-            OkHttpHandler okHttpHandler = new OkHttpHandler();
+            OkHttpHandlerR9 okHttpHandler = new OkHttpHandlerR9();
             okHttpHandler.testPrint(url);
             System.out.println("Main Activity testPrint");
         } catch (Exception e) {
@@ -65,7 +67,7 @@ public class MainActivity extends AppCompatActivity{
     }
 
     private void openActivity2() {
-        Intent intent = new Intent(this, MainActivity2.class);
+        Intent intent = new Intent(this, R9_2.class);
         startActivity(intent);
     }
 

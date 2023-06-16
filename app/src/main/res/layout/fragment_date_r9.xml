@@ -4,11 +4,11 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:id="@+id/child_fragment_container"
-    tools:context=".DateFragment">
+    tools:context=".R9.DateFragmentR9">
 
 <!--    <androidx.fragment.app.FragmentContainerView-->
 <!--        android:id="@+id/fragmentContainerView"-->
-<!--        android:name="com.example.physio_plus_app.MonthPickerFragment"-->
+<!--        android:name="com.example.physio_plus_app.MonthPickerFragmentR9R9"-->
 <!--        android:layout_width="412dp"-->
 <!--        android:layout_height="191dp"-->
 <!--        android:layout_above="@+id/buttonNext"-->
@@ -24,7 +24,7 @@
 
 <!--    <androidx.fragment.app.FragmentContainerView-->
 <!--        android:id="@+id/fragmentContainerView2"-->
-<!--        android:name="com.example.physio_plus_app.MonthPickerFragment"-->
+<!--        android:name="com.example.physio_plus_app.MonthPickerFragmentR9R9"-->
 <!--        android:layout_width="match_parent"-->
 <!--        android:layout_height="176dp"-->
 <!--        tools:layout="@layout/fragment_month_picker" />-->

@@ -1,39 +1,36 @@
-package com.example.physio_plus_app;
+package com.example.physio_plus_app.R9;
 
 import org.codehaus.jackson.map.SerializationConfig;
 import org.codehaus.jackson.map.annotate.JsonView;
-import org.json.JSONObject;
 
-import org.codehaus.jackson.JsonGenerationException;
-import org.codehaus.jackson.map.JsonMappingException;
 import org.codehaus.jackson.map.ObjectMapper;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class RequestObject {
+public class RequestObjectR9 {
     int event_id;
 
-    @JsonView(RequestObjectJsonView.sendRequest.class)
+    @JsonView(RequestObjectJsonViewR9.sendRequest.class)
     java.lang.String physio_center;
 
-    @JsonView(RequestObjectJsonView.sendRequest.class)
+    @JsonView(RequestObjectJsonViewR9.sendRequest.class)
     java.lang.String patient_id;
     LocalDateTime date_time;
 
 
     java.lang.String dateString;
 
-    @JsonView(RequestObjectJsonView.sendRequest.class)
+    @JsonView(RequestObjectJsonViewR9.sendRequest.class)
     java.lang.String status;
 
-    @JsonView(RequestObjectJsonView.sendRequest.class)
+    @JsonView(RequestObjectJsonViewR9.sendRequest.class)
     String requestedDate;
 
 
 
-    public RequestObject(int event_id, java.lang.String physio_center, java.lang.String patient_id, LocalDateTime date_time, java.lang.String status) {
+    public RequestObjectR9(int event_id, java.lang.String physio_center, java.lang.String patient_id, LocalDateTime date_time, java.lang.String status) {
         this.patient_id = patient_id;
         this.event_id = event_id;
         this.physio_center = physio_center;
@@ -41,7 +38,7 @@ public class RequestObject {
         this.status = status;
     }
 
-    public RequestObject(java.lang.String physio_center, java.lang.String patient_id, String requestedDate, java.lang.String status) {
+    public RequestObjectR9(java.lang.String physio_center, java.lang.String patient_id, String requestedDate, java.lang.String status) {
         this.patient_id = patient_id;
         this.physio_center = physio_center;
         this.requestedDate = requestedDate;
@@ -101,7 +98,7 @@ public class RequestObject {
         mapper.configure(SerializationConfig.Feature.DEFAULT_VIEW_INCLUSION, false);
 
         try {
-            String jsonStringOut = mapper.writerWithView(RequestObjectJsonView.sendRequest.class).writeValueAsString(this);
+            String jsonStringOut = mapper.writerWithView(RequestObjectJsonViewR9.sendRequest.class).writeValueAsString(this);
             return jsonStringOut;
         }
         catch (IOException e) {

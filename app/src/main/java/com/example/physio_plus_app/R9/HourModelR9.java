@@ -1,9 +1,9 @@
-package com.example.physio_plus_app;
+package com.example.physio_plus_app.R9;
 
-public class HourModel {
+public class HourModelR9 {
     String hour;
 
-    public HourModel(String hour) {
+    public HourModelR9(String hour) {
         this.hour = hour;
     }
 

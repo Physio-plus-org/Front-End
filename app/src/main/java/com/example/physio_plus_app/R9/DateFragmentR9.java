@@ -1,4 +1,4 @@
-package com.example.physio_plus_app;
+package com.example.physio_plus_app.R9;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,22 +12,24 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.physio_plus_app.R;
+
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link DateFragment#newInstance} factory method to
+ * Use the {@link DateFragmentR9#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class DateFragment extends Fragment {
+public class DateFragmentR9 extends Fragment {
 
 
 
 
-    public DateFragment() {
+    public DateFragmentR9() {
         // Required empty public constructor
     }
 
-    public static DateFragment newInstance() {
-        DateFragment fragment = new DateFragment();
+    public static DateFragmentR9 newInstance() {
+        DateFragmentR9 fragment = new DateFragmentR9();
         Bundle args = new Bundle();;
         fragment.setArguments(args);
         return fragment;
@@ -42,10 +44,10 @@ public class DateFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        final View view = inflater.inflate(R.layout.fragment_date, container, false);
+        final View view = inflater.inflate(R.layout.fragment_date_r9, container, false);
         FragmentManager fragmentManager = getChildFragmentManager();
         fragmentManager.beginTransaction()
-                .replace(R.id.child_fragment_container, MonthPickerFragment.class, null)
+                .replace(R.id.child_fragment_container, MonthPickerFragmentR9.class, null)
                 .setReorderingAllowed(true)
                 .addToBackStack("name") // Name can be null
                 .commit();
@@ -57,7 +59,7 @@ public class DateFragment extends Fragment {
                 // We use a String here, but any type that can be put in a Bundle is supported.
                 FragmentManager fragmentManager = getChildFragmentManager();
                 fragmentManager.beginTransaction()
-                        .replace(R.id.child_fragment_container, DayPickerFragment.class, bundle)
+                        .replace(R.id.child_fragment_container, DayPickerFragmentR9.class, bundle)
                         .setReorderingAllowed(true)
                         .addToBackStack("name") // Name can be null
                         .commit();
@@ -76,7 +78,7 @@ public class DateFragment extends Fragment {
             @Override
             public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle bundle) {
 
-                Intent intent = new Intent(getActivity(), MainActivity2.class);
+                Intent intent = new Intent(getActivity(), R9_2.class);
                 intent.putExtras(bundle);
                 startActivity(intent);
             }

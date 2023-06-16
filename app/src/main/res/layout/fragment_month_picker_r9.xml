@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    tools:context=".MonthPickerFragment">
+    tools:context=".R9.MonthPickerFragmentR9">
 
     <com.harrywhewell.scrolldatepicker.MonthScrollDatePicker
         android:id="@+id/month_date_picker"
@@ -12,6 +12,6 @@
         android:layout_gravity="center"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        android:background="@drawable/round_warning" />
+        android:background="@drawable/round_warning_r9" />
 
 </RelativeLayout>

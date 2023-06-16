@@ -12,10 +12,10 @@
         android:theme="@style/Theme.Physio_plus_App"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity2"
+            android:name=".R9.R9_2"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".R9.R9"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
