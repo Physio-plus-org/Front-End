@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <network-security-config>
     <domain-config cleartextTrafficPermitted="true">
-        <domain includeSubdomains="true"> 192.168.56.1</domain> //The ip might change , because of the ip of our service
+        //The ip might change , because of the ip of our service
+        <domain includeSubdomains="true">
+            sql7.freesqldatabase.com
+        </domain>
     </domain-config>
 </network-security-config>
