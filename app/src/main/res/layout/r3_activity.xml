@@ -26,7 +26,7 @@
                     android:layout_width="198dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    app:srcCompat="@drawable/r3_physio_logo_1"/>
+                    app:srcCompat="@drawable/physio_logo_topbar"/>
 
                 <ImageButton
                     android:id="@+id/imageButton5"
