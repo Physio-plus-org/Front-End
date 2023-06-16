@@ -1,6 +1,7 @@
 package com.example.physio_plus_app.R7;
 
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -11,6 +12,7 @@ import android.text.style.StyleSpan;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -22,6 +24,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 import com.example.physio_plus_app.R;
+import com.example.physio_plus_app.R3.R3;
+import com.example.physio_plus_app.R6.R6;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -39,6 +43,18 @@ import okhttp3.Response;
 
 
 public class R7 extends AppCompatActivity {
+
+
+    /* Topbar */
+
+    private ImageView PhysiologoTopbarButton;
+    private ImageView profileTopbarButton;
+    private ImageView notifTopbarButton;
+    private ImageView goBackButton;
+
+    /* Footbar */
+    private ImageView calendarFootbarButton;
+    private ImageView addPatientFootbarButton;
     private static final String TAG = "R7";
     private RelativeLayout cardContainer;
 
@@ -75,6 +91,41 @@ public class R7 extends AppCompatActivity {
         setCalendarTopBarClickListener(calendarTopBar);
         testConnection();
         fetchUpcomingAppointments();
+
+
+
+        PhysiologoTopbarButton = findViewById((R.id.PhysiologoTopbar));
+        profileTopbarButton = findViewById((R.id.ProfilePatientTopbar));
+        goBackButton = findViewById(R.id.goback);
+
+        calendarFootbarButton = findViewById(R.id.calendarFootbar);
+        addPatientFootbarButton = findViewById(R.id.addPatientFootbar);
+
+
+
+
+        PhysiologoTopbarButton.setOnClickListener(v->{
+            Intent i = new Intent(R7.this, R6.class );
+            startActivity(i);
+        });
+
+        profileTopbarButton.setOnClickListener(v->{
+            Intent i = new Intent(R7.this, patientProfile.class );
+            startActivity(i);
+        });
+
+        goBackButton.setOnClickListener(v -> finish());
+
+
+        addPatientFootbarButton.setOnClickListener((v->{
+            Intent i = new Intent(R7.this, R3.class );
+            startActivity(i);
+
+        }));
+        calendarFootbarButton.setOnClickListener(v->{
+            Intent i = new Intent(R7.this, R6.class);
+            startActivity(i);
+        });
 
     }
 
