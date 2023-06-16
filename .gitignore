@@ -84,16 +84,10 @@ lint/outputs/
 lint/tmp/
 # lint/reports/
 
-.tmp
-
-android
-
-caches
-
-daemon
-
-jdks
-
-native
-
-wrapper
+jdks/
+caches/
+.tmp/
+wrapper/
+native/
+daemon/
+android/
