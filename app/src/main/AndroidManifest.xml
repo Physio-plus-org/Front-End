@@ -16,7 +16,7 @@
             android:name="com.google.android.actions"
             android:resource="@xml/network_security_config" />
         <activity
-            android:name=".R10"
+            android:name=".R10.R10"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

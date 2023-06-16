@@ -1,10 +1,12 @@
-package com.example.physio_plus_app;
+package com.example.physio_plus_app.R10;
 
 import android.os.Bundle;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.physio_plus_app.R;
 
 import org.json.JSONException;
 
