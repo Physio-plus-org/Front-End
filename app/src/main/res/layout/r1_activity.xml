@@ -10,6 +10,11 @@
         android:layout_height="wrap_content"
         tools:context=".R1.R1">
 
+        <include>
+            
+        </include>
+
+
         <TextView
             android:id="@+id/titlePhysio"
             android:layout_width="369dp"
@@ -156,40 +161,15 @@
             app:layout_constraintTop_toBottomOf="@+id/afmPhysio"
             app:layout_constraintVertical_bias="1.0" />
 
-    <ImageView
-        android:id="@+id/physio_logo"
-        android:layout_width="335dp"
-        android:layout_height="65dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.565"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/r1_physio_logo" />
-
-    <ImageButton
-        android:id="@+id/backButton"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="4dp"
-        android:contentDescription="Back"
-        android:background="@drawable/r1_back_button_round"
-        android:src="@drawable/r1_back_arrow"
-        app:layout_constraintEnd_toStartOf="@+id/physio_logo"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="338dp"
             android:layout_height="254dp"
-            android:layout_marginTop="28dp"
 
             android:scaleType="fitXY"
-            app:layout_constraintTop_toBottomOf="@+id/physio_logo"
             app:srcCompat="@drawable/r1"
-            tools:layout_editor_absoluteX="43dp" />
+            tools:layout_editor_absoluteX="43dp"
+            tools:layout_editor_absoluteY="109dp" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
