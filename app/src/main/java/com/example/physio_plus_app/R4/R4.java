@@ -1,10 +1,8 @@
 package com.example.physio_plus_app.R4;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -17,13 +15,6 @@ import okhttp3.OkHttpClient;
 
 public class R4 extends AppCompatActivity {
 
-
-    /* Topbar */
-
-    private ImageView PhysiologoTopbarButton;
-    private ImageView profileTopbarButton;
-    private ImageView notifTopbarButton;
-    private ImageView goBackButton;
     TextView name_tv;
     TextView age_tv;
 
@@ -69,23 +60,6 @@ public class R4 extends AppCompatActivity {
 
         Log.d("Main Activity", "Sessions is running without problems");
 
-
-        PhysiologoTopbarButton = findViewById((R.id.PhysioLogoTopbar));
-        profileTopbarButton = findViewById((R.id.profileTopbar));
-        goBackButton = findViewById(R.id.goback);
-
-
-        PhysiologoTopbarButton.setOnClickListener(v->{
-            Intent i = new Intent(R4.this, R6.class );
-            startActivity(i);
-        });
-
-        profileTopbarButton.setOnClickListener(v->{
-            Intent i = new Intent(R4.this, Profile.class );
-            startActivity(i);
-        });
-
-        goBackButton.setOnClickListener(v -> finish());
 
     }
 

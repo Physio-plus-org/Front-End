@@ -41,14 +41,6 @@ import okhttp3.Response;
 
 public class R5 extends AppCompatActivity implements MyAdapter.UserClickListener {
 
-
-
-    /* Topbar */
-
-    private ImageView PhysiologoTopbarButton;
-    private ImageView profileTopbarButton;
-    private ImageView notifTopbarButton;
-    private ImageView goBackButton;
     private SearchView searchView;
     private ImageButton add_Button;
     private ImageView imageView1;
@@ -117,25 +109,6 @@ public class R5 extends AppCompatActivity implements MyAdapter.UserClickListener
 
         setUsersInfo();
         prepareRecyclerView();
-
-
-
-        PhysiologoTopbarButton = findViewById((R.id.PhysioLogoTopbar));
-        profileTopbarButton = findViewById((R.id.profileTopbar));
-        goBackButton = findViewById(R.id.goback);
-
-        PhysiologoTopbarButton.setOnClickListener(v->{
-            Intent i = new Intent(R5.this, R6.class );
-            startActivity(i);
-        });
-
-        profileTopbarButton.setOnClickListener(v->{
-            Intent i = new Intent(R5.this, Profile.class );
-            startActivity(i);
-        });
-
-        goBackButton.setOnClickListener(v -> finish());
-
 
     }
 
