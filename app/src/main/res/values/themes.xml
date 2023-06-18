@@ -36,7 +36,7 @@
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/white</item>
         <!-- <item name="colorPrimary">@color/background_color</item> -->
-        <item name="colorPrimaryVariant">@color/green</item>
+        <item name="colorPrimaryVariant">@color/R1_primaryColor</item>
         <item name="colorOnPrimary">@color/black</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/orange</item>

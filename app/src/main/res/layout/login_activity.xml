@@ -30,7 +30,7 @@
             android:layout_marginBottom="30dp"
             android:text="@string/r1_prompt_login"
             android:textAlignment="center"
-            android:textColor="@color/green"
+            android:textColor="@color/R1_primaryColor"
             android:textSize="34sp" />
 
         <LinearLayout
@@ -58,7 +58,7 @@
                 android:id="@+id/physio_center_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/green"
+                android:backgroundTint="@color/R1_primaryColor"
                 android:onClick="physioCenterActivity"
                 android:paddingLeft="48dp"
                 android:paddingTop="32dp"

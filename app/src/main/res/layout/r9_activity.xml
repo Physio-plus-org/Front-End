@@ -97,7 +97,7 @@
             android:layout_height="1dp"
             android:layout_below="@+id/dayLabelId"
             android:layout_marginTop="63dp"
-            android:background="@color/light_grey" />
+            android:background="@color/R1_backgroundColor" />
 
         <View
             android:id="@+id/view1"
@@ -105,7 +105,7 @@
             android:layout_height="1dp"
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="81dp"
-            android:background="@color/light_grey" />
+            android:background="@color/R1_backgroundColor" />
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/fragmentContainerView"

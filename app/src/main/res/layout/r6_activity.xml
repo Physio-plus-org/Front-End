@@ -51,7 +51,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="25dp"
-                android:textColor="@color/green"
+                android:textColor="@color/R1_primaryColor"
                 android:text="Πρόγραμμα"
                 app:layout_constraintBottom_toBottomOf="@+id/weekly_program_titleA"
                 app:layout_constraintStart_toEndOf="@+id/weekly_program_titleA"

@@ -43,20 +43,18 @@
                 android:backgroundTint="@color/backgroundColor"/>
 
 
-
-                <Button
-                    android:id="@+id/calendarTopBar"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:background="@color/backgroundColor"
-                    android:backgroundTint="@color/backgroundColor"
-                    android:gravity="center|center_horizontal"
-                    app:icon="@drawable/r4_calendar_icon"
-                    app:iconGravity="textEnd"
-                    android:contentDescription="notiftopbar"
-                    app:iconTint="@color/iconsColor" />
+            <Button
+                android:id="@+id/calendarTopBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:backgroundTint="@color/backgroundColor"
+                android:contentDescription="notiftopbar"
+                android:gravity="center|center_horizontal"
+                app:icon="@drawable/r4_calendar_icon"
+                app:iconGravity="textEnd"
+                app:iconTint="@color/iconsColor" />
 
                 <TextView
                     android:id="@+id/redBubbleText"
@@ -79,11 +77,12 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_weight="1"
+                android:backgroundTint="@color/backgroundColor"
+                android:contentDescription="profilepatient"
                 android:gravity="center|center_horizontal"
                 app:icon="@drawable/r3_person"
-                android:contentDescription="profilepatient"
                 app:iconGravity="textStart"
-                app:iconTint="@color/iconsColor"/>
+                app:iconTint="@color/iconsColor" />
 
 
 

@@ -76,7 +76,7 @@
                 android:inputType="text"
                 android:minHeight="48dp"
                 android:padding="10dp"
-                android:textColorHint="@color/light_grey" />
+                android:textColorHint="@color/sec_textColor" />
 
             <TextView
                 android:id="@+id/name"
@@ -100,7 +100,7 @@
                 android:inputType="text"
                 android:minHeight="48dp"
                 android:padding="10dp"
-                android:textColorHint="@color/light_grey" />
+                android:textColorHint="@color/sec_textColor" />
 
             <TextView
                 android:id="@+id/description"
@@ -125,7 +125,7 @@
                 android:minHeight="120dp"
                 android:padding="10dp"
                 android:textAlignment="textStart"
-                android:textColorHint="@color/light_grey" />
+                android:textColorHint="@color/sec_textColor" />
 
             <TextView
                 android:id="@+id/price"
@@ -149,7 +149,7 @@
                 android:inputType="text"
                 android:minHeight="48dp"
                 android:padding="10dp"
-                android:textColorHint="@color/light_grey" />
+                android:textColorHint="@color/sec_textColor" />
 
             <FrameLayout
                 android:layout_width="match_parent"
