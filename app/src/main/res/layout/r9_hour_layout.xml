@@ -7,7 +7,7 @@
     android:layout_marginTop="10dp"
     android:id="@+id/HourRelativeLayout"
     android:background="@drawable/r9_round_hourtable"
-    android:backgroundTint="@color/white">
+    android:backgroundTint="@color/backgroundColor">
 
     <TextView
         android:id="@+id/hourTextView"
@@ -17,7 +17,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         android:text="9:00"
-        android:textColor="@color/black"
+        android:textColor="@color/text_color"
         android:textSize="30sp" />
 
 

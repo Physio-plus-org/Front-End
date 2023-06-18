@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:text="April 3, Monday"
         android:textSize="18sp"
-        android:textColor="#000000" />
+        android:textColor="@color/text_color" />
 
     <!-- Time -->
     <TextView
@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:text="10:00 pm"
         android:textSize="16sp"
-        android:textColor="#666666"
+        android:textColor="@color/dark_grey"
         android:layout_marginTop="8dp" />
 
     <!-- Patient Name -->
@@ -33,7 +33,7 @@
         android:layout_height="wrap_content"
         android:text="Milios Filios"
         android:textSize="20sp"
-        android:textColor="#000000"
+        android:textColor="@color/text_color"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="16dp"
         android:gravity="center" />

@@ -13,6 +13,7 @@
     <color name="text_color">#FFFFFFFF</color>
     <color name="sec_textColor">#707070</color>
     <color name="primaryColor">#008563</color>
+    <color name="secondGreen">#15EDC2</color>
 
     <!--R1-->
     <color name="R1_primaryColor">#008563</color>
@@ -27,6 +28,9 @@
     <color name="R4_backgroundColor">#FF000000</color>
     <color name="R4_textColor">#FFFFFFFF</color>
     <color name="R4_scrollColor">#004A40</color>
+
+    <!--R7-->
+    <color name="SecondaryLightGrey">#181818</color>
 
     <!--top_bar-->
     <color name="dividerColor">#181818</color>
