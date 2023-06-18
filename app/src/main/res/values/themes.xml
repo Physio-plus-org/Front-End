@@ -50,5 +50,5 @@
     <style name="App.Custom.Indicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
         <item name="android:color">@color/light_green</item>
     </style>
-    <style name="Theme.physio_plus_app" parent="Base.Theme.physio_plus_app" />
+<!--    <style name="Theme.physio_plus_app" parent="Base.Theme.physio_plus_app" />-->
 </resources>

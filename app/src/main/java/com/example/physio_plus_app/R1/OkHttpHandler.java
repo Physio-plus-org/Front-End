@@ -1,10 +1,12 @@
 package com.example.physio_plus_app.R1;
 
-import android.os.*;
+import android.os.StrictMode;
 
-import org.json.*;
-import java.util.*;
-import okhttp3.*;
+import okhttp3.MediaType;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
 
 public abstract class OkHttpHandler {
     private static final StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();

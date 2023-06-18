@@ -12,6 +12,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.physio_plus_app.R;
+import com.example.physio_plus_app.R6.R6;
 
 import okhttp3.OkHttpClient;
 
@@ -68,24 +69,24 @@ public class R4 extends AppCompatActivity {
         Log.d("Main Activity", "Sessions is running without problems");
 
 
-        /* Topbar */
-        ImageView physiologoTopbarButton = findViewById((R.id.PhysiologoTopbar));
-        Button profileTopbarButton = findViewById((R.id.ProfilePatientTopbar));
-        Button notifTopbarButton = findViewById(R.id.calendarTopBar);
-        ImageView goBackButton = findViewById(R.id.goback);
-
-
-        PhysiologoTopbarButton.setOnClickListener(v->{
-            Intent i = new Intent(R4.this, R6.class );
-            startActivity(i);
-        });
-
-        profileTopbarButton.setOnClickListener(v->{
-            Intent i = new Intent(R4.this, Profile.class );
-            startActivity(i);
-        });
-
-        goBackButton.setOnClickListener(v -> finish());
+//        /* Topbar */
+//        ImageView physiologoTopbarButton = findViewById((R.id.PhysiologoTopbar));
+//        Button profileTopbarButton = findViewById((R.id.ProfilePatientTopbar));
+//        Button notifTopbarButton = findViewById(R.id.calendarTopBar);
+//        ImageView goBackButton = findViewById(R.id.goback);
+//
+//
+//        physiologoTopbarButton.setOnClickListener(v->{
+//            Intent i = new Intent(R4.this, R6.class );
+//            startActivity(i);
+//        });
+//
+//        profileTopbarButton.setOnClickListener(v->{
+////            Intent i = new Intent(R4.this, Profile.class );
+////            startActivity(i);
+//        });
+//
+//        goBackButton.setOnClickListener(v -> finish());
 
     }
 

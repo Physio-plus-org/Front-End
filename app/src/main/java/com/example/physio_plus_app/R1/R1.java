@@ -4,13 +4,18 @@ import static android.app.PendingIntent.getActivity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.physio_plus_app.Patientprofile.patientProfile;
 import com.example.physio_plus_app.R;
+import com.example.physio_plus_app.R3.R3;
+import com.example.physio_plus_app.R6.R6;
 
 
 public class R1 extends AppCompatActivity {
@@ -60,5 +65,10 @@ public class R1 extends AppCompatActivity {
 
             }
         });
+
+    }
+
+    public void backButtonR1(View view) {
+        finish();
     }
 }

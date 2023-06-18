@@ -30,6 +30,7 @@
                 android:layout_gravity="center"
                 android:layout_weight="1"
                 android:foregroundGravity="center"
+                android:onClick="backButtonR1"
                 android:src="@drawable/back_button" />
 
             <ImageView

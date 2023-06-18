@@ -34,27 +34,28 @@ public class R9 extends AppCompatActivity{
         setContentView(R.layout.r9_activity);
 
 //        button= findViewById(R.id.buttonNext);
-        Bundle args = new Bundle();
-        //start of actionBar
-        ActionBar actionBar;
-        actionBar = getSupportActionBar();
-
-        actionBar.setDisplayShowCustomEnabled(true);
-        LayoutInflater inflater=(LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View view = inflater.inflate(R.layout.r9_custom_image,null);
-        actionBar.setCustomView(view);
-
-        // Define ColorDrawable object and parse color
-        // using parseColor method
-        // with color hash code as its parameter
-        ColorDrawable colorDrawable
-                = new ColorDrawable(Color.parseColor("white"));
-
-        // Set BackgroundDrawable
-        actionBar.setBackgroundDrawable(colorDrawable);
-        //end of actionBar
-        Locale locale = new Locale("EL");
-        Locale.setDefault(locale);
+//        Bundle args = new Bundle();
+//        //start of actionBar
+//        ActionBar actionBar;
+//        actionBar = getSupportActionBar();
+//
+//        assert actionBar != null;
+//        actionBar.setDisplayShowCustomEnabled(true);
+//        LayoutInflater inflater=(LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+//        View view = inflater.inflate(R.layout.r9_custom_image,null);
+//        actionBar.setCustomView(view);
+//
+//        // Define ColorDrawable object and parse color
+//        // using parseColor method
+//        // with color hash code as its parameter
+//        ColorDrawable colorDrawable
+//                = new ColorDrawable(Color.parseColor("white"));
+//
+//        // Set BackgroundDrawable
+//        actionBar.setBackgroundDrawable(colorDrawable);
+//        //end of actionBar
+//        Locale locale = new Locale("EL");
+//        Locale.setDefault(locale);
 
 
         String url = "http://"+myIP+"/physio_app_db/TestPrint.php?range_start=2023-04-01&range_end=2023-07-01";
@@ -66,11 +67,11 @@ public class R9 extends AppCompatActivity{
             e.printStackTrace();
         }
 
-        /* Topbar */
-        ImageView physiologoTopbarButton = findViewById((R.id.PhysiologoTopbar));
-        Button profileTopbarButton = findViewById((R.id.ProfilePatientTopbar));
-        Button notifTopbarButton = findViewById(R.id.calendarTopBar);
-        ImageView goBackButton = findViewById(R.id.goback);
+//        /* Topbar */
+//        ImageView physiologoTopbarButton = findViewById((R.id.PhysiologoTopbar));
+//        Button profileTopbarButton = findViewById((R.id.ProfilePatientTopbar));
+//        Button notifTopbarButton = findViewById(R.id.calendarTopBar);
+//        ImageView goBackButton = findViewById(R.id.goback);
 
     }
 

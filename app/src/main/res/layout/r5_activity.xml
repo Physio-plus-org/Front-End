@@ -5,7 +5,7 @@
     android:id="@+id/relative_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".R5">
+    tools:context=".R5.R5">
 
 
     <ScrollView
@@ -50,16 +50,6 @@
                         android:layout_weight="1"
                         app:srcCompat="@drawable/physio_logo_topbar" />
 
-
-
-
-
-
-
-
-
-
-
                     <Button
                         android:id="@+id/calendarTopBar"
                         android:layout_width="wrap_content"
@@ -100,13 +90,8 @@
                         android:contentDescription="profilepatient"
                         app:iconGravity="textStart" />
 
-
-
-
-
-
-
                 </LinearLayout>
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -186,7 +171,7 @@
                         android:src="@drawable/r7_baseline_calendar_month_24"
                         android:text="@string/calendarButton"
                         android:title=""
-                        app:showAsAction="ifRoom"></ImageView>
+                        app:showAsAction="ifRoom"/>
 
 
                     <ImageView
@@ -203,7 +188,7 @@
                         android:src="@drawable/r7_baseline_person_24"
                         android:text="@string/calendarButton"
                         android:title=""
-                        app:showAsAction="ifRoom"></ImageView>
+                        app:showAsAction="ifRoom"/>
 
 
 

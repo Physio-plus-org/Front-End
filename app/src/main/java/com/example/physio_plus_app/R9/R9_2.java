@@ -84,15 +84,13 @@ public class R9_2 extends AppCompatActivity implements SelectListenerR9 {
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()){
-                    case R.id.calendar:
-                        openActivity1();
-                        break;
-                    case R.id.money:
-                        break;
-                }
-
-
+//                switch (item.getItemId()){
+//                    case R.id.calendar:
+//                        openActivity1();
+//                        break;
+//                    case R.id.money:
+//                        break;
+//                }
                 return false;
             }
         });

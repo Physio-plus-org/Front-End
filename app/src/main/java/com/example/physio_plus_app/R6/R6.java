@@ -100,47 +100,51 @@ public class R6 extends AppCompatActivity implements SelectListenerR6 {
 
 
         // Initialize events for current date
-        LocalDateTime date_now =  LocalDateTime.now();
+        LocalDateTime date_now = null;//DateTime();
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            date_now = LocalDateTime.now();
+        }
         createEvents(date_now, savedInstanceState);
+        assert date_now != null;
         greekDateHandler(date_now);
 
 
 
-        /* Topbar */
-        ImageView physiologoTopbarButton = findViewById((R.id.PhysiologoTopbar));
-        Button profileTopbarButton = findViewById((R.id.ProfilePatientTopbar));
-        Button notifTopbarButton = findViewById(R.id.calendarTopBar);
-        ImageView goBackButton = findViewById(R.id.goback);
-
-        /* Footbar */
-        ImageView calendarFootbarButton = findViewById(R.id.calendarFootbar);
-        ImageView addPatientFootbarButton = findViewById(R.id.addPatientFootbar);
-
-
-
-
-        PhysiologoTopbarButton.setOnClickListener(v->{
-            Intent i = new Intent(R6Main.this, DefaultScreen.class );
-            startActivity(i);
-        });
-
-        profileTopbarButton.setOnClickListener(v->{
-            Intent i = new Intent(R6Main.this, Profile.class );
-            startActivity(i);
-        });
-
-        goBackButton.setOnClickListener(v -> finish());
-
-
-        addPatientFootbarButton.setOnClickListener((v->{
-            Intent i = new Intent(R6Main.this, R3Main.class );
-            startActivity(i);
-
-        }));
-        calendarFootbarButton.setOnClickListener(v->{
-            Intent i = new Intent(CurrentActivity.this, R6Main.class);
-            startActivity(i);
-        });
+//        /* Topbar */
+//        ImageView physiologoTopbarButton = findViewById((R.id.PhysiologoTopbar));
+//        Button profileTopbarButton = findViewById((R.id.ProfilePatientTopbar));
+//        Button notifTopbarButton = findViewById(R.id.calendarTopBar);
+//        ImageView goBackButton = findViewById(R.id.goback);
+//
+//        /* Footbar */
+//        ImageView calendarFootbarButton = findViewById(R.id.calendarFootbar);
+//        ImageView addPatientFootbarButton = findViewById(R.id.addPatientFootbar);
+//
+//
+//
+//
+//        PhysiologoTopbarButton.setOnClickListener(v->{
+//            Intent i = new Intent(R6Main.this, DefaultScreen.class );
+//            startActivity(i);
+//        });
+//
+//        profileTopbarButton.setOnClickListener(v->{
+//            Intent i = new Intent(R6Main.this, Profile.class );
+//            startActivity(i);
+//        });
+//
+//        goBackButton.setOnClickListener(v -> finish());
+//
+//
+//        addPatientFootbarButton.setOnClickListener((v->{
+//            Intent i = new Intent(R6Main.this, R3Main.class );
+//            startActivity(i);
+//
+//        }));
+//        calendarFootbarButton.setOnClickListener(v->{
+//            Intent i = new Intent(CurrentActivity.this, R6Main.class);
+//            startActivity(i);
+//        });
 
     }
 

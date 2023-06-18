@@ -1,7 +1,10 @@
 <resources>
     <string name="app_name">Physio_plus_App</string>
 
-<!--R1-->
+    <!--Login-->
+    <string name="logo_image_description">logo_image</string>
+
+    <!--R1-->
     //R1 Enter
     <string name="r1EnterButtonPSF">Π.Σ.Φ.</string>
     <string name="r1EnterButtonPhysio">Φυσιοθεραπευτηριο</string>
@@ -12,7 +15,7 @@
     <string name="connect">Συνδεθείτε</string>
 
     //R1
-    <string name="r1_enter_title">Καλωσορίσατε στο</string>
+    <string name="r1_prompt_login">Συνδεθείτε ως</string>
     <string name="r1_title">Προσθήκη Φυσιοθεραπευτηρίου</string>
     <string name="r1_subtitle">Στοιχεία Λογαριασμού</string>
     <string name="username">Όνομα Χρήστη</string>

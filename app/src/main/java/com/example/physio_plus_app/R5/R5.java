@@ -23,6 +23,7 @@ import android.widget.SearchView;
 
 
 import com.example.physio_plus_app.R;
+import com.example.physio_plus_app.R6.R6;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -50,13 +51,13 @@ public class R5 extends AppCompatActivity implements MyAdapter.UserClickListener
     private SearchView searchView;
     private ImageButton add_Button;
     private ImageView imageView1;
-    private ImageView imageView2;
-    private ImageView imageView3;
+    private Button imageView2;
+    private Button imageView3;
     private ImageView imageView7;
     private ImageView imageView10;
     private ConstraintLayout constraintLayout;
-    private ImageButton imageButton1;
-    private ImageButton imageButton2;
+    private ImageView imageButton1;
+    private ImageView imageButton2;
     private CardView cardView;
 
     RecyclerView recyclerView;
@@ -72,9 +73,9 @@ public class R5 extends AppCompatActivity implements MyAdapter.UserClickListener
         setContentView(R.layout.r5_activity);
         getSupportActionBar().hide();
 
-        imageView1 = findViewById(R.id.imageView3);
-        imageView2 = findViewById(R.id.imageView8);
-        imageView3 = findViewById(R.id.imageView9);
+        imageView1 = findViewById(R.id.PhysiologoTopbar);
+        imageView2 = findViewById(R.id.calendarTopBar);
+        imageView3 = findViewById(R.id.ProfilePatientTopbar);
         imageView7 = findViewById(R.id.imageView7);
         imageView10 = findViewById(R.id.imageView10);
         add_Button = findViewById(R.id.add_Button);
@@ -94,16 +95,16 @@ public class R5 extends AppCompatActivity implements MyAdapter.UserClickListener
         });
 
         constraintLayout = findViewById(R.id.constraintLayout2);
-        imageButton1 = findViewById(R.id.imageButton4);
-        imageButton2 = findViewById(R.id.imageButton5);
+        imageButton1 = findViewById(R.id.calendarFootbar);
+        imageButton2 = findViewById(R.id.addPatientFootbar);
 
 
         userList = new ArrayList<>();
-        recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+        recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setVerticalScrollBarEnabled(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        adapter = new MyAdapter(userList, R5.this,this::clicked_user);
+        adapter = new MyAdapter(userList, R5.this, this::clicked_user);
         recyclerView.setAdapter(adapter);
 
 //        try {
@@ -117,24 +118,24 @@ public class R5 extends AppCompatActivity implements MyAdapter.UserClickListener
         prepareRecyclerView();
 
 
-
-        /* Topbar */
-        ImageView physiologoTopbarButton = findViewById((R.id.PhysiologoTopbar));
-        Button profileTopbarButton = findViewById((R.id.ProfilePatientTopbar));
-        Button notifTopbarButton = findViewById(R.id.calendarTopBar);
-        ImageView goBackButton = findViewById(R.id.goback);
-
-        PhysiologoTopbarButton.setOnClickListener(v->{
-            Intent i = new Intent(R5.this, R6.class );
-            startActivity(i);
-        });
-
-        profileTopbarButton.setOnClickListener(v->{
-            Intent i = new Intent(R5.this, Profile.class );
-            startActivity(i);
-        });
-
-        goBackButton.setOnClickListener(v -> finish());
+//
+//        /* Topbar */
+//        ImageView physiologoTopbarButton = findViewById((R.id.PhysiologoTopbar));
+//        Button profileTopbarButton = findViewById((R.id.ProfilePatientTopbar));
+//        Button notifTopbarButton = findViewById(R.id.calendarTopBar);
+//        ImageView goBackButton = findViewById(R.id.goback);
+//
+//        physiologoTopbarButton.setOnClickListener(v->{
+//            Intent i = new Intent(R5.this, R6.class );
+//            startActivity(i);
+//        });
+//
+//        profileTopbarButton.setOnClickListener(v->{
+////            Intent i = new Intent(R5.this, Profile.class );
+////            startActivity(i);
+//        });
+//
+//        goBackButton.setOnClickListener(v -> finish());
 
 
     }
