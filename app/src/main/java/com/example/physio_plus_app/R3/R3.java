@@ -20,7 +20,7 @@ public class R3 extends AppCompatActivity {
 
 
     EditText name_Patient,surname_Patient,addressPatient,amkaPatient;
-    ImageButton createPatient;
+    ImageButton createPatient, returnButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +31,7 @@ public class R3 extends AppCompatActivity {
         addressPatient = findViewById(R.id.addess);
         amkaPatient = findViewById(R.id.amka);
         createPatient = findViewById(R.id.createbtn);
+        returnButton = findViewById(R.id.backbtn);
 
         /* Topbar */
         ImageView physiologoTopbarButton = findViewById((R.id.PhysiologoTopbar));
@@ -52,7 +53,12 @@ public class R3 extends AppCompatActivity {
 
         goBackButton.setOnClickListener(v -> finish());
 
-
+        returnButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
     }
     public void onClick(View v) {
