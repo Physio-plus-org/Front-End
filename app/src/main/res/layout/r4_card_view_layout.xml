@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
-    android:elevation="4dp">
+    android:elevation="4dp"
+    app:cardBackgroundColor="@color/R4_primaryColor">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,7 +20,7 @@
             android:padding="8dp"
             android:text="date"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textColor="@color/background_color" />
+            android:textColor="@color/R4_textColor" />
 
         <TextView
             android:id="@+id/hours_text"
@@ -32,7 +33,7 @@
             android:text="hours"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textColor="@color/background_color" />
+            android:textColor="@color/R4_textColor" />
 
         <androidx.cardview.widget.CardView
             android:layout_width="100dp"
@@ -40,7 +41,7 @@
             android:layout_gravity="end|center"
             android:layout_margin="8dp"
             android:elevation="4dp"
-            app:cardBackgroundColor="@color/background_color">
+            app:cardBackgroundColor="@color/R4_backgroundColor">
 
 
             <TextView
@@ -51,7 +52,7 @@
                 android:layout_marginStart="5dp"
                 android:text="notes"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                android:textColor="@color/text_color"
+                android:textColor="@color/R4_textColor"
                 android:textSize="12sp"
                 android:textStyle="italic" />
 

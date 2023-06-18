@@ -2,19 +2,26 @@
 <resources>
 
     <!--Physio + Colours -->
-<!--R1-->
+    <!--R1-->
     <color name="green">#008563</color>
     <color name="blue">#2B00BC</color>
     <color name="dark_grey">#707070</color>
     <color name="light_grey">#C4C4C4</color>
     <color name="green_yes">#0CDB0C</color>
     <color name="red_no">#F95F5F</color>
-<!--R2-->
+    <!--R2-->
     <color name="transparent">#00000000</color>
-<!--R6-->
-     <color name="light_green">#54BA78</color>
-<!--R7-->
-    <color name="PrimaryGreen">#008563</color> 
+
+    <!--R4-->
+    <color name="R4_primaryColor">#008563</color>
+    <color name="R4_backgroundColor">#FFFFFFFF</color>
+    <color name="R4_textColor">#FF000000</color>
+    <color name="R4_scrollColor">#54BA78</color>
+
+    <!--R6-->
+    <color name="light_green">#54BA78</color>
+    <!--R7-->
+    <color name="PrimaryGreen">#008563</color>
     <color name="SecondaryLightGrey">#e1e1e1</color>
     <color name="SecondaryDarkGrey">#1c1c1c</color>
     <color name="AccentBrightRed">#ff5c5c</color>
@@ -22,7 +29,7 @@
     <color name="acceptButton">#00FF00</color> <!-- Set your desired accept button color -->
     <color name="cancelButton">#FF0000</color> <!-- Set your desired cancel button color -->
 
-<!--R8-->
+    <!--R8-->
 
     <color name="colorPrimary">#008563</color>
     <color name="colorPrimaryVariant">#00694E</color>
@@ -38,8 +45,13 @@
     <color name="light_black">#181818</color>
     <color name="black">#FF000000</color>
 
-<!--R9-->
+    <!--R9-->
     <color name="light_white">#ADFFFFFF</color>
     <color name="orange">#F0AD4E</color>
     <color name="light_orange">#B7ECAD55</color>
+
+    <!--top_bar-->
+    <color name="dividerColor">#707070</color>
+    <color name="backgroundColor">#FFFFFFFF</color>
+    <color name="iconsColor">#FF000000</color>
 </resources>

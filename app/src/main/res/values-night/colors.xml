@@ -9,4 +9,15 @@
 
     <color name="primary_color_dr">#F0AD4E</color>
 
+    <!--R4-->
+    <color name="R4_primaryColor">#008563</color>
+    <color name="R4_backgroundColor">#FF000000</color>
+    <color name="R4_textColor">#FFFFFFFF</color>
+    <color name="R4_scrollColor">#004A40</color>
+
+    <!--top_bar-->
+    <color name="dividerColor">#181818</color>
+    <color name="backgroundColor">#FF000000</color>
+    <color name="iconsColor">#FFFFFFFF</color>
+
 </resources>
