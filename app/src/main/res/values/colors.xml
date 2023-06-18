@@ -54,4 +54,5 @@
     <color name="dividerColor">#707070</color>
     <color name="backgroundColor">#FFFFFFFF</color>
     <color name="iconsColor">#FF000000</color>
+    <color name="notifyColor">#EA472E</color>
 </resources>

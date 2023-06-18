@@ -19,5 +19,6 @@
     <color name="dividerColor">#181818</color>
     <color name="backgroundColor">#FF000000</color>
     <color name="iconsColor">#FFFFFFFF</color>
+    <color name="notifyColor">#15EDC2</color>
 
 </resources>
