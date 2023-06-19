@@ -151,46 +151,7 @@
         </RelativeLayout>
 
 
-        <RelativeLayout
-            android:background="@color/primaryColor"
-            android:id="@+id/footerLayout"
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:layout_alignParentBottom="true">
-
-            <ImageView
-                android:id="@+id/calendarFootbar"
-                android:layout_width="200dp"
-                android:layout_height="60dp"
-                android:layout_alignParentStart="true"
-                android:layout_centerVertical="true"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="40dp"
-                android:layout_marginEnd="40dp"
-                android:layout_marginBottom="40dp"
-                android:background="@drawable/r7_footerroundedshape"
-                android:contentDescription="@string/goback"
-                android:src="@drawable/r7_baseline_calendar_month_24"
-                android:text="@string/calendarButton"
-                android:title=""
-                app:showAsAction="ifRoom"></ImageView>
-
-
-            <ImageView
-                android:id="@+id/addPatientFootbar"
-                android:layout_width="230dp"
-                android:layout_height="60dp"
-                android:layout_centerVertical="true"
-                android:layout_marginStart="208dp"
-                android:layout_marginTop="40dp"
-                android:layout_marginEnd="5dp"
-                android:layout_marginBottom="40dp"
-                android:background="@drawable/r7_footerroundedshape"
-                android:contentDescription="@string/goback"
-                android:src="@drawable/r7_baseline_person_24"
-                android:text="@string/calendarButton"
-                android:title=""
-                app:showAsAction="ifRoom"></ImageView>
+       <include layout="@layout/footbar_doctor"></include>
 
 
 
