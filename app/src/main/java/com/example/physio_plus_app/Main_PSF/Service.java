@@ -1,4 +1,4 @@
-package com.example.physio_plus_app.R_2_5;
+package com.example.physio_plus_app.Main_PSF;
 
 public class Service {
         private String title;

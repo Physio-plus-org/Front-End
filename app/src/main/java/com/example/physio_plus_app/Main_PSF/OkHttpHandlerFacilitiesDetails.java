@@ -1,10 +1,4 @@
-package com.example.physio_plus_app.R_2_5;
-
-import android.os.StrictMode;
-
-import com.example.physio_plus_app.R5.R5;
-import com.example.physio_plus_app.R5.User;
-import com.example.physio_plus_app.Utils.HttpHandler.HttpHandler;
+package com.example.physio_plus_app.Main_PSF;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -12,10 +6,8 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Iterator;
 
 import okhttp3.FormBody;
-import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;

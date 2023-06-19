@@ -43,8 +43,8 @@
         <activity android:name=".R9.R9" />
         <activity android:name=".R9.R9_2"/>
         <activity android:name=".R10.R10" />
-        <activity android:name=".R_2_5.mainPSF" />
-        <activity android:name=".R_2_5.Facilities_details" />
+        <activity android:name=".Main_PSF.mainPSF" />
+        <activity android:name=".Main_PSF.Facilities_details" />
     </application>
 
 </manifest>

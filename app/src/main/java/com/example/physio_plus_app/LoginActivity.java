@@ -6,11 +6,9 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.physio_plus_app.R1.R1;
 import com.example.physio_plus_app.R6.R6;
 import com.example.physio_plus_app.R9.R9;
-import com.example.physio_plus_app.R_2_5.Facilities_details;
-import com.example.physio_plus_app.R_2_5.mainPSF;
+import com.example.physio_plus_app.Main_PSF.mainPSF;
 import com.example.physio_plus_app.Utils.HttpHandler.HttpHandler;
 
 public class LoginActivity extends AppCompatActivity {

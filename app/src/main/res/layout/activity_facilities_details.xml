@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".R_2_5.Facilities_details">
+    tools:context=".Main_PSF.Facilities_details">
 
     <ScrollView
         android:layout_width="match_parent"

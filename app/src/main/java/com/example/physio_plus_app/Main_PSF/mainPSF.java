@@ -1,4 +1,4 @@
-package com.example.physio_plus_app.R_2_5;
+package com.example.physio_plus_app.Main_PSF;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,7 +8,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.physio_plus_app.R;
 import com.example.physio_plus_app.R1.R1;
 import com.example.physio_plus_app.R2.R2;
-import com.example.physio_plus_app.R_2_5.mainPSF;
 
 public class mainPSF extends AppCompatActivity {
 
