@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -12,7 +11,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.physio_plus_app.R;
-import com.example.physio_plus_app.R6.R6;
+import com.example.physio_plus_app.R5.R5;
 
 import java.util.Objects;
 
@@ -36,9 +35,12 @@ public class R4 extends AppCompatActivity {
 
     public DisplayInfo handler;
     public Sessions sessions;
-    String url1;
+    String url1, url2;
 
     OkHttpClient client,client2;
+
+    private static final String DISPLAY_INFO = "https://physioplus.000webhostapp.com/R4/displaypatients.php";
+    private static final String DISPLAY_SESSIONS= "https://physioplus.000webhostapp.com/R4/displaysessions.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,46 +58,69 @@ public class R4 extends AppCompatActivity {
 
 
 
-        url1 = "https://physioplus.000webhostapp.com/R4/displaypatients.php";
+        url1 = DISPLAY_INFO;
+        url2 = DISPLAY_SESSIONS;
 
-        client = new OkHttpClient();
-        client2 = new OkHttpClient();
-        handler = new DisplayInfo(url1, client ,name_tv, age_tv, address_tv, date_tv);
-        Log.d("Main Activity", "DisplayInfo is running without problems");
-
-
-        sessions = new Sessions(url1, client2, verticalLayout);
-        sessions.displaySessions();
 
 
         Log.d("Main Activity", "Sessions is running without problems");
 
 
-        /* Topbar */
-        ImageView physiologoTopbarButton = findViewById((R.id.PhysiologoTopbar));
-        Button profileTopbarButton = findViewById((R.id.ProfilePatientTopbar));
-        Button notifTopbarButton = findViewById(R.id.calendarTopBar);
-        ImageView goBackButton = findViewById(R.id.goback);
+//        /* Topbar */
+//        ImageView physiologoTopbarButton = findViewById((R.id.PhysiologoTopbar));
+//        Button profileTopbarButton = findViewById((R.id.ProfilePatientTopbar));
+//        Button notifTopbarButton = findViewById(R.id.calendarTopBar);
+//        ImageView goBackButton = findViewById(R.id.goback);
+//
+//
+//
+////        profileTopbarButton.setOnClickListener(v->{
+//////            Intent i = new Intent(R4.this, Profile.class );
+//////            startActivity(i);
+////        });
 
-
-        physiologoTopbarButton.setOnClickListener(v->{
-            Intent i = new Intent(R4.this, R6.class );
-            startActivity(i);
+        ImageView goBackView = findViewById(R.id.goback);
+        goBackView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View goBackView) {
+                Intent intent = new Intent(R4.this, R5.class);
+                startActivity(intent);
+            }
         });
 
-//        profileTopbarButton.setOnClickListener(v->{
-////            Intent i = new Intent(R4.this, Profile.class );
-////            startActivity(i);
-//        });
 
-        goBackButton.setOnClickListener(v -> finish());
+
+        // Get the intent that started this activity
+        Intent intent = getIntent();
+
+        // Retrieve the string extra from the intent
+        String message = intent.getStringExtra("PATIENT_NAME");
+
+        // Use the received string variable as needed
+        if (message != null) {
+
+            String patient_name = message;
+
+            client = new OkHttpClient();
+            client2 = new OkHttpClient();
+            handler.sendPatientNameToServer(patient_name);
+            handler = new DisplayInfo(url1, patient_name, client ,name_tv, age_tv, address_tv, date_tv);
+            Log.d("Main Activity", "DisplayInfo is running without problems");
+
+            sessions.sendPatientNameToServer(patient_name);
+            sessions = new Sessions(url2, patient_name, client2, verticalLayout);
+            sessions.displaySessions();
+
+
+        }else{
+            Log.d("Main R4","Data parsed from R4 to R5 is null!");
+        }
+
 
     }
 
 
-    public void OnClick(View view){
-        
-    }
+
 
 
 
