@@ -93,7 +93,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.UserViewHolder> im
         holder.firstname_text.setText(user.getFirstName());
         holder.lastname_text.setText(user.getLastName());
         holder.amka_text.setText(user.getAMKA());
-        holder.itemView.setOnClickListener(v -> userClickListener.clicked_user(user));
+        //holder.itemView.setOnClickListener(v -> userClickListener.clicked_user(user));
+
 
     }
 
@@ -103,7 +104,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.UserViewHolder> im
     }
 
 
-    class UserViewHolder extends RecyclerView.ViewHolder{
+    class UserViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         TextView firstname_text;
         TextView lastname_text;
@@ -114,6 +115,17 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.UserViewHolder> im
             firstname_text = itemView.findViewById(R.id.FirstText);
             lastname_text = itemView.findViewById(R.id.LastText);
             amka_text = itemView.findViewById(R.id.amkaText);
+
+            itemView.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View v) {
+            int position = getBindingAdapterPosition();
+            if (position != RecyclerView.NO_POSITION) {
+                User user = userList.get(position);
+                userClickListener.clicked_user(user);
+            }
         }
     }
 

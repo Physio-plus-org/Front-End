@@ -16,9 +16,12 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.SearchView;
 
 
@@ -29,6 +32,10 @@ import com.example.physio_plus_app.R3.R3;
 import com.example.physio_plus_app.R6.R6;
 import com.example.physio_plus_app.R7.R7;
 import com.example.physio_plus_app.R_2_5.R_2_5;
+
+import com.example.physio_plus_app.R4.R4;
+import com.example.physio_plus_app.R6.R6;
+import com.example.physio_plus_app.R8.R8;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -64,10 +71,12 @@ public class R5 extends AppCompatActivity implements MyAdapter.UserClickListener
     private ImageView imageButton1;
     private ImageView imageButton2;
     private CardView cardView;
+    private RelativeLayout mainLayout;
 
     RecyclerView recyclerView;
     MyAdapter adapter;
     List<User> userList;
+    private float mainActivityOpacity = 0.5f;
 
 
 
@@ -84,6 +93,7 @@ public class R5 extends AppCompatActivity implements MyAdapter.UserClickListener
         imageView7 = findViewById(R.id.imageView7);
         imageView10 = findViewById(R.id.imageView10);
         add_Button = findViewById(R.id.add_Button);
+        mainLayout = findViewById(R.id.relative_layout);
 
         add_Button.setOnClickListener(v -> {
             add_Button.setAlpha(0.5f);
@@ -235,7 +245,72 @@ public class R5 extends AppCompatActivity implements MyAdapter.UserClickListener
     }
 
     public void clicked_user(User user) {
-        startActivity(new Intent(this,Selected_User.class).putExtra("data",user));
+
+        String firstName = user.getFirstName();
+        String lastName = user.getLastName();
+        String amka = user.getAMKA();
+
+        LinearLayout newLayout = createLayout(firstName, lastName, amka);
+        mainLayout.addView(newLayout);
+
+        Intent intent = new Intent(getApplicationContext(), R4.class);
+        intent.putExtra("firstName", firstName);
+        intent.putExtra("lastName", lastName);
+        intent.putExtra("amka", amka);
+        startActivity(intent);
+
+        setComponentsOpacity(mainActivityOpacity);
+    }
+
+    private LinearLayout createLayout(final String firstName, final String lastName, final String amka) {
+        LinearLayout newLayout = new LinearLayout(this);
+        newLayout.setLayoutParams(new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+        ));
+        newLayout.setOrientation(LinearLayout.HORIZONTAL);
+
+        Button buttonHistory = new Button(this);
+        buttonHistory.setText("History");
+        buttonHistory.setOnClickListener(v -> {
+
+            Intent intent = new Intent(getApplicationContext(), R4.class);
+            intent.putExtra("firstName", firstName);
+            intent.putExtra("lastName", lastName);
+            intent.putExtra("amka", amka);
+            startActivity(intent);
+        });
+
+        Button buttonNewAppointment = new Button(this);
+        buttonNewAppointment.setText("Appointment");
+        buttonNewAppointment.setOnClickListener(v -> {
+
+            Intent intent = new Intent(getApplicationContext(), R8.class);
+            intent.putExtra("firstName", firstName);
+            intent.putExtra("lastName", lastName);
+            intent.putExtra("amka", amka);
+            startActivity(intent);
+        });
+
+        newLayout.addView(buttonHistory);
+        newLayout.addView(buttonNewAppointment);
+
+        return newLayout;
+    }
+
+    private void setComponentsOpacity(float opacity) {
+
+        add_Button.setAlpha(opacity);
+        searchView.setAlpha(opacity);
+        imageView1.setAlpha(opacity);
+        imageView2.setAlpha(opacity);
+        imageView3.setAlpha(opacity);
+        imageView7.setAlpha(opacity);
+        imageView10.setAlpha(opacity);
+        constraintLayout.setAlpha(opacity);
+        imageButton1.setAlpha(opacity);
+        imageButton2.setAlpha(opacity);
+
     }
 
     @Override
