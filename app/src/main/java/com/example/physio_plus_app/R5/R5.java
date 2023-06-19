@@ -71,7 +71,7 @@ public class R5 extends AppCompatActivity implements MyAdapter.UserClickListener
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.r5_activity);
-        getSupportActionBar().hide();
+//        getSupportActionBar().hide();
 
         imageView1 = findViewById(R.id.PhysiologoTopbar);
         imageView2 = findViewById(R.id.calendarTopBar);
@@ -104,7 +104,7 @@ public class R5 extends AppCompatActivity implements MyAdapter.UserClickListener
         recyclerView.setVerticalScrollBarEnabled(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        adapter = new MyAdapter(userList, R5.this, this::clicked_user);
+        adapter = new MyAdapter(userList, getApplicationContext(), this::clicked_user);
         recyclerView.setAdapter(adapter);
 
 //        try {
