@@ -17,10 +17,10 @@ public abstract class OkHttpHandler3 {
 //        OkHttpClient client = new OkHttpClient().newBuilder().build();
         String file_name = "logHistory.php";
         FormBody.Builder builder = new FormBody.Builder();
-        builder.add("namep", params.getnamePatient());
-        builder.add("surname", params.getSurnamePatient());
-        builder.add("soc_sec_reg_num", params.getAmkaPatient());
-        builder.add("address", params.getAddressPatient());
+        builder.add("first_name", params.getnamePatient());
+        builder.add("last_name", params.getSurnamePatient());
+        builder.add("address", params.getAmkaPatient());
+        builder.add("ssrn", params.getAddressPatient());
 
         RequestBody body = builder.build();
         Response response = HttpHandler.postRequest(file_folder + file_name, body);
