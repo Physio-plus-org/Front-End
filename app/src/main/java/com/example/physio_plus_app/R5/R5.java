@@ -73,7 +73,7 @@ public class R5 extends AppCompatActivity implements MyAdapter.UserClickListener
     private RelativeLayout mainLayout;
 
     RecyclerView recyclerView;
-    MyAdapter adapter;
+    public MyAdapter adapter;
     public static List<User> userList;
     private float mainActivityOpacity = 0.5f;
 
@@ -116,18 +116,20 @@ public class R5 extends AppCompatActivity implements MyAdapter.UserClickListener
         userList = new ArrayList<>();
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setVerticalScrollBarEnabled(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
 
         adapter = new MyAdapter(userList, getApplicationContext(), this::clicked_user);
         recyclerView.setAdapter(adapter);
 
         try {
             OkHttpHandlerR5.setUsersInfo();
+            Log.d("users", userList.toString());
+            adapter.notifyDataSetChanged();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
 
-        prepareRecyclerView();
+//        prepareRecyclerView();
 
         /* Topbar */
         ImageView physiologoTopbarButton = findViewById((R.id.PhysiologoTopbar));
@@ -170,16 +172,16 @@ public class R5 extends AppCompatActivity implements MyAdapter.UserClickListener
 
     }
 
-    public void prepareRecyclerView(){
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false);
-        recyclerView.setLayoutManager(linearLayoutManager);
-        Adapt_Recycler_view();
-    }
-
-    public void Adapt_Recycler_view(){
-        adapter = new MyAdapter(userList,this, this::clicked_user);
-        recyclerView.setAdapter(adapter);
-    }
+//    public void prepareRecyclerView(){
+//        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false);
+//        recyclerView.setLayoutManager(linearLayoutManager);
+//        Adapt_Recycler_view();
+//    }
+//
+//    public void Adapt_Recycler_view(){
+//        adapter = new MyAdapter(userList,this, this::clicked_user);
+//        recyclerView.setAdapter(adapter);
+//    }
 
     public void clicked_user(User user) {
 

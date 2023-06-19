@@ -21,7 +21,7 @@ import java.util.List;
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.UserViewHolder> implements Filterable {
 
     private final Context context;
-    private List<User> userList = new ArrayList<>();
+    private List<User> userList;
     private List<User> filteredData;
     public UserClickListener userClickListener;
 
@@ -76,7 +76,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.UserViewHolder> im
     @NonNull
     @Override
     public UserViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        LayoutInflater inflater = LayoutInflater.from(context);
+//        LayoutInflater inflater = LayoutInflater.from(context);
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.r5_list, parent, false);
         /*
         RecyclerView recyclerView = (RecyclerView) parent;
@@ -92,10 +92,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.UserViewHolder> im
     public void onBindViewHolder(@NonNull UserViewHolder holder, int position) {
         User user = userList.get(position);
 
-        holder.firstname_text.setText(user.getFirstName());
-        holder.lastname_text.setText(user.getLastName());
-        holder.amka_text.setText(user.getAMKA());
-        holder.address_text.setText(user.getAddress());
+        holder.getFirstName().setText(user.getFirstName());
+        holder.getLastname().setText(user.getLastName());
+        holder.getAmka().setText(user.getAMKA());
+        holder.getAddress().setText(user.getAddress());
         //holder.itemView.setOnClickListener(v -> userClickListener.clicked_user(user));
     }
 
@@ -107,10 +107,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.UserViewHolder> im
 
     class UserViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        TextView firstname_text;
-        TextView lastname_text;
-        TextView amka_text;
-        TextView address_text;
+        private final TextView firstname_text;
+        private final TextView lastname_text;
+        private final TextView amka_text;
+        private final TextView address_text;
 
         public UserViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -122,6 +122,20 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.UserViewHolder> im
 
             itemView.setOnClickListener(this);
         }
+        public TextView getFirstName() {
+            return firstname_text;
+        }
+        public TextView getLastname() {
+            return lastname_text;
+        }
+        public TextView getAddress() {
+            return address_text;
+        }
+        public TextView getAmka() {
+            return amka_text;
+        }
+
+
 
         @Override
         public void onClick(View v) {

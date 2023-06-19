@@ -11,109 +11,27 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <androidx.constraintlayout.widget.ConstraintLayout
+
+        <LinearLayout
             android:id="@+id/Parent_layout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/constraintLayout8"
-                android:layout_width="415dp"
-                android:layout_height="78dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:orientation="horizontal">
-
-
-                    <ImageView
-                        android:id="@+id/goback"
-                        android:layout_width="100dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight="1"
-                        android:foregroundGravity="center"
-                        android:minWidth="50dp"
-                        android:contentDescription="goback"
-                        android:src="@drawable/back_button" />
-
-
-                    <ImageView
-                        android:id="@+id/PhysiologoTopbar"
-                        android:layout_width="200dp"
-                        android:layout_height="60dp"
-                        android:layout_weight="1"
-                        app:srcCompat="@drawable/physio_logo_topbar" />
-
-                    <Button
-                        android:id="@+id/calendarTopBar"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight="1"
-                        android:backgroundTint="@color/backgroundColor"
-                        android:gravity="center|center_horizontal"
-                        app:icon="@drawable/r4_calendar_icon"
-                        app:iconGravity="textEnd"
-                        android:contentDescription="notiftopbar"
-                        app:iconTint="@color/iconsColor" />
-
-                    <TextView
-                        android:id="@+id/redBubbleText"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="end|top"
-                        android:layout_marginStart="0dp"
-                        android:layout_marginTop="8dp"
-                        android:layout_toEndOf="@id/PhysiologoTopbar"
-                        android:contentDescription="redbubble"
-                        android:background="@drawable/r7_red_circle"
-                        android:padding="4dp"
-                        android:textColor="@color/backgroundColor"
-                        android:textSize="12sp"
-                        android:visibility="visible" />
-
-                    <Button
-                        android:id="@+id/ProfilePatientTopbar"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight="1"
-                        android:backgroundTint="@color/backgroundColor"
-                        android:gravity="center|center_horizontal"
-                        app:icon="@drawable/r3_person"
-                        app:iconTint="@color/iconsColor"
-                        android:contentDescription="profilepatient"
-                        app:iconGravity="textStart" />
-
-                </LinearLayout>
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/constraintLayout9"
-                android:layout_width="411dp"
-                android:layout_height="300dp"
-                android:layout_marginTop="76dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.555"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/constraintLayout8">
+                android:layout_width="match_parent"
+                android:layout_height="300dp">
 
                 <ImageView
                     android:id="@+id/imageView7"
                     android:layout_width="417dp"
                     android:layout_height="285dp"
                     android:scaleType="fitXY"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
                     app:srcCompat="@drawable/r5_physio_image" />
 
                 <ImageView
@@ -141,93 +59,21 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/constraintLayout2"
-                android:layout_width="409dp"
-                android:layout_height="62dp"
-                android:background="#6ABD53"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent">
-
-                <!-- Footer -->
-                <RelativeLayout
-                    android:background="@color/PrimaryGreen"
-                    android:id="@+id/footerLayout"
-                    android:layout_width="match_parent"
-                    android:layout_height="70dp"
-                    android:layout_alignParentBottom="true">
-
-                    <ImageView
-                        android:id="@+id/calendarFootbar"
-                        android:layout_width="200dp"
-                        android:layout_height="60dp"
-                        android:layout_alignParentStart="true"
-                        android:layout_centerVertical="true"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginTop="40dp"
-                        android:layout_marginEnd="40dp"
-                        android:layout_marginBottom="40dp"
-                        android:background="@drawable/r7_footerroundedshape"
-                        android:contentDescription="@string/goback"
-                        android:src="@drawable/r7_baseline_calendar_month_24"
-                        android:text="@string/calendarButton"
-                        android:title=""
-                        app:showAsAction="ifRoom"/>
-
-
-                    <ImageView
-                        android:id="@+id/addPatientFootbar"
-                        android:layout_width="230dp"
-                        android:layout_height="60dp"
-                        android:layout_centerVertical="true"
-                        android:layout_marginStart="208dp"
-                        android:layout_marginTop="40dp"
-                        android:layout_marginEnd="5dp"
-                        android:layout_marginBottom="40dp"
-                        android:background="@drawable/r7_footerroundedshape"
-                        android:contentDescription="@string/goback"
-                        android:src="@drawable/r7_baseline_person_24"
-                        android:text="@string/calendarButton"
-                        android:title=""
-                        app:showAsAction="ifRoom"/>
-
-
-
-                </RelativeLayout>
-
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guideline6"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                app:layout_constraintGuide_begin="261dp" />
+                android:layout_height="wrap_content" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerView"
-                android:layout_width="410dp"
-                android:layout_height="330dp"
-                android:layout_marginTop="264dp"
-                android:background="@drawable/r5_background"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/constraintLayout9" />
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/r5_background" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="410dp"
-                android:layout_height="118dp"
-                android:layout_marginTop="1dp"
-                android:layout_marginBottom="1dp"
-                app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/recyclerView"
-                app:layout_constraintVertical_bias="1.0">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp">
 
                 <ImageButton
                     android:id="@+id/add_Button"
@@ -244,8 +90,122 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
 
     </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/footerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/PrimaryGreen">
+
+        <ImageView
+            android:id="@+id/calendarFootbar"
+            android:layout_width="200dp"
+            android:layout_height="60dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginBottom="40dp"
+            android:background="@drawable/r7_footerroundedshape"
+            android:contentDescription="@string/goback"
+            android:src="@drawable/r7_baseline_calendar_month_24"
+            android:text="@string/calendarButton"
+            android:title=""
+            app:showAsAction="ifRoom" />
+
+
+        <ImageView
+            android:id="@+id/addPatientFootbar"
+            android:layout_width="230dp"
+            android:layout_height="60dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="208dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="40dp"
+            android:background="@drawable/r7_footerroundedshape"
+            android:contentDescription="@string/goback"
+            android:src="@drawable/r7_baseline_person_24"
+            android:text="@string/calendarButton"
+            android:title=""
+            app:showAsAction="ifRoom" />
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@color/backgroundColor"
+        android:orientation="horizontal">
+
+
+        <ImageView
+            android:id="@+id/goback"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:contentDescription="goback"
+            android:foregroundGravity="center"
+            android:minWidth="50dp"
+            android:src="@drawable/back_button" />
+
+
+        <ImageView
+            android:id="@+id/PhysiologoTopbar"
+            android:layout_width="200dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/physio_logo_topbar" />
+
+        <Button
+            android:id="@+id/calendarTopBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:backgroundTint="@color/backgroundColor"
+            android:contentDescription="notiftopbar"
+            android:gravity="center|center_horizontal"
+            app:icon="@drawable/r4_calendar_icon"
+            app:iconGravity="textEnd"
+            app:iconTint="@color/iconsColor" />
+
+        <TextView
+            android:id="@+id/redBubbleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|top"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="8dp"
+            android:layout_toEndOf="@id/PhysiologoTopbar"
+            android:background="@drawable/r7_red_circle"
+            android:contentDescription="redbubble"
+            android:padding="4dp"
+            android:textColor="@color/backgroundColor"
+            android:textSize="12sp"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/ProfilePatientTopbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:backgroundTint="@color/backgroundColor"
+            android:contentDescription="profilepatient"
+            android:gravity="center|center_horizontal"
+            app:icon="@drawable/r3_person"
+            app:iconGravity="textStart"
+            app:iconTint="@color/iconsColor" />
+
+    </LinearLayout>
 
 </RelativeLayout>
