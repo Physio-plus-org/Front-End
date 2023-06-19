@@ -5,8 +5,8 @@
 <!--    <stroke-->
 <!--        android:width="10dp"-->
 <!--        android:color="#000000" />-->
-    <solid android:color="@color/Transparent" />
+    <solid android:color="@color/transparent" />
     <stroke
         android:width="10dp"
-        android:color="@color/Transparent" />
+        android:color="@color/transparent" />
 </shape>

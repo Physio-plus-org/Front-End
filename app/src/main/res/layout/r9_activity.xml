@@ -163,7 +163,7 @@
             android:layout_marginBottom="40dp"
             android:background="@drawable/r7_footerroundedshape"
             android:contentDescription="@string/goback"
-            android:src="@drawable/r7_baseline_person_24"
+            android:src="@drawable/r7_baseline_euro_24"
             android:text="@string/calendarButton"
             android:title=""
             app:showAsAction="ifRoom"></ImageView>
