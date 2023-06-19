@@ -23,7 +23,7 @@ public abstract class OkHttpHandlerR5 {
 
         OkHttpClient client = new OkHttpClient();
 
-        String url = "http://192.168.56.1/logHistory.php";
+        String url = "https://physioplus.000webhostapp.com/R5/logHistory.php";
         Request request = new Request.Builder()
                 .url(url)
                 .build();

@@ -3,7 +3,7 @@
     <domain-config cleartextTrafficPermitted="true">
         //The ip might change , because of the ip of our service
         <domain includeSubdomains="true">
-            sql7.freesqldatabase.com
+            physioplus.000webhostapp.com
         </domain>
     </domain-config>
 </network-security-config>

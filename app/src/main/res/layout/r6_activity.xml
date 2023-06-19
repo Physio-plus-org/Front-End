@@ -7,8 +7,7 @@
     tools:context=".R6.R6">
 
 
-
-    <include layout="@layout/top_bar_doctor"></include>
+    <include layout="@layout/top_bar_doctor" />
 
     <ScrollView
         android:layout_width="wrap_content"

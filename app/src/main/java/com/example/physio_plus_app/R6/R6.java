@@ -26,20 +26,11 @@ import java.util.Locale;
 
 public class R6 extends AppCompatActivity implements SelectListenerR6 {
     private final String myIP = "192.168.1.100";
-
-
     /* Topbar */
-
-
 //    ImageView physiologoTopbarButton = findViewById((R.id.PhysiologoTopbar));
-
-
     /* Footbar */
     private ImageView calendarFootbarButton;
     private ImageView addPatientFootbarButton;
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,7 +38,6 @@ public class R6 extends AppCompatActivity implements SelectListenerR6 {
         Locale locale = new Locale("EL", "GR");
         Locale.setDefault(locale);
         RequestEventR6 request = new RequestEventR6();
-
         final CollapsibleCalendar collapsibleCalendar = findViewById(R.id.calendarView);
         collapsibleCalendar.setCalendarListener(new CollapsibleCalendar.CalendarListener() {
             @Override
@@ -72,9 +62,6 @@ public class R6 extends AppCompatActivity implements SelectListenerR6 {
 
             }
 
-
-
-
             @Override
             public void onItemClick(View view) {
 
@@ -95,11 +82,6 @@ public class R6 extends AppCompatActivity implements SelectListenerR6 {
 
             }
         });
-
-
-
-
-
 
 
         // Initialize events for current date
@@ -136,9 +118,8 @@ public class R6 extends AppCompatActivity implements SelectListenerR6 {
         goBackButton.setOnClickListener(v -> finish());
 
        addPatientFootbarButton.setOnClickListener((v->{
-           Intent i = new Intent(R6.this, R5.class );
+           Intent i = new Intent(getApplicationContext(), R5.class);
            startActivity(i);
-
         }));
 //        calendarFootbarButton.setOnClickListener(v->{
 //            Intent i = new Intent(CurrentActivity.this, R6Main.class);
