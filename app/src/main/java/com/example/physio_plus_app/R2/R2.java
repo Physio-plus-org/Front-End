@@ -1,6 +1,7 @@
 package com.example.physio_plus_app.R2;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -25,9 +26,10 @@ public class R2 extends AppCompatActivity {
         desc = findViewById(R.id.descin);
         price = findViewById(R.id.pricein);
         conf = findViewById(R.id.confirm);
-    }
 
-    public void onClick(View view) {
+    }
+    public void onClick(View v) {
+        Log.e("tag","test");
         String c,n,d,p;
         c = code.getText().toString();
         n = name.getText().toString();

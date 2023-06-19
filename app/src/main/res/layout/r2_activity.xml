@@ -14,8 +14,7 @@
 
 
         <include
-            layout="@layout/psf_topbarmenu"
-            android:layout_gravity="center|top">
+            layout="@layout/psf_topbarmenu">
 
         </include>
 
@@ -52,6 +51,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/r2_entry_boarder"
+            android:onClick="onClick"
             android:orientation="vertical">
 
             <TextView
@@ -169,7 +169,8 @@
                     android:backgroundTint="@color/black"
                     android:onClick="onClick"
                     android:text="@string/r2_confirmation"
-                    android:textAllCaps="false" />
+                    android:textAllCaps="false"
+                    android:textColor="@color/white" />
             </FrameLayout>
 
         </LinearLayout>
