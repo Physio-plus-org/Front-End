@@ -26,7 +26,7 @@ public class User implements Serializable {
     public String getAMKA() {
         return Amka;
     }
-    
+
     public String getAddress() {return address;}
 
 

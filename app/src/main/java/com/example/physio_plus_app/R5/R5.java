@@ -57,10 +57,7 @@ import okhttp3.Response;
 
 public class R5 extends AppCompatActivity implements MyAdapter.UserClickListener {
 
-
-
     /* Topbar */
-
 
     private SearchView searchView;
     private ImageButton add_Button;
@@ -124,17 +121,13 @@ public class R5 extends AppCompatActivity implements MyAdapter.UserClickListener
         adapter = new MyAdapter(userList, getApplicationContext(), this::clicked_user);
         recyclerView.setAdapter(adapter);
 
-//        try {
-//            OkHttpHandlerR5.setUsersInfo();
-//        } catch (Exception e) {
-//            throw new RuntimeException(e);
-//        }
+        try {
+            OkHttpHandlerR5.setUsersInfo(userList);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
 
-
-        setUsersInfo();
         prepareRecyclerView();
-
-
 
         /* Topbar */
         ImageView physiologoTopbarButton = findViewById((R.id.PhysiologoTopbar));
@@ -152,14 +145,10 @@ public class R5 extends AppCompatActivity implements MyAdapter.UserClickListener
 //        });
 
 
-
         /* Footbar */
         ImageView calendarFootbarButton = findViewById(R.id.calendarFootbar);
         ImageView addPatientFootbarButton = findViewById(R.id.addPatientFootbar);
         ImageButton addButton = findViewById(R.id.add_Button);
-
-
-
 
 
         addButton.setOnClickListener(v->{
@@ -177,58 +166,6 @@ public class R5 extends AppCompatActivity implements MyAdapter.UserClickListener
         calendarFootbarButton.setOnClickListener(v->{
             Intent i = new Intent(R5.this, R6.class);
             startActivity(i);
-        });
-
-    }
-
-    public void setUsersInfo(){
-
-        OkHttpClient client = new OkHttpClient();
-
-        String url = "https://physioplus.000webhostapp.com/R5/logHistory.php";
-        Request request = new Request.Builder()
-                .url(url)
-                .build();
-
-        client.newCall(request).enqueue(new Callback() {
-            @Override
-            public void onFailure(Call call, IOException e) {
-                e.printStackTrace();
-                Log.d(TAG, "Something went wrong");
-            }
-
-
-
-            @Override
-            public void onResponse(Call call, Response response) throws IOException {
-                if (response.isSuccessful()) {
-                    final String responseBody = response.body().string();
-
-                    try {
-                        JSONArray jsonArray = new JSONArray(responseBody);
-
-                        if (jsonArray.length() > 0) {
-
-                            for(int i = 0; i < jsonArray.length(); i++){
-                                JSONObject jsonObject = jsonArray.getJSONObject(i);
-                                String firstName = jsonObject.optString("first_name");
-                                String lastName = jsonObject.optString("last_name");
-                                String Amka = jsonObject.optString("ssrn");
-                                String address = jsonObject.optString("address");
-
-                                User user = new User(firstName, lastName, Amka, address);
-                                userList.add(user);
-                            }
-                        }
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                        Log.d(TAG, "Fetching Data failed!");
-                    }
-
-                } else {
-                    Log.d(TAG, "Error occurred!");
-                }
-            }
         });
 
     }
@@ -347,11 +284,8 @@ public class R5 extends AppCompatActivity implements MyAdapter.UserClickListener
             }
         });
 
-
         return super.onCreateOptionsMenu(menu);
-
     }
-
 }
 
 
