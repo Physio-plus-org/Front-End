@@ -169,6 +169,7 @@
                     android:backgroundTint="@color/black"
                     android:onClick="onClick"
                     android:text="@string/r2_confirmation"
+                    android:textColor="@color/white"
                     android:textAllCaps="false" />
             </FrameLayout>
 

@@ -7,17 +7,16 @@
     tools:context=".Main_PSF.Facilities_details">
 
     <ScrollView
+        android:id="@+id/scrollView4"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <include
-                layout="@layout/psf_topbarmenu"
-                >
+            <include layout="@layout/psf_topbarmenu">
 
             </include>
 
@@ -57,16 +56,9 @@
 
                 </com.google.android.material.appbar.AppBarLayout>
 
+
             </LinearLayout>
 
-            <TextView
-                android:id="@+id/code"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="40dp"
-                android:layout_marginTop="20dp"
-                android:textSize="35dp"
-                android:textStyle="bold|italic" />
 
             <TextView
                 android:id="@+id/name"
@@ -74,34 +66,44 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
                 android:layout_marginTop="10dp"
-                android:textSize="25dp"
+                android:textSize="25sp"
                 android:textStyle="italic" />
 
-            <TextView
-                android:id="@+id/description"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="40dp"
-                android:layout_marginTop="10dp"
-                android:textSize="20sp"
-                android:textStyle="italic" />
 
-            <TextView
-                android:id="@+id/price"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="40dp"
-                android:layout_marginTop="10dp"
-                android:textSize="30sp"
-                android:textStyle="bold|italic" />
+
+
 
 
         </LinearLayout>
 
 
+
     </ScrollView>
 
+    <include
+        android:id="@+id/include"
+        layout="@layout/psf_botbarmenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        app:layout_constraintBottom_toBottomOf="parent"></include>
 
+
+    <ImageButton
+        android:id="@+id/addPSF_Button"
+        android:layout_width="70dp"
+        android:layout_height="62dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/r5_add_button"
+        android:backgroundTint="@color/black"
+        android:contentDescription="b"
+        android:onClick="myButtonClickHandler"
+        android:src="@drawable/r7_baseline_add_24"
+
+        app:layout_constraintBottom_toTopOf="@+id/include"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:tint="@color/white" />
 
 
 

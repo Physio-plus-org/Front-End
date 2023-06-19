@@ -42,7 +42,7 @@
 
             <Button
                 android:id="@+id/physio_club_button"
-                android:layout_width="wrap_content"
+                android:layout_width="321dp"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/black"
                 android:onClick="physioClubActivity"
@@ -51,9 +51,9 @@
                 android:paddingRight="48dp"
                 android:paddingBottom="32dp"
                 android:text="@string/r1EnterButtonPSF"
+                android:textColor="@color/white"
                 android:textSize="48sp"
-                android:textStyle="bold"
-                android:textColor="@color/white"/>
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/physio_center_button"
@@ -72,7 +72,7 @@
 
             <Button
                 android:id="@+id/physio_patient_button"
-                android:layout_width="wrap_content"
+                android:layout_width="321dp"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/orange"
                 android:onClick="physioPatientActivity"

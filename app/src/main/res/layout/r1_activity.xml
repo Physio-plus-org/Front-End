@@ -5,27 +5,24 @@
 
 
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="wrap_content"
+
+    <include
+        layout="@layout/psf_topbarmenu"
         android:layout_height="wrap_content"
-        android:layout_gravity="center|top"
-        android:gravity="center|top">
+        android:layout_width="wrap_content">
 
-        <include layout="@layout/psf_topbarmenu">
 
-        </include>
-    </androidx.appcompat.widget.Toolbar>
+    </include>
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/nestedScrollView"
 
 
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_gravity="center|center_vertical"
         app:layout_anchorGravity="center|center_vertical"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
