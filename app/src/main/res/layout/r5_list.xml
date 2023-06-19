@@ -41,6 +41,13 @@
             android:text="AMKA"
             android:textSize="14sp" />
 
+        <TextView
+            android:id="@+id/address_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Address"
+            android:textSize="14sp" />
+
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>

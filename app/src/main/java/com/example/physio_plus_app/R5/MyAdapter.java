@@ -13,6 +13,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.physio_plus_app.R;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -93,9 +95,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.UserViewHolder> im
         holder.firstname_text.setText(user.getFirstName());
         holder.lastname_text.setText(user.getLastName());
         holder.amka_text.setText(user.getAMKA());
+        holder.address_text.setText(user.getAddress());
         //holder.itemView.setOnClickListener(v -> userClickListener.clicked_user(user));
-
-
     }
 
     @Override
@@ -109,12 +110,15 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.UserViewHolder> im
         TextView firstname_text;
         TextView lastname_text;
         TextView amka_text;
+        TextView address_text;
+
         public UserViewHolder(@NonNull View itemView) {
             super(itemView);
 
             firstname_text = itemView.findViewById(R.id.FirstText);
             lastname_text = itemView.findViewById(R.id.LastText);
             amka_text = itemView.findViewById(R.id.amkaText);
+            address_text = itemView.findViewById(R.id.address_text);
 
             itemView.setOnClickListener(this);
         }

@@ -26,6 +26,7 @@ import android.widget.SearchView;
 
 
 import com.example.physio_plus_app.R;
+
 import com.example.physio_plus_app.R1.R1;
 import com.example.physio_plus_app.R2.R2;
 import com.example.physio_plus_app.R3.R3;
@@ -36,6 +37,7 @@ import com.example.physio_plus_app.R_2_5.R_2_5;
 import com.example.physio_plus_app.R4.R4;
 import com.example.physio_plus_app.R6.R6;
 import com.example.physio_plus_app.R8.R8;
+
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -229,9 +231,6 @@ public class R5 extends AppCompatActivity implements MyAdapter.UserClickListener
             }
         });
 
-
-
-
     }
 
     public void prepareRecyclerView(){
@@ -250,20 +249,23 @@ public class R5 extends AppCompatActivity implements MyAdapter.UserClickListener
         String firstName = user.getFirstName();
         String lastName = user.getLastName();
         String amka = user.getAMKA();
+        String address = user.getAddress();
 
-        LinearLayout newLayout = createLayout(firstName, lastName, amka);
+        LinearLayout newLayout = createLayout(firstName, lastName, amka, address);
         mainLayout.addView(newLayout);
 
         Intent intent = new Intent(getApplicationContext(), R4.class);
         intent.putExtra("firstName", firstName);
         intent.putExtra("lastName", lastName);
         intent.putExtra("amka", amka);
+        intent.putExtra("address", address);
+
         startActivity(intent);
 
         setComponentsOpacity(mainActivityOpacity);
     }
 
-    private LinearLayout createLayout(final String firstName, final String lastName, final String amka) {
+    private LinearLayout createLayout(final String firstName, final String lastName, final String amka, final String address) {
         LinearLayout newLayout = new LinearLayout(this);
         newLayout.setLayoutParams(new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT,
@@ -279,6 +281,7 @@ public class R5 extends AppCompatActivity implements MyAdapter.UserClickListener
             intent.putExtra("firstName", firstName);
             intent.putExtra("lastName", lastName);
             intent.putExtra("amka", amka);
+            intent.putExtra("address", address);
             startActivity(intent);
         });
 
@@ -290,6 +293,7 @@ public class R5 extends AppCompatActivity implements MyAdapter.UserClickListener
             intent.putExtra("firstName", firstName);
             intent.putExtra("lastName", lastName);
             intent.putExtra("amka", amka);
+            intent.putExtra("address", address);
             startActivity(intent);
         });
 
