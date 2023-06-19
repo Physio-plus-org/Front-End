@@ -9,6 +9,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.SearchView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
@@ -17,6 +18,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.physio_plus_app.R;
 import com.example.physio_plus_app.R3.R3;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,7 +44,7 @@ public class R5 extends AppCompatActivity  {
     private RelativeLayout mainLayout;
 
     RecyclerView recyclerView;
-    public MyAdapter adapter;
+    public static MyAdapter adapter;
     public static List<User> userList;
     //private float mainActivityOpacity = 0.5f;
 
@@ -62,7 +66,7 @@ public class R5 extends AppCompatActivity  {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), R3.class);
-                startActivity(intent);
+                startActivityForResult(intent, 2);
             }
         });
         mainLayout = findViewById(R.id.relative_layout);
@@ -109,6 +113,33 @@ public class R5 extends AppCompatActivity  {
             }
     });
 
+    }
+
+    // Call Back method  to get the Message form other Activity
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data)
+    {
+        super.onActivityResult(requestCode, resultCode, data);
+        // check if the request code is same as what is passed  here it is 2
+        if(requestCode==2)
+        {
+
+            //convert from JSON string to JSONObject
+            try {
+                String jsonText = data.getStringExtra("patient");
+                JSONObject newJObject = new JSONObject(jsonText);
+                User user = new User(newJObject.get("first_name").toString(), newJObject.get("last_name").toString(), newJObject.get("ssrn").toString(), newJObject.get("address").toString());
+                userList.add(user);
+                adapter.notifyDataSetChanged();
+
+            } catch (JSONException e) {
+                throw new RuntimeException(e);
+            }
+
+
+//            recreate();
+            Toast.makeText(this, "success", Toast.LENGTH_SHORT).show();
+        }
     }
 
 }

@@ -70,30 +70,9 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/r5_background" />
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="1dp">
-
-                <ImageButton
-                    android:id="@+id/add_Button"
-                    android:layout_width="70dp"
-                    android:layout_height="62dp"
-                    android:background="@drawable/r5_add_button"
-                    android:contentDescription="b"
-                    android:onClick="myButtonClickHandler"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/r5_adding_pat" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
         </LinearLayout>
 
     </ScrollView>
-
 
 
     <LinearLayout
@@ -165,5 +144,25 @@
             app:iconTint="@color/iconsColor" />
 
     </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <ImageButton
+            android:id="@+id/add_Button"
+            android:layout_width="70dp"
+            android:layout_height="62dp"
+            android:background="@drawable/r5_add_button"
+            android:contentDescription="b"
+            android:onClick="myButtonClickHandler"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/r5_adding_pat" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </RelativeLayout>
