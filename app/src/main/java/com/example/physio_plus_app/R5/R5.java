@@ -66,7 +66,7 @@ public class R5 extends AppCompatActivity implements MyAdapter.UserClickListener
     private Button imageView3;
     private ImageView imageView7;
     private ImageView imageView10;
-    private ConstraintLayout constraintLayout;
+//    private ConstraintLayout constraintLayout;
     private ImageView imageButton1;
     private ImageView imageButton2;
     private CardView cardView;
@@ -94,21 +94,9 @@ public class R5 extends AppCompatActivity implements MyAdapter.UserClickListener
         add_Button = findViewById(R.id.add_Button);
         mainLayout = findViewById(R.id.relative_layout);
 
-        add_Button.setOnClickListener(v -> {
-            add_Button.setAlpha(0.5f);
-            searchView.setAlpha(0.5f);
-            imageView1.setAlpha(0.5f);
-            imageView2.setAlpha(0.5f);
-            imageView3.setAlpha(0.5f);
-            imageView7.setAlpha(0.5f);
-            imageView10.setAlpha(0.5f);
-            constraintLayout.setAlpha(0.5f);
-            imageButton1.setAlpha(0.5f);
-            imageButton2.setAlpha(0.5f);
+        add_Button.setOnClickListener(v -> setComponentsOpacity(0.5f));
 
-        });
-
-        constraintLayout = findViewById(R.id.constraintLayout2);
+//        constraintLayout = findViewById(R.id.constraintLayout2);
         imageButton1 = findViewById(R.id.calendarFootbar);
         imageButton2 = findViewById(R.id.addPatientFootbar);
 
@@ -251,7 +239,7 @@ public class R5 extends AppCompatActivity implements MyAdapter.UserClickListener
         imageView3.setAlpha(opacity);
         imageView7.setAlpha(opacity);
         imageView10.setAlpha(opacity);
-        constraintLayout.setAlpha(opacity);
+//        constraintLayout.setAlpha(opacity);
         imageButton1.setAlpha(opacity);
         imageButton2.setAlpha(opacity);
 
