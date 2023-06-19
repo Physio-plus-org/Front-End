@@ -9,7 +9,7 @@
     tools:ignore="ExtraText">
     <!--    tools:context=".R4.R4"-->
 
-    <include layout="@layout/top_bar"></include>
+    <include layout="@layout/top_bar_doctor"></include>
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
         android:layout_width="wrap_content"
