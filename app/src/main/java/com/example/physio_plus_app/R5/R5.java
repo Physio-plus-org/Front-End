@@ -118,24 +118,24 @@ public class R5 extends AppCompatActivity implements MyAdapter.UserClickListener
         prepareRecyclerView();
 
 
-//
-//        /* Topbar */
-//        ImageView physiologoTopbarButton = findViewById((R.id.PhysiologoTopbar));
-//        Button profileTopbarButton = findViewById((R.id.ProfilePatientTopbar));
-//        Button notifTopbarButton = findViewById(R.id.calendarTopBar);
-//        ImageView goBackButton = findViewById(R.id.goback);
-//
-//        physiologoTopbarButton.setOnClickListener(v->{
-//            Intent i = new Intent(R5.this, R6.class );
+
+        /* Topbar */
+        ImageView physiologoTopbarButton = findViewById((R.id.PhysiologoTopbar));
+        Button profileTopbarButton = findViewById((R.id.ProfilePatientTopbar));
+        Button notifTopbarButton = findViewById(R.id.calendarTopBar);
+        ImageView goBackButton = findViewById(R.id.goback);
+
+        physiologoTopbarButton.setOnClickListener(v->{
+            Intent i = new Intent(R5.this, R6.class );
+            startActivity(i);
+        });
+
+//        profileTopbarButton.setOnClickListener(v->{
+//            Intent i = new Intent(R5.this, Profile.class );
 //            startActivity(i);
 //        });
-//
-//        profileTopbarButton.setOnClickListener(v->{
-////            Intent i = new Intent(R5.this, Profile.class );
-////            startActivity(i);
-//        });
-//
-//        goBackButton.setOnClickListener(v -> finish());
+
+        goBackButton.setOnClickListener(v -> finish());
 
 
     }

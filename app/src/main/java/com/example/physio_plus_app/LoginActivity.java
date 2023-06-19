@@ -9,6 +9,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.physio_plus_app.R1.R1;
 import com.example.physio_plus_app.R3.R3;
+import com.example.physio_plus_app.R4.R4;
+import com.example.physio_plus_app.R5.R5;
+import com.example.physio_plus_app.R6.R6;
+import com.example.physio_plus_app.R7.R7;
 import com.example.physio_plus_app.R9.R9;
 
 public class LoginActivity extends AppCompatActivity {
@@ -24,7 +28,7 @@ public class LoginActivity extends AppCompatActivity {
         startActivity(intent);
     }
     public void physioCenterActivity(View view) {
-        Intent intent = new Intent(getApplicationContext(), R3.class);
+        Intent intent = new Intent(getApplicationContext(), R6.class);
         startActivity(intent);
     }
     //TODO: R9 TO SEE

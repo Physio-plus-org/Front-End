@@ -28,7 +28,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent">
 
 
                     <ImageView
@@ -37,9 +38,9 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_weight="1"
+                        android:contentDescription="goback"
                         android:foregroundGravity="center"
                         android:minWidth="50dp"
-                        android:contentDescription="goback"
                         android:src="@drawable/back_button" />
 
 
@@ -57,10 +58,10 @@
                         android:layout_gravity="center"
                         android:layout_weight="1"
                         android:backgroundTint="@color/backgroundColor"
+                        android:contentDescription="notiftopbar"
                         android:gravity="center|center_horizontal"
                         app:icon="@drawable/r4_calendar_icon"
                         app:iconGravity="textEnd"
-                        android:contentDescription="notiftopbar"
                         app:iconTint="@color/iconsColor" />
 
                     <TextView
@@ -71,8 +72,8 @@
                         android:layout_marginStart="0dp"
                         android:layout_marginTop="8dp"
                         android:layout_toEndOf="@id/PhysiologoTopbar"
-                        android:contentDescription="redbubble"
                         android:background="@drawable/r7_red_circle"
+                        android:contentDescription="redbubble"
                         android:padding="4dp"
                         android:textColor="@color/backgroundColor"
                         android:textSize="12sp"
@@ -85,11 +86,11 @@
                         android:layout_gravity="center"
                         android:layout_weight="1"
                         android:backgroundTint="@color/backgroundColor"
+                        android:contentDescription="profilepatient"
                         android:gravity="center|center_horizontal"
                         app:icon="@drawable/r3_person"
-                        app:iconTint="@color/iconsColor"
-                        android:contentDescription="profilepatient"
-                        app:iconGravity="textStart" />
+                        app:iconGravity="textStart"
+                        app:iconTint="@color/iconsColor" />
 
                 </LinearLayout>
 
@@ -113,6 +114,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:srcCompat="@drawable/r5_physio_image" />
 
                 <ImageView
@@ -155,7 +157,8 @@
                     android:id="@+id/footerLayout"
                     android:layout_width="match_parent"
                     android:layout_height="70dp"
-                    android:layout_alignParentBottom="true">
+                    android:layout_alignParentBottom="true"
+                    app:layout_constraintBottom_toBottomOf="parent">
 
                     <ImageView
                         android:id="@+id/calendarFootbar"

@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.physio_plus_app.R;
+import com.example.physio_plus_app.R5.R5;
 import com.shrikanthravi.collapsiblecalendarview.data.Day;
 import com.shrikanthravi.collapsiblecalendarview.widget.CollapsibleCalendar;
 
@@ -29,6 +30,8 @@ public class R6 extends AppCompatActivity implements SelectListenerR6 {
 
     /* Topbar */
 
+
+//    ImageView physiologoTopbarButton = findViewById((R.id.PhysiologoTopbar));
 
 
     /* Footbar */
@@ -101,51 +104,47 @@ public class R6 extends AppCompatActivity implements SelectListenerR6 {
 
         // Initialize events for current date
         LocalDateTime date_now = null;//DateTime();
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-            date_now = LocalDateTime.now();
-        }
+        date_now = LocalDateTime.now();
         createEvents(date_now, savedInstanceState);
         assert date_now != null;
         greekDateHandler(date_now);
 
 
 
-//        /* Topbar */
-//        ImageView physiologoTopbarButton = findViewById((R.id.PhysiologoTopbar));
-//        Button profileTopbarButton = findViewById((R.id.ProfilePatientTopbar));
-//        Button notifTopbarButton = findViewById(R.id.calendarTopBar);
-//        ImageView goBackButton = findViewById(R.id.goback);
-//
-//        /* Footbar */
-//        ImageView calendarFootbarButton = findViewById(R.id.calendarFootbar);
-//        ImageView addPatientFootbarButton = findViewById(R.id.addPatientFootbar);
-//
-//
-//
-//
-//        PhysiologoTopbarButton.setOnClickListener(v->{
-//            Intent i = new Intent(R6Main.this, DefaultScreen.class );
-//            startActivity(i);
-//        });
-//
-//        profileTopbarButton.setOnClickListener(v->{
-//            Intent i = new Intent(R6Main.this, Profile.class );
-//            startActivity(i);
-//        });
-//
-//        goBackButton.setOnClickListener(v -> finish());
-//
-//
-//        addPatientFootbarButton.setOnClickListener((v->{
-//            Intent i = new Intent(R6Main.this, R3Main.class );
-//            startActivity(i);
-//
-//        }));
-//        calendarFootbarButton.setOnClickListener(v->{
-//            Intent i = new Intent(CurrentActivity.this, R6Main.class);
+        /* Topbar */
+       Button profileTopbarButton = findViewById((R.id.ProfilePatientTopbar));
+       Button notifTopbarButton = findViewById(R.id.calendarTopBar);
+       ImageView goBackButton = findViewById(R.id.goback);
+
+       /* Footbar */
+        ImageView calendarFootbarButton = findViewById(R.id.calendarFootbar);
+      ImageView addPatientFootbarButton = findViewById(R.id.addPatientFootbar);
+
+
+
+
+//        physiologoTopbarButton.setOnClickListener(v->{
+//           Intent i = new Intent(R6.this, R6.class );
 //            startActivity(i);
 //        });
 
+//       profileTopbarButton.setOnClickListener(v->{
+//            Intent i = new Intent(R6.this, Profile.class );
+//           startActivity(i);
+//        });
+
+        goBackButton.setOnClickListener(v -> finish());
+
+       addPatientFootbarButton.setOnClickListener((v->{
+           Intent i = new Intent(R6.this, R5.class );
+           startActivity(i);
+
+        }));
+//        calendarFootbarButton.setOnClickListener(v->{
+//            Intent i = new Intent(CurrentActivity.this, R6Main.class);
+//           startActivity(i);
+//        });
+//
     }
 
 
@@ -190,11 +189,9 @@ public class R6 extends AppCompatActivity implements SelectListenerR6 {
         builder.setMessage("Είστε σίγουρος ότι θέλετε να διαγράψετε το ραντεβού;");
         builder.setCancelable(true);
 
-        builder.setNegativeButton("Άκυρο", (DialogInterface.OnClickListener) (dialog, which) -> {
-            dialog.cancel();
-        });
+        builder.setNegativeButton("Άκυρο", (dialog, which) -> dialog.cancel());
 
-        builder.setPositiveButton("Ναι", (DialogInterface.OnClickListener) (dialog, which) -> {
+        builder.setPositiveButton("Ναι", (dialog, which) -> {
             String url = "http://"+myIP+"/physio_stl/requestCancel.php?id=" + eventID;
             String response = null;
             try {
