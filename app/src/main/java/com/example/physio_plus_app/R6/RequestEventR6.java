@@ -18,7 +18,7 @@ public class RequestEventR6 {
     public List<EventR6> requestEvents(String range_start, String range_end) {
 
 
-        String url = "http://"+myIP+"/physio_stl/requestEvents.php?range_start="+ range_start +"&range_end="+range_end+"&status=UPCOMING";
+        String url = "https://physioplus.000webhostapp.com/R6/requestEvents.php?range_start="+ range_start +"&range_end="+range_end+"&status=UPCOMING";
 
         try {
             OkHttpHandlerR6 okHttpHandler = new OkHttpHandlerR6();

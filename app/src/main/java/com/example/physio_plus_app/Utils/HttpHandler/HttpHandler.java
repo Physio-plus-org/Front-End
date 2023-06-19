@@ -1,6 +1,7 @@
 package com.example.physio_plus_app.Utils.HttpHandler;
 
 import android.os.StrictMode;
+import android.util.Log;
 
 import androidx.annotation.Nullable;
 
@@ -30,6 +31,7 @@ public interface HttpHandler {
 
     static Response postRequest(String file_path, RequestBody body) throws IOException {
         String url = host + file_path;
+        Log.e("url", url);
         Request request = new Request.Builder()
                     .url(url)
                     .post(body)

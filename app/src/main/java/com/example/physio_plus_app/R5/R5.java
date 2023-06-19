@@ -74,7 +74,7 @@ public class R5 extends AppCompatActivity implements MyAdapter.UserClickListener
 
     RecyclerView recyclerView;
     MyAdapter adapter;
-    List<User> userList;
+    public static List<User> userList;
     private float mainActivityOpacity = 0.5f;
 
 
@@ -122,7 +122,7 @@ public class R5 extends AppCompatActivity implements MyAdapter.UserClickListener
         recyclerView.setAdapter(adapter);
 
         try {
-            OkHttpHandlerR5.setUsersInfo(userList);
+            OkHttpHandlerR5.setUsersInfo();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
