@@ -11,6 +11,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
@@ -34,7 +35,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class R5 extends AppCompatActivity implements MyAdapter.UserClickListener {
+public class R5 extends AppCompatActivity  {
 
     /* Topbar */
 
@@ -54,8 +55,7 @@ public class R5 extends AppCompatActivity implements MyAdapter.UserClickListener
     RecyclerView recyclerView;
     public MyAdapter adapter;
     public static List<User> userList;
-    private float mainActivityOpacity = 0.5f;
-
+    //private float mainActivityOpacity = 0.5f;
 
 
     @Override
@@ -71,13 +71,23 @@ public class R5 extends AppCompatActivity implements MyAdapter.UserClickListener
         imageView7 = findViewById(R.id.imageView7);
         imageView10 = findViewById(R.id.imageView10);
         add_Button = findViewById(R.id.add_Button);
+        add_Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), R3.class);
+                startActivity(intent);
+            }
+        });
         mainLayout = findViewById(R.id.relative_layout);
 
-        add_Button.setOnClickListener(v -> setComponentsOpacity(mainActivityOpacity));
 
-//        constraintLayout = findViewById(R.id.constraintLayout2);
-        imageButton1 = findViewById(R.id.calendarFootbar);
-        imageButton2 = findViewById(R.id.addPatientFootbar);
+
+//        //Ena layout gia mazi me ta duo koumpia pou pane sto R8,R4 --> Not finished
+//        LayoutInflater inflater = getLayoutInflater();
+//        View PatientActions = inflater.inflate(R.layout.r5_actions_layout,mainLayout,false);
+//
+//        mainLayout.addView(PatientActions);
+
 
 
         userList = new ArrayList<>();
@@ -85,7 +95,7 @@ public class R5 extends AppCompatActivity implements MyAdapter.UserClickListener
         recyclerView.setVerticalScrollBarEnabled(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
 
-        adapter = new MyAdapter(userList, getApplicationContext(), this::clicked_user);
+        adapter = new MyAdapter(userList, getApplicationContext());
         recyclerView.setAdapter(adapter);
 
         try {
@@ -95,147 +105,6 @@ public class R5 extends AppCompatActivity implements MyAdapter.UserClickListener
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-
-//        prepareRecyclerView();
-
-        /* Topbar */
-        ImageView physiologoTopbarButton = findViewById((R.id.PhysiologoTopbar));
-        Button notifTopbarButton = findViewById(R.id.calendarTopBar);
-        ImageView goBackButton = findViewById(R.id.goback);
-
-        physiologoTopbarButton.setOnClickListener(v->{
-            Intent i = new Intent(R5.this, R6.class );
-            startActivity(i);
-        });
-
-//        profileTopbarButton.setOnClickListener(v->{
-//            Intent i = new Intent(R5.this, Profile.class );
-//            startActivity(i);
-//        });
-
-
-        /* Footbar */
-        ImageView calendarFootbarButton = findViewById(R.id.calendarFootbar);
-        ImageView addPatientFootbarButton = findViewById(R.id.addPatientFootbar);
-        ImageButton addButton = findViewById(R.id.add_Button);
-
-
-        addButton.setOnClickListener(v->{
-            Intent i = new Intent(R5.this, R3.class );
-            startActivity(i);
-        });
-        goBackButton.setOnClickListener(v -> finish());
-
-
-        addPatientFootbarButton.setOnClickListener((v->{
-            Intent i = new Intent(R5.this, R3.class );
-            startActivity(i);
-
-        }));
-        calendarFootbarButton.setOnClickListener(v->{
-            Intent i = new Intent(R5.this, R6.class);
-            startActivity(i);
-        });
-
-    }
-
-//    public void prepareRecyclerView(){
-//        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false);
-//        recyclerView.setLayoutManager(linearLayoutManager);
-//        Adapt_Recycler_view();
-//    }
-//
-//    public void Adapt_Recycler_view(){
-//        adapter = new MyAdapter(userList,this, this::clicked_user);
-//        recyclerView.setAdapter(adapter);
-//    }
-
-    public void clicked_user(User user) {
-
-        String firstName = user.getFirstName();
-        String lastName = user.getLastName();
-        String amka = user.getAMKA();
-        String address = user.getAddress();
-
-        LinearLayout newLayout = createLayout(firstName, lastName, amka, address);
-        mainLayout.addView(newLayout);
-
-        Intent intent = new Intent(getApplicationContext(), R4.class);
-        intent.putExtra("firstName", firstName);
-        intent.putExtra("lastName", lastName);
-        intent.putExtra("amka", amka);
-        intent.putExtra("address", address);
-
-        startActivity(intent);
-
-        setComponentsOpacity(mainActivityOpacity);
-    }
-
-    private LinearLayout createLayout(final String firstName, final String lastName, final String amka, final String address) {
-        LinearLayout newLayout = new LinearLayout(this);
-        newLayout.setLayoutParams(new LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.MATCH_PARENT,
-                LinearLayout.LayoutParams.WRAP_CONTENT
-        ));
-        newLayout.setOrientation(LinearLayout.HORIZONTAL);
-
-        Button buttonHistory = new Button(this);
-        buttonHistory.setText("History");
-        buttonHistory.setOnClickListener(v -> {
-
-            Intent intent = new Intent(getApplicationContext(), R4.class);
-            intent.putExtra("firstName", firstName);
-            intent.putExtra("lastName", lastName);
-            intent.putExtra("amka", amka);
-            intent.putExtra("address", address);
-            startActivity(intent);
-        });
-
-        Button buttonNewAppointment = new Button(this);
-        buttonNewAppointment.setText("Appointment");
-        buttonNewAppointment.setOnClickListener(v -> {
-
-            Intent intent = new Intent(getApplicationContext(), R8.class);
-            intent.putExtra("firstName", firstName);
-            intent.putExtra("lastName", lastName);
-            intent.putExtra("amka", amka);
-            intent.putExtra("address", address);
-            startActivity(intent);
-        });
-
-        newLayout.addView(buttonHistory);
-        newLayout.addView(buttonNewAppointment);
-
-        return newLayout;
-    }
-
-    private void setComponentsOpacity(float opacity) {
-
-        add_Button.setAlpha(opacity);
-        searchView.setAlpha(opacity);
-        imageView1.setAlpha(opacity);
-        imageView2.setAlpha(opacity);
-        imageView3.setAlpha(opacity);
-        imageView7.setAlpha(opacity);
-        imageView10.setAlpha(opacity);
-//        constraintLayout.setAlpha(opacity);
-        imageButton1.setAlpha(opacity);
-        imageButton2.setAlpha(opacity);
-
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        int item_id = item.getItemId();
-        if(item_id == R.id.searchView){
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
-    @SuppressLint("ResourceType")
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
 
         SearchView searchView = findViewById(R.id.searchView);
         searchView.setMaxWidth(Integer.MAX_VALUE);
@@ -251,10 +120,10 @@ public class R5 extends AppCompatActivity implements MyAdapter.UserClickListener
                 adapter.getFilter().filter(newText);
                 return false;
             }
-        });
+    });
 
-        return super.onCreateOptionsMenu(menu);
     }
+
 }
 
 
