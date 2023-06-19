@@ -54,41 +54,6 @@ public abstract class OkHttpHandlerR5 {
         } catch (JSONException e) {
             throw new RuntimeException(e);
         }
-//        client.newCall(request).enqueue(new Callback() {
-//            @Override
-//            public void onFailure(Call call, IOException e) {
-//                e.printStackTrace();
-//                Log.d(TAG, "Something went wrong");
-//            }
-//            @Override
-//            public void onResponse(Call call, Response response) throws IOException {
-//                if (response.isSuccessful()) {
-//                    final String responseBody = response.body().string();
-//                    try {
-//                        JSONArray jsonArray = new JSONArray(responseBody);
-//
-//                        if (jsonArray.length() > 0) {
-//
-//                            for(int i = 0; i < jsonArray.length(); i++){
-//                                JSONObject jsonObject = jsonArray.getJSONObject(i);
-//                                String firstName = jsonObject.optString("first_name");
-//                                String lastName = jsonObject.optString("last_name");
-//                                String Amka = jsonObject.optString("ssrn");
-//                                String address = jsonObject.optString("address");
-//
-//                                User user = new User(firstName, lastName, Amka, address);
-//                                R5.userList.add(user);
-//                            }
-//                        }
-//                    } catch (JSONException e) {
-//                        e.printStackTrace();
-//                        Log.d(TAG, "Fetching Data failed!");
-//                    }
-//
-//                } else {
-//                    Log.d(TAG, "Error occurred!");
-//                }
-//            }
-//        });
+
     }
 }
