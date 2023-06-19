@@ -33,7 +33,7 @@ import java.util.Locale;
 
 
 public class R9_2 extends AppCompatActivity implements SelectListenerR9 {
-    private  final String myIP = "192.168.2.6";
+    private  final String myIP = "https://physioplus.000webhostapp.com/R9/";
     private RequestListR9 requestList;
 
     ArrayList<HourModelR9> hourModel = new ArrayList<>();

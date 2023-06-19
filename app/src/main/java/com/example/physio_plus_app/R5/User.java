@@ -6,11 +6,13 @@ public class User implements Serializable {
     private String firstName;
     private String lastName;
     private String Amka;
+    private String address;
 
-    public User(String firstName, String lastName, String Amka) {
+    public User(String firstName, String lastName, String Amka, String address) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.Amka = Amka;
+        this.address = address;
     }
 
 
@@ -24,6 +26,8 @@ public class User implements Serializable {
     public String getAMKA() {
         return Amka;
     }
+
+    public String getAddress() {return address;}
 
 
 }

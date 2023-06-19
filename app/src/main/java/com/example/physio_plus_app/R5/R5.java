@@ -183,7 +183,7 @@ public class R5 extends AppCompatActivity implements MyAdapter.UserClickListener
 
         OkHttpClient client = new OkHttpClient();
 
-        String url = "http://192.168.56.1/logHistory.php";
+        String url = "https://physioplus.000webhostapp.com/R5/logHistory.php";
         Request request = new Request.Builder()
                 .url(url)
                 .build();
@@ -211,9 +211,10 @@ public class R5 extends AppCompatActivity implements MyAdapter.UserClickListener
                                 JSONObject jsonObject = jsonArray.getJSONObject(i);
                                 String firstName = jsonObject.optString("first_name");
                                 String lastName = jsonObject.optString("last_name");
-                                String Amka = jsonObject.optString("soc_sec_reg_num");
+                                String Amka = jsonObject.optString("ssrn");
+                                String address = jsonObject.optString("address");
 
-                                User user = new User(firstName, lastName, Amka);
+                                User user = new User(firstName, lastName, Amka, address);
                                 userList.add(user);
                             }
                         }

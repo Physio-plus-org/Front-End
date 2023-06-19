@@ -4,18 +4,13 @@ import static android.app.PendingIntent.getActivity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.example.physio_plus_app.Patientprofile.patientProfile;
 import com.example.physio_plus_app.R;
-import com.example.physio_plus_app.R3.R3;
-import com.example.physio_plus_app.R6.R6;
 
 
 public class R1 extends AppCompatActivity {
@@ -43,7 +38,7 @@ public class R1 extends AppCompatActivity {
 
                 // Call the psfCreate method with the obtained data
                 try {
-                    String response = OkHttpHandler.psfCreate(namePhysio, addressPhysio, afmPhysio);
+                    String response = R1HttpHandler.psfCreate(namePhysio, addressPhysio, afmPhysio);
 
                     if (response.equals("Tax ID number already exists")) {
                         Toast.makeText(R1.this, "Tax ID number already exists", Toast.LENGTH_SHORT).show();

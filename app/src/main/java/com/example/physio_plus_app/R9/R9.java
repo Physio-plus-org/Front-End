@@ -58,7 +58,7 @@ public class R9 extends AppCompatActivity{
 //        Locale.setDefault(locale);
 
 
-        String url = "http://"+myIP+"/physio_app_db/TestPrint.php?range_start=2023-04-01&range_end=2023-07-01";
+        String url = "https://physioplus.000webhostapp.com/R7/TestPrint.php?range_start=2023-04-01&range_end=2023-07-01";
         try {
             OkHttpHandlerR9 okHttpHandler = new OkHttpHandlerR9();
             okHttpHandler.testPrint(url);

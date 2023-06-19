@@ -10,9 +10,8 @@ import java.text.ParseException;
 import java.util.Hashtable;
 
 public abstract class FinancialHttpHandlerR10 extends HttpHandlerR10 {
-    public static final String ip = "192.168.1.6";
     public static FinancialHistoryR10 makeRequest(Hashtable<String, String> params) throws ServerResponseExceptionR10, JSONException, IOException, ParseException {
-        String url = "http://" + ip + "/requestFinance.php";
+        String url = "https://physioplus.000webhostapp.com/R10/requestFinance.php";
         Log.d("url", url);
         JSONArray jsonArray = request(url, params);
         Log.w("jsonArray", jsonArray.toString());

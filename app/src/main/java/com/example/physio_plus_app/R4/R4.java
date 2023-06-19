@@ -56,7 +56,7 @@ public class R4 extends AppCompatActivity {
 
 
 
-        url1 = "http://192.168.56.1/displaypatients.php";
+        url1 = "https://physioplus.000webhostapp.com/R4/displaypatients.php";
 
         client = new OkHttpClient();
         client2 = new OkHttpClient();

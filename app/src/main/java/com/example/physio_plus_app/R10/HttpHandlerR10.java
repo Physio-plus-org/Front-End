@@ -25,7 +25,6 @@ public abstract class HttpHandlerR10 {
         RequestBody requestBody = new FormBody(new ArrayList<>(params.keySet()), new ArrayList<>(params.values()));
         Request request = new Request.Builder().url(url).method("POST", requestBody).build();
         Response response = client.newCall(request).execute();
-        assert response.body() != null;
         if (response.code() == 200) {
             String data = response.body().string();
             Log.d("response body", data);

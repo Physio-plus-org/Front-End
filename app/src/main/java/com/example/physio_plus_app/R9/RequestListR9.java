@@ -11,7 +11,7 @@ public class RequestListR9 {
     String range_end;
 
     public RequestListR9(String ip, String range_start, String range_end){
-        String url = "http://"+ip+"/physio_app_db/requestCreate.php?range_start="+ range_start +"&range_end="+range_end;
+        String url = ip+"requestCreate.php?range_start="+ range_start +"&range_end="+range_end;
 
         try {
             OkHttpHandlerR9 okHttpHandler = new OkHttpHandlerR9();

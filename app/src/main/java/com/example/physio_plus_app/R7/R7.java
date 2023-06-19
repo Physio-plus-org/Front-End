@@ -62,9 +62,9 @@ public class R7 extends AppCompatActivity {
 
     private static final int MAX_APPOINTMENTS = 3;
 
-    private static final String MOVE_TO_ACCEPTED_URL = "http://192.168.1.7/physio-backend/move_to_accepted.php";
-    private static final String TESTCON_URL = "http://192.168.1.7/physio-backend/verify_connection.php";
-    private static final String UPCOMING_APPOINTMENTS_URL = "http://192.168.1.7/physio-backend/fetch_upcomingAppoint.php";
+    private static final String MOVE_TO_ACCEPTED_URL = "https://physioplus.000webhostapp.com/R7/move_to_accepted.php";
+    private static final String TESTCON_URL = "https://physioplus.000webhostapp.com/R7/verify_connection.php";
+    private static final String UPCOMING_APPOINTMENTS_URL = "https://physioplus.000webhostapp.com/R7/fetch_upcomingAppoint.php";
 
 
     @Override

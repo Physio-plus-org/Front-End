@@ -25,7 +25,7 @@ import java.util.List;
 import java.util.Locale;
 
 public class R6 extends AppCompatActivity implements SelectListenerR6 {
-    private final String myIP = "192.168.1.100";
+    private final String myHost = "https://physioplus.000webhostapp.com/R6";
     /* Topbar */
 //    ImageView physiologoTopbarButton = findViewById((R.id.PhysiologoTopbar));
     /* Footbar */
@@ -173,7 +173,7 @@ public class R6 extends AppCompatActivity implements SelectListenerR6 {
         builder.setNegativeButton("Άκυρο", (dialog, which) -> dialog.cancel());
 
         builder.setPositiveButton("Ναι", (dialog, which) -> {
-            String url = "http://"+myIP+"/physio_stl/requestCancel.php?id=" + eventID;
+            String url = myHost +"/requestCancel.php?id=" + eventID;
             String response = null;
             try {
                 OkHttpHandlerR6 okHttpHandler = new OkHttpHandlerR6();
@@ -202,7 +202,7 @@ public class R6 extends AppCompatActivity implements SelectListenerR6 {
 
     @Override
     public void onCompleteItemClicked(int eventID) {
-        String url = "http://"+myIP+"/physio_stl/requestCompleted.php?id=" + eventID;
+        String url = "http://"+ myHost +"/physio_stl/requestCompleted.php?id=" + eventID;
         String response = null;
         try {
             OkHttpHandlerR6 okHttpHandler = new OkHttpHandlerR6();

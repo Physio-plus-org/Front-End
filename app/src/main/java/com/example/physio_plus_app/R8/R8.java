@@ -29,8 +29,7 @@ public class R8 extends AppCompatActivity {
    private final ArrayList<ServiceR8> servicesList = new ArrayList<>();
     private TextView notesTextView;
     private TextView dateTextView;
-    private final String HOST = "192.168.1.7";
-    private final String urlRoot = "http://"+ HOST+"/";
+    private final String urlRoot = "https://physioplus.000webhostapp.com/R8/";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
