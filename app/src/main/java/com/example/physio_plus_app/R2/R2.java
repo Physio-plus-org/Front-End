@@ -1,9 +1,11 @@
 package com.example.physio_plus_app.R2;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -25,9 +27,9 @@ public class R2 extends AppCompatActivity {
         desc = findViewById(R.id.descin);
         price = findViewById(R.id.pricein);
         conf = findViewById(R.id.confirm);
-    }
 
-    public void onClick(View view) {
+    }
+    public void onClick(View v) {
         String c,n,d,p;
         c = code.getText().toString();
         n = name.getText().toString();
@@ -35,6 +37,7 @@ public class R2 extends AppCompatActivity {
         p = price.getText().toString();
         try {
             OkHttpHandlerR2.insertData(new ParamsR2(n,d,c,p));
+            Toast.makeText(this, "Service successfully added", Toast.LENGTH_LONG).show();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

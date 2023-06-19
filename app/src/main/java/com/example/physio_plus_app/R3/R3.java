@@ -13,7 +13,13 @@ import android.widget.Toast;
 
 import com.example.physio_plus_app.Patientprofile.patientProfile;
 import com.example.physio_plus_app.R;
+import com.example.physio_plus_app.R5.R5;
+import com.example.physio_plus_app.R5.User;
 import com.example.physio_plus_app.R6.R6;
+
+import org.json.JSONObject;
+
+import java.io.Serializable;
 
 public class R3 extends AppCompatActivity {
 
@@ -69,8 +75,20 @@ public class R3 extends AppCompatActivity {
 
         try {
             String response = OkHttpHandler3.loghistory(new ParamsR3(namePatient,surnamePatient, amPatient, addressOfPatient));
-            Toast.makeText(R3.this, response, Toast.LENGTH_LONG).show();
-            
+            if (!response.isEmpty()){
+                Toast.makeText(R3.this, response, Toast.LENGTH_LONG).show();
+            }
+            else {
+                Intent intent = new Intent();
+                JSONObject json = new JSONObject();
+                json.put("first_name", namePatient);
+                json.put("last_name", surnamePatient);
+                json.put("ssrn", amPatient);
+                json.put("address", addressOfPatient);
+                intent.putExtra("patient", json.toString());
+                setResult(2, intent);
+                finish();
+            }
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

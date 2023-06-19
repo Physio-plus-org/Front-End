@@ -26,7 +26,7 @@ public abstract class OkHttpHandlerR2 {
 
         if (params != null) {
             builder.add("title", params.getTitle());
-            builder.add("desc", params.getDesc());
+            builder.add("description", params.getDesc());
             builder.add("code", params.getCode());
             builder.add("cost", params.getPrice());
         }
