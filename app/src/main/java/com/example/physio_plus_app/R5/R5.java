@@ -94,7 +94,7 @@ public class R5 extends AppCompatActivity implements MyAdapter.UserClickListener
         add_Button = findViewById(R.id.add_Button);
         mainLayout = findViewById(R.id.relative_layout);
 
-        add_Button.setOnClickListener(v -> setComponentsOpacity(0.5f));
+        add_Button.setOnClickListener(v -> setComponentsOpacity(mainActivityOpacity));
 
 //        constraintLayout = findViewById(R.id.constraintLayout2);
         imageButton1 = findViewById(R.id.calendarFootbar);
