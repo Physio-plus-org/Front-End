@@ -23,7 +23,12 @@ import android.widget.SearchView;
 
 
 import com.example.physio_plus_app.R;
+import com.example.physio_plus_app.R1.R1;
+import com.example.physio_plus_app.R2.R2;
+import com.example.physio_plus_app.R3.R3;
 import com.example.physio_plus_app.R6.R6;
+import com.example.physio_plus_app.R7.R7;
+import com.example.physio_plus_app.R_2_5.R_2_5;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -121,7 +126,6 @@ public class R5 extends AppCompatActivity implements MyAdapter.UserClickListener
 
         /* Topbar */
         ImageView physiologoTopbarButton = findViewById((R.id.PhysiologoTopbar));
-        Button profileTopbarButton = findViewById((R.id.ProfilePatientTopbar));
         Button notifTopbarButton = findViewById(R.id.calendarTopBar);
         ImageView goBackButton = findViewById(R.id.goback);
 
@@ -135,8 +139,33 @@ public class R5 extends AppCompatActivity implements MyAdapter.UserClickListener
 //            startActivity(i);
 //        });
 
+
+
+        /* Footbar */
+        ImageView calendarFootbarButton = findViewById(R.id.calendarFootbar);
+        ImageView addPatientFootbarButton = findViewById(R.id.addPatientFootbar);
+        ImageButton addButton = findViewById(R.id.add_Button);
+
+
+
+
+
+        addButton.setOnClickListener(v->{
+            Intent i = new Intent(R5.this, R3.class );
+            startActivity(i);
+        });
         goBackButton.setOnClickListener(v -> finish());
 
+
+        addPatientFootbarButton.setOnClickListener((v->{
+            Intent i = new Intent(R5.this, R3.class );
+            startActivity(i);
+
+        }));
+        calendarFootbarButton.setOnClickListener(v->{
+            Intent i = new Intent(R5.this, R6.class);
+            startActivity(i);
+        });
 
     }
 

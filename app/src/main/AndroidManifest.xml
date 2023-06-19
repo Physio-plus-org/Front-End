@@ -40,6 +40,7 @@
         <activity android:name=".R7.R7"/>
         <activity android:name=".R8.R8"/>
         <activity android:name=".R9.R9"/>
+        <activity android:name=".R_2_5.R_2_5"/>
         <activity android:name=".R10.R10"/>
     </application>
 </manifest>
