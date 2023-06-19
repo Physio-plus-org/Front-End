@@ -148,23 +148,9 @@
                 android:layout_marginEnd="15dp"
                 android:layout_marginBottom="15dp" />
         </RelativeLayout>
-
-
-       <include layout="@layout/footbar_doctor"></include>
-
-
-
-        </RelativeLayout>
         </androidx.appcompat.widget.LinearLayoutCompat>
 </ScrollView>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"></LinearLayout>
+<include layout="@layout/footbar_doctor" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"></LinearLayout>
 </RelativeLayout>
