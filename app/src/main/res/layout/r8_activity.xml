@@ -22,7 +22,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <include layout="@layout/top_bar"></include>
+            <include layout="@layout/top_bar_doctor"></include>
 
 
             <LinearLayout

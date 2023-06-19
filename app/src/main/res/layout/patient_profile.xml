@@ -5,7 +5,7 @@
     android:orientation="horizontal">
 
 
-    <include layout="@layout/top_bar"></include>
+    <include layout="@layout/top_bar_doctor"></include>
 
     <!-- Division 1: Image with Patient's Name -->
     <RelativeLayout
