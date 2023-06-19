@@ -15,6 +15,7 @@ import com.example.physio_plus_app.R6.R6;
 import com.example.physio_plus_app.R7.R7;
 import com.example.physio_plus_app.R9.R9;
 import com.example.physio_plus_app.R_2_5.Facilities_details;
+import com.example.physio_plus_app.R_2_5.mainPSF;
 import com.example.physio_plus_app.Utils.HttpHandler.HttpHandler;
 
 public class LoginActivity extends AppCompatActivity {
@@ -28,7 +29,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void physioClubActivity(View view) {
-        Intent intent = new Intent(getApplicationContext(), Facilities_details.class);
+        Intent intent = new Intent(getApplicationContext(), mainPSF.class);
         startActivity(intent);
     }
     public void physioCenterActivity(View view) {

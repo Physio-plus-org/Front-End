@@ -70,6 +70,7 @@ public class R3 extends AppCompatActivity {
         try {
             String response = OkHttpHandler3.loghistory(new ParamsR3(namePatient,surnamePatient, amPatient, addressOfPatient));
             Toast.makeText(R3.this, response, Toast.LENGTH_LONG).show();
+            
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

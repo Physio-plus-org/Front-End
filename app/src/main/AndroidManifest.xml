@@ -17,12 +17,8 @@
         android:theme="@style/Theme.Physio_plus_App"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
-        <activity
-            android:name=".R_2_5.mainPSF"
-            android:exported="false" />
-        <activity
-            android:name=".R_2_5.Facilities_details"
-            android:exported="false" /> <!-- android:enableOnBackInvokedCallback="true" -->
+
+        <!-- android:enableOnBackInvokedCallback="true" -->
         <meta-data
             android:name="com.google.android.actions"
             android:resource="@xml/network_security_config" />
@@ -46,6 +42,8 @@
         <activity android:name=".R8.R8" />
         <activity android:name=".R9.R9" />
         <activity android:name=".R10.R10" />
+        <activity android:name=".R_2_5.mainPSF" />
+        <activity android:name=".R_2_5.Facilities_details" />
     </application>
 
 </manifest>
