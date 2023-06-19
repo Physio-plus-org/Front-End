@@ -8,6 +8,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Locale;
@@ -21,7 +22,12 @@ public class SessionR10 {
     public SessionR10(JSONObject jsonObject) throws JSONException, ParseException {
         this.sessionId = Integer.parseInt(jsonObject.get("id").toString());
 //        String[] date_details = jsonObject.getJSONArray("date").toString().split("-");
-        this.sessionDate = java.sql.Date.valueOf(jsonObject.get("date").toString());
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", new Locale("Greek"));
+        try {
+            this.sessionDate = format.parse(jsonObject.get("date").toString());
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
         //new SimpleDateFormat("yyyy-MM-dd", new Locale("greek")).parse(jsonObject.get("date").toString());
         this.sessionNotes = jsonObject.get("notes").toString();
         JSONArray jsonArrayServices = jsonObject.getJSONArray("services");

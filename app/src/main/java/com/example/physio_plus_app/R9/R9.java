@@ -13,9 +13,11 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import com.example.physio_plus_app.R;
+import com.example.physio_plus_app.R10.R10;
 
 import java.util.Locale;
 
@@ -27,12 +29,18 @@ public class R9 extends AppCompatActivity{
     //    private Button button;
     private  final String myIP = "192.168.2.6";
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
+//    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.r9_activity);
 
+        ImageView financialMovesButton = findViewById(R.id.addPatientFootbar);
+        financialMovesButton.setOnClickListener(v -> {
+            Intent intent = new Intent(getApplicationContext(), R10.class);
+            intent.putExtra("patient_id", "12345678");
+            startActivity(intent);
+        });
 //        button= findViewById(R.id.buttonNext);
 //        Bundle args = new Bundle();
 //        //start of actionBar

@@ -1,5 +1,8 @@
 package com.example.physio_plus_app.R10;
 
+import static android.app.ProgressDialog.show;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -18,18 +21,23 @@ import java.util.Hashtable;
 
 public class R10 extends AppCompatActivity {
     private FinancialHistoryR10 financialHistory;
+    private String patient_id = "12345678";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.r10_activity);
+
+        Intent intent = getIntent();
+        patient_id = "12345678";//intent.getStringExtra("patient_id");
+
         Request();
         ShowFinancialHistory();
 
-        /* Topbar */
-        ImageView physiologoTopbarButton = findViewById((R.id.PhysiologoTopbar));
-        Button profileTopbarButton = findViewById((R.id.ProfilePatientTopbar));
-        Button notifTopbarButton = findViewById(R.id.calendarTopBar);
-        ImageView goBackButton = findViewById(R.id.goback);
+//        /* Topbar */
+//        ImageView physiologoTopbarButton = findViewById((R.id.PhysiologoTopbar));
+//        Button profileTopbarButton = findViewById((R.id.ProfilePatientTopbar));
+//        Button notifTopbarButton = findViewById(R.id.calendarTopBar);
+//        ImageView goBackButton = findViewById(R.id.goback);
     }
 
     protected void ShowFinancialHistory() {
@@ -38,9 +46,12 @@ public class R10 extends AppCompatActivity {
     }
 
     protected void Request() {
+        if (patient_id.isEmpty()) {
+            Toast.makeText(this, "No patient selected", Toast.LENGTH_SHORT).show();
+        }
         try {
             Hashtable<String, String> params = new Hashtable<>();
-            params.put("patient_id", "279869537922"); //!!!THIS IS FOR TESTING
+            params.put("patient_id", patient_id);
             this.financialHistory = FinancialHttpHandlerR10.makeRequest(params);
             Toast.makeText(this, "Done", Toast.LENGTH_SHORT).show();
         } catch (ServerResponseExceptionR10 e) {

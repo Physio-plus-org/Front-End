@@ -50,20 +50,20 @@ public class R9_2 extends AppCompatActivity implements SelectListenerR9 {
         Locale.setDefault(locale);
 
         //start of actionBar
-        ActionBar actionBar;
-        actionBar = getSupportActionBar();
-        actionBar.setDisplayShowCustomEnabled(true);
-        LayoutInflater inflater=(LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View view = inflater.inflate(R.layout.r9_custom_image,null);
-        actionBar.setCustomView(view);
-
-        // Define ColorDrawable object and parse color
-        // using parseColor method
-        // with color hash code as its parameter
-        ColorDrawable colorDrawable
-                = new ColorDrawable(Color.parseColor("white"));
-        // Set BackgroundDrawable
-        actionBar.setBackgroundDrawable(colorDrawable);
+//        ActionBar actionBar;
+//        actionBar = getSupportActionBar();
+//        actionBar.setDisplayShowCustomEnabled(true);
+//        LayoutInflater inflater=(LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+//        View view = inflater.inflate(R.layout.r9_custom_image,null);
+//        actionBar.setCustomView(view);
+//
+//        // Define ColorDrawable object and parse color
+//        // using parseColor method
+//        // with color hash code as its parameter
+//        ColorDrawable colorDrawable
+//                = new ColorDrawable(Color.parseColor("white"));
+//        // Set BackgroundDrawable
+//        actionBar.setBackgroundDrawable(colorDrawable);
         //end of actionBar
 
 

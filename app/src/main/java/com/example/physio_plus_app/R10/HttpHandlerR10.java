@@ -23,7 +23,10 @@ public abstract class HttpHandlerR10 {
         StrictMode.setThreadPolicy(policy);
         OkHttpClient client = new OkHttpClient().newBuilder().build();
         RequestBody requestBody = new FormBody(new ArrayList<>(params.keySet()), new ArrayList<>(params.values()));
-        Request request = new Request.Builder().url(url).method("POST", requestBody).build();
+        Request request = new Request.Builder()
+                .url(url)
+                .post(requestBody)
+                .build();
         Response response = client.newCall(request).execute();
         if (response.code() == 200) {
             String data = response.body().string();
