@@ -13,7 +13,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.physio_plus_app.R;
 
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,11 +1,8 @@
 package com.example.physio_plus_app.R5;
 
-import static android.content.ContentValues.TAG;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -16,7 +13,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -27,32 +23,15 @@ import android.widget.SearchView;
 
 import com.example.physio_plus_app.R;
 
-import com.example.physio_plus_app.R1.R1;
-import com.example.physio_plus_app.R2.R2;
 import com.example.physio_plus_app.R3.R3;
 import com.example.physio_plus_app.R6.R6;
-import com.example.physio_plus_app.R7.R7;
-import com.example.physio_plus_app.R_2_5.R_2_5;
 
 import com.example.physio_plus_app.R4.R4;
-import com.example.physio_plus_app.R6.R6;
 import com.example.physio_plus_app.R8.R8;
 
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
-import okhttp3.Call;
-import okhttp3.Callback;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
 
 
 public class R5 extends AppCompatActivity implements MyAdapter.UserClickListener {

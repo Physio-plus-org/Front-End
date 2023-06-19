@@ -114,7 +114,7 @@
     </string>
     <string name="action_settings">Settings</string>
 
-<!--R2-->
+    <!--R2-->
     <string name="r2_code">Κωδικός</string>
     <string name="r2_codehint">Εισαγωγή κωδικού</string>
     <string name="r2_name">Όνομα</string>
@@ -126,17 +126,17 @@
     <string name="r2_confirmation">Επιβεβαίωση</string>
     <string name="r2_backgroud_image">backgroud_image</string>
 
-<!--R3-->
+    <!--R3-->
     <string name="r3_create_label">Δημιουργία</string>
     <string name="r3_patient_label">Ασθενή</string>
     <string name="r3_name_label">Ονοματεπώνυμο</string>
     <string name="r3_amka_label">ΑΜΚΑ</string>
     <string name="r3_address_label">Διεύθυνση</string>
-<!--R6-->
+    <!--R6-->
     <string name="hello_blank_fragment_r6">Hello blank fragment</string>
     <string name="upcoming_eventΑ_r6">Προσεχή</string>
     <string name="upcoming_eventΒ_r6">Ραντεβού</string>
-<!--R7-->
+    <!--R7-->
     <string name="profile">Profile</string>
     <string name="physiologo">physiologo</string>
     <string name="physiotext">PhysioText</string>
@@ -169,7 +169,7 @@
     <string name="todo">TODO</string>
     <string name="aitimata">Αιτήματα</string>
     <string name="radevou"> Ραντεβου</string>
-<!--R8-->
+    <!--R8-->
     <string name="screen_title_first">Προσθήκη</string>
     <string name="screen_title_second">Ραντεβού</string>
     <string name="info_title">Στοιχεία Ασθενή</string>
@@ -184,7 +184,7 @@
     <string name="calendar_button">calendar_button</string>
     <string name="date_value">%1$d/%2$d/%3$d</string>
     <string name="spinner_prompt">Επιλέξτε Παροχή</string>
-<!--R9-->
+    <!--R9-->
     <string name="requestLabel">Αίτημα</string>
     <string name="request_2_Label">Ραντεβού</string>
     <string name="dayLabel">Επιλογή Ημέρας</string>
@@ -209,7 +209,7 @@
         <item>19:00</item>
         <item>20:00</item>
     </string-array>
-<!--R10-->
+    <!--R10-->
     <string name="page_title">Ιστορικό Συναλλαγών</string>
     <string name="search">Search</string>
     <string name="patient_id">Patient ID</string>

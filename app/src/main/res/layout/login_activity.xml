@@ -52,7 +52,8 @@
                 android:paddingBottom="32dp"
                 android:text="@string/r1EnterButtonPSF"
                 android:textSize="48sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:textColor="@color/white"/>
 
             <Button
                 android:id="@+id/physio_center_button"
