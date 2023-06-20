@@ -3,7 +3,7 @@ package com.example.physio_plus_app.R4;
 import android.util.Log;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
+import com.example.physio_plus_app.Utils.HttpHandler.HttpHandler;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -13,11 +13,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-import okhttp3.Call;
-import okhttp3.Callback;
 import okhttp3.FormBody;
 import okhttp3.OkHttpClient;
-import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 
@@ -43,52 +40,84 @@ public class DisplayInfo {
         this.age_tv = age;
         this.url = url;
         date_tv.setText(currentDate);
-        this.client = client;
+//        this.client = client;
 
 
-        Request request = new Request.Builder().url(url).build();
+//        Request request = new Request.Builder().url(url).build();
+        try {
+            Response response = HttpHandler.postRequest("R4/displaypatients.php", null);
 
-        client.newCall(request).enqueue(new Callback() {
-            @Override
-            public void onFailure(Call call, IOException e) {
-                Log.d("MainActivity","Call failure!"+ e.getMessage());
-            }
+            if (response.isSuccessful()) {
+                String json = response.body().string();
+                Log.d("MainActivity", "Server response: " + json);
 
-            @Override
-            public void onResponse(Call call, Response response) throws IOException {
-                Log.d("MainActivity","Call Responded!");
-                if (response.isSuccessful()) {
-                    String json = response.body().string();
-                    Log.d("MainActivity", "Server response: " + json);
+                try {
+                      JSONObject jsonObject = new JSONObject(json);
+//                    String name = jsonObject.getString("name");
+//                    String address = jsonObject.getString("address");
+//
+//                    // Use the name variable as needed
+//                    Log.d("MainActivity", "Name set to: " + name);
+//                    Log.d("MainActivity","Address set to:" + address);
 
-                    try {
-                        JSONObject jsonObject = new JSONObject(json);
-                        String name = jsonObject.getString("name");
-                        String address = jsonObject.getString("address");
-                        String age = jsonObject.getString(("age"));
-                        // Use the name variable as needed
-                        Log.d("MainActivity", "Name set to: " + name);
-                        Log.d("MainActivity","Address set to:" + address);
-                        Log.d("MainActivity","Age set to:" + age);
+                    name_tv.setText(jsonObject.getString("name"));
 
-                        name_tv.post(()->name_tv.setText(name));
-                        address_tv.post(()->address_tv.setText(address));
-                        age_tv.post(()->age_tv.setText(age));
-                    } catch (JSONException e) {
-                        // Handle JSON parsing error
-                        Log.e("MainActivity", "JSON parsing error", e);
-                    }
-                } else {
-                    //code
-                    Log.e("MainActivity", "Error response: " + response.code());
+                    address_tv.setText(jsonObject.getString("address"));
+
+                } catch (JSONException e) {
+                    // Handle JSON parsing error
+                    Log.e("MainActivity", "JSON parsing error", e);
                 }
-                response.close();
-                Log.d("DisplayInfo", "Responce closed");
+            } else {
+                //code
+                Log.e("MainActivity", "Error response: " + response.code());
             }
 
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
-        });
-
+//        client.newCall(request).enqueue(new Callback() {
+//            @Override
+//            public void onFailure(Call call, IOException e) {
+//                Log.d("MainActivity","Call failure!"+ e.getMessage());
+//            }
+//
+//            @Override
+//            public void onResponse(Call call, Response response) throws IOException {
+//                Log.d("MainActivity","Call Responded!");
+//                if (response.isSuccessful()) {
+//                    String json = response.body().string();
+//                    Log.d("MainActivity", "Server response: " + json);
+//
+//                    try {
+//                        JSONObject jsonObject = new JSONObject(json);
+//                        String name = jsonObject.getString("name");
+//                        String address = jsonObject.getString("address");
+//                        String age = jsonObject.getString(("age"));
+//                        // Use the name variable as needed
+//                        Log.d("MainActivity", "Name set to: " + name);
+//                        Log.d("MainActivity","Address set to:" + address);
+//                        Log.d("MainActivity","Age set to:" + age);
+//
+//                        name_tv.post(()->name_tv.setText(name));
+//                        address_tv.post(()->address_tv.setText(address));
+//                        age_tv.post(()->age_tv.setText(age));
+//                    } catch (JSONException e) {
+//                        // Handle JSON parsing error
+//                        Log.e("MainActivity", "JSON parsing error", e);
+//                    }
+//                } else {
+//                    //code
+//                    Log.e("MainActivity", "Error response: " + response.code());
+//                }
+//                response.close();
+//                Log.d("DisplayInfo", "Responce closed");
+//            }
+//
+//
+//        });
+//
 
 
     }
@@ -99,36 +128,48 @@ public class DisplayInfo {
                 .add("amka", amka)
                 .build();
 
-        Request request = new Request.Builder()
-                .url(url)
-                .post(requestBody)
-                .build();
+        try {
+            Response response = HttpHandler.postRequest("R4/displaysessions.php", requestBody);
+            if (response.isSuccessful()) {
 
-        client.newCall(request).enqueue(new Callback() {
-            @Override
-            public void onFailure(@NonNull Call call, @NonNull IOException e) {
-                // Handle network request failure
-                Log.e("DisplayInfo", "Failed to send patient name: " + e.getMessage());
-            }
+                String responseData = response.body().string();
+                Log.d("DisplayInfo", "Response: " + responseData);
 
-            @Override
-            public void onResponse(@NonNull Call call, @NonNull Response response) {
-                // Handle network request success
-                try (response) {
-                    if (response.isSuccessful()) {
-                        // Process the response if needed
-                        assert response.body() != null;
-                        String responseData = response.body().string();
-                        Log.d("DisplayInfo", "Response: " + responseData);
-                    } else {
-                        // Handle unsuccessful response
-                        Log.e("DisplayInfo", "Failed to send patient name. Response code: " + response.code());
-                    }
-                } catch (IOException e) {
-                    Log.e("DisplayInfo", "Exception occurred while processing network response: " + e.getMessage());
-                }
+            } else {
+                //code
+                Log.e("DisplayInfo", "Failed to send patient name. Response code: " + response.code());
             }
-        });
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+//        client.newCall(request).enqueue(new Callback() {
+//            @Override
+//            public void onFailure(@NonNull Call call, @NonNull IOException e) {
+//                // Handle network request failure
+//                Log.e("DisplayInfo", "Failed to send patient name: " + e.getMessage());
+//            }
+//
+//            @Override
+//            public void onResponse(@NonNull Call call, @NonNull Response response) {
+//                // Handle network request success
+//                try (response) {
+//                    if (response.isSuccessful()) {
+//                        // Process the response if needed
+//                        assert response.body() != null;
+//                        String responseData = response.body().string();
+//                        Log.d("DisplayInfo", "Response: " + responseData);
+//                    } else {
+//                        // Handle unsuccessful response
+//                        Log.e("DisplayInfo", "Failed to send patient name. Response code: " + response.code());
+//                    }
+//                } catch (IOException e) {
+//                    Log.e("DisplayInfo", "Exception occurred while processing network response: " + e.getMessage());
+//                }
+//            }
+//        });
+
 
     }
+
 }
