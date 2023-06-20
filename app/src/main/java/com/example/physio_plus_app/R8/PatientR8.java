@@ -21,7 +21,7 @@ public class PatientR8 {
         this.first_name = obj.getString("first_name");
         this.last_name = obj.getString("last_name");
         this.address = obj.getString("address");
-        this.id_number = obj.getString("id_number");
+        this.id_number = obj.getString("ssrn");
     }
 
     @NonNull
