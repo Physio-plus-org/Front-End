@@ -28,13 +28,13 @@
 
             <ImageView
                 android:id="@+id/back_button"
-                android:layout_width= "48dp"
+                android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:layout_gravity="center"
                 android:layout_weight="1"
                 android:contentDescription="@string/backbutton"
                 android:foregroundGravity="center"
-                android:onClick="backButtonR1"
+                android:onClick="onClick"
                 android:src="@drawable/back_button" />
 
             <ImageView

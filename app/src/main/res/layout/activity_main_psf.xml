@@ -5,7 +5,7 @@
     android:id="@+id/relative_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Main_PSF.mainPSF">
+    tools:context=".Main_PSF.MainPSF">
 
 <include layout="@layout/psf_topbarmenu"></include>
 
@@ -73,45 +73,49 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/r5_background" />
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="1dp">
-
-                <ImageButton
-                    android:id="@+id/add_Button"
-                    android:layout_width="70dp"
-                    android:layout_height="62dp"
-                    android:background="@drawable/r5_add_button"
-                    android:backgroundTint="@color/black"
-                    android:contentDescription="@string/addkneading"
-                    android:onClick="myButtonClickHandler"
-                    android:src="@drawable/r7_baseline_add_24"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.498"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="1.0"
-                    app:tint="@color/white" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
         </LinearLayout>
 
     </ScrollView>
 
-    <RelativeLayout
-        android:id="@+id/footerLayout"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint_layout_plus_button"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:layout_alignParentBottom="true"
-        android:background="@color/black">
+        android:layout_height="wrap_content"
+        android:layout_above="@id/bottom"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="12dp">
 
-        <include layout="@layout/psf_botbarmenu">
+        <ImageButton
+            android:id="@+id/add_Button"
+            android:layout_width="70dp"
+            android:layout_height="62dp"
+            android:background="@drawable/r5_add_button"
+            android:backgroundTint="@color/black"
+            android:contentDescription="@string/addkneading"
+            android:onClick="myButtonClickHandler"
+            android:src="@drawable/r7_baseline_add_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0"
+            app:tint="@color/white" />
 
-        </include>
-    </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <include
+        android:id="@+id/bottom"
+        layout="@layout/psf_botbarmenu"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true">
+
+    </include>
 
     <LinearLayout
         android:layout_width="match_parent"

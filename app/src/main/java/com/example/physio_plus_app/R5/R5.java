@@ -8,12 +8,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.SearchView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -44,7 +46,7 @@ public class R5 extends AppCompatActivity  {
     private ImageView imageButton1;
     private ImageView imageButton2;
     private CardView cardView;
-    private RelativeLayout mainLayout;
+    private ConstraintLayout mainLayout;
 
     RecyclerView recyclerView;
     public static MyAdapter adapter;
@@ -65,12 +67,9 @@ public class R5 extends AppCompatActivity  {
         imageView7 = findViewById(R.id.imageView7);
         imageView10 = findViewById(R.id.imageView10);
         add_Button = findViewById(R.id.add_Button);
-        add_Button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), R3.class);
-                startActivityForResult(intent, 2);
-            }
+        add_Button.setOnClickListener(v -> {
+            Intent intent = new Intent(getApplicationContext(), R3.class);
+            startActivityForResult(intent, 2);
         });
         mainLayout = findViewById(R.id.relative_layout);
 

@@ -36,16 +36,17 @@
         <activity android:name=".R2.R2" />
         <activity android:name=".R3.R3" />
         <activity android:name=".R4.R4" />
-        <activity android:name=".R5.R5" />
+        <activity android:name=".R5.R5"
+            android:windowSoftInputMode="adjustPan"
+            />
         <activity android:name=".R6.R6" />
         <activity android:name=".R7.R7" />
         <activity android:name=".R8.R8" />
         <activity android:name=".R9.R9" />
         <activity android:name=".R9.R9_2"/>
         <activity android:name=".R10.R10" />
-        <activity android:name=".Main_PSF.mainPSF" />
-        <activity android:name=".Main_PSF.Facilities_details" />
-        <activity android:name=".Main_PSF.show_psf"></activity>
+        <activity android:name=".Main_PSF.MainPSF" />
+        <activity android:name=".Main_PSF.show_psf" />
     </application>
 
 </manifest>

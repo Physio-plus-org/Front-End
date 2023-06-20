@@ -1,19 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/relative_layout"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".R5.R5">
 
-<include layout="@layout/top_bar_doctor">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/relative_layout"
+            tools:context=".R5.R5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-</include>
+    <include
+        android:id="@+id/include3"
+        layout="@layout/top_bar_doctor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </include>
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include3">
 
         <LinearLayout
             android:id="@+id/Parent_layout"
@@ -30,13 +43,13 @@
                     android:id="@+id/imageView7"
                     android:layout_width="417dp"
                     android:layout_height="285dp"
+                    android:contentDescription="@string/image_of_doctors"
                     android:scaleType="fitXY"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/r5_physio_image"
-                    android:contentDescription="@string/image_of_doctors" />
+                    app:srcCompat="@drawable/r5_physio_image" />
 
                 <ImageView
                     android:id="@+id/imageView10"
@@ -44,11 +57,11 @@
                     android:layout_height="34dp"
                     android:layout_marginStart="44dp"
                     android:layout_marginTop="240dp"
+                    android:contentDescription="@string/filtersimage"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/searchView"
                     app:layout_constraintTop_toTopOf="@+id/imageView7"
-                    app:srcCompat="@drawable/r5_filters"
-                    android:contentDescription="@string/filtersimage" />
+                    app:srcCompat="@drawable/r5_filters" />
 
                 <SearchView
                     android:id="@+id/searchView"
@@ -78,53 +91,52 @@
 
     </ScrollView>
 
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:background="@color/backgroundColor"
-        android:orientation="horizontal">
-
-
-        <include layout="@layout/top_bar_doctor"></include>
-
-
-
-
-
-
-    </LinearLayout>
-
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="false">
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
-        <ImageButton
-            android:id="@+id/add_Button"
-            android:layout_width="70dp"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout2"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:background="@drawable/r5_add_button"
-            android:backgroundTint="@color/colorPrimary"
-            android:contentDescription="@string/add_patient"
-            android:onClick="myButtonClickHandler"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/footbarId"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <ImageButton
+                android:id="@+id/add_Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/r5_add_button"
+                android:backgroundTint="@color/colorPrimary"
+                android:contentDescription="@string/add_patient"
+                android:onClick="myButtonClickHandler"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:srcCompat="@drawable/r7_baseline_add_24"
+                app:tint="@color/white" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <include
+            android:id="@+id/footbarId"
+            layout="@layout/footbar_doctor"
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:srcCompat="@drawable/r7_baseline_add_24"
-            app:tint="@color/white" />
+            app:layout_constraintStart_toStartOf="@+id/constraintLayout2">
 
-
+        </include>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <include layout="@layout/footbar_doctor"
-        android:layout_height="match_parent"
-        android:layout_width="wrap_content"
 
-        android:id="@+id/footbarId"
-        >
-
-    </include>
-
-</RelativeLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>

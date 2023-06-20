@@ -1,5 +1,9 @@
 package com.example.physio_plus_app.Main_PSF;
 
+import android.util.Log;
+
+import com.example.physio_plus_app.Utils.HttpHandler.HttpHandler;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -15,32 +19,28 @@ import okhttp3.Response;
 
 public class OkHttpHandlerFacilitiesDetails {
 
-    public static ArrayList<Service> withdrawData() {
+    public static void withdrawData() throws IOException {
   //        StrictMode.setThreadPolicy(policy);
 //        final String myIP = "192.168.1.6";
 //        String url = "http://"+myIP+"/request.php";
 //
 //        OkHttpClient client = new OkHttpClient().newBuilder().build();
-        String url = "https://physioplus.000webhostapp.com/R_2_5/facilities.php";
-        ArrayList<Service> services = new ArrayList<>();
-        OkHttpClient client = new OkHttpClient();
-        FormBody.Builder builder = new FormBody.Builder();
-        RequestBody body = builder.build();
-        Request request = new Request.Builder().url(url).post(body).build();
-
+//        String url = "https://physioplus.000webhostapp.com/R_2_5/facilities.php";
+//        FormBody.Builder builder = new FormBody.Builder();
+//        RequestBody body = builder.build();
         try {
-            Response response = client.newCall(request).execute();
+            Response response = HttpHandler.postRequest("R_2_5/facilities.php", null);
             final String responseBody = response.body().string();
             JSONArray jsonArray = new JSONArray(responseBody);
             if (jsonArray.length() > 0) {
                 for (int i = 0; i < jsonArray.length(); i++) {
                     JSONObject jsonObject = jsonArray.getJSONObject(i);
-                    String title = jsonObject.optString("title");
-                    String code = jsonObject.optString("code");
-                    String description = jsonObject.optString("description");
-                    String cost = jsonObject.optString("cost");
-                    Service service = new Service(code, title, description, cost);
-                    services.add(service);
+                    String title = jsonObject.getString("title");
+                    String code = jsonObject.getString("code");
+                    String description = jsonObject.getString("description");
+                    double cost = jsonObject.getDouble("cost");
+                    Service service = new Service(title, code, description, cost);
+                    MainPSF.services.add(service);
                 }
             }
         } catch (IOException ignored) {
@@ -48,6 +48,5 @@ public class OkHttpHandlerFacilitiesDetails {
         } catch (JSONException e) {
             throw new RuntimeException(e);
         }
-        return services;
     }
 }

@@ -7,6 +7,7 @@ import androidx.annotation.Nullable;
 
 import java.io.IOException;
 
+import okhttp3.FormBody;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
@@ -21,17 +22,13 @@ public interface HttpHandler {
         StrictMode.setThreadPolicy(policy);
     }
 
-    static Response Request(String file_path) throws IOException {
-        String url = host + file_path;
-        Request request = new Request.Builder()
-                .url(url)
-                .build();
-        return client.newCall(request).execute();
-    }
-
     static Response postRequest(String file_path, RequestBody body) throws IOException {
         String url = host + file_path;
         Log.e("url", url);
+        if (body == null) {
+            FormBody.Builder builder = new FormBody.Builder();
+            body = builder.build();
+        }
         Request request = new Request.Builder()
                     .url(url)
                     .post(body)
