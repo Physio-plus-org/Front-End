@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -30,7 +31,7 @@
                 android:layout_weight="1"
                 android:foregroundGravity="center"
                 android:minWidth="50dp"
-                android:contentDescription="goback"
+                android:contentDescription="@string/goback"
                 android:src="@drawable/back_button" />
 
 
@@ -39,6 +40,7 @@
                 android:layout_width="200dp"
                 android:layout_height="60dp"
                 android:layout_weight="1"
+                android:contentDescription="@string/physiologo"
                 app:srcCompat="@drawable/physio_logo_topbar"
                 android:backgroundTint="@color/backgroundColor"/>
 
@@ -50,11 +52,12 @@
                 android:layout_gravity="center"
                 android:layout_weight="1"
                 android:backgroundTint="@color/backgroundColor"
-                android:contentDescription="notiftopbar"
+                android:contentDescription="@string/notiftopbar"
                 android:gravity="center|center_horizontal"
                 app:icon="@drawable/r4_calendar_icon"
                 app:iconGravity="textEnd"
-                app:iconTint="@color/iconsColor" />
+                app:iconTint="@color/iconsColor"
+                tools:ignore="VisualLintButtonSize" />
 
                 <TextView
                     android:id="@+id/redBubbleText"
@@ -63,8 +66,7 @@
                     android:layout_gravity="end|top"
                     android:layout_marginStart="0dp"
                     android:layout_marginTop="8dp"
-                    android:layout_toEndOf="@id/PhysiologoTopbar"
-                    android:contentDescription="redbubble"
+                    android:contentDescription="@string/redbubble"
                     android:background="@drawable/r7_red_circle"
                     android:padding="4dp"
                     android:textColor="@color/backgroundColor"
@@ -78,11 +80,12 @@
                 android:layout_gravity="center"
                 android:layout_weight="1"
                 android:backgroundTint="@color/backgroundColor"
-                android:contentDescription="profilepatient"
+                android:contentDescription="@string/profilepatient"
                 android:gravity="center|center_horizontal"
                 app:icon="@drawable/r3_person"
                 app:iconGravity="textStart"
-                app:iconTint="@color/iconsColor" />
+                app:iconTint="@color/iconsColor"
+                tools:ignore="VisualLintButtonSize" />
 
 
 

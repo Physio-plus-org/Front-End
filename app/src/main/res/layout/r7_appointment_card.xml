@@ -12,7 +12,7 @@
         android:id="@+id/textDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="April 3, Monday"
+        android:text="@string/april_3_monday"
         android:textSize="18sp"
         android:textColor="@color/text_color" />
 
@@ -21,17 +21,17 @@
         android:id="@+id/textTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="10:00 pm"
-        android:textSize="16sp"
-        android:textColor="@color/dark_grey"
-        android:layout_marginTop="8dp" />
+        android:layout_marginTop="8dp"
+        android:text="@string/_10_00_pm"
+        android:textColor="#616161"
+        android:textSize="16sp" />
 
     <!-- Patient Name -->
     <TextView
         android:id="@+id/textPatientName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Milios Filios"
+        android:text="@string/milios_filios"
         android:textSize="20sp"
         android:textColor="@color/text_color"
         android:layout_gravity="center_horizontal"

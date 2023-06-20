@@ -215,4 +215,19 @@
     <string name="patient_id">Patient ID</string>
     <string name="results">Results</string>
     <string name="financial_history_screen_title">Ιστορικό Συναλλαγών</string>
+    <string name="imageofhospital">imageOfHospital</string>
+    <string name="filtersimage">filtersImage</string>
+    <string name="addkneading">addKneading</string>
+    <string name="footer_button">footer_button</string>
+    <string name="footerEuro_button">footer_button</string>
+    <string name="add_new_psf">add new Psf</string>
+    <string name="physio_center_button">physio center Buttodn</string>
+    <string name="add_kneading_button">add kneading bustton</string>
+    <string name="patient_s_name">Patient\'s Name</string>
+    <string name="person_button">person button</string>
+    <string name="button">Button</string>
+    <string name="day_name">day name</string>
+    <string name="notiftopbar">notiftopbar</string>
+    <string name="redbubble">redbubble</string>
+    <string name="profilepatient">profilepatient</string>
 </resources>

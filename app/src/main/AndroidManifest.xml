@@ -45,6 +45,7 @@
         <activity android:name=".R10.R10" />
         <activity android:name=".Main_PSF.mainPSF" />
         <activity android:name=".Main_PSF.Facilities_details" />
+        <activity android:name=".Main_PSF.show_psf"></activity>
     </application>
 
 </manifest>

@@ -16,7 +16,7 @@
         android:layout_marginStart="40dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        android:text="9:00"
+        android:text="@string/_9_00"
         android:textColor="@color/text_color"
         android:textSize="30sp" />
 

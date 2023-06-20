@@ -9,5 +9,5 @@
     android:singleLine="true"
     android:text="@string/spinner_prompt"
     android:textAlignment="center"
-    android:textColor="@color/gray"
+    android:textColor="#757575"
     android:textSize="@dimen/text_size" />

@@ -17,7 +17,7 @@
 
         <ImageView
             android:id="@+id/calendarFootbar"
-            android:layout_width="200dp"
+            android:layout_width="195dp"
             android:layout_height="60dp"
             android:layout_alignParentStart="true"
             android:layout_centerVertical="true"
@@ -38,7 +38,7 @@
             android:layout_width="230dp"
             android:layout_height="60dp"
             android:layout_centerVertical="true"
-            android:layout_marginStart="208dp"
+            android:layout_marginStart="220dp"
             android:layout_marginTop="40dp"
             android:layout_marginEnd="5dp"
             android:layout_marginBottom="40dp"

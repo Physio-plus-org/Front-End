@@ -227,7 +227,8 @@
                     android:paddingEnd="16dp"
                     android:paddingBottom="8dp"
                     android:textColor="@color/light_gray"
-                    android:textSize="@dimen/text_size" />
+                    android:textSize="@dimen/text_size"
+                    tools:ignore="VisualLintTextFieldSize" />
 
                 <Button
                     android:id="@+id/submit"
@@ -243,7 +244,8 @@
                     android:onClick="onSubmit"
                     android:text="@string/button_text"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/text_size" />
+                    android:textSize="@dimen/text_size"
+                    tools:ignore="VisualLintButtonSize" />
             </LinearLayout>
 
         </LinearLayout>

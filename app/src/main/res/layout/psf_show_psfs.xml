@@ -13,7 +13,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <include layout="@layout/psf_topbarmenu">
@@ -96,7 +96,7 @@
         android:layout_marginBottom="30dp"
         android:background="@drawable/r5_add_button"
         android:backgroundTint="@color/black"
-        android:contentDescription="b"
+        android:contentDescription="@string/add_new_psf"
         android:onClick="myButtonClickHandler"
         android:src="@drawable/r7_baseline_add_24"
 

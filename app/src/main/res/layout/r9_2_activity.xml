@@ -16,7 +16,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/bottomnavigationmenu" />
+        app:menu="@menu/bottomnavigationmenu"
+        tools:ignore="VisualLintBounds" />
 
     <RelativeLayout
         android:id="@+id/relativeLayout3"
@@ -42,7 +43,8 @@
             android:layout_marginEnd="117dp"
             android:text="@string/hourLabel"
             android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            tools:ignore="TextSizeCheck" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
@@ -56,7 +58,7 @@
         android:id="@+id/dayNameLabel"
         android:layout_width="wrap_content"
         android:layout_height="47dp"
-        android:text="day name"
+        android:text="@string/day_name"
         android:layout_marginTop="60dp"
         android:textSize="20sp"
         android:textStyle="bold"

@@ -28,8 +28,8 @@
 
             <ImageView
                 android:id="@+id/back_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width= "48dp"
+                android:layout_height="48dp"
                 android:layout_gravity="center"
                 android:layout_weight="1"
                 android:contentDescription="@string/backbutton"
@@ -42,6 +42,7 @@
                 android:layout_width="150dp"
                 android:layout_height="60dp"
                 android:layout_weight="1"
+                android:contentDescription="@string/todo"
                 app:srcCompat="@drawable/physio_logo_topbar" />
 
 
@@ -50,6 +51,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:contentDescription="@string/todo"
                 android:src="@drawable/back_button"
                 android:visibility="invisible" />
 
@@ -58,7 +60,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Button"
+                android:text="@string/button"
                 android:visibility="gone" />
 
 

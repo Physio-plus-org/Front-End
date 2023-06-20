@@ -12,6 +12,7 @@
         android:layout_gravity="center"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        android:background="@drawable/r9_round_warning" />
+        android:background="@drawable/r9_round_warning"
+        tools:ignore="TextSizeCheck" />
 
 </RelativeLayout>
