@@ -6,11 +6,14 @@ public class PatientR8 {
     private final String first_name;
     private final String last_name;
     private final String id_number;
-    public PatientR8(String fname, String lname, String pnumber) {
+    private final String address;
+    public PatientR8(String fname, String lname, String pnumber, String address) {
         this.first_name = fname;
         this.last_name = lname;
         this.id_number = pnumber;
+        this.address = address;
     }
+
     @NonNull
     @Override
     public String toString() {
@@ -22,4 +25,5 @@ public class PatientR8 {
     public String getIdNumber() {
         return this.id_number;
     }
+    public String getAddress() {return this.address;}
 }

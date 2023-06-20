@@ -1,7 +1,6 @@
 package com.example.physio_plus_app.R5;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,18 +11,13 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.physio_plus_app.R;
-import com.example.physio_plus_app.R4.R4;
-import com.example.physio_plus_app.R8.R8;
 
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.UserViewHolder> implements Filterable {
@@ -32,7 +26,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.UserViewHolder> im
     private List<User> userList;
     private List<User> filteredData;
     public UserClickListener userClickListener;
-    private int selectedUser;
+    private int selectedUserId;
+    private String selectedUserSSRN;
     private List<UserViewHolder> clickArray;
     private Button NewAppointments;
     private Button PatientHistory;
@@ -199,13 +194,23 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.UserViewHolder> im
             return layout;
         }
 
+        public String getPatientId() {
+            return amka_text.getText().toString();
+        }
+
 
     }
 
     private void changeSelectedUser(int id) {
-        clickArray.get(selectedUser).setPopUpVisibility(View.GONE);
-        selectedUser = id;
-        clickArray.get(selectedUser).setPopUpVisibility(View.VISIBLE);
+        clickArray.get(selectedUserId).setPopUpVisibility(View.GONE);
+        selectedUserId = id;
+        UserViewHolder new_holder = clickArray.get(selectedUserId);
+        selectedUserSSRN = new_holder.getPatientId();
+        new_holder.setPopUpVisibility(View.VISIBLE);
+    }
+
+    public String getPatientId() {
+        return selectedUserSSRN;
     }
 
 }

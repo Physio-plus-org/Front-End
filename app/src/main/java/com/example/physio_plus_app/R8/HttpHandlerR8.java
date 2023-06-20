@@ -33,7 +33,6 @@ public abstract class HttpHandlerR8 {
                 .post(body)
                 .build();
         try (Response response = client.newCall(request).execute()) {
-            assert response.body() != null;
             String data = response.body().string();
             Log.e("tag:", data);
             if (!data.isEmpty())
