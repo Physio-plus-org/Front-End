@@ -2,6 +2,9 @@ package com.example.physio_plus_app.R8;
 
 import androidx.annotation.NonNull;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 public class PatientR8 {
     private final String first_name;
     private final String last_name;
@@ -12,6 +15,13 @@ public class PatientR8 {
         this.last_name = lname;
         this.id_number = pnumber;
         this.address = address;
+    }
+
+    public PatientR8 (JSONObject obj) throws JSONException {
+        this.first_name = obj.getString("first_name");
+        this.last_name = obj.getString("last_name");
+        this.address = obj.getString("address");
+        this.id_number = obj.getString("ssrn");
     }
 
     @NonNull
