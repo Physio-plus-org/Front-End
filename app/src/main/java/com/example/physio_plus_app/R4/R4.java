@@ -87,7 +87,7 @@ public class R4 extends AppCompatActivity {
         Intent intent = getIntent();
 
         // Retrieve the string extra from the intent
-        String message = intent.getStringExtra("PATIENT_AMKA");
+        String message = intent.getStringExtra("patient_id");
 
         // Use the received string variable as needed
         if (message != null) {
@@ -95,14 +95,13 @@ public class R4 extends AppCompatActivity {
             String patient_amka = message;
 
             client = new OkHttpClient();
-            client2 = new OkHttpClient();
             handler.sendPatientNameToServer(patient_amka);
-            handler = new DisplayInfo(url1, "12345678", client ,name_tv, age_tv, address_tv, date_tv);
+            handler = new DisplayInfo(url1, patient_amka, client ,name_tv, age_tv, address_tv, date_tv);
             //vazw dummy metablhth sth thesh tou amka gia na kanw thn klhsh ths vashs
             Log.d("Main Activity", "DisplayInfo is running without problems");
 
             sessions.sendPatientNameToServer(patient_amka);
-            sessions = new Sessions(url2, "12345678", client2, verticalLayout);
+            sessions = new Sessions(url2, patient_amka, client, verticalLayout);
             //vazw dummy metablhth sth thesh tou amka gia na kanw thn klhsh ths vashs
             sessions.displaySessions();
 
