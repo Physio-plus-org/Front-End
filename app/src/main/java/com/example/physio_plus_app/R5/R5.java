@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.SearchView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,9 +24,12 @@ import com.example.physio_plus_app.R;
 import com.example.physio_plus_app.R3.R3;
 import com.example.physio_plus_app.R4.R4;
 import com.example.physio_plus_app.R6.R6;
+import com.example.physio_plus_app.R7.AppointmentForIntentFactory;
+import com.example.physio_plus_app.R7.DropdownAppointmentSharedFactory;
 import com.example.physio_plus_app.R7.R7;
 import com.example.physio_plus_app.R8.R8;
 import com.example.physio_plus_app.Utils.HttpHandler.ButtonActionsController;
+import com.google.gson.Gson;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -34,10 +38,22 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import okhttp3.OkHttpClient;
+
 
 public class R5 extends AppCompatActivity  {
 
     /* Topbar */
+
+    private RelativeLayout cardContainer;
+
+    AppointmentForIntentFactory appointmentManager;
+
+    TextView redBubble;
+
+    private DropdownAppointmentSharedFactory dropdownAppointmentSharedFactory;
+    private Gson gson;
+    private OkHttpClient client;
 
     private SearchView searchView;
     private ImageButton add_Button;
@@ -85,6 +101,19 @@ public class R5 extends AppCompatActivity  {
 
         adapter = new MyAdapter(userList, getApplicationContext());
         recyclerView.setAdapter(adapter);
+
+        /* Layout obbjects */
+        cardContainer = findViewById(R.id.cardContainer);
+        redBubble = findViewById(R.id.redBubbleText);
+        redBubble.setVisibility(View.GONE);
+        LinearLayout appointmentCardsContainer = findViewById(R.id.appointmentCardsContainer);
+
+
+
+        /* Network-Database oriented Objects */
+        gson = new Gson();
+        client = new OkHttpClient();
+        dropdownAppointmentSharedFactory = new DropdownAppointmentSharedFactory(R5.this);
 
 
         try {

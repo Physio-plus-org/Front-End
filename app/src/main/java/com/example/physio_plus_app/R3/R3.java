@@ -9,6 +9,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.physio_plus_app.Patientprofile.patientProfile;
@@ -16,15 +19,30 @@ import com.example.physio_plus_app.R;
 import com.example.physio_plus_app.R5.R5;
 import com.example.physio_plus_app.R5.User;
 import com.example.physio_plus_app.R6.R6;
+import com.example.physio_plus_app.R7.AppointmentForIntentFactory;
+import com.example.physio_plus_app.R7.DropdownAppointmentSharedFactory;
 import com.example.physio_plus_app.R7.R7;
+import com.google.gson.Gson;
 
 import org.json.JSONObject;
 
 import java.io.Serializable;
 
+import okhttp3.OkHttpClient;
+
 public class R3 extends AppCompatActivity {
 
 
+
+    private RelativeLayout cardContainer;
+
+    AppointmentForIntentFactory appointmentManager;
+
+    TextView redBubble;
+
+    private DropdownAppointmentSharedFactory dropdownAppointmentSharedFactory;
+    private Gson gson;
+    private OkHttpClient client;
 
     EditText name_Patient,surname_Patient,addressPatient,amkaPatient;
     ImageButton createPatient, returnButton;
@@ -49,6 +67,18 @@ public class R3 extends AppCompatActivity {
 
 
 
+        /* Layout objects */
+        cardContainer = findViewById(R.id.cardContainer);
+        redBubble = findViewById(R.id.redBubbleText);
+        redBubble.setVisibility(View.GONE);
+        LinearLayout appointmentCardsContainer = findViewById(R.id.appointmentCardsContainer);
+
+
+
+        /* Network-Database oriented Objects */
+        gson = new Gson();
+        client = new OkHttpClient();
+        dropdownAppointmentSharedFactory = new DropdownAppointmentSharedFactory(R3.this);
 
 
 

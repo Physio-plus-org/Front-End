@@ -11,12 +11,17 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.physio_plus_app.R;
 import com.example.physio_plus_app.R3.R3;
 import com.example.physio_plus_app.R5.R5;
+import com.example.physio_plus_app.R7.AppointmentForIntentFactory;
+import com.example.physio_plus_app.R7.DropdownAppointmentSharedFactory;
 import com.example.physio_plus_app.R7.R7;
+import com.google.gson.Gson;
 import com.shrikanthravi.collapsiblecalendarview.data.Day;
 import com.shrikanthravi.collapsiblecalendarview.widget.CollapsibleCalendar;
 
@@ -26,7 +31,20 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
+import okhttp3.OkHttpClient;
+
 public class R6 extends AppCompatActivity implements SelectListenerR6 {
+
+
+    private RelativeLayout cardContainer;
+
+    AppointmentForIntentFactory appointmentManager;
+
+    TextView redBubble;
+
+    private DropdownAppointmentSharedFactory dropdownAppointmentSharedFactory;
+    private Gson gson;
+    private OkHttpClient client;
     private final String myHost = "https://physioplus.000webhostapp.com/R6";
     /* Topbar */
 //    ImageView physiologoTopbarButton = findViewById((R.id.PhysiologoTopbar));
@@ -133,6 +151,20 @@ public class R6 extends AppCompatActivity implements SelectListenerR6 {
 //           startActivity(i);
 //        });
 //
+
+
+        /* Layout obbjects */
+        redBubble = findViewById(R.id.redBubbleText);
+        redBubble.setVisibility(View.GONE);
+
+
+
+
+        /* Network-Database oriented Objects */
+        gson = new Gson();
+        client = new OkHttpClient();
+        dropdownAppointmentSharedFactory = new DropdownAppointmentSharedFactory(this);
+        dropdownAppointmentSharedFactory.fetchUpcomingAppointmentsForDropdown(this);
     }
 
 

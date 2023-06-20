@@ -6,12 +6,17 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.physio_plus_app.R;
 import com.example.physio_plus_app.R5.R5;
+import com.example.physio_plus_app.R7.AppointmentForIntentFactory;
+import com.example.physio_plus_app.R7.DropdownAppointmentSharedFactory;
+import com.example.physio_plus_app.R7.R7;
+import com.google.gson.Gson;
 
 import okhttp3.OkHttpClient;
 
@@ -20,6 +25,17 @@ public class R4 extends AppCompatActivity {
 
 
     /* Topbar */
+
+
+    private RelativeLayout cardContainer;
+
+    AppointmentForIntentFactory appointmentManager;
+
+    TextView redBubble;
+
+    private DropdownAppointmentSharedFactory dropdownAppointmentSharedFactory;
+    private Gson gson;
+    private OkHttpClient client;
 
 
     TextView name_tv;
@@ -35,7 +51,7 @@ public class R4 extends AppCompatActivity {
     public Sessions sessions;
     String url1, url2;
 
-    OkHttpClient client,client2;
+    OkHttpClient client2;
 
     private static final String DISPLAY_INFO = "https://physioplus.000webhostapp.com/R4/displaypatients.php";
     private static final String DISPLAY_SESSIONS= "https://physioplus.000webhostapp.com/R4/displaysessions.php";
@@ -65,6 +81,19 @@ public class R4 extends AppCompatActivity {
 
 
 
+
+        /* Layout obbjects */
+        cardContainer = findViewById(R.id.cardContainer);
+        redBubble = findViewById(R.id.redBubbleText);
+        redBubble.setVisibility(View.GONE);
+        LinearLayout appointmentCardsContainer = findViewById(R.id.appointmentCardsContainer);
+
+
+
+        /* Network-Database oriented Objects */
+        gson = new Gson();
+        client = new OkHttpClient();
+        dropdownAppointmentSharedFactory = new DropdownAppointmentSharedFactory(R4.this);
 
 
 
