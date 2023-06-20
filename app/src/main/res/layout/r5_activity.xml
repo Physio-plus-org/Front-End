@@ -7,6 +7,9 @@
     android:layout_height="match_parent"
     tools:context=".R5.R5">
 
+<include layout="@layout/top_bar_doctor">
+
+</include>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -32,7 +35,8 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/r5_physio_image" />
+                    app:srcCompat="@drawable/r5_physio_image"
+                    android:contentDescription="@string/image_of_doctors" />
 
                 <ImageView
                     android:id="@+id/imageView10"
@@ -43,7 +47,8 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/searchView"
                     app:layout_constraintTop_toTopOf="@+id/imageView7"
-                    app:srcCompat="@drawable/r5_filters" />
+                    app:srcCompat="@drawable/r5_filters"
+                    android:contentDescription="@string/filtersimage" />
 
                 <SearchView
                     android:id="@+id/searchView"
@@ -82,65 +87,12 @@
         android:orientation="horizontal">
 
 
-        <ImageView
-            android:id="@+id/goback"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:contentDescription="goback"
-            android:foregroundGravity="center"
-            android:minWidth="50dp"
-            android:src="@drawable/back_button" />
+        <include layout="@layout/top_bar_doctor"></include>
 
 
-        <ImageView
-            android:id="@+id/PhysiologoTopbar"
-            android:layout_width="200dp"
-            android:layout_height="60dp"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/physio_logo_topbar" />
 
-        <Button
-            android:id="@+id/calendarTopBar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:backgroundTint="@color/backgroundColor"
-            android:contentDescription="notiftopbar"
-            android:gravity="center|center_horizontal"
-            app:icon="@drawable/r4_calendar_icon"
-            app:iconGravity="textEnd"
-            app:iconTint="@color/iconsColor" />
 
-        <TextView
-            android:id="@+id/redBubbleText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end|top"
-            android:layout_marginStart="0dp"
-            android:layout_marginTop="8dp"
-            android:layout_toEndOf="@id/PhysiologoTopbar"
-            android:background="@drawable/r7_red_circle"
-            android:contentDescription="redbubble"
-            android:padding="4dp"
-            android:textColor="@color/backgroundColor"
-            android:textSize="12sp"
-            android:visibility="visible" />
 
-        <Button
-            android:id="@+id/ProfilePatientTopbar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:backgroundTint="@color/backgroundColor"
-            android:contentDescription="profilepatient"
-            android:gravity="center|center_horizontal"
-            app:icon="@drawable/r3_person"
-            app:iconGravity="textStart"
-            app:iconTint="@color/iconsColor" />
 
     </LinearLayout>
 
@@ -161,15 +113,18 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginBottom="90dp"
-            android:tint="@color/white"
             android:backgroundTint="@color/colorPrimary"
-            app:srcCompat="@drawable/r7_baseline_add_24" />
+            app:srcCompat="@drawable/r7_baseline_add_24"
+            app:tint="@color/white" />
 
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <include layout="@layout/footbar_doctor"
+        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+
         android:id="@+id/footbarId"
         >
 
