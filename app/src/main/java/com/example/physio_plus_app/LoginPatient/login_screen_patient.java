@@ -23,7 +23,6 @@ public class login_screen_patient extends AppCompatActivity {
 
         id_text = findViewById(R.id.amka_LG);
         loginBtn = findViewById(R.id.login_Btn_LG);
-        loginBtn.setOnClickListener(this::onClick);
 
     }
     public void onClick(View view) {

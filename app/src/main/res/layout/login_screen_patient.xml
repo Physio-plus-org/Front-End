@@ -105,6 +105,7 @@
                         android:layout_gravity="center"
                         android:layout_marginTop="20sp"
                         android:backgroundTint="@color/backgroundColor"
+                        android:onClick="onClick"
                         android:text="Σύνδεση"
                         android:textColor="@color/text_color" />
                 </LinearLayout>
