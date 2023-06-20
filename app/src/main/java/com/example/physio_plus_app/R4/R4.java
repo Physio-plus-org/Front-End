@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -66,18 +67,11 @@ public class R4 extends AppCompatActivity {
         Log.d("Main Activity", "Sessions is running without problems");
 
 
-//        /* Topbar */
-//        ImageView physiologoTopbarButton = findViewById((R.id.PhysiologoTopbar));
-//        Button profileTopbarButton = findViewById((R.id.ProfilePatientTopbar));
-//        Button notifTopbarButton = findViewById(R.id.calendarTopBar);
-//        ImageView goBackButton = findViewById(R.id.goback);
-//
-//
-//
-////        profileTopbarButton.setOnClickListener(v->{
-//////            Intent i = new Intent(R4.this, Profile.class );
-//////            startActivity(i);
-////        });
+
+
+
+
+
 
         ImageView goBackView = findViewById(R.id.goback);
         goBackView.setOnClickListener(new View.OnClickListener() {

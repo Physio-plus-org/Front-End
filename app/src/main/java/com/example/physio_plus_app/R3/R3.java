@@ -16,6 +16,7 @@ import com.example.physio_plus_app.R;
 import com.example.physio_plus_app.R5.R5;
 import com.example.physio_plus_app.R5.User;
 import com.example.physio_plus_app.R6.R6;
+import com.example.physio_plus_app.R7.R7;
 
 import org.json.JSONObject;
 
@@ -40,31 +41,21 @@ public class R3 extends AppCompatActivity {
         returnButton = findViewById(R.id.backbtn);
 
         /* Topbar */
-        ImageView physiologoTopbarButton = findViewById((R.id.PhysiologoTopbar));
-        Button profileTopbarButton = findViewById((R.id.ProfilePatientTopbar));
-        Button notifTopbarButton = findViewById(R.id.calendarTopBar);
+
+
         ImageView goBackButton = findViewById(R.id.goback);
 
 
 
-        physiologoTopbarButton.setOnClickListener(v->{
-            Intent i = new Intent(R3.this, R6.class );
-            startActivity(i);
-        });
 
-        profileTopbarButton.setOnClickListener(v->{
-            Intent i = new Intent(R3.this, patientProfile.class );
-            startActivity(i);
-        });
+
+
+
+
 
         goBackButton.setOnClickListener(v -> finish());
 
-        returnButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-            }
-        });
+        returnButton.setOnClickListener(view -> finish());
 
     }
     public void onClick(View v) {

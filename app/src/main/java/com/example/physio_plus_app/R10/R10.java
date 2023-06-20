@@ -12,6 +12,9 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.physio_plus_app.R;
+import com.example.physio_plus_app.R5.R5;
+import com.example.physio_plus_app.R6.R6;
+import com.example.physio_plus_app.R9.R9;
 
 import org.json.JSONException;
 
@@ -33,11 +36,17 @@ public class R10 extends AppCompatActivity {
         Request();
         ShowFinancialHistory();
 
-//        /* Topbar */
-//        ImageView physiologoTopbarButton = findViewById((R.id.PhysiologoTopbar));
-//        Button profileTopbarButton = findViewById((R.id.ProfilePatientTopbar));
-//        Button notifTopbarButton = findViewById(R.id.calendarTopBar);
-//        ImageView goBackButton = findViewById(R.id.goback);
+
+
+
+        //fOOTBAR
+        ImageView calendarFootbarButton = findViewById(R.id.calendarFootbar);
+
+
+        calendarFootbarButton.setOnClickListener(v->{
+            Intent i = new Intent(R10.this, R9.class);
+            startActivity(i);
+        });
     }
 
     protected void ShowFinancialHistory() {

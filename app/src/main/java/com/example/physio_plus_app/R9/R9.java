@@ -18,6 +18,9 @@ import android.widget.ImageView;
 
 import com.example.physio_plus_app.R;
 import com.example.physio_plus_app.R10.R10;
+import com.example.physio_plus_app.R3.R3;
+import com.example.physio_plus_app.R5.R5;
+import com.example.physio_plus_app.R6.R6;
 
 import java.util.Locale;
 
@@ -75,11 +78,11 @@ public class R9 extends AppCompatActivity{
             e.printStackTrace();
         }
 
-//        /* Topbar */
-//        ImageView physiologoTopbarButton = findViewById((R.id.PhysiologoTopbar));
-//        Button profileTopbarButton = findViewById((R.id.ProfilePatientTopbar));
-//        Button notifTopbarButton = findViewById(R.id.calendarTopBar);
-//        ImageView goBackButton = findViewById(R.id.goback);
+        /* Topbar */
+        ImageView goBackButton = findViewById(R.id.goback);
+        goBackButton.setOnClickListener(v -> finish());
+
+        
 
     }
 

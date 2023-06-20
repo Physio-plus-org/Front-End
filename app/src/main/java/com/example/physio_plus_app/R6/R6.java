@@ -14,7 +14,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.physio_plus_app.R;
+import com.example.physio_plus_app.R3.R3;
 import com.example.physio_plus_app.R5.R5;
+import com.example.physio_plus_app.R7.R7;
 import com.shrikanthravi.collapsiblecalendarview.data.Day;
 import com.shrikanthravi.collapsiblecalendarview.widget.CollapsibleCalendar;
 
@@ -94,26 +96,31 @@ public class R6 extends AppCompatActivity implements SelectListenerR6 {
 
 
         /* Topbar */
-       Button profileTopbarButton = findViewById((R.id.ProfilePatientTopbar));
-       Button notifTopbarButton = findViewById(R.id.calendarTopBar);
-       ImageView goBackButton = findViewById(R.id.goback);
+        ImageView goBackButton = findViewById(R.id.goback);
 
-       /* Footbar */
+        /* Footbar */
         ImageView calendarFootbarButton = findViewById(R.id.calendarFootbar);
-      ImageView addPatientFootbarButton = findViewById(R.id.addPatientFootbar);
+        ImageView addPatientFootbarButton = findViewById(R.id.addPatientFootbar);
 
 
 
 
-//        physiologoTopbarButton.setOnClickListener(v->{
-//           Intent i = new Intent(R6.this, R6.class );
-//            startActivity(i);
-//        });
 
-//       profileTopbarButton.setOnClickListener(v->{
-//            Intent i = new Intent(R6.this, Profile.class );
-//           startActivity(i);
-//        });
+
+
+
+        goBackButton.setOnClickListener(v -> finish());
+
+
+        addPatientFootbarButton.setOnClickListener((v->{
+            Intent i = new Intent(R6.this, R3.class );
+            startActivity(i);
+
+        }));
+        calendarFootbarButton.setOnClickListener(v->{
+            Intent i = new Intent(R6.this, R6.class);
+            startActivity(i);
+        });
 
         goBackButton.setOnClickListener(v -> finish());
 

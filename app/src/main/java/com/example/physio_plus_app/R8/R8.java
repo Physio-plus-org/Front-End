@@ -1,6 +1,7 @@
 package com.example.physio_plus_app.R8;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -13,6 +14,9 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.physio_plus_app.R;
+import com.example.physio_plus_app.R3.R3;
+import com.example.physio_plus_app.R6.R6;
+import com.example.physio_plus_app.R7.R7;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -61,10 +65,9 @@ public class R8 extends AppCompatActivity {
         }
 
         /* Topbar */
-        ImageView physiologoTopbarButton = findViewById((R.id.PhysiologoTopbar));
-        Button profileTopbarButton = findViewById((R.id.ProfilePatientTopbar));
-        Button notifTopbarButton = findViewById(R.id.calendarTopBar);
         ImageView goBackButton = findViewById(R.id.goback);
+        goBackButton.setOnClickListener(v -> finish());
+
     }
     public void onSubmit(View view) {
         try {

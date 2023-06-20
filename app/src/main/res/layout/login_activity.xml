@@ -70,6 +70,7 @@
                 android:text="@string/r1EnterButtonPhysio"
                 android:textAlignment="center"
                 android:textSize="34sp"
+                android:textColor="@color/backgroundColor"
                 android:textStyle="bold" />
 
             <Button
@@ -84,6 +85,7 @@
                 android:textAlignment="center"
                 android:textSize="48sp"
                 android:textStyle="bold"
+                android:textColor="@color/backgroundColor"
                 tools:ignore="VisualLintButtonSize" />
 
         </LinearLayout>

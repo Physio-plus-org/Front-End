@@ -90,8 +90,7 @@ public class R7 extends AppCompatActivity {
         fetchUpcomingAppointments();
 
 
-        ImageView physiologoTopbarButton = findViewById((R.id.PhysiologoTopbar));
-        Button profileTopbarButton = findViewById((R.id.ProfilePatientTopbar));
+        /* Topbar */
         ImageView goBackButton = findViewById(R.id.goback);
 
         /* Footbar */
@@ -101,15 +100,9 @@ public class R7 extends AppCompatActivity {
 
 
 
-        physiologoTopbarButton.setOnClickListener(v->{
-            Intent i = new Intent(R7.this, R6.class );
-            startActivity(i);
-        });
 
-        profileTopbarButton.setOnClickListener(v->{
-            Intent i = new Intent(R7.this, patientProfile.class );
-            startActivity(i);
-        });
+
+
 
         goBackButton.setOnClickListener(v -> finish());
 
