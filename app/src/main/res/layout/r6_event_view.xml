@@ -13,6 +13,7 @@
         android:layout_alignParentEnd="true"
         android:layout_centerVertical="true"
         android:layout_marginRight="10dp"
+        android:contentDescription="@string/event_view"
         android:layout_marginLeft="10dp"/>
 
     <TextView
@@ -20,10 +21,10 @@
         android:layout_height="wrap_content"
         android:id="@+id/patient_name"
         android:layout_toStartOf="@id/confirmEventButton"
-        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
         android:textColor="@color/black"
-        android:textSize="20dp"
-        android:text="Name"/>
+        android:textSize="20sp"
+        android:text="@string/name"/>
 
 
 
@@ -33,9 +34,9 @@
         android:id="@+id/date"
         android:layout_toStartOf="@id/confirmEventButton"
         android:layout_below="@id/patient_name"
-        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
         android:textColor="@color/black"
-        android:text="Date"/>
+        android:text="@string/date"/>
 
     <TextView
         android:layout_width="match_parent"
@@ -43,10 +44,10 @@
         android:id="@+id/event_id"
         android:layout_toStartOf="@id/confirmEventButton"
         android:layout_below="@id/date"
-        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
         android:layout_marginBottom="5dp"
         android:textColor="@color/black"
-        android:text="Event ID"/>
+        android:text="@string/event_id"/>
 
     <Button
         android:id="@+id/confirmEventButton"

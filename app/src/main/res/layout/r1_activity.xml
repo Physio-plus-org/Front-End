@@ -51,7 +51,8 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.615"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/imageView" />
+                    app:layout_constraintTop_toBottomOf="@+id/imageView"
+                    tools:ignore="TextSizeCheck" />
 
                 <EditText
                     android:id="@+id/namePhysio"
@@ -60,11 +61,12 @@
                     android:layout_marginTop="20dp"
                     android:cursorVisible="false"
                     android:ems="10"
-                    android:hint="Όνομα"
+                    android:hint="@string/PSFNAME"
                     android:inputType="text"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/titlePhysio" />
+                    app:layout_constraintTop_toBottomOf="@+id/titlePhysio"
+                    tools:ignore="Autofill" />
 
                 <EditText
                     android:id="@+id/addressPhysio"
@@ -76,7 +78,8 @@
                     android:inputType="text"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/namePhysio" />
+                    app:layout_constraintTop_toBottomOf="@+id/namePhysio"
+                    tools:ignore="Autofill,HardcodedText" />
 
                 <EditText
                     android:id="@+id/afmPhysio"
@@ -88,7 +91,8 @@
                     android:inputType="text"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/addressPhysio" />
+                    app:layout_constraintTop_toBottomOf="@+id/addressPhysio"
+                    tools:ignore="Autofill,HardcodedText" />
 
                 <!--
                    <View
@@ -193,7 +197,8 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/r1" />
+                    app:srcCompat="@drawable/r1"
+                    android:contentDescription="@string/imageofhospital" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>

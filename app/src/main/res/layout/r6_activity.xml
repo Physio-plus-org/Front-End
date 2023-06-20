@@ -15,24 +15,24 @@
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginVertical="90dp"
             android:id="@+id/welcome_text"
-            android:textSize="18dp"
-            android:text="Καλωσήρθατε"
+            android:textSize="18sp"
+            android:text="@string/greetings"
             android:layout_marginTop="10dp"
-            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
             android:layout_marginBottom="5dp"/>
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/welcome_text"
-            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
             android:id="@+id/weekly_program_title">
 
 
@@ -45,9 +45,9 @@
                     android:id="@+id/weekly_program_titleA"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="25dp"
+                    android:textSize="25sp"
                     android:layout_marginEnd="8dp"
-                    android:text="Εβδομαδιαίο "
+                    android:text="@string/weekly"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/weekly_program_titleB"
                     app:layout_constraintStart_toStartOf="parent"
@@ -57,9 +57,9 @@
                     android:id="@+id/weekly_program_titleB"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="25dp"
+                    android:textSize="25sp"
                     android:textColor="@color/R1_primaryColor"
-                    android:text="Πρόγραμμα"
+                    android:text="@string/calendar"
                     app:layout_constraintBottom_toBottomOf="@+id/weekly_program_titleA"
                     app:layout_constraintStart_toEndOf="@+id/weekly_program_titleA"
                     app:layout_constraintTop_toTopOf="@+id/weekly_program_titleA" />
@@ -109,18 +109,18 @@
             android:background="@drawable/r6_roundly_light_view">
 
             <TextView
+                android:id="@+id/upcoming_eventA"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
-                android:textColor="@color/text_color"
-                android:id="@+id/upcoming_eventA"
-                android:text="@string/upcoming_eventΑ_r6"/>
+                android:text="@string/upcoming_eventΑ_r6"
+                android:textColor="#4E342E" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
+                android:layout_marginStart="5dp"
                 android:layout_marginTop="10dp"
                 android:textStyle="bold"
                 android:layout_toEndOf="@id/upcoming_eventA"
@@ -132,11 +132,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toEndOf="@id/upcoming_eventB"
-                android:layout_marginLeft="45dp"
+                android:layout_marginStart="45dp"
                 android:layout_marginTop="10dp"
                 android:id="@+id/date_word"
                 android:textColor="@color/text_color"
-                android:text="Date Placeholder"/>
+                android:text="@string/placeholder"/>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerView"

@@ -17,11 +17,11 @@
 
         <ImageButton
             android:id="@+id/btnhistory"
-            android:layout_width="62dp"
-            android:layout_height="57dp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:layout_marginStart="16dp"
             android:backgroundTint="@color/R4_scrollColor"
-            android:contentDescription="History"
+            android:contentDescription="@string/history"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -29,16 +29,16 @@
 
         <ImageButton
             android:id="@+id/btnactions"
-            android:layout_width="42dp"
-            android:layout_height="30dp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:layout_marginEnd="24dp"
             android:backgroundTint="@color/R4_scrollColor"
-            android:contentDescription="NewActions"
+            android:contentDescription="@string/newactions"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.487"
-            app:srcCompat="@drawable/r5_adding_pat" />
+            app:srcCompat="@drawable/r7_baseline_add_24" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
