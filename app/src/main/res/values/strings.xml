@@ -241,4 +241,7 @@
     <string name="history">History</string>
     <string name="add_patient">add patient</string>
     <string name="PSFNAME">Όνομα</string>
+    <string name="image_of_doctors">image of doctors</string>
+    <string name="surname">Επίθετο</string>
+    <string name="cancel_patient_add">cancel patient add</string>
 </resources>
