@@ -30,7 +30,7 @@ public class MainPSF extends AppCompatActivity {
         setContentView(R.layout.activity_main_psf);
 
         //Topbar
-        ImageView goBackButton = findViewById(R.id.back_button);
+        ImageView goBackButton = findViewById(R.id.goback);
 
         //Footbar
         ImageButton addButton = findViewById(R.id.add_Button);
