@@ -27,13 +27,13 @@ import okhttp3.Response;
 public class Sessions {
 
     private String url;
-    String name_cd;
+    String amka;
     private OkHttpClient client;
     private LinearLayout verticalLayout;
 
-    public Sessions(String url, String name_cd, OkHttpClient client, LinearLayout verticalLayout) {
+    public Sessions(String url, String amka, OkHttpClient client, LinearLayout verticalLayout) {
         this.url = url;
-        this.name_cd = name_cd;
+        this.amka = amka;
         this.client = client;
         this.verticalLayout = verticalLayout;
     }
@@ -105,9 +105,9 @@ public class Sessions {
     }
 
 
-    public void sendPatientNameToServer(String name_cd) {
+    public void sendPatientNameToServer(String amka) {
         RequestBody requestBody = new FormBody.Builder()
-                .add("patientName", name_cd)
+                .add("amka", amka)
                 .build();
 
         Request request = new Request.Builder()

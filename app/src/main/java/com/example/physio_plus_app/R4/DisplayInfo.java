@@ -29,14 +29,14 @@ public class DisplayInfo {
     TextView date_tv;
 
     String url;
-    String name_cd;
+    String amka;
     OkHttpClient client;
 
     String currentDate = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).format(new Date());
 
-    public DisplayInfo(String url,String name_cd, OkHttpClient client, TextView name, TextView age, TextView address, TextView date){
+    public DisplayInfo(String url, String amka, OkHttpClient client, TextView name, TextView age, TextView address, TextView date){
 
-        this.name_cd = name_cd;
+        this.amka = amka;
         this.date_tv = date;
         this.name_tv = name;
         this.address_tv = address;
@@ -94,9 +94,9 @@ public class DisplayInfo {
     }
 
 
-    public void sendPatientNameToServer(String name_cd) {
+    public void sendPatientNameToServer(String amka) {
         RequestBody requestBody = new FormBody.Builder()
-                .add("patientName", name_cd)
+                .add("amka", amka)
                 .build();
 
         Request request = new Request.Builder()

@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -88,21 +87,23 @@ public class R4 extends AppCompatActivity {
         Intent intent = getIntent();
 
         // Retrieve the string extra from the intent
-        String message = intent.getStringExtra("PATIENT_NAME");
+        String message = intent.getStringExtra("PATIENT_AMKA");
 
         // Use the received string variable as needed
         if (message != null) {
 
-            String patient_name = message;
+            String patient_amka = message;
 
             client = new OkHttpClient();
             client2 = new OkHttpClient();
-            handler.sendPatientNameToServer(patient_name);
-            handler = new DisplayInfo(url1, patient_name, client ,name_tv, age_tv, address_tv, date_tv);
+            handler.sendPatientNameToServer(patient_amka);
+            handler = new DisplayInfo(url1, "12345678", client ,name_tv, age_tv, address_tv, date_tv);
+            //vazw dummy metablhth sth thesh tou amka gia na kanw thn klhsh ths vashs
             Log.d("Main Activity", "DisplayInfo is running without problems");
 
-            sessions.sendPatientNameToServer(patient_name);
-            sessions = new Sessions(url2, patient_name, client2, verticalLayout);
+            sessions.sendPatientNameToServer(patient_amka);
+            sessions = new Sessions(url2, "12345678", client2, verticalLayout);
+            //vazw dummy metablhth sth thesh tou amka gia na kanw thn klhsh ths vashs
             sessions.displaySessions();
 
 
