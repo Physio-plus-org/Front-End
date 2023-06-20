@@ -10,6 +10,7 @@
     <!--    tools:context=".R4.R4"-->
 
     <include layout="@layout/top_bar_doctor"></include>
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
         android:layout_width="wrap_content"
@@ -22,7 +23,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="-4dp" />
+        app:layout_constraintGuide_begin="-4dp"
+        tools:ignore="VisualLintBounds" />
 
 
 
@@ -85,7 +87,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-medium"
-        android:text="Ιστορικό"
+        android:text="@string/history4"
         android:textColor="@color/R4_textColor"
         android:textSize="34sp"
         android:textStyle="italic"
@@ -230,6 +232,7 @@
                 android:layout_gravity="center"
                 android:background="#00FFFFFF"
                 app:icon="@drawable/r4_profile_icon"
+                android:contentDescription="@string/this_is_a_profile_icon4"
                 app:iconGravity="textStart"
                 app:iconPadding="0dp"
                 app:iconSize="120dp"
@@ -261,11 +264,12 @@
 
                     <TextView
                         android:id="@+id/name_tv"
-                        android:text="Name Surname"
+                        android:text="@string/name_surname4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-medium"
-                        android:paddingStart="8dp"
+                        android:paddingStart="8sp"
+                        android:paddingEnd="8sp"
                         android:textColor="@color/R4_backgroundColor"
                         android:textSize="20sp" />
                     <!--                        android:text="Γιάννης Κονταξής"-->
@@ -280,13 +284,14 @@
 
                     <TextView
                         android:id="@+id/age_tv"
-                        android:text="age"
+                        android:text="@string/age4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="left"
-                        android:paddingStart="3dp"
+                        android:layout_gravity="start"
+                        android:paddingStart="3sp"
+                        android:paddingEnd="3sp"
                         android:textColor="@color/R4_backgroundColor"
-                        android:textSize="10dp" />
+                        android:textSize="11sp" />
 
                     <!--                        android:id="@+id/yearsold_tv"-->
                     <!--                        android:layout_width="match_parent"-->
@@ -299,12 +304,13 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_gravity="end|right"
-                        android:paddingEnd="9dp"
-                        android:text="14 Μαρ 2001"
+                        android:layout_gravity="end|end"
+                        android:paddingEnd="9sp"
+                        android:paddingStart="9sp"
+                        android:text="@string/sample_date4"
                         android:textAlignment="textEnd"
                         android:textColor="@color/R4_backgroundColor"
-                        android:textSize="10dp" />
+                        android:textSize="11sp" />
 
 
                 </LinearLayout>
@@ -313,21 +319,23 @@
                     android:id="@+id/address_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingStart="8dp"
-                    android:text="address"
+                    android:paddingStart="8sp"
+                    android:paddingEnd="8sp"
+                    android:text="@string/address4"
                     android:textColor="@color/R4_backgroundColor"
-                    android:textSize="10dp" />
+                    android:textSize="11sp" />
 
                 <TextView
                     android:id="@+id/date_tv"
-                    android:text="date"
+                    android:text="@string/date_4"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:fontFamily="sans-serif-medium"
-                    android:paddingStart="8dp"
+                    android:paddingStart="8sp"
+                    android:paddingEnd="8sp"
                     android:paddingTop="5dp"
                     android:textColor="@color/R4_backgroundColor"
-                    android:textSize="11dp" />
+                    android:textSize="11sp" />
 
             </LinearLayout>
         </LinearLayout>
@@ -340,6 +348,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@color/R4_scrollColor"
+        android:contentDescription="@string/this_is_a_scroll_view_component_containing_the_sessions4"
         android:backgroundTint="@color/R4_scrollColor"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -423,7 +432,7 @@
         <LinearLayout
             android:id="@+id/verticalLayout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_gravity="start|center_horizontal"
             android:orientation="vertical"/>
 
@@ -444,7 +453,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Ημερομηνία"
+            android:text="@string/date4"
             android:textAlignment="textEnd" />
 
         <TextView
@@ -452,7 +461,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Ώρες"
+            android:text="@string/hours4"
             android:textAlignment="center" />
 
         <TextView
@@ -460,7 +469,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Σημειώσεις" />
+            android:text="@string/notes4" />
     </LinearLayout>
 
     <!--    <TextView-->

@@ -244,4 +244,15 @@
     <string name="image_of_doctors">image of doctors</string>
     <string name="surname">Επίθετο</string>
     <string name="cancel_patient_add">cancel patient add</string>
+    <string name="history4">Ιστορικό</string>
+    <string name="this_is_a_profile_icon4">this is a profile icon</string>
+    <string name="name_surname4">Name Surname</string>
+    <string name="age4">age</string>
+    <string name="sample_date4">14 Μαρ 2001</string>
+    <string name="address4">address</string>
+    <string name="date_4">date</string>
+    <string name="this_is_a_scroll_view_component_containing_the_sessions4">this is a scroll view component containing the sessions</string>
+    <string name="date4">Ημερομηνία</string>
+    <string name="hours4">Ώρες</string>
+    <string name="notes4">Σημειώσεις</string>
 </resources>
