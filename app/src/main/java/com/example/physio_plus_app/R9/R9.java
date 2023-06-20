@@ -21,17 +21,16 @@ import com.example.physio_plus_app.R10.R10;
 import com.example.physio_plus_app.R3.R3;
 import com.example.physio_plus_app.R5.R5;
 import com.example.physio_plus_app.R6.R6;
+import com.example.physio_plus_app.Utils.HttpHandler.ButtonActionsController;
 
+import java.util.HashMap;
 import java.util.Locale;
 
 
 //import com.cheesecake.mytoxictraits.Week.ThisLocalizedWeek;
 
 public class R9 extends AppCompatActivity{
-
-    //    private Button button;
-    private  final String myIP = "192.168.2.6";
-
+    private String patient_id = "12345678";
 //    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,11 +38,7 @@ public class R9 extends AppCompatActivity{
         setContentView(R.layout.r9_activity);
 
         ImageView financialMovesButton = findViewById(R.id.addPatientFootbar);
-        financialMovesButton.setOnClickListener(v -> {
-            Intent intent = new Intent(getApplicationContext(), R10.class);
-            intent.putExtra("patient_id", "12345678");
-            startActivity(intent);
-        });
+
 //        button= findViewById(R.id.buttonNext);
 //        Bundle args = new Bundle();
 //        //start of actionBar
@@ -81,14 +76,21 @@ public class R9 extends AppCompatActivity{
         /* Topbar */
         ImageView goBackButton = findViewById(R.id.goback);
         goBackButton.setOnClickListener(v -> finish());
-
-        
-
     }
 
     private void openActivity2() {
         Intent intent = new Intent(this, R9_2.class);
         startActivity(intent);
+    }
+
+    protected HashMap<String,String> getR10Params() {
+        HashMap<String, String> params = new HashMap<>();
+        params.put("patient_id", this.patient_id);
+        return params;
+    }
+
+    public void GoToR10(View view) {
+        ButtonActionsController.TransitionButtonAction(this, R10.class, getR10Params());
     }
 
 

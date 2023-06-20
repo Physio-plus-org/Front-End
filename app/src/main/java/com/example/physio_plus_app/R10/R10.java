@@ -4,6 +4,7 @@ import static android.app.ProgressDialog.show;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -15,6 +16,7 @@ import com.example.physio_plus_app.R;
 import com.example.physio_plus_app.R5.R5;
 import com.example.physio_plus_app.R6.R6;
 import com.example.physio_plus_app.R9.R9;
+import com.example.physio_plus_app.Utils.HttpHandler.ButtonActionsController;
 
 import org.json.JSONException;
 
@@ -31,7 +33,7 @@ public class R10 extends AppCompatActivity {
         setContentView(R.layout.r10_activity);
 
         Intent intent = getIntent();
-        patient_id = "12345678";//intent.getStringExtra("patient_id");
+        patient_id = intent.getStringExtra("patient_id");
 
         Request();
         ShowFinancialHistory();
@@ -40,13 +42,17 @@ public class R10 extends AppCompatActivity {
 
 
         //fOOTBAR
-        ImageView calendarFootbarButton = findViewById(R.id.calendarFootbar);
+//        ImageView calendarFootbarButton = findViewById(R.id.calendarFootbar);
 
 
-        calendarFootbarButton.setOnClickListener(v->{
-            Intent i = new Intent(R10.this, R9.class);
-            startActivity(i);
-        });
+//        calendarFootbarButton.setOnClickListener(v->{
+//            Intent i = new Intent(R10.this, R9.class);
+//            startActivity(i);
+//        });
+    }
+
+    public void GoToR9(View view) {
+        ButtonActionsController.BackButtonAction(this);
     }
 
     protected void ShowFinancialHistory() {

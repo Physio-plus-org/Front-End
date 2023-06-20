@@ -36,12 +36,12 @@ public interface HttpHandler {
         return client.newCall(request).execute();
     }
 
-    public static Response getRequest(String file_path, String parameters) throws IOException {
-        String url = host + file_path + parameters;
-        Request request = new Request.Builder()
-                .url(url)
-                .get()
-                .build();
-        return client.newCall(request).execute();
-    }
+//    public static Response getRequest(String file_path, String parameters) throws IOException {
+//        String url = host + file_path + parameters;
+//        Request request = new Request.Builder()
+//                .url(url)
+//                .get()
+//                .build();
+//        return client.newCall(request).execute();
+//    }
 }

@@ -18,10 +18,8 @@ public class RequestObjR9 {
         this.physio_center = physio_center;
         this.patient_id = patient_id;
         this.date_time = date_time;
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-            DateTimeFormatter myFormat = DateTimeFormat.forPattern("yyyy-MM-dd");
-            this.date = date_time.toString(myFormat);
-        }
+        DateTimeFormatter myFormat = DateTimeFormat.forPattern("yyyy-MM-dd");
+        this.date = date_time.toString(myFormat);
     }
 
     public String getDate() {

@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageButton
-            android:id="@+id/imageButton"
+            android:id="@+id/calendar_view"
             android:layout_width="190dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="35dp"
@@ -28,11 +28,12 @@
             android:background="@drawable/r7_footerroundedshape"
             android:contentDescription="@string/footer_button"
             android:minHeight="49dp"
+            android:onClick="GoToR9"
             app:srcCompat="@drawable/r7_baseline_calendar_month_24"
             tools:ignore="DuplicateSpeakableTextCheck,ImageContrastCheck" />
 
         <ImageButton
-            android:id="@+id/imageButton2"
+            android:id="@+id/financial_moves"
             android:layout_width="190dp"
             android:layout_height="wrap_content"
             android:layout_marginVertical="5dp"
@@ -41,6 +42,7 @@
             android:background="@drawable/r7_footerroundedshape"
             android:contentDescription="@string/footerEuro_button"
             android:minHeight="49dp"
+            android:onClick="GoToR10"
             app:srcCompat="@drawable/r7_baseline_euro_24"
             tools:ignore="ImageContrastCheck" />
     </LinearLayout>

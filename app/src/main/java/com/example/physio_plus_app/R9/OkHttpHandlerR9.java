@@ -33,7 +33,7 @@ public class OkHttpHandlerR9 {
         Request request = new Request.Builder().url(url).method("POST", body).build();
         Response response = client.newCall(request).execute();
         String data = response.body().string();
-        System.out.println("My response: " + data);
+//        System.out.println("My response: " + data);
         org.joda.time.format.DateTimeFormatter f = DateTimeFormat.forPattern("yyyy-MM-dd HH:mm:ss");
         try {
 //            JSONObject json = new JSONObject(data);

@@ -26,12 +26,10 @@
         android:layout_height="0dp"
         android:layout_marginTop="8dp"
         android:contentDescription="@string/todo"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/include4"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/financial_screen_title"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toBottomOf="@+id/financial_screen_title">
 
         <LinearLayout
             android:id="@+id/main_ll"
@@ -40,7 +38,12 @@
             android:orientation="vertical"></LinearLayout>
     </ScrollView>
 
-    <include layout="@layout/patient_footer"
-        app:layout_constraintBottom_toBottomOf="@id/main_ll"
-     ></include>
+    <include
+        android:id="@+id/include4"
+        layout="@layout/patient_footer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"></include>
 </androidx.constraintlayout.widget.ConstraintLayout>
