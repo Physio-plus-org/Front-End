@@ -68,7 +68,7 @@ public class R5 extends AppCompatActivity  {
         imageView1 = findViewById(R.id.PhysiologoTopbar);
         imageView2 = findViewById(R.id.calendarTopBar);
         imageView3 = findViewById(R.id.ProfilePatientTopbar);
-        imageView7 = findViewById(R.id.imageView7);
+        imageView7 = findViewById(R.id.imageView2);
         imageView10 = findViewById(R.id.imageView10);
         add_Button = findViewById(R.id.add_Button);
         add_Button.setOnClickListener(v -> {

@@ -46,15 +46,13 @@
             android:id="@+id/code_field"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="14sp"
-            android:visibility="gone" />
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/desc_field"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="14sp"
-            android:visibility="gone" />
+            android:textSize="14sp" />
 
     </LinearLayout>
 
