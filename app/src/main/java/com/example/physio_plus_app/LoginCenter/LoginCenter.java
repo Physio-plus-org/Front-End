@@ -1,4 +1,4 @@
-package com.example.physio_plus_app.LoginPSF;
+package com.example.physio_plus_app.LoginCenter;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,13 +11,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.physio_plus_app.R;
 import com.example.physio_plus_app.R6.R6;
 
-public class login_screen_psf extends AppCompatActivity {
+public class LoginCenter extends AppCompatActivity {
 
     EditText tax_text;
     Button loginBtn;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.login_screen_psf);
+        setContentView(R.layout.login_screen_physio_center);
 
         tax_text = findViewById(R.id.amka_LG);
         loginBtn = findViewById(R.id.login_Btn_psf);

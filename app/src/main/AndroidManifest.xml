@@ -48,8 +48,8 @@
         <activity android:name=".Main_PSF.MainPSF"
             android:windowSoftInputMode="adjustPan"
             />
-        <activity android:name=".LoginPSF.login_screen_psf" />
-        <activity android:name=".LoginPatient.login_screen_patient" />
+        <activity android:name=".LoginCenter.LoginCenter" />
+        <activity android:name=".LoginPatient.LoginPatient" />
     </application>
 
 </manifest>

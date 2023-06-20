@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.physio_plus_app.R;
 import com.example.physio_plus_app.R9.R9;
 
-public class login_screen_patient extends AppCompatActivity {
+public class LoginPatient extends AppCompatActivity {
 
     EditText id_text;
     Button loginBtn;

@@ -8,7 +8,7 @@
     android:layout_gravity="center"
     android:backgroundTint="@color/text_color"
     android:orientation="vertical"
-    tools:context=".LoginPSF.login_screen_psf">
+    tools:context=".LoginCenter.LoginCenter">
 
     <ScrollView
         android:layout_width="match_parent"
