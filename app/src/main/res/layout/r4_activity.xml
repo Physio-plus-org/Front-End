@@ -301,16 +301,6 @@
                     <!--                        android:paddingEnd="9dp"-->
                     <!--                        android:text="ετών"-->
                     <!--                        android:textAlignment="textStart"-->
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="end|end"
-                        android:paddingEnd="9sp"
-                        android:paddingStart="9sp"
-                        android:text="@string/sample_date4"
-                        android:textAlignment="textEnd"
-                        android:textColor="@color/R4_backgroundColor"
-                        android:textSize="11sp" />
 
 
                 </LinearLayout>
