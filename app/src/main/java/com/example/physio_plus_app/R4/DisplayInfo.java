@@ -3,6 +3,8 @@ package com.example.physio_plus_app.R4;
 import android.util.Log;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -13,8 +15,10 @@ import java.util.Locale;
 
 import okhttp3.Call;
 import okhttp3.Callback;
+import okhttp3.FormBody;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
+import okhttp3.RequestBody;
 import okhttp3.Response;
 
 public class DisplayInfo {
@@ -25,12 +29,14 @@ public class DisplayInfo {
     TextView date_tv;
 
     String url;
+    String name_cd;
     OkHttpClient client;
 
     String currentDate = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).format(new Date());
 
-    public DisplayInfo(String url, OkHttpClient client, TextView name, TextView age, TextView address, TextView date){
+    public DisplayInfo(String url,String name_cd, OkHttpClient client, TextView name, TextView age, TextView address, TextView date){
 
+        this.name_cd = name_cd;
         this.date_tv = date;
         this.name_tv = name;
         this.address_tv = address;
@@ -81,6 +87,47 @@ public class DisplayInfo {
             }
 
 
+        });
+
+
+
+    }
+
+
+    public void sendPatientNameToServer(String name_cd) {
+        RequestBody requestBody = new FormBody.Builder()
+                .add("patientName", name_cd)
+                .build();
+
+        Request request = new Request.Builder()
+                .url(url)
+                .post(requestBody)
+                .build();
+
+        client.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(@NonNull Call call, @NonNull IOException e) {
+                // Handle network request failure
+                Log.e("DisplayInfo", "Failed to send patient name: " + e.getMessage());
+            }
+
+            @Override
+            public void onResponse(@NonNull Call call, @NonNull Response response) {
+                // Handle network request success
+                try (response) {
+                    if (response.isSuccessful()) {
+                        // Process the response if needed
+                        assert response.body() != null;
+                        String responseData = response.body().string();
+                        Log.d("DisplayInfo", "Response: " + responseData);
+                    } else {
+                        // Handle unsuccessful response
+                        Log.e("DisplayInfo", "Failed to send patient name. Response code: " + response.code());
+                    }
+                } catch (IOException e) {
+                    Log.e("DisplayInfo", "Exception occurred while processing network response: " + e.getMessage());
+                }
+            }
         });
 
     }

@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -29,7 +30,6 @@ public class R2 extends AppCompatActivity {
 
     }
     public void onClick(View v) {
-        Log.e("tag","test");
         String c,n,d,p;
         c = code.getText().toString();
         n = name.getText().toString();
@@ -37,6 +37,7 @@ public class R2 extends AppCompatActivity {
         p = price.getText().toString();
         try {
             OkHttpHandlerR2.insertData(new ParamsR2(n,d,c,p));
+            Toast.makeText(this, "Service successfully added", Toast.LENGTH_LONG).show();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
