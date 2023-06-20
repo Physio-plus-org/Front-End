@@ -13,8 +13,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.physio_plus_app.R;
 import com.example.physio_plus_app.R5.R5;
 
-import java.util.Objects;
-
 import okhttp3.OkHttpClient;
 
 
@@ -46,7 +44,7 @@ public class R4 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.r4_activity);
-        Objects.requireNonNull(getSupportActionBar()).hide(); // Hide the action bar
+//        Objects.requireNonNull(getSupportActionBar()).hide(); // Hide the action bar
 
         Log.d("MainActivity", "onCreate method called");
 
@@ -92,16 +90,14 @@ public class R4 extends AppCompatActivity {
         // Use the received string variable as needed
         if (message != null) {
 
-            String patient_amka = message;
-
             client = new OkHttpClient();
-            handler.sendPatientNameToServer(patient_amka);
-            handler = new DisplayInfo(url1, patient_amka, client ,name_tv, age_tv, address_tv, date_tv);
+            handler = new DisplayInfo(url1, message, client ,name_tv, age_tv, address_tv, date_tv);
+            handler.sendPatientNameToServer(message);
             //vazw dummy metablhth sth thesh tou amka gia na kanw thn klhsh ths vashs
             Log.d("Main Activity", "DisplayInfo is running without problems");
 
-            sessions.sendPatientNameToServer(patient_amka);
-            sessions = new Sessions(url2, patient_amka, client, verticalLayout);
+            sessions = new Sessions(url2, message, client, verticalLayout);
+            sessions.sendPatientNameToServer(message);
             //vazw dummy metablhth sth thesh tou amka gia na kanw thn klhsh ths vashs
             sessions.displaySessions();
 
