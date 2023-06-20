@@ -255,4 +255,8 @@
     <string name="date4">Ημερομηνία</string>
     <string name="hours4">Ώρες</string>
     <string name="notes4">Σημειώσεις</string>
+    <string name="firstname">Firstname</string>
+    <string name="lastname">Lastname</string>
+    <string name="amka">AMKA</string>
+    <string name="address">Address</string>
 </resources>

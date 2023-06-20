@@ -22,7 +22,7 @@
             android:id="@+id/FirstText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Firstname"
+            android:text="@string/firstname"
             android:textSize="18sp"
             android:textStyle="bold" />
 
@@ -30,21 +30,21 @@
             android:id="@+id/LastText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Lastname"
+            android:text="@string/lastname"
             android:textSize="14sp" />
 
         <TextView
             android:id="@+id/amkaText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="AMKA"
+            android:text="@string/amka"
             android:textSize="14sp" />
 
         <TextView
             android:id="@+id/address_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Address"
+            android:text="@string/address"
             android:textSize="14sp" />
 
     </LinearLayout>
