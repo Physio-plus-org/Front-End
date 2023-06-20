@@ -28,7 +28,7 @@ public class R1 extends AppCompatActivity {
         r1Button = findViewById(R.id.r1_button);
         namePhysioEditText = findViewById(R.id.namePhysio);
         addressPhysioEditText = findViewById(R.id.addressPhysio);
-        afmPhysioEditText = findViewById(R.id.afmPhysio);
+        afmPhysioEditText = findViewById(R.id.amka_LG);
 
         //Topbar
         ImageView goBackButton = findViewById(R.id.back_button);
