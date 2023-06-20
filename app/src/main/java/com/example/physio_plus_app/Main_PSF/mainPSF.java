@@ -1,6 +1,9 @@
 package com.example.physio_plus_app.Main_PSF;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -33,6 +36,13 @@ public class mainPSF extends AppCompatActivity {
         physioCenter.setOnClickListener(v->{
             Intent i = new Intent(mainPSF.this, show_psf.class );
             startActivity(i);
+
+//            // Change background color
+//            physioCenter.setBackgroundColor(Color.WHITE);
+//
+//            // Change drawable color
+//            Drawable drawable = physioCenter.getBackground().getCurrent();
+//            drawable.setColorFilter(Color.BLACK, PorterDuff.Mode.SRC_IN);
         });
     }
 
