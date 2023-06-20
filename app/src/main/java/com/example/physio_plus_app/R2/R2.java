@@ -9,6 +9,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.physio_plus_app.Main_PSF.MainPSF;
 import com.example.physio_plus_app.R;
 
 import java.io.IOException;
@@ -42,6 +43,11 @@ public class R2 extends AppCompatActivity {
         try {
             OkHttpHandlerR2.insertData(new ParamsR2(n,d,c,p));
             Toast.makeText(this, "Service successfully added", Toast.LENGTH_LONG).show();
+
+            code.getText().clear();
+            name.getText().clear();
+            desc.getText().clear();
+            price.getText().clear();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

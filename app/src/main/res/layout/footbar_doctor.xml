@@ -7,49 +7,47 @@
 
 
     <!-- Footer -->
-    <RelativeLayout
+    <LinearLayout
         android:id="@+id/footerLayout"
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:layout_alignParentBottom="true"
         android:background="@color/PrimaryGreen"
-        app:layout_constraintBottom_toBottomOf="parent">
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
         <ImageView
             android:id="@+id/calendarFootbar"
-            android:layout_width="195dp"
-            android:layout_height="60dp"
-            android:layout_alignParentStart="true"
-            android:layout_centerVertical="true"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="40dp"
-            android:layout_marginEnd="40dp"
-            android:layout_marginBottom="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="1"
             android:background="@drawable/r7_footerroundedshape"
             android:contentDescription="@string/goback"
-            android:src="@drawable/r7_baseline_calendar_month_24"
-            android:text="@string/calendarButton"
-            android:title=""
-            app:showAsAction="ifRoom"></ImageView>
+            android:src="@drawable/r7_baseline_calendar_month_24"></ImageView>
 
+
+        <View
+            android:id="@+id/margin"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.7" />
 
         <ImageView
             android:id="@+id/addPatientFootbar"
-            android:layout_width="230dp"
-            android:layout_height="60dp"
-            android:layout_centerVertical="true"
-            android:layout_marginStart="220dp"
-            android:layout_marginTop="40dp"
-            android:layout_marginEnd="5dp"
-            android:layout_marginBottom="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="1"
             android:background="@drawable/r7_footerroundedshape"
             android:contentDescription="@string/goback"
-            android:src="@drawable/r7_baseline_person_24"
-            android:text="@string/calendarButton"
-            android:title=""
-            app:showAsAction="ifRoom"></ImageView>
+            android:src="@drawable/r7_baseline_person_24"></ImageView>
 
 
-    </RelativeLayout>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

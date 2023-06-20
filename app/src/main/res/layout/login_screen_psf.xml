@@ -41,7 +41,7 @@
                 android:layout_width="350sp"
                 android:layout_height="300sp"
                 android:layout_gravity="bottom|center_horizontal"
-                android:backgroundTint="@color/text_color"
+                android:backgroundTint="@color/primaryColor"
                 app:cardCornerRadius="30sp">
 
                 <TextView
@@ -51,7 +51,7 @@
                     android:layout_gravity="top|center"
                     android:layout_marginTop="30sp"
                     android:layout_marginBottom="30sp"
-                    android:text="ΠΣΦ Προφίλ"
+                    android:text="Προφίλ Φυσ/ριο"
                     android:textColor="@color/backgroundColor"
                     android:textSize="28sp" />
 

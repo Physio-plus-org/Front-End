@@ -41,6 +41,7 @@ public class OkHttpHandlerFacilitiesDetails {
                     double cost = jsonObject.getDouble("cost");
                     Service service = new Service(title, code, description, cost);
                     MainPSF.services.add(service);
+                    //MainPSF.selectedView.put(title,cost);
                 }
             }
         } catch (IOException ignored) {
