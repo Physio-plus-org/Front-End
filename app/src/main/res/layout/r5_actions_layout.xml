@@ -7,6 +7,7 @@
     android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/PopUpActions"
         android:layout_width="156dp"
         android:layout_height="69dp"
         android:background="@drawable/r5_add_button"

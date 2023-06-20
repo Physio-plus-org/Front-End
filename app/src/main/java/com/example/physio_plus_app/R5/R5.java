@@ -3,6 +3,7 @@ package com.example.physio_plus_app.R5;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -76,6 +77,7 @@ public class R5 extends AppCompatActivity  {
 
 
 //        //Ena layout gia mazi me ta duo koumpia pou pane sto R8,R4 --> Not finished
+
 //        LayoutInflater inflater = getLayoutInflater();
 //        View PatientActions = inflater.inflate(R.layout.r5_actions_layout,mainLayout,false);
 //
@@ -90,6 +92,7 @@ public class R5 extends AppCompatActivity  {
 
         adapter = new MyAdapter(userList, getApplicationContext());
         recyclerView.setAdapter(adapter);
+
 
         try {
             OkHttpHandlerR5.setUsersInfo();
@@ -124,11 +127,6 @@ public class R5 extends AppCompatActivity  {
 
 
         ImageView addPatientFootbarButton = findViewById(R.id.addPatientFootbar);
-
-
-
-
-
 
 
 
