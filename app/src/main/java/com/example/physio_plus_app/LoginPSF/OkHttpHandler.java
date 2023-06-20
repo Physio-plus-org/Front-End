@@ -1,43 +1,41 @@
 package com.example.physio_plus_app.LoginPSF;
 
-import android.os.StrictMode;
-
+import com.example.physio_plus_app.R10.PhysioCenterR10;
 import com.example.physio_plus_app.Utils.HttpHandler.HttpHandler;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.ArrayList;
-
+import okhttp3.FormBody;
+import okhttp3.RequestBody;
 import okhttp3.Response;
 
-public class OkHttpHandler {
+public abstract class OkHttpHandler {
 
-    public OkHttpHandler() {
-        StrictMode.ThreadPolicy policy = new
-                StrictMode.ThreadPolicy.Builder().permitAll().build();
-        StrictMode.setThreadPolicy(policy);
-    }
-    ArrayList<String> withdrawTax() throws Exception {
+    public static PhysioCenterR10 withdrawTax(String taxText) throws Exception {
+        String file_name = "read.php";
 
-        ArrayList<String> cbList = new ArrayList<>();
+
+        FormBody.Builder builder = new FormBody.Builder();
+
+        builder.add("tax_id_number", taxText);
+
+        RequestBody body = builder.build();
 
         try {
-            Response response = HttpHandler.postRequest("login/read.php", null);
+            Response response = HttpHandler.postRequest("login/read.php", body);
             final String responseBody = response.body().string();
-            JSONArray jsonArray = new JSONArray(responseBody);
-            if (jsonArray.length() > 0) {
-                for (int i = 0; i < jsonArray.length(); i++) {
-                    JSONObject jsonObject = jsonArray.getJSONObject(i);
-                    String tax = jsonObject.getString("tax_id_number");
-                    cbList.add(tax);
-                }
+            JSONObject json = new JSONObject(responseBody);
+//            Log.e("Response", responseBody);
+            if(json.has("tax_id_number")){
+
+                return new PhysioCenterR10(json);
             }
+
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        return cbList;
+        return null;
     }
 
 }
