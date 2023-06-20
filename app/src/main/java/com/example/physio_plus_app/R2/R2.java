@@ -1,19 +1,14 @@
 package com.example.physio_plus_app.R2;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.physio_plus_app.Main_PSF.MainPSF;
-import com.example.physio_plus_app.Main_PSF.show_psf;
 import com.example.physio_plus_app.R;
 
 import java.io.IOException;

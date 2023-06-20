@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.physio_plus_app.R;
@@ -28,6 +29,10 @@ public class R1 extends AppCompatActivity {
         namePhysioEditText = findViewById(R.id.namePhysio);
         addressPhysioEditText = findViewById(R.id.addressPhysio);
         afmPhysioEditText = findViewById(R.id.afmPhysio);
+
+        //Topbar
+        ImageView goBackButton = findViewById(R.id.back_button);
+        goBackButton.setOnClickListener(v -> finish());
 
         r1Button.setOnClickListener(new View.OnClickListener() {
             @Override

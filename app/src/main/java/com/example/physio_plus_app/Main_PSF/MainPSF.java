@@ -1,6 +1,7 @@
 package com.example.physio_plus_app.Main_PSF;
 
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -10,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.physio_plus_app.R;
+import com.example.physio_plus_app.R1.R1;
 import com.example.physio_plus_app.R2.R2;
 import com.example.physio_plus_app.R5.MyAdapter;
 
@@ -32,6 +34,7 @@ public class MainPSF extends AppCompatActivity {
         //Footbar
         ImageButton addButton = findViewById(R.id.add_Button);
         ImageView physioCenter = findViewById(R.id.physiocenter_btn);
+        ImageView serviceButton = findViewById(R.id.physio_btn);
 
         goBackButton.setOnClickListener(v -> finish());
 
@@ -40,11 +43,14 @@ public class MainPSF extends AppCompatActivity {
             startActivity(i);
         });
 
-
         physioCenter.setOnClickListener(v->{
-            Intent i = new Intent(MainPSF.this, show_psf.class );
+            Intent i = new Intent(MainPSF.this, R1.class);
             startActivity(i);
+        });
 
+        serviceButton.setOnClickListener(v->{
+            Intent i = new Intent(MainPSF.this, R2.class );
+            startActivity(i);
         });
 
         recyclerView = findViewById(R.id.recyclerView);

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/welcomeTxt"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:backgroundTint="@color/backgroundColor"
+    android:orientation="vertical"
+    tools:context=".Main_PSF.login_screen_psf">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Καλώς ήρθατε στο"
+        android:textColor="@color/text_color"
+        android:textSize="28sp"
+        android:textAlignment="center"
+        android:paddingTop="100sp"
+        android:paddingBottom="50sp"/>
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="150sp"
+        app:srcCompat="@drawable/physio_logo_topbar" />
+
+
+    <EditText
+        android:id="@+id/afmPhysio"
+        android:layout_width="237sp"
+        android:layout_height="48sp"
+        android:layout_gravity="center"
+        android:layout_marginTop="100sp"
+        android:ems="10"
+        android:hint="ΑΦΜ"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addressPhysio" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="237sp"
+        android:layout_height="48sp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20sp"
+        android:backgroundTint="@color/text_color"
+        android:text="Σύνδεση"
+        android:textColor="@color/backgroundColor" />
+</LinearLayout>
