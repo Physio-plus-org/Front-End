@@ -1,4 +1,4 @@
-package com.example.physio_plus_app.LoginPSF;
+package com.example.physio_plus_app.LoginPatient;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,30 +9,32 @@ import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.physio_plus_app.R;
-import com.example.physio_plus_app.R6.R6;
+import com.example.physio_plus_app.R9.R9;
 
-public class login_screen_psf extends AppCompatActivity {
+public class login_screen_patient extends AppCompatActivity {
 
-    EditText tax_text;
+    EditText id_text;
     Button loginBtn;
+
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.login_screen_psf);
+        setContentView(R.layout.login_screen_patient);
 
-        tax_text = findViewById(R.id.amka_LG);
-        loginBtn = findViewById(R.id.login_Btn_psf);
+        id_text = findViewById(R.id.amka_LG);
+        loginBtn = findViewById(R.id.login_Btn_LG);
         loginBtn.setOnClickListener(this::onClick);
 
     }
     public void onClick(View view) {
 
         try {
-            OkHttpHandler.withdrawTax(tax_text.getText().toString());
+            OkHttpHandler.withdrawId(id_text.getText().toString());
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        Intent intent = new Intent(getApplicationContext(), R6.class);
+        Intent intent = new Intent(getApplicationContext(), R9.class);
         startActivity(intent);
 
     }
