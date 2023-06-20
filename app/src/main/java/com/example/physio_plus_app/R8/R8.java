@@ -3,6 +3,7 @@ package com.example.physio_plus_app.R8;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -33,11 +34,15 @@ public class R8 extends AppCompatActivity {
    private final ArrayList<ServiceR8> servicesList = new ArrayList<>();
     private TextView notesTextView;
     private TextView dateTextView;
+    private String patient_id;
     private final String urlRoot = "https://physioplus.000webhostapp.com/R8/";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.r8_activity);
+
+        Intent intent = getIntent();
+        patient_id = intent.getStringExtra("patient_id");
 
         this.nameTextView = findViewById(R.id.full_name);
         this.personalNumberTextView = findViewById(R.id.personal_number);
@@ -56,6 +61,7 @@ public class R8 extends AppCompatActivity {
                         this
                 )
         );
+        Log.e("patient", patient_id);
         //ServerRequest
         try {
             DataBaseInitializationRequest();
@@ -111,10 +117,10 @@ public class R8 extends AppCompatActivity {
     protected void PatientInitializationRequest() throws Exception {
         String url = this.urlRoot + "patientRequest.php";
         RequestParamsR8 params = new RequestParamsR8();
-        params.add("patient_id", "*");
-        ArrayList<PatientR8> patients = PatientHttpHandlerR8.request(url, params);
-        if (patients == null) throw new Exception();
-        PatientInformationSetting(patients.get(0));
+        params.add("patient_id", patient_id);
+        PatientR8 patient = PatientHttpHandlerR8.request(url, params);
+        if (patient == null) throw new Exception();
+        PatientInformationSetting(patient);
     }
     protected void ServicesSpinnerPopulation(ArrayList<ServiceR8> services) {
         this.servicesList.clear();

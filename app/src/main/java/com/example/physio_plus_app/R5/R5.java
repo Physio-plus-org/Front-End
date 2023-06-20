@@ -21,13 +21,17 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.physio_plus_app.R;
 import com.example.physio_plus_app.R3.R3;
+import com.example.physio_plus_app.R4.R4;
 import com.example.physio_plus_app.R6.R6;
 import com.example.physio_plus_app.R7.R7;
+import com.example.physio_plus_app.R8.R8;
+import com.example.physio_plus_app.Utils.HttpHandler.ButtonActionsController;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 
@@ -160,6 +164,19 @@ public class R5 extends AppCompatActivity  {
 //            recreate();
             Toast.makeText(this, "success", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    protected HashMap<String, String> getPatientIdParams() {
+        HashMap<String, String> params = new HashMap<>();
+        params.put("patient_id", adapter.getPatientId());
+        return params;
+    }
+    public void GoToPatientHistory(View view) {
+        ButtonActionsController.TransitionButtonAction(this, R4.class, getPatientIdParams());
+    }
+
+    public void GoToPatientActions(View view) {
+        ButtonActionsController.TransitionButtonAction(this, R8.class, getPatientIdParams());
     }
 
 }
