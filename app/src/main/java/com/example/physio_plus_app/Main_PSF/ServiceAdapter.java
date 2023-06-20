@@ -19,20 +19,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.ServiceViewHolder> {//implements Filterable {
-
     private final Context context;
     private final List<Service> serviceList;
 //    private List<Service> filteredData;
 //    public ServiceAdapter.ServiceClickListener userClickListener;
-
     public ServiceAdapter(List<Service> service,Context context) {
         this.context = context;
         this.serviceList = service;
         //this.userClickListener = userClickListener;
 //        this.filteredData = service;
     }
-
-
 //    @Override
 //    public Filter getFilter() {
 //        Filter filter = new Filter() {
@@ -71,12 +67,22 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.ServiceV
 //    public interface ServiceClickListener{
 //        void clicked_user(User user);
 //    }
-
-
     @NonNull
     @Override
     public ServiceAdapter.ServiceViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.main_psf_list, parent, false);
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (view.findViewById(R.id.code_field).getVisibility() == View.GONE && view.findViewById(R.id.desc_field).getVisibility() == View.GONE) {
+                    view.findViewById(R.id.code_field).setVisibility(View.VISIBLE);
+                    view.findViewById(R.id.desc_field).setVisibility(View.VISIBLE);
+                }else{
+                    view.findViewById(R.id.code_field).setVisibility(View.GONE);
+                    view.findViewById(R.id.desc_field).setVisibility(View.GONE);
+                }
+            }
+        });
         return new ServiceViewHolder(view);
     }
 
@@ -87,6 +93,7 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.ServiceV
         holder.getDescription().setText(service.getDescription());
         holder.getCode().setText(service.getCode());
         holder.getCost().setText(service.getCost() + "€");
+
 //        holder.itemView.setOnClickListener(v -> userClickListener.clicked_user(user));
     }
 
@@ -110,9 +117,6 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.ServiceV
             code = itemView.findViewById(R.id.code_field);
             cost = itemView.findViewById(R.id.cost_field);
             description = itemView.findViewById(R.id.desc_field);
-
-
-
         }
         public TextView getTitle() {
             return title;

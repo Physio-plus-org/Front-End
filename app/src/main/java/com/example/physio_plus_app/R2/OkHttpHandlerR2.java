@@ -20,7 +20,6 @@ public abstract class OkHttpHandlerR2 {
 //        String url = "http://"+myIP+"/request.php";
 //
 //        OkHttpClient client = new OkHttpClient().newBuilder().build();
-
         String file_name = "request.php";
         FormBody.Builder builder = new FormBody.Builder();
 
