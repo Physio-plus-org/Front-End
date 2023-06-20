@@ -74,16 +74,6 @@ public class R5 extends AppCompatActivity  {
         mainLayout = findViewById(R.id.relative_layout);
 
 
-
-//        //Ena layout gia mazi me ta duo koumpia pou pane sto R8,R4 --> Not finished
-
-//        LayoutInflater inflater = getLayoutInflater();
-//        View PatientActions = inflater.inflate(R.layout.r5_actions_layout,mainLayout,false);
-//
-//        mainLayout.addView(PatientActions);
-
-
-
         userList = new ArrayList<>();
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setVerticalScrollBarEnabled(true);

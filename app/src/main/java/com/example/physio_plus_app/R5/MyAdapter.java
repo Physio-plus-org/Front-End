@@ -1,9 +1,11 @@
 package com.example.physio_plus_app.R5;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.LinearLayout;
@@ -15,6 +17,8 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.physio_plus_app.R;
+import com.example.physio_plus_app.R4.R4;
+import com.example.physio_plus_app.R8.R8;
 
 
 import java.util.ArrayList;
@@ -30,6 +34,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.UserViewHolder> im
     public UserClickListener userClickListener;
     private int selectedUser;
     private List<UserViewHolder> clickArray;
+    private Button NewAppointments;
+    private Button PatientHistory;
 
 
     public MyAdapter(List<User> Users,Context context) {
@@ -135,6 +141,36 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.UserViewHolder> im
                     changeSelectedUser(id);
                 }
             });
+
+//      To be done. I have made the two buttons and their listeners. Also i put Intent and maybe is correct i dont know the user infos
+//      I want to check it because i havent found another way
+
+//            NewAppointments = itemView.findViewById(R.id.btnactions);
+//            NewAppointments.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    Intent intent = new Intent(context.getApplicationContext(), R8.class);
+//                    intent.putExtra("first_name", (CharSequence) getFirstName());
+//                    intent.putExtra("last_name", (CharSequence) getLastname());
+//                    intent.putExtra("address", (CharSequence) getAddress());
+//                    intent.putExtra("amka", (CharSequence) getAmka());
+//                    context.startActivity(intent);
+//                }
+//            });
+//            PatientHistory = itemView.findViewById(R.id.btnhistory);
+//            PatientHistory.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    Intent intent = new Intent(context.getApplicationContext(), R4.class);
+//                    intent.putExtra("first_name", (CharSequence) getFirstName());
+//                    intent.putExtra("last_name", (CharSequence) getLastname());
+//                    intent.putExtra("address", (CharSequence) getAddress());
+//                    intent.putExtra("amka", (CharSequence) getAmka());
+//                    context.startActivity(intent);
+//                }
+//            });
+
+
         }
 
         public void setPopUpVisibility(int visibility){
