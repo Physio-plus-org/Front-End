@@ -8,18 +8,7 @@
     android:background="@drawable/r1"
     app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
-    <include
-        android:id="@+id/include5"
-        layout="@layout/psf_topbarmenu"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-    </include>
-
-<!--    <com.google.android.material.appbar.AppBarLayout-->
+    <!--    <com.google.android.material.appbar.AppBarLayout-->
 <!--        android:id="@+id/appbar"-->
 
 <!--        android:layout_width="match_parent"-->
@@ -49,176 +38,197 @@
 
 <!--    </com.google.android.material.appbar.AppBarLayout>-->
 
-    <ScrollView
-        android:id="@+id/scoll_view"
+    <LinearLayout
+        android:id="@+id/code_input"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="128dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/r2_entry_boarder"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/include5">
 
-        <LinearLayout
-            android:id="@+id/code_input"
+
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/r2_entry_boarder"
-            android:orientation="vertical">
+            android:layout_height="match_parent"
+            android:paddingTop="10sp"
+            android:paddingBottom="70sp">
 
-
-            <TextView
-                android:id="@+id/name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="40dp"
-                android:layout_marginTop="20dp"
-                android:text="@string/r2_name"
-                android:textStyle="italic" />
-
-            <EditText
-                android:id="@+id/namein"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="20dp"
-                android:background="@drawable/r2_textview_boarder"
-                android:ems="10"
-                android:hint="@string/r2_namehint"
-                android:inputType="text"
-                android:maxWidth="488dp"
-                android:minHeight="48dp"
-                android:padding="10dp"
-                android:textColorHint="@color/sec_textColor"
-                tools:ignore="Autofill,VisualLintTextFieldSize" />
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/code"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="40dp"
-                android:layout_marginTop="10dp"
-                android:text="@string/r2_code"
-                android:textStyle="italic" />
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/r2_name"
+                    android:textStyle="italic" />
 
-            <EditText
-                android:id="@+id/codein"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="20dp"
-                android:background="@drawable/r2_textview_boarder"
-                android:ems="10"
-                android:hint="@string/r2_codehint"
-                android:inputType="text"
-                android:maxWidth="488dp"
-                android:minHeight="48dp"
-                android:padding="10dp"
-                android:textColorHint="@color/sec_textColor"
-                tools:ignore="Autofill,VisualLintTextFieldSize" />
+                <EditText
+                    android:id="@+id/namein"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@drawable/r2_textview_boarder"
+                    android:ems="10"
+                    android:hint="@string/r2_namehint"
+                    android:inputType="text"
+                    android:maxWidth="488dp"
+                    android:minHeight="48dp"
+                    android:padding="10dp"
+                    android:textColorHint="@color/sec_textColor"
+                    tools:ignore="Autofill,VisualLintTextFieldSize" />
 
-            <TextView
-                android:id="@+id/price"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="40dp"
-                android:layout_marginTop="10dp"
-                android:text="@string/r2_price"
-                android:textStyle="italic" />
+                <TextView
+                    android:id="@+id/code"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/r2_code"
+                    android:textStyle="italic" />
 
-            <!--        <EditText-->
-            <!--            android:id="@+id/pricein_plain"-->
-            <!--            android:layout_width="match_parent"-->
-            <!--            android:layout_height="wrap_content"-->
-            <!--            android:layout_marginStart="30dp"-->
-            <!--            android:layout_marginTop="5dp"-->
-            <!--            android:layout_marginEnd="20dp"-->
-            <!--            android:background="@drawable/r2_textview_boarder"-->
-            <!--            android:ems="10"-->
-            <!--            android:hint="@string/r2_pricehint"-->
-            <!--            android:inputType="text"-->
-            <!--            android:minHeight="48dp"-->
-            <!--            android:padding="10dp"-->
-            <!--            android:textColorHint="@color/sec_textColor"-->
-            <!--            android:visibility="gone"-->
-            <!--            tools:ignore="Autofill,VisualLintTextFieldSize" />-->
+                <EditText
+                    android:id="@+id/codein"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@drawable/r2_textview_boarder"
+                    android:ems="10"
+                    android:hint="@string/r2_codehint"
+                    android:inputType="text"
+                    android:maxWidth="488dp"
+                    android:minHeight="48dp"
+                    android:padding="10dp"
+                    android:textColorHint="@color/sec_textColor"
+                    tools:ignore="Autofill,VisualLintTextFieldSize" />
 
-            <EditText
-                android:id="@+id/pricein"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="20dp"
-                android:autofillHints=""
-                android:background="@drawable/r2_textview_boarder"
-                android:ems="10"
-                android:hint="@string/r2_pricehint"
-                android:inputType="number"
-                android:maxWidth="488dp"
-                android:minHeight="48dp"
-                android:padding="10dp"
-                android:textColorHint="@color/sec_textColor" />
+                <TextView
+                    android:id="@+id/price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/r2_price"
+                    android:textStyle="italic" />
 
-            <TextView
-                android:id="@+id/description"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="40dp"
-                android:layout_marginTop="10dp"
-                android:text="@string/r2_description"
-                android:textStyle="italic" />
+                <EditText
+                    android:id="@+id/pricein"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="20dp"
+                    android:autofillHints=""
+                    android:background="@drawable/r2_textview_boarder"
+                    android:ems="10"
+                    android:hint="@string/r2_pricehint"
+                    android:inputType="number"
+                    android:maxWidth="488dp"
+                    android:minHeight="48dp"
+                    android:padding="10dp"
+                    android:textColorHint="@color/sec_textColor" />
 
-            <EditText
-                android:id="@+id/descin"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="20dp"
-                android:background="@drawable/r2_textview_boarder"
-                android:ems="10"
-                android:hint="@string/r2_deschint"
-                android:inputType="text"
-                android:maxWidth="488dp"
-                android:minHeight="120dp"
-                android:padding="10dp"
-                android:textAlignment="textStart"
-                android:textColorHint="@color/sec_textColor"
-                tools:ignore="Autofill,VisualLintTextFieldSize" />
+                <TextView
+                    android:id="@+id/description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/r2_description"
+                    android:textStyle="italic" />
 
-            <Button
-                android:id="@+id/confirm"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_marginVertical="10dp"
-                android:backgroundTint="@color/black"
+                <EditText
+                    android:id="@+id/descin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@drawable/r2_textview_boarder"
+                    android:ems="10"
+                    android:hint="@string/r2_deschint"
+                    android:inputType="text"
+                    android:maxWidth="488dp"
+                    android:minHeight="120dp"
+                    android:padding="10dp"
+                    android:textAlignment="textStart"
+                    android:textColorHint="@color/sec_textColor"
+                    tools:ignore="Autofill,VisualLintTextFieldSize" />
 
-                android:onClick="onClick"
-                android:paddingHorizontal="40dp"
-                android:paddingVertical="15dp"
-                android:text="@string/r2_confirmation"
-                android:textAllCaps="false"
-                android:textColor="@color/white" />
+            </LinearLayout>
+        </ScrollView>
 
-            <!--        <FrameLayout-->
-            <!--            android:layout_width="match_parent"-->
-            <!--            android:layout_height="wrap_content"-->
-            <!--            android:layout_marginStart="80dp"-->
-            <!--            android:layout_marginTop="30dp"-->
-            <!--            android:layout_marginEnd="80dp"-->
-            <!--            android:layout_marginBottom="20dp"-->
-            <!--            android:background="@drawable/r2_round_button"-->
-            <!--            android:visibility="gone">-->
+        <!--        <EditText-->
+        <!--            android:id="@+id/pricein_plain"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginStart="30dp"-->
+        <!--            android:layout_marginTop="5dp"-->
+        <!--            android:layout_marginEnd="20dp"-->
+        <!--            android:background="@drawable/r2_textview_boarder"-->
+        <!--            android:ems="10"-->
+        <!--            android:hint="@string/r2_pricehint"-->
+        <!--            android:inputType="text"-->
+        <!--            android:minHeight="48dp"-->
+        <!--            android:padding="10dp"-->
+        <!--            android:textColorHint="@color/sec_textColor"-->
+        <!--            android:visibility="gone"-->
+        <!--            tools:ignore="Autofill,VisualLintTextFieldSize" />-->
+
+        <!--        <FrameLayout-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginStart="80dp"-->
+        <!--            android:layout_marginTop="30dp"-->
+        <!--            android:layout_marginEnd="80dp"-->
+        <!--            android:layout_marginBottom="20dp"-->
+        <!--            android:background="@drawable/r2_round_button"-->
+        <!--            android:visibility="gone">-->
 
 
-            <!--        </FrameLayout>-->
+        <!--        </FrameLayout>-->
 
-        </LinearLayout>
-    </ScrollView>
+    </LinearLayout>
+
+    <include
+        android:id="@+id/include5"
+        layout="@layout/psf_topbarmenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </include>
+
+    <Button
+        android:id="@+id/confirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginBottom="8dp"
+        android:backgroundTint="@color/black"
+        android:onClick="onClick"
+        android:paddingHorizontal="35dp"
+        android:paddingVertical="10dp"
+        android:text="@string/r2_confirmation"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

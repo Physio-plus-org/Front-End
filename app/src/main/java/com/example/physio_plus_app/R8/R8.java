@@ -140,7 +140,7 @@ public class R8 extends AppCompatActivity {
     public void onCalendarClick(View view) {
         Calendar c = Calendar.getInstance();
         DatePickerDialog dpDialog = new DatePickerDialog (
-                getApplicationContext(),
+                this,
                 (view1, year, month, dayOfMonth) -> dateTextView.setText(getString(R.string.date_value, dayOfMonth, (month+1), year)),
                 c.get(Calendar.YEAR),
                 c.get(Calendar.MONTH),

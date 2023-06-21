@@ -32,7 +32,8 @@ public class LoginCenter extends AppCompatActivity {
         try {
             AppObserver.setLoggedUser(PhysioCenterLoginHandler.request(tax_text.getText().toString()));
 //            OkHttpHandler.withdrawTax(tax_text.getText().toString());
-
+            Intent intent = new Intent(getApplicationContext(), R6.class);
+            startActivity(intent);
         } catch (Exception e) {
             e.printStackTrace();
         }

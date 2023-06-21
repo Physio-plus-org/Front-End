@@ -1,11 +1,14 @@
 package com.example.physio_plus_app.Utils.HttpHandler.Patient;
 
+import android.util.Log;
+
 import com.example.physio_plus_app.R10.FinancialHistory;
 import com.example.physio_plus_app.Utils.HttpHandler.HttpHandler;
 import com.example.physio_plus_app.Utils.RequestParams;
 
 import org.json.JSONArray;
 import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.IOException;
 import java.text.ParseException;

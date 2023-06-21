@@ -33,6 +33,8 @@ public class LoginPatient extends AppCompatActivity {
         try {
             AppObserver.setLoggedUser(PatientLoginHandler.request(id_text.getText().toString()));
 //            OkHttpHandler.withdrawId(id_text.getText().toString());
+            Intent intent = new Intent(getApplicationContext(), R9.class);
+            startActivity(intent);
         } catch (Exception e) {
             e.printStackTrace();
         }

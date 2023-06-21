@@ -2,6 +2,7 @@ package com.example.physio_plus_app.R10;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.Toast;
@@ -35,9 +36,6 @@ public class R10 extends AppCompatActivity {
         patient = (Patient) AppObserver.getLoggedUser();
         Request();
         ShowFinancialHistory();
-
-
-
 
         //fOOTBAR
 //        ImageView calendarFootbarButton = findViewById(R.id.calendarFootbar);
