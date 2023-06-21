@@ -31,7 +31,7 @@
             android:layout_marginBottom="30dp"
             android:text="@string/r1_prompt_login"
             android:textAlignment="center"
-            android:textColor="@color/R1_primaryColor"
+            android:textColor="@color/text_color"
             android:textSize="34sp" />
 
         <LinearLayout
@@ -69,8 +69,8 @@
                 android:paddingBottom="32dp"
                 android:text="@string/r1EnterButtonPhysio"
                 android:textAlignment="center"
+                android:textColor="@color/white"
                 android:textSize="34sp"
-                android:textColor="@color/backgroundColor"
                 android:textStyle="bold" />
 
             <Button
@@ -83,9 +83,9 @@
                 android:paddingBottom="32dp"
                 android:text="@string/r1EnterButtonPat"
                 android:textAlignment="center"
+                android:textColor="@color/white"
                 android:textSize="48sp"
                 android:textStyle="bold"
-                android:textColor="@color/backgroundColor"
                 tools:ignore="VisualLintButtonSize" />
 
         </LinearLayout>
