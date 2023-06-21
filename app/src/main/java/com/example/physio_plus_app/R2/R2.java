@@ -14,12 +14,13 @@ import com.example.physio_plus_app.R;
 
 import java.io.IOException;
 
-
 public class R2 extends AppCompatActivity {
     EditText name,desc,code,price;
     Button conf;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.r2_activity);
 
@@ -29,18 +30,20 @@ public class R2 extends AppCompatActivity {
         price = findViewById(R.id.pricein);
         conf = findViewById(R.id.confirm);
 
-        //Topbar
+        //Top-bar
         ImageView goBackButton = findViewById(R.id.back_button);
         goBackButton.setOnClickListener(v -> finish());
-
     }
+
     public void onClick(View v) throws IOException {
+
         String c,n,d;
         double p;
         c = code.getText().toString();
         n = name.getText().toString();
         d = desc.getText().toString();
         p = Double.parseDouble(price.getText().toString());
+
         try {
             String response = OkHttpHandlerR2.insertData(new Service(n,d,c,p));
             if (response.equals("Code already exists")) {
