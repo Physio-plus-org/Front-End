@@ -60,7 +60,6 @@ public class R3 extends AppCompatActivity {
         LinearLayout appointmentCardsContainer = findViewById(R.id.appointmentCardsContainer);
 
 
-
         /* Network-Database oriented Objects */
         gson = new Gson();
         client = new OkHttpClient();
