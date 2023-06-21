@@ -155,16 +155,16 @@ public class R5 extends AppCompatActivity  {
         goBackButton.setOnClickListener(v -> finish());
 
 
-        addPatientFootbarButton.setOnClickListener((v->{
-            Intent i = new Intent(R5.this, R3.class );
-            startActivity(i);
-
-        }));
-        calendarFootbarButton.setOnClickListener(v->{
-            Intent i = new Intent(R5.this, R6.class);
-            startActivity(i);
-        });
-
+//        addPatientFootbarButton.setOnClickListener((v->{
+//            Intent i = new Intent(R5.this, R3.class );
+//            startActivity(i);
+//
+//        }));
+//        calendarFootbarButton.setOnClickListener(v->{
+//            Intent i = new Intent(R5.this, R6.class);
+//            startActivity(i);
+//        });
+        calendarFootbarButton.setOnClickListener(v -> finish());
 
     }
 
