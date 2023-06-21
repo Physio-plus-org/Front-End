@@ -1,11 +1,11 @@
-package com.example.physio_plus_app.Pararms;
+package com.example.physio_plus_app.Utils.Entities;
 
 import androidx.annotation.NonNull;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class Patient {
+public class Patient implements User{
     private final String first_name;
     private final String last_name;
     private final String id_number;

@@ -1,15 +1,6 @@
 package com.example.physio_plus_app.Main_PSF;
 
-import com.example.physio_plus_app.Pararms.Service;
-import com.example.physio_plus_app.Utils.HttpHandler.HttpHandler;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.io.IOException;
-
-import okhttp3.Response;
 
 public class OkHttpHandlerFacilitiesDetails {
 
@@ -22,26 +13,26 @@ public class OkHttpHandlerFacilitiesDetails {
 //        String url = "https://physioplus.000webhostapp.com/R_2_5/facilities.php";
 //        FormBody.Builder builder = new FormBody.Builder();
 //        RequestBody body = builder.build();
-        try {
-            Response response = HttpHandler.postRequest("R_2_5/facilities.php", null);
-            final String responseBody = response.body().string();
-            JSONArray jsonArray = new JSONArray(responseBody);
-            if (jsonArray.length() > 0) {
-                for (int i = 0; i < jsonArray.length(); i++) {
-                    JSONObject jsonObject = jsonArray.getJSONObject(i);
-                    String title = jsonObject.getString("title");
-                    String code = jsonObject.getString("code");
-                    String description = jsonObject.getString("description");
-                    double cost = jsonObject.getDouble("cost");
-                    Service service = new Service(title, code, description, cost);
-                    MainPSF.services.add(service);
-                    //MainPSF.selectedView.put(title,cost);
-                }
-            }
-        } catch (IOException ignored) {
-
-        } catch (JSONException e) {
-            throw new RuntimeException(e);
-        }
+//        try {
+//            Response response = HttpHandler.postRequest("R_2_5/facilities.php", null);
+//            final String responseBody = response.body().string();
+//            JSONArray jsonArray = new JSONArray(responseBody);
+//            if (jsonArray.length() > 0) {
+//                for (int i = 0; i < jsonArray.length(); i++) {
+//                    JSONObject jsonObject = jsonArray.getJSONObject(i);
+//                    String title = jsonObject.getString("title");
+//                    String code = jsonObject.getString("code");
+//                    String description = jsonObject.getString("description");
+//                    double cost = jsonObject.getDouble("cost");
+//                    Service service = new Service(title, code, description, cost);
+//                    MainPSF.services.add(service);
+//                    //MainPSF.selectedView.put(title,cost);
+//                }
+//            }
+//        } catch (IOException ignored) {
+//
+//        } catch (JSONException e) {
+//            throw new RuntimeException(e);
+//        }
     }
 }

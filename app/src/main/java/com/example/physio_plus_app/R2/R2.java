@@ -9,8 +9,9 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.physio_plus_app.Pararms.Service;
 import com.example.physio_plus_app.R;
+import com.example.physio_plus_app.Utils.HttpHandler.PSF.PSFRegisterServiceHandler;
+import com.example.physio_plus_app.Utils.RequestParams;
 
 import java.io.IOException;
 
@@ -42,7 +43,13 @@ public class R2 extends AppCompatActivity {
         d = desc.getText().toString();
         p = Double.parseDouble(price.getText().toString());
         try {
-            String response = OkHttpHandlerR2.insertData(new Service(n,d,c,p));
+            String response = PSFRegisterServiceHandler.request(
+                    new RequestParams()
+                        .add("title", n)
+                        .add("description", d)
+                        .add("code", c)
+                        .add("cost", String.valueOf(p))
+            );//OkHttpHandlerR2.insertData(new Service(n,d,c,p));
             if (response.equals("Code already exists")) {
                 Toast.makeText(R2.this, "Code already exists", Toast.LENGTH_SHORT).show();
             } else {

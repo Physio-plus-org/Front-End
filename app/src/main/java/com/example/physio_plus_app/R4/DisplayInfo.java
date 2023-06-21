@@ -1,23 +1,12 @@
 package com.example.physio_plus_app.R4;
 
-import android.util.Log;
 import android.widget.TextView;
 
-import com.example.physio_plus_app.Utils.HttpHandler.HttpHandler;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-import okhttp3.FormBody;
 import okhttp3.OkHttpClient;
-import okhttp3.RequestBody;
-import okhttp3.Response;
 
 public class DisplayInfo {
 
@@ -34,48 +23,48 @@ public class DisplayInfo {
 
     public DisplayInfo(String url, String amka, OkHttpClient client, TextView name, TextView ssrn, TextView address, TextView date){
 
-        this.amka = amka;
-        this.date_tv = date;
-        this.name_tv = name;
-        this.address_tv = address;
-        this.ssrn_tv = ssrn;
-        this.url = url;
-        date_tv.setText(currentDate);
-//        this.client = client;
-
-
-        RequestBody requestBody = new FormBody.Builder()
-                .add("amka", amka)
-                .build();
-
-        try {
-            Response response = HttpHandler.postRequest("R4/displaypatients.php", requestBody);
-
-            if (response.isSuccessful()) {
-                String json = response.body().string();
-                Log.d("MainActivity", "Server response: " + json);
-
-                try {
-                      JSONArray jsonArray = new JSONArray(json);
-
-
-                    name_tv.setText(((JSONObject)jsonArray.get(0)).getString("name"));
-                    ssrn_tv.setText(((JSONObject)jsonArray.get(0)).getString("ssrn"));
-                    address_tv.setText(((JSONObject)jsonArray.get(0)).getString("address"));
-
-                } catch (JSONException e) {
-
-                    Log.e("MainActivity", "JSON parsing error", e);
-                }
-            } else {
-
-                Log.e("MainActivity", "Error response: " + response.code());
-            }
-
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-
+//        this.amka = amka;
+//        this.date_tv = date;
+//        this.name_tv = name;
+//        this.address_tv = address;
+//        this.ssrn_tv = ssrn;
+//        this.url = url;
+//        date_tv.setText(currentDate);
+////        this.client = client;
+//
+//
+//        RequestBody requestBody = new FormBody.Builder()
+//                .add("amka", amka)
+//                .build();
+//
+//        try {
+//            Response response = HttpHandler.postRequest("R4/displaypatients.php", requestBody);
+//
+//            if (response.isSuccessful()) {
+//                String json = response.body().string();
+//                Log.d("MainActivity", "Server response: " + json);
+//
+//                try {
+//                      JSONArray jsonArray = new JSONArray(json);
+//
+//
+//                    name_tv.setText(((JSONObject)jsonArray.get(0)).getString("name"));
+//                    ssrn_tv.setText(((JSONObject)jsonArray.get(0)).getString("ssrn"));
+//                    address_tv.setText(((JSONObject)jsonArray.get(0)).getString("address"));
+//
+//                } catch (JSONException e) {
+//
+//                    Log.e("MainActivity", "JSON parsing error", e);
+//                }
+//            } else {
+//
+//                Log.e("MainActivity", "Error response: " + response.code());
+//            }
+//
+//        } catch (IOException e) {
+//            throw new RuntimeException(e);
+//        }
+//
 
     }
 

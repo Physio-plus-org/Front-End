@@ -2,7 +2,6 @@ package com.example.physio_plus_app.R5;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -19,19 +18,18 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.physio_plus_app.Pararms.Patient;
 import com.example.physio_plus_app.R;
 import com.example.physio_plus_app.R3.R3;
 import com.example.physio_plus_app.R4.R4;
-import com.example.physio_plus_app.R6.R6;
 import com.example.physio_plus_app.R7.AppointmentForIntentFactory;
 import com.example.physio_plus_app.R7.DropdownAppointmentSharedFactory;
 import com.example.physio_plus_app.R8.R8;
-import com.example.physio_plus_app.Utils.HttpHandler.ButtonActionsController;
+import com.example.physio_plus_app.Utils.AppObserver;
+import com.example.physio_plus_app.Utils.ButtonActionsController;
+import com.example.physio_plus_app.Utils.Entities.Patient;
+import com.example.physio_plus_app.Utils.Entities.PhysioCenter;
+import com.example.physio_plus_app.Utils.HttpHandler.PhysioCenter.AllPatientsInformationHandler;
 import com.google.gson.Gson;
-
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -69,7 +67,7 @@ public class R5 extends AppCompatActivity  {
 
     RecyclerView recyclerView;
     public static MyAdapter adapter;
-    public static List<Patient> userList;
+    private List<Patient> userList;
     //private float mainActivityOpacity = 0.5f;
 
 
@@ -115,13 +113,11 @@ public class R5 extends AppCompatActivity  {
         dropdownAppointmentSharedFactory = new DropdownAppointmentSharedFactory(R5.this);
 
 
-        try {
-            OkHttpHandlerR5.setUsersInfo();
-            Log.d("users", userList.toString());
-            adapter.notifyDataSetChanged();
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+        AllPatientsInformationHandler.request(userList);
+        adapter.notifyDataSetChanged();
+        ((PhysioCenter) AppObserver.getLoggedUser()).setPatients(userList);
+//            OkHttpHandlerR5.setUsersInfo();
+//            Log.d("users", userList.toString());
 
         SearchView searchView = findViewById(R.id.searchView);
         searchView.setMaxWidth(Integer.MAX_VALUE);
@@ -133,7 +129,6 @@ public class R5 extends AppCompatActivity  {
 
             @Override
             public boolean onQueryTextChange(String newText) {
-                String search_user = newText;
                 adapter.getFilter().filter(newText);
                 return false;
             }
@@ -177,16 +172,9 @@ public class R5 extends AppCompatActivity  {
         {
 
             //convert from JSON string to JSONObject
-            try {
-                String jsonText = data.getStringExtra("patient");
-                JSONObject newJObject = new JSONObject(jsonText);
-                Patient user = new Patient(newJObject.get("first_name").toString(), newJObject.get("last_name").toString(), newJObject.get("ssrn").toString(), newJObject.get("address").toString());
-                userList.add(user);
-                adapter.notifyDataSetChanged();
-
-            } catch (JSONException e) {
-                throw new RuntimeException(e);
-            }
+            AllPatientsInformationHandler.request(userList);
+            adapter.notifyDataSetChanged();
+            ((PhysioCenter) AppObserver.getLoggedUser()).setPatients(userList);
 
 
 //            recreate();

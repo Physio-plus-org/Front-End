@@ -1,30 +1,17 @@
 package com.example.physio_plus_app.R9;
 
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
-import android.os.Build;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.physio_plus_app.R;
 import com.example.physio_plus_app.R10.R10;
-import com.example.physio_plus_app.R3.R3;
-import com.example.physio_plus_app.R5.R5;
-import com.example.physio_plus_app.R6.R6;
-import com.example.physio_plus_app.Utils.HttpHandler.ButtonActionsController;
+import com.example.physio_plus_app.Utils.ButtonActionsController;
 
 import java.util.HashMap;
-import java.util.Locale;
 
 
 //import com.cheesecake.mytoxictraits.Week.ThisLocalizedWeek;

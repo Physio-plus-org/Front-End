@@ -1,4 +1,4 @@
-package com.example.physio_plus_app.Pararms;
+package com.example.physio_plus_app.Utils;
 
 import java.util.Hashtable;
 import java.util.Iterator;
@@ -9,8 +9,9 @@ public class RequestParams {
     public RequestParams() {
         this.params = new Hashtable<>();
     }
-    public void add(String key, String value) {
+    public RequestParams add(String key, String value) {
         params.put(key, value);
+        return this;
     }
     public void add(Hashtable<String, String> p) {
         params = p;

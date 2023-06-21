@@ -1,26 +1,22 @@
 package com.example.physio_plus_app.R6;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.physio_plus_app.R;
-import com.example.physio_plus_app.R3.R3;
 import com.example.physio_plus_app.R5.R5;
 import com.example.physio_plus_app.R7.AppointmentForIntentFactory;
 import com.example.physio_plus_app.R7.DropdownAppointmentSharedFactory;
-import com.example.physio_plus_app.R7.R7;
 import com.google.gson.Gson;
 import com.shrikanthravi.collapsiblecalendarview.data.Day;
 import com.shrikanthravi.collapsiblecalendarview.widget.CollapsibleCalendar;

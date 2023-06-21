@@ -18,7 +18,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_activity);
         //initialize thread policy for http handler
-        HttpHandler.setPolicy();
+        HttpHandler.initialize();
     }
 
     public void physioClubActivity(View view) {

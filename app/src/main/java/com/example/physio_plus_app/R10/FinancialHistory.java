@@ -2,8 +2,8 @@ package com.example.physio_plus_app.R10;
 
 import android.widget.LinearLayout;
 
-import com.example.physio_plus_app.Pararms.PhysioCenter;
-import com.example.physio_plus_app.Pararms.Session;
+import com.example.physio_plus_app.Utils.Entities.PhysioCenter;
+import com.example.physio_plus_app.Utils.Entities.Session;
 
 import org.json.JSONArray;
 import org.json.JSONException;

@@ -1,9 +1,5 @@
 package com.example.physio_plus_app.R1;
 
-import static android.app.PendingIntent.getActivity;
-
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -11,7 +7,10 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.physio_plus_app.R;
+import com.example.physio_plus_app.Utils.HttpHandler.PSF.PSFRegisterCenterHandler;
 
 
 public class R1 extends AppCompatActivity {
@@ -43,7 +42,7 @@ public class R1 extends AppCompatActivity {
 
                 // Call the psfCreate method with the obtained data
                 try {
-                    String response = R1HttpHandler.psfCreate(namePhysio, addressPhysio, afmPhysio);
+                    String response = PSFRegisterCenterHandler.request(namePhysio, addressPhysio, afmPhysio);//R1HttpHandler.psfCreate(namePhysio, addressPhysio, afmPhysio);
 
                     if (response.equals("Tax ID number already exists")) {
                         Toast.makeText(R1.this, "Tax ID number already exists", Toast.LENGTH_SHORT).show();

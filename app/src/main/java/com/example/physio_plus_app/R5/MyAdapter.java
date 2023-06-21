@@ -14,9 +14,8 @@ import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.physio_plus_app.Pararms.Patient;
 import com.example.physio_plus_app.R;
-
+import com.example.physio_plus_app.Utils.Entities.Patient;
 
 import java.util.ArrayList;
 import java.util.List;

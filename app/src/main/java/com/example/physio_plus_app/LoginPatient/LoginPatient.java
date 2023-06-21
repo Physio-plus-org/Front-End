@@ -10,6 +10,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.physio_plus_app.R;
 import com.example.physio_plus_app.R9.R9;
+import com.example.physio_plus_app.Utils.AppObserver;
+import com.example.physio_plus_app.Utils.HttpHandler.Login.PatientLoginHandler;
 
 public class LoginPatient extends AppCompatActivity {
 
@@ -28,7 +30,8 @@ public class LoginPatient extends AppCompatActivity {
     public void onClick(View view) {
 
         try {
-            OkHttpHandler.withdrawId(id_text.getText().toString());
+            AppObserver.setLoggedUser(PatientLoginHandler.request(id_text.getText().toString()));
+//            OkHttpHandler.withdrawId(id_text.getText().toString());
         } catch (Exception e) {
             e.printStackTrace();
         }

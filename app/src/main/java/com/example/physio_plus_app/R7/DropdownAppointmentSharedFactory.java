@@ -1,9 +1,6 @@
 package com.example.physio_plus_app.R7;
 
 
-
-
-
 import android.graphics.Typeface;
 import android.os.StrictMode;
 import android.text.Spannable;
@@ -21,10 +18,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.physio_plus_app.R;
 import com.google.gson.Gson;
-
 import com.google.gson.reflect.TypeToken;
-
-
 
 import java.io.IOException;
 import java.lang.reflect.Type;

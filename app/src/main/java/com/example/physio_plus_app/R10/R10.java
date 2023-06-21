@@ -9,7 +9,11 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.physio_plus_app.R;
-import com.example.physio_plus_app.Utils.HttpHandler.ButtonActionsController;
+import com.example.physio_plus_app.Utils.AppObserver;
+import com.example.physio_plus_app.Utils.ButtonActionsController;
+import com.example.physio_plus_app.Utils.Entities.Patient;
+import com.example.physio_plus_app.Utils.HttpHandler.Patient.FinancialMovesHandler;
+import com.example.physio_plus_app.Utils.RequestParams;
 
 import org.json.JSONException;
 
@@ -20,6 +24,7 @@ import java.util.Hashtable;
 public class R10 extends AppCompatActivity {
     private FinancialHistory financialHistory;
     private String patient_id = "12345678";
+    private Patient patient;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,7 +32,7 @@ public class R10 extends AppCompatActivity {
 
         Intent intent = getIntent();
         patient_id = intent.getStringExtra("patient_id");
-
+        patient = (Patient) AppObserver.getLoggedUser();
         Request();
         ShowFinancialHistory();
 
@@ -49,7 +54,7 @@ public class R10 extends AppCompatActivity {
     }
 
     protected void ShowFinancialHistory() {
-        LinearLayout linearLayout = (LinearLayout) findViewById(R.id.main_ll);
+        LinearLayout linearLayout = findViewById(R.id.main_ll);
         financialHistory.show(linearLayout);
     }
 
@@ -58,13 +63,10 @@ public class R10 extends AppCompatActivity {
             Toast.makeText(this, "No patient selected", Toast.LENGTH_SHORT).show();
         }
         try {
-            Hashtable<String, String> params = new Hashtable<>();
-            params.put("patient_id", patient_id);
-            this.financialHistory = FinancialHttpHandlerR10.makeRequest(params);
+            RequestParams params = new RequestParams()
+                    .add("patient_id", patient_id);
+            this.financialHistory = FinancialMovesHandler.request(params);//FinancialHttpHandlerR10.makeRequest(params);
             Toast.makeText(this, "Done", Toast.LENGTH_SHORT).show();
-        } catch (ServerResponseExceptionR10 e) {
-            Toast.makeText(this, "Page not found", Toast.LENGTH_SHORT).show();
-            throw new RuntimeException(e);
         } catch (JSONException e) {
             Toast.makeText(this, "Json parsing error", Toast.LENGTH_SHORT).show();
             throw new RuntimeException(e);

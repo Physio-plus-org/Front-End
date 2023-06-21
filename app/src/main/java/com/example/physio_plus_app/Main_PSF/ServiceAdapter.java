@@ -9,8 +9,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.physio_plus_app.Pararms.Service;
 import com.example.physio_plus_app.R;
+import com.example.physio_plus_app.Utils.Entities.Service;
 
 import java.util.List;
 

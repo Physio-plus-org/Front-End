@@ -3,7 +3,7 @@ package com.example.physio_plus_app.R8;
 import android.os.StrictMode;
 import android.util.Log;
 
-import com.example.physio_plus_app.Pararms.RequestParams;
+import com.example.physio_plus_app.Utils.RequestParams;
 
 import org.json.JSONArray;
 

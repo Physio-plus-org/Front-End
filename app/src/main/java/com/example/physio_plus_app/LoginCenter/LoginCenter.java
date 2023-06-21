@@ -10,6 +10,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.physio_plus_app.R;
 import com.example.physio_plus_app.R6.R6;
+import com.example.physio_plus_app.Utils.AppObserver;
+import com.example.physio_plus_app.Utils.HttpHandler.Login.PhysioCenterLoginHandler;
 
 public class LoginCenter extends AppCompatActivity {
 
@@ -27,7 +29,8 @@ public class LoginCenter extends AppCompatActivity {
     public void onClick(View view) {
 
         try {
-            OkHttpHandler.withdrawTax(tax_text.getText().toString());
+            AppObserver.setLoggedUser(PhysioCenterLoginHandler.request(tax_text.getText().toString()));
+//            OkHttpHandler.withdrawTax(tax_text.getText().toString());
         } catch (Exception e) {
             e.printStackTrace();
         }

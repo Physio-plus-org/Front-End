@@ -1,4 +1,4 @@
-package com.example.physio_plus_app.Pararms;
+package com.example.physio_plus_app.Utils.Entities;
 
 import android.util.Log;
 import android.widget.LinearLayout;

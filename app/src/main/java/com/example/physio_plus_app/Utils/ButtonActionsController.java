@@ -1,4 +1,4 @@
-package com.example.physio_plus_app.Utils.HttpHandler;
+package com.example.physio_plus_app.Utils;
 
 import android.content.Intent;
 

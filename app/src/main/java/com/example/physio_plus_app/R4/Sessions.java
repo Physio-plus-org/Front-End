@@ -1,28 +1,18 @@
 package com.example.physio_plus_app.R4;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.physio_plus_app.R;
-import com.example.physio_plus_app.Utils.HttpHandler.HttpHandler;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.IOException;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.Locale;
 
 import okhttp3.FormBody;
 import okhttp3.OkHttpClient;
 import okhttp3.RequestBody;
-import okhttp3.Response;
 
 public class Sessions {
 
@@ -47,48 +37,48 @@ public class Sessions {
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", new Locale("Greek"));
 
 
-        try {
-            Response response = HttpHandler.postRequest("R4/displaysessions.php", requestBody);
-            if (response.isSuccessful()) {
-                String json = response.body().string();
-                Log.d("MainActivity", "Server response: " + json);
-
-                try {
-
-
-                    JSONArray sessionsArray = new JSONArray(json);
-
-
-                    for (int i = 0; i < sessionsArray.length(); i++) {
-                         JSONObject sessionObject = sessionsArray.getJSONObject(i);
-
-                        try {
-                            Date date = format.parse(sessionObject.get("date").toString());
-                            String notes = sessionObject.getString("notes");
-
-                            if (date != null) {
-                                createCardView(format.format(date), notes);
-                            }
-
-                        } catch (ParseException e) {
-                            e.printStackTrace();
-                        }
-
-
-
-                }
-
-                } catch (JSONException e) {
-                    // Handle JSON parsing error
-                    Log.e("MainActivity", "JSON parsing error", e);
-                }
-            } else {
-                //code
-                Log.e("MainActivity", "Error response: " + response.code());
-            }
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+//        try {
+//            Response response = HttpHandler.postRequest("R4/displaysessions.php", requestBody);
+//            if (response.isSuccessful()) {
+//                String json = response.body().string();
+//                Log.d("MainActivity", "Server response: " + json);
+//
+//                try {
+//
+//
+//                    JSONArray sessionsArray = new JSONArray(json);
+//
+//
+//                    for (int i = 0; i < sessionsArray.length(); i++) {
+//                         JSONObject sessionObject = sessionsArray.getJSONObject(i);
+//
+//                        try {
+//                            Date date = format.parse(sessionObject.get("date").toString());
+//                            String notes = sessionObject.getString("notes");
+//
+//                            if (date != null) {
+//                                createCardView(format.format(date), notes);
+//                            }
+//
+//                        } catch (ParseException e) {
+//                            e.printStackTrace();
+//                        }
+//
+//
+//
+//                }
+//
+//                } catch (JSONException e) {
+//                    // Handle JSON parsing error
+//                    Log.e("MainActivity", "JSON parsing error", e);
+//                }
+//            } else {
+//                //code
+//                Log.e("MainActivity", "Error response: " + response.code());
+//            }
+//        } catch (IOException e) {
+//            throw new RuntimeException(e);
+//        }
 
     }
 

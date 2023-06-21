@@ -10,10 +10,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.physio_plus_app.Pararms.Service;
 import com.example.physio_plus_app.R;
 import com.example.physio_plus_app.R1.R1;
 import com.example.physio_plus_app.R2.R2;
+import com.example.physio_plus_app.Utils.Entities.Service;
+import com.example.physio_plus_app.Utils.HttpHandler.PSF.ServicesHandler;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -21,7 +22,7 @@ import java.util.ArrayList;
 public class MainPSF extends AppCompatActivity {
 
     RecyclerView recyclerView;
-    static ArrayList<Service> services;
+    ArrayList<Service> services;
     ServiceAdapter adapter;
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,7 +62,8 @@ public class MainPSF extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
 
         try {
-            OkHttpHandlerFacilitiesDetails.withdrawData();
+            ServicesHandler.request(services);
+//            OkHttpHandlerFacilitiesDetails.withdrawData();
             adapter.notifyDataSetChanged();
         } catch (IOException e) {
             throw new RuntimeException(e);
