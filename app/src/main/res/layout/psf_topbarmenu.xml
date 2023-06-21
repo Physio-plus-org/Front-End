@@ -43,7 +43,7 @@
                 android:layout_height="60dp"
                 android:layout_weight="1"
                 android:contentDescription="@string/todo"
-                app:srcCompat="@drawable/Physio_logo_black" />
+                app:srcCompat="@drawable/Physio_logo_topbar" />
 
 
             <ImageView
