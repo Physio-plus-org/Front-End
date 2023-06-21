@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -14,10 +13,10 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.physio_plus_app.Pararms.Patient;
+import com.example.physio_plus_app.Pararms.RequestParams;
+import com.example.physio_plus_app.Pararms.Service;
 import com.example.physio_plus_app.R;
-import com.example.physio_plus_app.R3.R3;
-import com.example.physio_plus_app.R6.R6;
-import com.example.physio_plus_app.R7.R7;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -30,8 +29,8 @@ public class R8 extends AppCompatActivity {
     private TextView nameTextView;
     private TextView personalNumberTextView;
     private Spinner servicesSpinner;
-    private ArrayAdapter<ServiceR8> dataAdapter;
-   private final ArrayList<ServiceR8> servicesList = new ArrayList<>();
+    private ArrayAdapter<Service> dataAdapter;
+   private final ArrayList<Service> servicesList = new ArrayList<>();
     private TextView notesTextView;
     private TextView dateTextView;
     private String patient_id;
@@ -85,7 +84,7 @@ public class R8 extends AppCompatActivity {
     }
     protected void SubmitRegistry() throws Exception {
         String url = urlRoot + "registerAction.php";
-        RequestParamsR8 params = new RequestParamsR8();
+        RequestParams params = new RequestParams();
         params.add("date", formatDate(this.dateTextView.getText().toString()));
         params.add("note", this.notesTextView.getText().toString());
         params.add("service_id", this.servicesList.get(this.servicesSpinner.getSelectedItemPosition()).getCode());
@@ -108,7 +107,7 @@ public class R8 extends AppCompatActivity {
         );
         dpDialog.show();
     }
-    protected void PatientInformationSetting(PatientR8 patient) {
+    protected void PatientInformationSetting(Patient patient) {
         String fullName = patient.getFullName();
         String pNumber = patient.getIdNumber();
         this.nameTextView.setText(fullName);
@@ -116,20 +115,20 @@ public class R8 extends AppCompatActivity {
     }
     protected void PatientInitializationRequest() throws Exception {
         String url = this.urlRoot + "patientRequest.php";
-        RequestParamsR8 params = new RequestParamsR8();
+        RequestParams params = new RequestParams();
         params.add("patient_id", patient_id);
-        PatientR8 patient = PatientHttpHandlerR8.request(url, params);
+        Patient patient = PatientHttpHandlerR8.request(url, params);
         if (patient == null) throw new Exception();
         PatientInformationSetting(patient);
     }
-    protected void ServicesSpinnerPopulation(ArrayList<ServiceR8> services) {
+    protected void ServicesSpinnerPopulation(ArrayList<Service> services) {
         this.servicesList.clear();
         this.servicesList.addAll(services);
         this.dataAdapter.notifyDataSetChanged();
     }
     protected void ServicesInitializationRequest() throws Exception {
         String url = this.urlRoot + "serviceRequest.php";
-        ArrayList<ServiceR8> services = ServiceHttpHandlerR8.request(url, null);
+        ArrayList<Service> services = ServiceHttpHandlerR8.request(url, null);
         if (services == null) throw new Exception();
         ServicesSpinnerPopulation(services);
     }

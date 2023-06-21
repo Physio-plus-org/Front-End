@@ -1,18 +1,13 @@
 package com.example.physio_plus_app.R5;
 
-import static android.content.ContentValues.TAG;
-
-import android.util.Log;
+import com.example.physio_plus_app.Pararms.Patient;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
-import java.util.List;
 
-import okhttp3.Call;
-import okhttp3.Callback;
 import okhttp3.FormBody;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -45,7 +40,7 @@ public abstract class OkHttpHandlerR5 {
                     String Amka = jsonObject.optString("ssrn");
                     String address = jsonObject.optString("address");
 
-                    User user = new User(firstName, lastName, Amka, address);
+                    Patient user = new Patient(firstName, lastName, Amka, address);
                     R5.userList.add(user);
                 }
             }

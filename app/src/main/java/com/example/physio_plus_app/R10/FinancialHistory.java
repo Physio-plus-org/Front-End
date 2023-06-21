@@ -2,6 +2,9 @@ package com.example.physio_plus_app.R10;
 
 import android.widget.LinearLayout;
 
+import com.example.physio_plus_app.Pararms.PhysioCenter;
+import com.example.physio_plus_app.Pararms.Session;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -9,22 +12,22 @@ import org.json.JSONObject;
 import java.text.ParseException;
 import java.util.ArrayList;
 
-public class FinancialHistoryR10 {
-    private ArrayList<FinancialMoveR10> history;
-    public FinancialHistoryR10() {
+public class FinancialHistory {
+    private ArrayList<FinancialMove> history;
+    public FinancialHistory() {
         this.history = new ArrayList<>();
     }
     public void MapJsonArray(JSONArray jsonArray) throws JSONException, ParseException {
         for (int i = 0; i < jsonArray.length(); i++) {
             JSONObject jsonMove = jsonArray.getJSONObject(i);
-            PhysioCenterR10 center = new PhysioCenterR10(jsonMove.getJSONObject("center"));
-            SessionR10 session = new SessionR10(jsonMove.getJSONObject("session"));
-            FinancialMoveR10 move = new FinancialMoveR10(center, session);
+            PhysioCenter center = new PhysioCenter(jsonMove.getJSONObject("center"));
+            Session session = new Session(jsonMove.getJSONObject("session"));
+            FinancialMove move = new FinancialMove(center, session);
             this.history.add(move);
         }
     }
     public void show(LinearLayout linearLayout) {
-        for (FinancialMoveR10 move : this.history) {
+        for (FinancialMove move : this.history) {
             move.show(linearLayout);
         }
     }

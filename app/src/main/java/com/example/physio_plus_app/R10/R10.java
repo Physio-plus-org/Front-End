@@ -1,21 +1,14 @@
 package com.example.physio_plus_app.R10;
 
-import static android.app.ProgressDialog.show;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.physio_plus_app.R;
-import com.example.physio_plus_app.R5.R5;
-import com.example.physio_plus_app.R6.R6;
-import com.example.physio_plus_app.R9.R9;
 import com.example.physio_plus_app.Utils.HttpHandler.ButtonActionsController;
 
 import org.json.JSONException;
@@ -25,7 +18,7 @@ import java.text.ParseException;
 import java.util.Hashtable;
 
 public class R10 extends AppCompatActivity {
-    private FinancialHistoryR10 financialHistory;
+    private FinancialHistory financialHistory;
     private String patient_id = "12345678";
     @Override
     protected void onCreate(Bundle savedInstanceState) {

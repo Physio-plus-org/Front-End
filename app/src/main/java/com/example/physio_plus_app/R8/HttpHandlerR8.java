@@ -3,6 +3,8 @@ package com.example.physio_plus_app.R8;
 import android.os.StrictMode;
 import android.util.Log;
 
+import com.example.physio_plus_app.Pararms.RequestParams;
+
 import org.json.JSONArray;
 
 import java.util.Iterator;
@@ -14,7 +16,7 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 
 public abstract class HttpHandlerR8 {
-    protected static JSONArray makeRequest(String url, RequestParamsR8 params) throws Exception {
+    protected static JSONArray makeRequest(String url, RequestParams params) throws Exception {
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
         OkHttpClient client = new OkHttpClient().newBuilder().build();

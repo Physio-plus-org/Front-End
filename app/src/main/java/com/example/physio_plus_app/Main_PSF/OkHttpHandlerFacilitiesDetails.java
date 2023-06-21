@@ -1,7 +1,6 @@
 package com.example.physio_plus_app.Main_PSF;
 
-import android.util.Log;
-
+import com.example.physio_plus_app.Pararms.Service;
 import com.example.physio_plus_app.Utils.HttpHandler.HttpHandler;
 
 import org.json.JSONArray;
@@ -9,12 +8,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
-import okhttp3.FormBody;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.RequestBody;
 import okhttp3.Response;
 
 public class OkHttpHandlerFacilitiesDetails {

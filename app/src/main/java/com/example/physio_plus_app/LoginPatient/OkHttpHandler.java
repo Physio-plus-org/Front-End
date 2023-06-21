@@ -1,6 +1,6 @@
 package com.example.physio_plus_app.LoginPatient;
 
-import com.example.physio_plus_app.R8.PatientR8;
+import com.example.physio_plus_app.Pararms.Patient;
 import com.example.physio_plus_app.Utils.HttpHandler.HttpHandler;
 
 import org.json.JSONException;
@@ -12,7 +12,7 @@ import okhttp3.Response;
 
 public abstract class OkHttpHandler {
 
-    public static PatientR8 withdrawId(String taxText) throws Exception {
+    public static Patient withdrawId(String taxText) throws Exception {
 
         FormBody.Builder builder = new FormBody.Builder();
 
@@ -27,7 +27,7 @@ public abstract class OkHttpHandler {
 //            Log.e("Response", responseBody);
             if(json.has("ssrn")){
 
-                return new PatientR8(json);
+                return new Patient(json);
             }
 
         } catch (JSONException e) {

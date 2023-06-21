@@ -1,4 +1,4 @@
-package com.example.physio_plus_app.R10;
+package com.example.physio_plus_app.Pararms;
 
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -13,13 +13,13 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Locale;
 
-public class SessionR10 {
+public class Session {
     private int sessionId;
-    private ArrayList<ServiceR10> services = new ArrayList<>();
+    private ArrayList<Service> services = new ArrayList<>();
     private Date sessionDate;
     private String sessionNotes;
     private double sessionCost;
-    public SessionR10(JSONObject jsonObject) throws JSONException, ParseException {
+    public Session(JSONObject jsonObject) throws JSONException, ParseException {
         this.sessionId = Integer.parseInt(jsonObject.get("id").toString());
 //        String[] date_details = jsonObject.getJSONArray("date").toString().split("-");
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", new Locale("Greek"));
@@ -33,18 +33,18 @@ public class SessionR10 {
         JSONArray jsonArrayServices = jsonObject.getJSONArray("services");
         for (int i = 0; i < jsonArrayServices.length(); i++) {
             JSONObject jsonService = jsonArrayServices.getJSONObject(i);
-            services.add(new ServiceR10(jsonService));
+            services.add(new Service(jsonService));
         }
         this.sessionCost = 0;
-        for (ServiceR10 service : this.services) {
-            this.sessionCost += service.getServiceCost();
+        for (Service service : this.services) {
+            this.sessionCost += service.getCost();
         }
     }
 
     public void show(LinearLayout linearLayout) {
         LinearLayout ser_linearLayout = new LinearLayout(linearLayout.getContext());
         ser_linearLayout.setOrientation(LinearLayout.VERTICAL);
-        for (ServiceR10 service : this.services) {
+        for (Service service : this.services) {
             service.show(ser_linearLayout);
         }
         TextView textView = new TextView(linearLayout.getContext());

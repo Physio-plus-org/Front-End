@@ -2,6 +2,7 @@ package com.example.physio_plus_app.R3;
 
 import android.os.*;
 
+import com.example.physio_plus_app.Pararms.Patient;
 import com.example.physio_plus_app.Utils.HttpHandler.HttpHandler;
 
 import java.io.IOException;
@@ -10,7 +11,7 @@ import okhttp3.*;
 public abstract class OkHttpHandler3 {
     public static StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
     private static final String file_folder = "R3/";
-    public static String loghistory(ParamsR3 params) throws IOException {
+    public static String loghistory(Patient params) throws IOException {
 //        StrictMode.setThreadPolicy(policy);
 //        final String URL = "http://192.168.1.248/logHistory.php";
 //
@@ -19,8 +20,8 @@ public abstract class OkHttpHandler3 {
         FormBody.Builder builder = new FormBody.Builder();
         builder.add("first_name", params.getnamePatient());
         builder.add("last_name", params.getSurnamePatient());
-        builder.add("address", params.getAmkaPatient());
-        builder.add("ssrn", params.getAddressPatient());
+        builder.add("address", params.getAddress());
+        builder.add("ssrn", params.getIdNumber());
 
         RequestBody body = builder.build();
         Response response = HttpHandler.postRequest(file_folder + file_name, body);

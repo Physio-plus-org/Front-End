@@ -1,23 +1,22 @@
 package com.example.physio_plus_app.Main_PSF;
 
 import android.content.Intent;
-import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.physio_plus_app.Pararms.Service;
 import com.example.physio_plus_app.R;
 import com.example.physio_plus_app.R1.R1;
 import com.example.physio_plus_app.R2.R2;
-import com.example.physio_plus_app.R5.MyAdapter;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public class MainPSF extends AppCompatActivity {
 

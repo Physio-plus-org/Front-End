@@ -1,4 +1,4 @@
-package com.example.physio_plus_app.R10;
+package com.example.physio_plus_app.Pararms;
 
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -6,10 +6,10 @@ import android.widget.TextView;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class PhysioCenterR10 {
+public class PhysioCenter {
     private String centerId;
     private String name;
-    public PhysioCenterR10(JSONObject jsonObject) throws JSONException {
+    public PhysioCenter(JSONObject jsonObject) throws JSONException {
         this.centerId = jsonObject.get("tax_id_number").toString();
         this.name = jsonObject.get("name").toString();
     }

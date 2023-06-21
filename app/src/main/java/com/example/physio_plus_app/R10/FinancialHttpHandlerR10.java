@@ -10,12 +10,12 @@ import java.text.ParseException;
 import java.util.Hashtable;
 
 public abstract class FinancialHttpHandlerR10 extends HttpHandlerR10 {
-    public static FinancialHistoryR10 makeRequest(Hashtable<String, String> params) throws ServerResponseExceptionR10, JSONException, IOException, ParseException {
+    public static FinancialHistory makeRequest(Hashtable<String, String> params) throws ServerResponseExceptionR10, JSONException, IOException, ParseException {
         String url = "https://physioplus.000webhostapp.com/R10/requestFinance.php";
         Log.d("url", url);
         JSONArray jsonArray = request(url, params);
         Log.w("jsonArray", jsonArray.toString());
-        FinancialHistoryR10 financialHistory = new FinancialHistoryR10();
+        FinancialHistory financialHistory = new FinancialHistory();
         financialHistory.MapJsonArray(jsonArray);
         return financialHistory;
     }

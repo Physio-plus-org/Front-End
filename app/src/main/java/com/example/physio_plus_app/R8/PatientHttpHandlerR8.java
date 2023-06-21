@@ -1,14 +1,13 @@
 package com.example.physio_plus_app.R8;
 
-import com.google.gson.JsonObject;
+import com.example.physio_plus_app.Pararms.Patient;
+import com.example.physio_plus_app.Pararms.RequestParams;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import java.util.ArrayList;
-
 public abstract class PatientHttpHandlerR8 extends HttpHandlerR8 {
-    static PatientR8 request(String url, RequestParamsR8 params) throws Exception {
+    static Patient request(String url, RequestParams params) throws Exception {
         JSONArray jsonArray = makeRequest(url, params);
         if (jsonArray == null) return null;
         //        for (int i = 0; i < jsonArray.length(); i++) {
@@ -21,7 +20,7 @@ public abstract class PatientHttpHandlerR8 extends HttpHandlerR8 {
 //        }
 //        return patientsArray;
         JSONObject jsonObject = jsonArray.getJSONObject(0);
-        return new PatientR8(
+        return new Patient(
                 jsonObject.getString("first_name"),
                 jsonObject.getString("last_name"),
                 jsonObject.getString("ssrn"),

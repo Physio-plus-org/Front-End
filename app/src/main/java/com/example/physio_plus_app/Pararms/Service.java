@@ -1,5 +1,6 @@
-package com.example.physio_plus_app.R10;
+package com.example.physio_plus_app.Pararms;
 
+import android.util.Log;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -8,17 +9,23 @@ import org.json.JSONObject;
 
 import java.util.Locale;
 
-public class ServiceR10 {
+public class Service {
     private String serviceCode;
     private String serviceTitle;
     private String serviceDescription;
     private double serviceCost;
 
-    public ServiceR10(JSONObject jsonObject) throws JSONException {
+    public Service(JSONObject jsonObject) throws JSONException {
         this.serviceTitle = jsonObject.get("title").toString();
         this.serviceCode = jsonObject.get("code").toString();
         this.serviceDescription = jsonObject.get("description").toString();
         this.serviceCost = Double.parseDouble(jsonObject.get("cost").toString());
+    }
+    public Service(String title, String code, String description, double cost) {
+        this.serviceTitle = title;
+        this.serviceCode = code;
+        this.serviceDescription = description;
+        this.serviceCost = cost;
     }
 
     public void show(LinearLayout linearLayout) {
@@ -32,7 +39,19 @@ public class ServiceR10 {
         linearLayout.addView(textView);
     }
 
-    public double getServiceCost() {
-        return this.serviceCost;
+
+    public String getTitle() {
+        return serviceTitle;
+    }
+    public String getCode() {
+        return serviceCode;
+    }
+    public String getDescription() {
+        return serviceDescription;
+    }
+    public double getCost() {return serviceCost;}
+
+    public void print() {
+        Log.e("service", serviceTitle+"|"+serviceCode+"|"+serviceCost+"|"+serviceDescription);
     }
 }

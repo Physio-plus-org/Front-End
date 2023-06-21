@@ -1,11 +1,8 @@
 package com.example.physio_plus_app.R3;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -14,25 +11,19 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.physio_plus_app.Patientprofile.patientProfile;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.physio_plus_app.Pararms.Patient;
 import com.example.physio_plus_app.R;
-import com.example.physio_plus_app.R5.R5;
-import com.example.physio_plus_app.R5.User;
-import com.example.physio_plus_app.R6.R6;
 import com.example.physio_plus_app.R7.AppointmentForIntentFactory;
 import com.example.physio_plus_app.R7.DropdownAppointmentSharedFactory;
-import com.example.physio_plus_app.R7.R7;
 import com.google.gson.Gson;
 
 import org.json.JSONObject;
 
-import java.io.Serializable;
-
 import okhttp3.OkHttpClient;
 
 public class R3 extends AppCompatActivity {
-
-
 
     private RelativeLayout cardContainer;
 
@@ -60,12 +51,7 @@ public class R3 extends AppCompatActivity {
 
         /* Topbar */
 
-
         ImageView goBackButton = findViewById(R.id.goback);
-
-
-
-
 
         /* Layout objects */
         cardContainer = findViewById(R.id.cardContainer);
@@ -81,8 +67,6 @@ public class R3 extends AppCompatActivity {
         dropdownAppointmentSharedFactory = new DropdownAppointmentSharedFactory(R3.this);
 
 
-
-
         goBackButton.setOnClickListener(v -> finish());
 
         returnButton.setOnClickListener(view -> finish());
@@ -95,7 +79,7 @@ public class R3 extends AppCompatActivity {
         String amPatient = amkaPatient.getText().toString();
 
         try {
-            String response = OkHttpHandler3.loghistory(new ParamsR3(namePatient,surnamePatient, amPatient, addressOfPatient));
+            String response = OkHttpHandler3.loghistory(new Patient(namePatient,surnamePatient, amPatient, addressOfPatient));
             if (!response.isEmpty()){
                 Toast.makeText(R3.this, response, Toast.LENGTH_LONG).show();
             }

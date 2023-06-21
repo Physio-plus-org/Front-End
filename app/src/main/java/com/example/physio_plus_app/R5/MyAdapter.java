@@ -14,6 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.physio_plus_app.Pararms.Patient;
 import com.example.physio_plus_app.R;
 
 
@@ -23,8 +24,8 @@ import java.util.List;
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.UserViewHolder> implements Filterable {
 
     private final Context context;
-    private List<User> userList;
-    private List<User> filteredData;
+    private List<Patient> userList;
+    private List<Patient> filteredData;
     public UserClickListener userClickListener;
     private int selectedUserId;
     private String selectedUserSSRN;
@@ -33,7 +34,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.UserViewHolder> im
     private Button PatientHistory;
 
 
-    public MyAdapter(List<User> Users,Context context) {
+    public MyAdapter(List<Patient> Users,Context context) {
         this.context = context;
         this.userList = Users;
         //this.userClickListener = userClickListener;
@@ -53,9 +54,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.UserViewHolder> im
                     filterResults.count = filteredData.size();
                 }else{
                     String x = constraint.toString().toLowerCase();
-                    List<User> Users = new ArrayList<>();
-                    for(User u: filteredData){
-                        if(u.getFirstName().toLowerCase().contains(x) || u.getLastName().toLowerCase().contains(x) || u.getAMKA().toLowerCase().contains(x)){
+                    List<Patient> Users = new ArrayList<>();
+                    for(Patient u: filteredData){
+                        if(u.getnamePatient().toLowerCase().contains(x) || u.getSurnamePatient().toLowerCase().contains(x) || u.getIdNumber().toLowerCase().contains(x)){
                             Users.add(u);
                         }
                     }
@@ -68,7 +69,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.UserViewHolder> im
 
             @Override
             protected void publishResults(CharSequence constraint, FilterResults results) {
-                userList = (List<User>) results.values;
+                userList = (List<Patient>) results.values;
                 notifyDataSetChanged();
 
             }
@@ -78,7 +79,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.UserViewHolder> im
 
 
     public interface UserClickListener{
-        void clicked_user(User user);
+        void clicked_user(Patient user);
     }
 
 
@@ -91,12 +92,12 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.UserViewHolder> im
 
     @Override
     public void onBindViewHolder(@NonNull UserViewHolder holder, int position) {
-        User user = userList.get(position);
+        Patient user = userList.get(position);
 
         holder.setId(position);
-        holder.getFirstName().setText(user.getFirstName());
-        holder.getLastname().setText(user.getLastName());
-        holder.getAmka().setText(user.getAMKA());
+        holder.getFirstName().setText(user.getnamePatient());
+        holder.getLastname().setText(user.getSurnamePatient());
+        holder.getAmka().setText(user.getIdNumber());
         holder.getAddress().setText(user.getAddress());
         holder.itemView.setOnClickListener(v -> userClickListener.clicked_user(user));
         clickArray.add(holder);

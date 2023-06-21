@@ -9,10 +9,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.physio_plus_app.Main_PSF.MainPSF;
+import com.example.physio_plus_app.Pararms.Service;
 import com.example.physio_plus_app.R;
-import com.example.physio_plus_app.R1.R1;
-import com.example.physio_plus_app.R1.R1HttpHandler;
 
 import java.io.IOException;
 
@@ -37,13 +35,14 @@ public class R2 extends AppCompatActivity {
 
     }
     public void onClick(View v) throws IOException {
-        String c,n,d,p;
+        String c,n,d;
+        double p;
         c = code.getText().toString();
         n = name.getText().toString();
         d = desc.getText().toString();
-        p = price.getText().toString();
+        p = Double.parseDouble(price.getText().toString());
         try {
-            String response = OkHttpHandlerR2.insertData(new ParamsR2(n,d,c,p));
+            String response = OkHttpHandlerR2.insertData(new Service(n,d,c,p));
             if (response.equals("Code already exists")) {
                 Toast.makeText(R2.this, "Code already exists", Toast.LENGTH_SHORT).show();
             } else {

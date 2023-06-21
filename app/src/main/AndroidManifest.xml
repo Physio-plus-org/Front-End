@@ -50,6 +50,7 @@
             />
         <activity android:name=".LoginCenter.LoginCenter" />
         <activity android:name=".LoginPatient.LoginPatient" />
+
     </application>
 
 </manifest>
