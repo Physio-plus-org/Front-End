@@ -18,22 +18,9 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:padding="8dp"
-            android:text="date"
+            android:text="date and hours"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textColor="@color/R4_textColor" />
-
-        <TextView
-            android:id="@+id/hours_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center|start"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="5dp"
-            android:padding="8dp"
-            android:text="hours"
-            android:textAlignment="center"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textColor="@color/R4_textColor" />
+            android:textColor="@color/backgroundColor" />
 
         <androidx.cardview.widget.CardView
             android:layout_width="100dp"

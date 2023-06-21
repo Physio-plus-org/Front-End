@@ -15,7 +15,6 @@ import com.example.physio_plus_app.R;
 import com.example.physio_plus_app.R5.R5;
 import com.example.physio_plus_app.R7.AppointmentForIntentFactory;
 import com.example.physio_plus_app.R7.DropdownAppointmentSharedFactory;
-import com.example.physio_plus_app.R7.R7;
 import com.google.gson.Gson;
 
 import okhttp3.OkHttpClient;
@@ -44,6 +43,7 @@ public class R4 extends AppCompatActivity {
     TextView address_tv;
     TextView date_tv;
 
+    TextView ssrn_tv;
     LinearLayout verticalLayout;
 
 
@@ -60,12 +60,11 @@ public class R4 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.r4_activity);
-//        Objects.requireNonNull(getSupportActionBar()).hide(); // Hide the action bar
 
         Log.d("MainActivity", "onCreate method called");
 
         name_tv = findViewById(R.id.name_tv);
-        age_tv = findViewById(R.id.age_tv);
+        ssrn_tv = findViewById(R.id.ssrn_tv);
         address_tv = findViewById(R.id.address_tv);
         date_tv = findViewById(R.id.date_tv);
         verticalLayout = findViewById(R.id.verticalLayout);
@@ -82,7 +81,6 @@ public class R4 extends AppCompatActivity {
 
 
 
-        /* Layout obbjects */
         cardContainer = findViewById(R.id.cardContainer);
         redBubble = findViewById(R.id.redBubbleText);
         redBubble.setVisibility(View.GONE);
@@ -90,7 +88,7 @@ public class R4 extends AppCompatActivity {
 
 
 
-        /* Network-Database oriented Objects */
+
         gson = new Gson();
         client = new OkHttpClient();
         dropdownAppointmentSharedFactory = new DropdownAppointmentSharedFactory(R4.this);
@@ -110,24 +108,20 @@ public class R4 extends AppCompatActivity {
 
 
 
-        // Get the intent that started this activity
-        Intent intent = getIntent();
 
-        // Retrieve the string extra from the intent
+        Intent intent = getIntent();
         String message = intent.getStringExtra("patient_id");
 
-        // Use the received string variable as needed
+
         if (message != null) {
 
             client = new OkHttpClient();
-            handler = new DisplayInfo(url1, message, client ,name_tv, age_tv, address_tv, date_tv);
-            handler.sendPatientNameToServer(message);
-            //vazw dummy metablhth sth thesh tou amka gia na kanw thn klhsh ths vashs
+            handler = new DisplayInfo(url1, message, client ,name_tv, ssrn_tv, address_tv, date_tv);
+
             Log.d("Main Activity", "DisplayInfo is running without problems");
 
             sessions = new Sessions(url2, message, client, verticalLayout);
-            sessions.sendPatientNameToServer(message);
-            //vazw dummy metablhth sth thesh tou amka gia na kanw thn klhsh ths vashs
+
             sessions.displaySessions();
 
 
