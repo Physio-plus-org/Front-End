@@ -3,6 +3,7 @@ package com.example.physio_plus_app.R3;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -54,16 +55,26 @@ public class R3 extends AppCompatActivity {
 
         /* Layout objects */
         cardContainer = findViewById(R.id.cardContainer);
+        /* Layout obbjects */
         redBubble = findViewById(R.id.redBubbleText);
         redBubble.setVisibility(View.GONE);
         LinearLayout appointmentCardsContainer = findViewById(R.id.appointmentCardsContainer);
 
 
-
         /* Network-Database oriented Objects */
         gson = new Gson();
         client = new OkHttpClient();
-        dropdownAppointmentSharedFactory = new DropdownAppointmentSharedFactory(R3.this);
+
+
+
+
+        Button appointmentsButton = findViewById(R.id.calendarTopBar);
+
+        appointmentsButton.setOnClickListener(v->{
+            dropdownAppointmentSharedFactory.fetchUpcomingAppointmentsForDropdown(this,redBubble);
+        });
+
+
 
 
         goBackButton.setOnClickListener(v -> finish());

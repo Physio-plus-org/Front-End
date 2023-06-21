@@ -1,13 +1,18 @@
 package com.example.physio_plus_app.R7;
 
-
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.StrictMode;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.style.StyleSpan;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -15,14 +20,20 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import com.example.physio_plus_app.R;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.IOException;
-import java.lang.reflect.Type;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -37,7 +48,7 @@ public class DropdownAppointmentSharedFactory extends AppCompatActivity {
 
     public RelativeLayout cardContainer;
 
-    TextView redBubble;
+
 
     public final StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
 
@@ -52,14 +63,13 @@ public class DropdownAppointmentSharedFactory extends AppCompatActivity {
     public static final String UPCOMING_APPOINTMENTS_URL = "https://physioplus.000webhostapp.com/R7/fetch_upcomingAppoint.php";
 
 
-    public final Gson gson;
+
     public final OkHttpClient client;
 
     public final AppCompatActivity currActivity;
 
     public DropdownAppointmentSharedFactory(AppCompatActivity currActivity) {
         this.currActivity = currActivity;
-        gson = new Gson();
         client = new OkHttpClient();
     }
 
@@ -93,11 +103,11 @@ public class DropdownAppointmentSharedFactory extends AppCompatActivity {
     }
 
 
-    public void fetchUpcomingAppointmentsForDropdown(AppCompatActivity currActivity) {
+    public void fetchUpcomingAppointmentsForDropdown(AppCompatActivity currActivity, TextView  redBubble) {
 
         Request request = new Request.Builder()
                 .url(UPCOMING_APPOINTMENTS_URL)
-                .get()
+                .post(new FormBody.Builder().build())
                 .build();
 
         client.newCall(request).enqueue(new Callback() {
@@ -114,7 +124,9 @@ public class DropdownAppointmentSharedFactory extends AppCompatActivity {
                 // Handle network request success
                 try {
                     if (response.isSuccessful()) {
+
                         String responseData = response.body().string();
+                        Log.d(TAG, "parseAppointmentsFromJson: " + responseData);
                         // Process the response data
                         runOnUiThread(() -> {
                             // Update UI with the fetched data
@@ -149,6 +161,7 @@ public class DropdownAppointmentSharedFactory extends AppCompatActivity {
 
         int upcomingAppointmentsCount = appointments.size();
 
+        Log.d(TAG, "upcomingAppointmentsCount: " + upcomingAppointmentsCount);
 
         if (upcomingAppointmentsCount > 0) {
             redBubble.setVisibility(View.VISIBLE);
@@ -156,10 +169,11 @@ public class DropdownAppointmentSharedFactory extends AppCompatActivity {
         } else {
             redBubble.setVisibility(View.GONE);
         }
-        String separator = "\n⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯\n";
+        String separator = "\n⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯\n";
 
 
         String[] appointmentItems;
+
         if (upcomingAppointmentsCount > MAX_APPOINTMENTS) {
             appointmentItems = new String[upcomingAppointmentsCount];
             for (int i = 0; i < MAX_APPOINTMENTS; i++) {
@@ -177,12 +191,12 @@ public class DropdownAppointmentSharedFactory extends AppCompatActivity {
 
 
             builder.setItems(appointmentItems, (dialog, which) -> {
-                if (which == MAX_APPOINTMENTS) {
+                if (which >= MAX_APPOINTMENTS) {
 
-                    redirectToAppointmentsPage();
+                    redirectToAppointmentsPage(currActivity);
                 } else {
                     AppointmentR7 selectedAppointment = appointments.get(which);
-                    showAppointmentDialog(selectedAppointment,currActivity);
+                    showAppointmentDialog(selectedAppointment,currActivity ,  appointments,redBubble);
                 }
             });
         } else {
@@ -194,61 +208,89 @@ public class DropdownAppointmentSharedFactory extends AppCompatActivity {
             }
             builder.setItems(appointmentItems, (dialog, which) -> {
                 AppointmentR7 selectedAppointment = appointments.get(which);
-                showAppointmentDialog(selectedAppointment,currActivity);
+                showAppointmentDialog(selectedAppointment,currActivity ,appointments,redBubble);
             });
         }
+
+
+
+
+        ImageButton MoveToR7 = new ImageButton(currActivity);
+        MoveToR7.setImageResource(R.drawable.icon_map_fullscreen); // Set the icon for the button
+        MoveToR7.setBackground(null); // Remove the button background
+        MoveToR7.setScaleType(ImageView.ScaleType.CENTER_INSIDE); // Set the scale type
+
+        LinearLayout.LayoutParams MoveToR7Params = new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.WRAP_CONTENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+        );
+        MoveToR7Params.gravity = Gravity.END | Gravity.TOP; // Set gravity to top right corner
+        MoveToR7.setLayoutParams(MoveToR7Params); // Apply the layout parameters
+
+        LinearLayout dialogLayout = new LinearLayout(currActivity);
+        dialogLayout.setOrientation(LinearLayout.VERTICAL);
+        dialogLayout.addView(MoveToR7);
+        builder.setView(dialogLayout);
+
+        MoveToR7.setOnClickListener(view -> {
+            Intent intent = new Intent(currActivity,R7.class);
+            currActivity.startActivity(intent);
+        });
 
         builder.show();
     }
 
 
-    public void showAppointmentDialog(AppointmentR7 appointment, AppCompatActivity currActivity) {
+    public void showAppointmentDialog(AppointmentR7 appointment, AppCompatActivity currActivity, List<AppointmentR7> appointmentList,TextView redBubble) {
         AlertDialog.Builder builder = new AlertDialog.Builder(currActivity, R.style.AlertDialogTheme);
         builder.setTitle("Απόφαση Ραντεβού");
         builder.setIcon(R.drawable.r7_baseline_access_time_24);
+        AtomicBoolean canceled = new AtomicBoolean(false);
 
         builder.setMessage("Θέλετε να πραγματοποιήσετε το ραντεβού σας " + appointment.getDate() +
                 "\n ,την ώρα  " + appointment.getTime() +
                 "\n, για τον ασθενή " + appointment.getPatientName() + " ;");
         builder.setPositiveButton("Accept", (dialog, which) -> {
-            // Handle accept action
-            // You can perform any necessary operations when the appointment is accepted
-            acceptAppointment(appointment,currActivity,cardContainer);
+
+            canceled.set(false);
+            updateDropdownList(appointment,appointmentList,redBubble);
+            sendPatientNameToServer(appointment, canceled.get());
+
         });
-        builder.setNegativeButton("Άκυρο", (dialog, which) -> dialog.dismiss());
+        builder.setNegativeButton("Διαγραφή", (dialog, which)-> {
+            canceled.set(true);
+            updateDropdownList(appointment,appointmentList,redBubble);
+            sendPatientNameToServer(appointment, canceled.get());
+        });
+        builder.setNeutralButton("Ακυρο",(dialog,which)->dialog.dismiss());
         builder.setCancelable(false);
         builder.create().show();
     }
 
 
-    public void acceptAppointment(AppointmentR7 appointment, AppCompatActivity currActivity, RelativeLayout cardContainer) {
-        // Update the TextView with a green border
-        for (int i = 0; i < cardContainer.getChildCount(); i++) {
-            View appointmentCard = cardContainer.getChildAt(i);
-            TextView textPatientName = appointmentCard.findViewById(R.id.textPatientName);
 
-            try {
-                if (textPatientName.getText().toString().equals(appointment.getPatientName())) {
-                    // Apply the green border to the appointment card
-                    appointmentCard.setBackgroundResource(R.drawable.r7_roundedshape_accepted);
-
-                    appointmentCard.setClickable(false);
-
-                    // Send the patient name back to the server
-                    sendPatientNameToServer(appointment.getPatientName());
+    public void updateDropdownList(AppointmentR7 appointment , List<AppointmentR7> appointmentList,TextView redBubble) {
 
 
+            for (int i = 0; i < appointmentList.size(); i++) {
+                AppointmentR7 patient = appointmentList.get(i);
+                if (patient.getPatientName().equals(appointment.getPatientName())) {
+                    appointmentList.remove(i);
                     break;
                 }
-            } catch (Exception e) {
-                Log.e(TAG, "Exception occurred while accepting appointment: " + e.getMessage());
             }
+            redBubble.setText(String.valueOf(appointmentList.size()));
         }
-    }
 
-    public void sendPatientNameToServer(String patientName) {
+
+
+    public void sendPatientNameToServer(AppointmentR7 appointment,boolean canceled) {
         RequestBody requestBody = new FormBody.Builder()
-                .add("patientName", patientName)
+                .add("patientId", appointment.getPatientId())
+                .add("status",appointment.getStatus())
+                .add("canceled", String.valueOf(canceled))
+
+
                 .build();
 
         Request request = new Request.Builder()
@@ -284,19 +326,63 @@ public class DropdownAppointmentSharedFactory extends AppCompatActivity {
 
 
 
-    public void redirectToAppointmentsPage() {
-        recreate();
+    public void redirectToAppointmentsPage(AppCompatActivity currActivity) {
+        Intent i = new Intent(currActivity, R7.class);
+       currActivity.startActivity(i);
 
     }
     public List<AppointmentR7> parseAppointmentsFromJson(String json) {
-        Type listType = new TypeToken<List<AppointmentR7>>() {
-        }.getType();
+        List<AppointmentR7> appointments = new ArrayList<>();
         try {
-            return gson.fromJson(json, listType);
-        } catch (Exception e) {
-            Log.e(TAG, "Failed to parse JSON: " + e.getMessage());
+
+            if (!json.isEmpty()) {
+                JSONArray jsonArray = new JSONArray(json);
+
+                int length = jsonArray.length();
+
+                Log.d(TAG, "length of json array : " + length);
+
+
+                for (int i = 0; i < length; i++) {
+                    JSONObject appointmentObject = jsonArray.getJSONObject(i);
+
+                    String dateTime = appointmentObject.getString("date_time");
+                    String status = appointmentObject.getString("status");
+                    String firstName = appointmentObject.getString("first_name");
+                    String lastName = appointmentObject.getString("last_name");
+                    String patientId =appointmentObject.getString("patient_id");
+
+
+                    //Changes to some of the fields
+                    String patientName = firstName + " " + lastName;
+                    String[] dateTimeParts = dateTime.split(" ");
+                    String date = dateTimeParts[0];
+                    String time = dateTimeParts[1];
+
+
+                    //Create the appointment
+
+
+                        AppointmentR7 currAppointment = new AppointmentR7(date, time, patientName, status, patientId);
+                        appointments.add(currAppointment);
+
+
+
+
+
+
+            }
+
         }
-        return null;
+
+
+
+    } catch (JSONException e) {
+            e.printStackTrace();
+            Log.e(TAG, "Exception occurred while processing the json file (inside the function) " + e.getMessage());
+        }
+
+        return appointments;
     }
 
     public void showToast(final String message) {
@@ -304,7 +390,6 @@ public class DropdownAppointmentSharedFactory extends AppCompatActivity {
         currActivity.runOnUiThread(() ->
                 Toast.makeText(currActivity, message, Toast.LENGTH_SHORT).show());
     }
-
     public interface NetworkCallback<T> {
         void onSuccess(T data);
 

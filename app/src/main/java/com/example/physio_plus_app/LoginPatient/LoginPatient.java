@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -36,8 +37,6 @@ public class LoginPatient extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        Intent intent = new Intent(getApplicationContext(), R9.class);
-        startActivity(intent);
 
     }
 

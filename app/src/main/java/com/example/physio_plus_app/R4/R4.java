@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -14,6 +15,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.physio_plus_app.R;
 import com.example.physio_plus_app.R5.R5;
+import com.example.physio_plus_app.R7.AppointmentForIntentFactory;
+import com.example.physio_plus_app.R7.DropdownAppointmentSharedFactory;
 import com.example.physio_plus_app.Utils.AppObserver;
 import com.example.physio_plus_app.Utils.Entities.Patient;
 import com.example.physio_plus_app.Utils.Entities.PhysioCenter;
@@ -34,11 +37,11 @@ public class R4 extends AppCompatActivity {
 
     private RelativeLayout cardContainer;
 
-//    AppointmentForIntentFactory appointmentManager;
+    AppointmentForIntentFactory appointmentManager;
 
     TextView redBubble;
 
-//    private DropdownAppointmentSharedFactory dropdownAppointmentSharedFactory;
+    private DropdownAppointmentSharedFactory dropdownAppointmentSharedFactory;
 //    private Gson gson;
 //    private OkHttpClient client;
 //    TextView age_tv;
@@ -86,10 +89,24 @@ public class R4 extends AppCompatActivity {
 
 
 
+
         cardContainer = findViewById(R.id.cardContainer);
+
+
+        /* Layout obbjects */
+
         redBubble = findViewById(R.id.redBubbleText);
         redBubble.setVisibility(View.GONE);
 //        LinearLayout appointmentCardsContainer = findViewById(R.id.appointmentCardsContainer);
+
+
+        Button appointmentsButton = findViewById(R.id.calendarTopBar);
+
+        appointmentsButton.setOnClickListener(v->{
+            dropdownAppointmentSharedFactory.fetchUpcomingAppointmentsForDropdown(this,redBubble);
+        });
+
+
 
 
 
@@ -97,6 +114,7 @@ public class R4 extends AppCompatActivity {
 //        gson = new Gson();
 //        client = new OkHttpClient();
 //        dropdownAppointmentSharedFactory = new DropdownAppointmentSharedFactory(R4.this);
+
 
 
 

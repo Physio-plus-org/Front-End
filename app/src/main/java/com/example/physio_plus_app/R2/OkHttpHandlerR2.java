@@ -1,14 +1,13 @@
 package com.example.physio_plus_app.R2;
 
-import android.os.StrictMode;
 
 import com.example.physio_plus_app.Utils.Entities.Service;
+
 
 import java.io.IOException;
 
 public abstract class OkHttpHandlerR2 {
     private static final String file_folder = "R2/";
-    private static final StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
     public static String insertData(Service params) throws IOException {
 //        StrictMode.setThreadPolicy(policy);
 //        final String myIP = "192.168.1.6";
@@ -35,5 +34,6 @@ public abstract class OkHttpHandlerR2 {
 //                .build();
 //        client.newCall(request).execute();
         return null;
+
     }
 }

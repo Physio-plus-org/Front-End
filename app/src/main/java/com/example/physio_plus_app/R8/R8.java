@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -22,6 +23,12 @@ import com.example.physio_plus_app.Utils.HttpHandler.PhysioCenter.ActionRegister
 import com.example.physio_plus_app.Utils.HttpHandler.PhysioCenter.AllServicesHandler;
 import com.example.physio_plus_app.Utils.RequestParams;
 
+import com.example.physio_plus_app.R3.R3;
+import com.example.physio_plus_app.R6.R6;
+import com.example.physio_plus_app.R7.DropdownAppointmentSharedFactory;
+import com.example.physio_plus_app.R7.R7;
+
+
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -33,6 +40,9 @@ import java.util.Locale;
 
 public class R8 extends AppCompatActivity {
 
+
+    TextView redBubble;
+    private DropdownAppointmentSharedFactory dropdownAppointmentSharedFactory;
     private TextView nameTextView;
     private TextView addressTextView;
     private TextView dateInfoTextView;
@@ -84,9 +94,22 @@ public class R8 extends AppCompatActivity {
             RaiseToast("Failed");
         }
 
+        /* Layout obbjects */
+        redBubble = findViewById(R.id.redBubbleText);
+        redBubble.setVisibility(View.GONE);
+
         /* Topbar */
+        //Initialize Appointment Object
+        dropdownAppointmentSharedFactory = new DropdownAppointmentSharedFactory(this);
+        dropdownAppointmentSharedFactory.testConnection();
         ImageView goBackButton = findViewById(R.id.goback);
         goBackButton.setOnClickListener(v -> finish());
+
+        Button appointmentsButton = findViewById(R.id.calendarTopBar);
+
+        appointmentsButton.setOnClickListener(v->{
+            dropdownAppointmentSharedFactory.fetchUpcomingAppointmentsForDropdown(this,redBubble);
+        });
 
     }
     public void onSubmit(View view) {
