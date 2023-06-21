@@ -150,6 +150,16 @@ public class R5 extends AppCompatActivity  {
         ImageView addPatientFootbarButton = findViewById(R.id.addPatientFootbar);
 
 
+        Button appointmentsButton = findViewById(R.id.calendarTopBar);
+
+        appointmentsButton.setOnClickListener(v->{
+            dropdownAppointmentSharedFactory.fetchUpcomingAppointmentsForDropdown(this,redBubble);
+        });
+
+        /* Layout obbjects */
+        redBubble = findViewById(R.id.redBubbleText);
+        redBubble.setVisibility(View.GONE);
+
 
         goBackButton.setOnClickListener(v -> finish());
 

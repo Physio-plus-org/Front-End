@@ -57,7 +57,7 @@ public class R7 extends AppCompatActivity {
 
 
         List<AppointmentR7> appointments = null;
-        appointmentManager = new AppointmentForIntentFactory();
+        appointmentManager = new AppointmentForIntentFactory(R7.this);
 
 
         /* Layout objects */
@@ -71,7 +71,6 @@ public class R7 extends AppCompatActivity {
         /* Network-Database oriented Objects */
         gson = new Gson();
         client = new OkHttpClient();
-        dropdownAppointmentSharedFactory = new DropdownAppointmentSharedFactory(R7.this);
 
 
 
@@ -98,18 +97,15 @@ public class R7 extends AppCompatActivity {
         });
 
 
-        dropdownAppointmentSharedFactory.testConnection();
-        dropdownAppointmentSharedFactory.fetchUpcomingAppointmentsForDropdown(R7.this);
 
-        appointmentManager.fetchUpcomingAppointments(R7.this);
-        appointmentManager.populateAppointmentCards(appointments,appointmentCardsContainer,R7.this);
-        setCalendarTopBarClickListener(calendarTopBar);
 
-    }
 
-    private void setCalendarTopBarClickListener(View calendarTopBar) {
 
-        calendarTopBar.setOnClickListener(v -> dropdownAppointmentSharedFactory.fetchUpcomingAppointmentsForDropdown(R7.this));
+        appointmentManager.fetchUpcomingAppointmentsForIntent(R7.this,redBubble,appointmentCardsContainer);
+
+
 
     }
+
+
 }

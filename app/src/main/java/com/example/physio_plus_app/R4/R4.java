@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -81,17 +82,30 @@ public class R4 extends AppCompatActivity {
 
 
 
+
         cardContainer = findViewById(R.id.cardContainer);
+
+
+        /* Layout obbjects */
+
         redBubble = findViewById(R.id.redBubbleText);
         redBubble.setVisibility(View.GONE);
         LinearLayout appointmentCardsContainer = findViewById(R.id.appointmentCardsContainer);
+
+
+        Button appointmentsButton = findViewById(R.id.calendarTopBar);
+
+        appointmentsButton.setOnClickListener(v->{
+            dropdownAppointmentSharedFactory.fetchUpcomingAppointmentsForDropdown(this,redBubble);
+        });
+
 
 
 
 
         gson = new Gson();
         client = new OkHttpClient();
-        dropdownAppointmentSharedFactory = new DropdownAppointmentSharedFactory(R4.this);
+
 
 
 

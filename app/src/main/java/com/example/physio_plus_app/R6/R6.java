@@ -113,8 +113,13 @@ public class R6 extends AppCompatActivity implements SelectListenerR6 {
 
 
 
+        //Initialize Appointment Object
+        dropdownAppointmentSharedFactory = new DropdownAppointmentSharedFactory(this);
+        dropdownAppointmentSharedFactory.testConnection();
+
         /* Topbar */
         ImageView goBackButton = findViewById(R.id.goback);
+
 
         /* Footbar */
         ImageView calendarFootbarButton = findViewById(R.id.calendarFootbar);
@@ -122,10 +127,15 @@ public class R6 extends AppCompatActivity implements SelectListenerR6 {
 
 
 
+        Button appointmentsButton = findViewById(R.id.calendarTopBar);
 
+        appointmentsButton.setOnClickListener(v->{
+            dropdownAppointmentSharedFactory.fetchUpcomingAppointmentsForDropdown(this,redBubble);
+        });
 
-
-
+        /* Layout obbjects */
+        redBubble = findViewById(R.id.redBubbleText);
+        redBubble.setVisibility(View.GONE);
 
         goBackButton.setOnClickListener(v -> finish());
 
@@ -152,18 +162,16 @@ public class R6 extends AppCompatActivity implements SelectListenerR6 {
 //
 
 
-        /* Layout obbjects */
-        redBubble = findViewById(R.id.redBubbleText);
-        redBubble.setVisibility(View.GONE);
+
 
 
 
 
         /* Network-Database oriented Objects */
-        gson = new Gson();
         client = new OkHttpClient();
-        dropdownAppointmentSharedFactory = new DropdownAppointmentSharedFactory(this);
-        dropdownAppointmentSharedFactory.fetchUpcomingAppointmentsForDropdown(this);
+
+
+
     }
 
 
