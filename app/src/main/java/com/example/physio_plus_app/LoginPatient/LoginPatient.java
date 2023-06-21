@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -28,13 +29,21 @@ public class LoginPatient extends AppCompatActivity {
     public void onClick(View view) {
 
         try {
-            OkHttpHandler.withdrawId(id_text.getText().toString());
+
+            if(OkHttpHandler.withdrawId(id_text.getText().toString())==null){
+                Toast.makeText(this, "try again", Toast.LENGTH_SHORT).show();
+            }
+            else{
+                Intent intent = new Intent(getApplicationContext(), R9.class);
+                Toast.makeText(this, "success", Toast.LENGTH_SHORT).show();
+                startActivity(intent);
+            }
+
+
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        Intent intent = new Intent(getApplicationContext(), R9.class);
-        startActivity(intent);
 
     }
 
