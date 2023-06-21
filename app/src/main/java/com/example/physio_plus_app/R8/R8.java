@@ -18,15 +18,20 @@ import com.example.physio_plus_app.Pararms.RequestParams;
 import com.example.physio_plus_app.Pararms.Service;
 import com.example.physio_plus_app.R;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Collections;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 public class R8 extends AppCompatActivity {
 
     private TextView nameTextView;
+    private TextView addressTextView;
+    private TextView dateInfoTextView;
     private TextView personalNumberTextView;
     private Spinner servicesSpinner;
     private ArrayAdapter<Service> dataAdapter;
@@ -43,8 +48,10 @@ public class R8 extends AppCompatActivity {
         Intent intent = getIntent();
         patient_id = intent.getStringExtra("patient_id");
 
-        this.nameTextView = findViewById(R.id.full_name);
-        this.personalNumberTextView = findViewById(R.id.personal_number);
+        this.nameTextView = findViewById(R.id.name_tv);
+        this.personalNumberTextView = findViewById(R.id.ssrn_tv);
+        this.dateInfoTextView = findViewById(R.id.date_tv);
+        this.addressTextView = findViewById(R.id.address_tv);
         this.notesTextView = findViewById(R.id.notes);
         this.dateTextView = findViewById(R.id.date_text);
 
@@ -99,7 +106,7 @@ public class R8 extends AppCompatActivity {
     public void onCalendarClick(View view) {
         Calendar c = Calendar.getInstance();
         DatePickerDialog dpDialog = new DatePickerDialog (
-                R8.this,
+                getApplicationContext(),
                 (view1, year, month, dayOfMonth) -> dateTextView.setText(getString(R.string.date_value, dayOfMonth, (month+1), year)),
                 c.get(Calendar.YEAR),
                 c.get(Calendar.MONTH),
@@ -107,11 +114,13 @@ public class R8 extends AppCompatActivity {
         );
         dpDialog.show();
     }
+
     protected void PatientInformationSetting(Patient patient) {
-        String fullName = patient.getFullName();
-        String pNumber = patient.getIdNumber();
-        this.nameTextView.setText(fullName);
-        this.personalNumberTextView.setText(pNumber);
+        this.nameTextView.setText(patient.getFullName());
+        this.personalNumberTextView.setText(patient.getIdNumber());
+        this.addressTextView.setText(patient.getAddress());
+        this.dateInfoTextView.setText(new SimpleDateFormat("dd/MM/yyyy", new Locale("greek")).format(new Date()));
+
     }
     protected void PatientInitializationRequest() throws Exception {
         String url = this.urlRoot + "patientRequest.php";

@@ -130,16 +130,15 @@ public class R6 extends AppCompatActivity implements SelectListenerR6 {
         goBackButton.setOnClickListener(v -> finish());
 
 
-        addPatientFootbarButton.setOnClickListener((v->{
-            Intent i = new Intent(R6.this, R3.class );
-            startActivity(i);
-
-        }));
-        calendarFootbarButton.setOnClickListener(v->{
-            Intent i = new Intent(R6.this, R6.class);
-            startActivity(i);
-        });
-
+//        addPatientFootbarButton.setOnClickListener((v->{
+//            Intent i = new Intent(R6.this, R3.class );
+//            startActivity(i);
+//
+//        }));
+//        calendarFootbarButton.setOnClickListener(v->{
+//            Intent i = new Intent(getApplicationContext(), R6.class);
+//            startActivity(i);
+//        });
         goBackButton.setOnClickListener(v -> finish());
 
        addPatientFootbarButton.setOnClickListener((v->{
@@ -171,10 +170,9 @@ public class R6 extends AppCompatActivity implements SelectListenerR6 {
 
     private List<String> dateHandler(LocalDateTime dateTime){
         List<String> dates = new ArrayList<>();
-        LocalDateTime date_start = dateTime;
-        LocalDateTime date_end = date_start.plusDays(1);
+        LocalDateTime date_end = dateTime.plusDays(1);
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        dates.add(date_start.format(formatter));
+        dates.add(dateTime.format(formatter));
         dates.add(date_end.format(formatter));
         return dates;
     }

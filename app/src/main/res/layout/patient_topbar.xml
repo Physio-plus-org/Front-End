@@ -41,7 +41,7 @@
                 android:layout_height="60dp"
                 android:layout_weight="1"
                 android:contentDescription="@string/physiologo"
-                app:srcCompat="@drawable/physio_logo_topbar"
+                app:srcCompat="@drawable/physio_logo_orange"
                 android:backgroundTint="@color/backgroundColor"/>
 
 

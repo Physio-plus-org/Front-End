@@ -36,7 +36,7 @@ public class MainPSF extends AppCompatActivity {
         ImageView physioCenter = findViewById(R.id.physiocenter_btn);
         ImageView serviceButton = findViewById(R.id.physio_btn);
 
-        goBackButton.setOnClickListener(v -> finish());
+//        goBackButton.setOnClickListener(v -> finish());
 
         addButton.setOnClickListener(v->{
             Intent i = new Intent(MainPSF.this, R2.class );

@@ -32,24 +32,49 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".R1.R1" />
-        <activity android:name=".R2.R2" />
-        <activity android:name=".R3.R3" />
-        <activity android:name=".R4.R4" />
+        <activity android:name=".R1.R1"
+            android:windowSoftInputMode="adjustPan"
+            />
+        <activity android:name=".R2.R2"
+            android:windowSoftInputMode="adjustPan"
+            />
+        <activity android:name=".R3.R3"
+            android:windowSoftInputMode="adjustPan"
+            />
+        <activity android:name=".R4.R4"
+            android:windowSoftInputMode="adjustPan"
+            />
         <activity android:name=".R5.R5"
             android:windowSoftInputMode="adjustPan"
             />
-        <activity android:name=".R6.R6" />
-        <activity android:name=".R7.R7" />
-        <activity android:name=".R8.R8" />
-        <activity android:name=".R9.R9" />
-        <activity android:name=".R9.R9_2"/>
-        <activity android:name=".R10.R10" />
+        <activity android:name=".R6.R6"
+            android:windowSoftInputMode="adjustPan"
+            />
+        <activity android:name=".R7.R7"
+            android:windowSoftInputMode="adjustPan"
+            />
+        <activity android:name=".R8.R8"
+            android:windowSoftInputMode="adjustPan"
+            />
+        <activity android:name=".R9.R9"
+            android:windowSoftInputMode="adjustPan"
+            />
+        <activity android:name=".R9.R9_2"
+            android:windowSoftInputMode="adjustPan"
+            />
+        <activity android:name=".R10.R10"
+            android:windowSoftInputMode="adjustPan"
+            />
         <activity android:name=".Main_PSF.MainPSF"
             android:windowSoftInputMode="adjustPan"
             />
-        <activity android:name=".LoginCenter.LoginCenter" />
-        <activity android:name=".LoginPatient.LoginPatient" />
+
+        <activity android:name=".LoginCenter.LoginCenter"
+            android:windowSoftInputMode="adjustPan"
+            />
+        <activity android:name=".LoginPatient.LoginPatient"
+            android:windowSoftInputMode="adjustPan"
+            />
 
     </application>
 
