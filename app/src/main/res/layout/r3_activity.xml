@@ -6,9 +6,35 @@
     android:layout_height="match_parent"
     tools:context=".R3.R3">
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-100sp"
+        android:contentDescription="@string/image_of_doctors"
+        android:paddingTop="-40sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/r3_682091152593" />
+
+    <include
+        android:id="@+id/top_bar_r3"
+        layout="@layout/top_bar_doctor"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></include>
+
     <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:id="@+id/scrollView5"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/r3_card_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -16,29 +42,11 @@
             android:orientation="vertical">
 
 
-            <include layout="@layout/top_bar_doctor"></include>
-
-
-
-            <LinearLayout
-                android:id="@+id/linearLayout2"
-                android:layout_width="match_parent"
-                android:layout_height="156dp"
-                tools:ignore="MissingConstraints">
-
-                <ImageView
-                    android:id="@+id/imageView"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    app:srcCompat="@drawable/r3_682091152593"
-                    android:contentDescription="@string/image_of_doctors" />
-            </LinearLayout>
-
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="456dp"
-                android:background="@drawable/r3_top_background_gradiunt"
-                android:backgroundTint="@color/backgroundColor"
+                android:layout_height="430sp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10sp"
                 android:orientation="vertical"
                 tools:ignore="MissingConstraints">
                 <!-- app:layout_gravity="center_horizontal"-->
@@ -49,6 +57,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
+                    android:layout_weight="1"
                     android:text="@string/r3_create_label"
                     android:textAlignment="center"
                     android:textColor="@color/text_color"
@@ -59,6 +68,7 @@
                     android:id="@+id/login"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:text="@string/r3_patient_label"
                     android:textAlignment="center"
                     android:textColor="@color/primaryColor"
@@ -70,8 +80,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginLeft="20dp"
-                    android:layout_marginTop="25dp"
                     android:layout_marginRight="20dp"
+                    android:layout_weight="1"
                     android:background="@drawable/r3_pedio"
                     android:backgroundTintMode="add"
                     android:drawableStart="@drawable/r3_account"
@@ -80,16 +90,16 @@
                     android:padding="8sp"
                     android:textColor="@color/sec_textColor"
                     android:textColorHint="@color/sec_textColor"
-                    tools:ignore="Autofill,TextFields,VisualLintTextFieldSize"
-                  />
+                    tools:ignore="Autofill,TextFields,VisualLintTextFieldSize" />
 
                 <EditText
                     android:id="@+id/surname"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginLeft="20dp"
-                    android:layout_marginTop="25dp"
+                    android:layout_marginTop="15sp"
                     android:layout_marginRight="20dp"
+                    android:layout_weight="1"
                     android:background="@drawable/r3_pedio"
                     android:backgroundTintMode="add"
                     android:drawableStart="@drawable/r3_account"
@@ -105,8 +115,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginLeft="20dp"
-                    android:layout_marginTop="25dp"
+                    android:layout_marginTop="15sp"
                     android:layout_marginRight="20dp"
+                    android:layout_weight="1"
                     android:background="@drawable/r3_pedio"
                     android:backgroundTintMode="add"
                     android:drawableStart="@drawable/r3_amka"
@@ -122,8 +133,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginLeft="20dp"
-                    android:layout_marginTop="25dp"
+                    android:layout_marginTop="15sp"
                     android:layout_marginRight="20dp"
+                    android:layout_weight="1"
                     android:background="@drawable/r3_pedio"
                     android:backgroundTintMode="add"
                     android:drawableStart="@drawable/r3_location"
@@ -139,8 +151,7 @@
             <LinearLayout
                 android:id="@+id/linearLayout"
                 android:layout_width="match_parent"
-                android:layout_height="63dp"
-                tools:ignore="MissingConstraints">
+                android:layout_height="63dp">
 
                 <ImageButton
                     android:id="@+id/backbtn"
@@ -148,8 +159,8 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:backgroundTint="@color/primaryColor"
-                    android:onClick="onClick"
                     android:contentDescription="@string/cancel_patient_add"
+                    android:onClick="onClick"
                     app:srcCompat="@drawable/baseline_cancel_24" />
 
                 <ImageButton
@@ -157,8 +168,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:contentDescription="@string/add_patient"
                     android:backgroundTint="@color/primaryColor"
+                    android:contentDescription="@string/add_patient"
                     android:onClick="onClick"
                     app:srcCompat="@drawable/baseline_save_as_24" />
             </LinearLayout>
