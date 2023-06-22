@@ -43,4 +43,8 @@ public class Patient implements User{
 
     public String getSurnamePatient(){return last_name;}
 
+    @Override
+    public String getId() {
+        return this.id_number;
+    }
 }

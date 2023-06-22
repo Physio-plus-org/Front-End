@@ -24,8 +24,7 @@ import java.util.Hashtable;
 
 public class R10 extends AppCompatActivity {
     private FinancialHistory financialHistory;
-    private String patient_id = "12345678";
-    private Patient patient;
+    private String patient_id;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,8 +32,9 @@ public class R10 extends AppCompatActivity {
 
         Intent intent = getIntent();
         patient_id = intent.getStringExtra("patient_id");
-        patient = (Patient) AppObserver.getLoggedUser();
         Request();
+        financialHistory.CheckDuplicates();
+        financialHistory.CalculateCosts();
         ShowFinancialHistory();
 
         //fOOTBAR
