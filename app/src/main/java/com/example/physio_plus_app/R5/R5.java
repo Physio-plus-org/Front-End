@@ -10,7 +10,6 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.SearchView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
@@ -188,7 +187,7 @@ public class R5 extends AppCompatActivity  {
 
 
 //            recreate();
-            Toast.makeText(this, "success", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(this, "success", Toast.LENGTH_SHORT).show();
         }
     }
 

@@ -160,7 +160,6 @@
                     android:layout_weight="1"
                     android:backgroundTint="@color/primaryColor"
                     android:contentDescription="@string/cancel_patient_add"
-                    android:onClick="onClick"
                     app:srcCompat="@drawable/baseline_cancel_24" />
 
                 <ImageButton
