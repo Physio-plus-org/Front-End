@@ -1,7 +1,10 @@
 package com.example.physio_plus_app.Utils.Entities;
 
+import android.graphics.Typeface;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.example.physio_plus_app.Utils.AppObserver;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -40,7 +43,17 @@ public class PhysioCenter implements User{
                         LinearLayout.LayoutParams.WRAP_CONTENT
                 )
         );
+        textView.setTypeface(null, Typeface.BOLD);
         textView.setText(this.name);
         linearLayout.addView(textView);
+    }
+
+    public String getHashKey() {
+        return AppObserver.getLoggedUser().getId() + this.centerId;
+    }
+
+    @Override
+    public String getId() {
+        return this.centerId;
     }
 }

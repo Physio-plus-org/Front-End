@@ -14,15 +14,16 @@ import java.util.Date;
 import java.util.Locale;
 
 public class Session {
-    private int sessionId;
-    private ArrayList<Service> services = new ArrayList<>();
+    private final int sessionId;
+    private final ArrayList<Service> services = new ArrayList<>();
     private Date sessionDate;
-    private String sessionNotes;
+    private final String sessionNotes;
     private double sessionCost;
+    private final SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", new Locale("Greek"));
+
     public Session(JSONObject jsonObject) throws JSONException, ParseException {
         this.sessionId = Integer.parseInt(jsonObject.get("id").toString());
 //        String[] date_details = jsonObject.getJSONArray("date").toString().split("-");
-        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", new Locale("Greek"));
         try {
             this.sessionDate = format.parse(jsonObject.get("date").toString());
         } catch (ParseException e) {
@@ -42,10 +43,16 @@ public class Session {
     }
 
     public void show(LinearLayout linearLayout) {
-        LinearLayout ser_linearLayout = new LinearLayout(linearLayout.getContext());
-        ser_linearLayout.setOrientation(LinearLayout.VERTICAL);
+        TextView dateView = new TextView(linearLayout.getContext());
+        dateView.setLayoutParams(new LinearLayout.LayoutParams(
+                        LinearLayout.LayoutParams.WRAP_CONTENT,
+                        LinearLayout.LayoutParams.WRAP_CONTENT
+                )
+        );
+        dateView.setText(format.format(this.sessionDate));
+        linearLayout.addView(dateView);
         for (Service service : this.services) {
-            service.show(ser_linearLayout);
+            service.show(linearLayout);
         }
         TextView textView = new TextView(linearLayout.getContext());
         textView.setLayoutParams(new LinearLayout.LayoutParams(
@@ -54,7 +61,14 @@ public class Session {
                 )
         );
         textView.setText(String.format(Locale.getDefault(), "Συνολικό κόστος: %.2f€", this.sessionCost));
-        ser_linearLayout.addView(textView);
-        linearLayout.addView(ser_linearLayout);
+        linearLayout.addView(textView);
+    }
+
+    public double getCost() {
+        double cost = 0;
+        for (Service service : this.services) {
+            cost += service.getCost();
+        }
+        return cost;
     }
 }
