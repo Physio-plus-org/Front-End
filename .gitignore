@@ -84,9 +84,13 @@ lint/outputs/
 lint/tmp/
 # lint/reports/
 
+*.lock
+jdks/
 caches/
 .tmp/
 wrapper/
 native/
-android/
 daemon/
+android/
+.idea/misc.xml 
+

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scroll_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="false"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:id="@+id/vertical_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/physio_logo_login_image"
+            android:layout_width="326dp"
+            android:layout_height="125dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="50dp"
+            app:srcCompat="@drawable/r1_physio_logo"
+            android:contentDescription="@string/logo_image_description" />
+
+        <TextView
+            android:id="@+id/prompt_login_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:text="@string/r1_prompt_login"
+            android:textAlignment="center"
+            android:textColor="@color/text_color"
+            android:textSize="34sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/physio_club_button"
+                android:layout_width="321dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/black"
+                android:onClick="physioClubActivity"
+                android:paddingLeft="48dp"
+                android:paddingTop="32dp"
+                android:paddingRight="48dp"
+                android:paddingBottom="32dp"
+                android:text="@string/r1EnterButtonPSF"
+                android:textColor="@color/white"
+                android:textSize="48sp"
+                android:textStyle="bold"
+                tools:ignore="VisualLintButtonSize" />
+
+            <Button
+                android:id="@+id/physio_center_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/R1_primaryColor"
+                android:onClick="physioCenterActivity"
+                android:paddingLeft="48dp"
+                android:paddingTop="32dp"
+                android:paddingRight="48dp"
+                android:paddingBottom="32dp"
+                android:text="@string/r1EnterButtonPhysio"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="34sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/physio_patient_button"
+                android:layout_width="321dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/orange"
+                android:onClick="physioPatientActivity"
+                android:paddingTop="32dp"
+                android:paddingBottom="32dp"
+                android:text="@string/r1EnterButtonPat"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="48sp"
+                android:textStyle="bold"
+                tools:ignore="VisualLintButtonSize" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

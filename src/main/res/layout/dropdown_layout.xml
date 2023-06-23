@@ -1,0 +1,27 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@android:color/white"
+    android:padding="8dp">
+
+    <TextView
+        android:id="@+id/appointment1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Appointment 1" />
+
+    <TextView
+        android:id="@+id/appointment2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Appointment 2" />
+
+    <TextView
+        android:id="@+id/appointment3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Appointment 3" />
+
+</LinearLayout>

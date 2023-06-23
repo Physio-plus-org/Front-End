@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <domain-config cleartextTrafficPermitted="true">
+        //The ip might change , because of the ip of our service
+        <domain includeSubdomains="true">
+            physioplus.000webhostapp.com
+        </domain>
+    </domain-config>
+</network-security-config>

@@ -1,10 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
-    <color name="black">#FF000000</color>
+
+    <!--Physio + General Colours -->
+
+    <color name="text_color">#FF000000</color>
+    <color name="sec_textColor">#D0D0D0</color>
+    <color name="primaryColor">#008563</color>
+    <color name="secondGreen">#54BA78</color>
+
+    <!--R1-->
+    <color name="R1_primaryColor">#008563</color>
+    <color name="blue">#2B00BC</color>
+    <color name="dark_grey">#707070</color>
+    <color name="R1_backgroundColor">#C4C4C4</color>
+    <color name="green_yes">#0CDB0C</color>
+    <color name="red_no">#F95F5F</color>
+    <!--R2-->
+    <color name="transparent">#00000000</color>
+
+    <!--R4-->
+    <color name="R4_primaryColor">#008563</color>
+    <color name="R4_backgroundColor">#FFFFFFFF</color>
+    <color name="R4_textColor">#FF000000</color>
+    <color name="R4_scrollColor">#54BA78</color>
+
+    <!--R6-->
+    <color name="light_green">#54BA78</color>
+    <!--R7-->
+    <color name="PrimaryGreen">#008563</color>
+    <color name="SecondaryLightGrey">#e1e1e1</color>
+    <color name="SecondaryDarkGrey">#1c1c1c</color>
+    <color name="AccentBrightRed">#ff5c5c</color>
+    <color name="AccentOrange">#f0ad4e</color>
+    <color name="acceptButton">#00FF00</color> <!-- Set your desired accept button color -->
+    <color name="cancelButton">#FF0000</color> <!-- Set your desired cancel button color -->
+
+    <!--R8-->
+
+    <color name="colorPrimary">#008563</color>
+    <color name="colorPrimaryVariant">#00694E</color>
+    <color name="colorPrimaryDeSat">#2C806B</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorPrimaryVariantDark">#004A40</color>
+
+
     <color name="white">#FFFFFFFF</color>
+    <color name="light_gray">#D9D9D9</color>
+    <color name="divider_gray">#D0D0D0</color>
+    <color name="gray">#878787</color>
+    <color name="light_black">#181818</color>
+    <color name="black">#FF000000</color>
+
+    <!--R9-->
+    <color name="light_white">#ADFFFFFF</color>
+    <color name="orange">#F0AD4E</color>
+    <color name="light_orange">#B7ECAD55</color>
+
+    <!--top_bar-->
+    <color name="dividerColor">#707070</color>
+    <color name="backgroundColor">#FFFFFFFF</color>
+    <color name="iconsColor">#FF000000</color>
+    <color name="notifyColor">#EA472E</color>
+
+
 </resources>

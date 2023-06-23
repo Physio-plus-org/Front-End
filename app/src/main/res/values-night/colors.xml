@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+<!--    <color name="background_color">#FF000000</color>-->
+<!--    <color name="secondary_green">#1F3A33</color>-->
+<!--    <color name="Transparent">#00000000</color>-->
+
+<!--    <color name="primary_color_dr">#F0AD4E</color>-->
+
+
+    <!--Physio + General Colours -->
+
+    <color name="text_color">#FFFFFFFF</color>
+    <color name="sec_textColor">#707070</color>
+    <color name="primaryColor">#008563</color>
+    <color name="secondGreen">#15EDC2</color>
+
+    <!--R1-->
+    <color name="R1_primaryColor">#008563</color>
+    <color name="blue">#2B00BC</color>
+    <color name="dark_grey">#707070</color>
+    <color name="R1_backgroundColor">#FF000000</color>
+    <color name="green_yes">#0CDB0C</color>
+    <color name="red_no">#F95F5F</color>
+
+    <!--R4-->
+    <color name="R4_primaryColor">#008563</color>
+    <color name="R4_backgroundColor">#FF000000</color>
+    <color name="R4_textColor">#FFFFFFFF</color>
+    <color name="R4_scrollColor">#004A40</color>
+
+    <!--R7-->
+    <color name="SecondaryLightGrey">#181818</color>
+
+    <!--top_bar-->
+    <color name="dividerColor">#181818</color>
+    <color name="backgroundColor">#FF000000</color>
+    <color name="iconsColor">#FFFFFFFF</color>
+    <color name="notifyColor">#15EDC2</color>
+
+</resources>

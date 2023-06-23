@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".R3.R3">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-50sp"
+        android:contentDescription="@string/image_of_doctors"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/r3_682091152593" />
+
+    <include
+        android:id="@+id/top_bar_r3"
+        layout="@layout/top_bar_doctor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></include>
+
+    <ScrollView
+        android:id="@+id/scrollView5"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/r3_card_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10sp"
+                android:minHeight="350sp"
+                android:orientation="vertical"
+                tools:ignore="MissingConstraints">
+                <!-- app:layout_gravity="center_horizontal"-->
+
+
+                <TextView
+                    android:id="@+id/loginTest"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_weight="1"
+                    android:text="@string/r3_create_label"
+                    android:textAlignment="center"
+                    android:textColor="@color/text_color"
+                    android:textSize="28sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/login"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/r3_patient_label"
+                    android:textAlignment="center"
+                    android:textColor="@color/primaryColor"
+                    android:textSize="28sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/username"
+                    android:layout_width="match_parent"
+                    android:layout_height="30sp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/r3_pedio"
+                    android:backgroundTintMode="add"
+                    android:drawableStart="@drawable/r3_account"
+                    android:drawablePadding="8dp"
+                    android:hint="@string/name"
+                    android:padding="8sp"
+                    android:textColor="@color/sec_textColor"
+                    android:textColorHint="@color/sec_textColor"
+                    tools:ignore="Autofill,TextFields,VisualLintTextFieldSize" />
+
+                <EditText
+                    android:id="@+id/surname"
+                    android:layout_width="match_parent"
+                    android:layout_height="30sp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="15sp"
+                    android:layout_marginRight="20dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/r3_pedio"
+                    android:backgroundTintMode="add"
+                    android:drawableStart="@drawable/r3_account"
+                    android:drawablePadding="8dp"
+                    android:hint="@string/surname"
+                    android:padding="8sp"
+                    android:textColor="@color/sec_textColor"
+                    android:textColorHint="@color/sec_textColor"
+                    tools:ignore="Autofill,TextFields,VisualLintTextFieldSize" />
+
+                <EditText
+                    android:id="@+id/amka"
+                    android:layout_width="match_parent"
+                    android:layout_height="30sp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="15sp"
+                    android:layout_marginRight="20dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/r3_pedio"
+                    android:backgroundTintMode="add"
+                    android:drawableStart="@drawable/r3_amka"
+                    android:drawablePadding="8dp"
+                    android:hint="@string/r3_amka_label"
+                    android:padding="8sp"
+                    android:textColor="@color/sec_textColor"
+                    android:textColorHint="@color/sec_textColor"
+                    tools:ignore="Autofill,TextFields,VisualLintTextFieldSize" />
+
+                <EditText
+                    android:id="@+id/addess"
+                    android:layout_width="match_parent"
+                    android:layout_height="30sp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="15sp"
+                    android:layout_marginRight="20dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/r3_pedio"
+                    android:backgroundTintMode="add"
+                    android:drawableStart="@drawable/r3_location"
+                    android:drawablePadding="8dp"
+                    android:hint="@string/r3_address_label"
+                    android:padding="8sp"
+                    android:textColor="@color/sec_textColor"
+                    android:textColorHint="@color/sec_textColor"
+                    tools:ignore="Autofill,TextFields,VisualLintTextFieldSize" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="63dp">
+
+                <ImageButton
+                    android:id="@+id/backbtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/primaryColor"
+                    android:contentDescription="@string/cancel_patient_add"
+                    app:srcCompat="@drawable/baseline_cancel_24" />
+
+                <ImageButton
+                    android:id="@+id/createbtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/primaryColor"
+                    android:contentDescription="@string/add_patient"
+                    android:onClick="onClick"
+                    app:srcCompat="@drawable/baseline_save_as_24" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
