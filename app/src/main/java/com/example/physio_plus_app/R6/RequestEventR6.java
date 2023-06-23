@@ -1,5 +1,10 @@
 package com.example.physio_plus_app.R6;
 
+import android.widget.Toast;
+
+import com.example.physio_plus_app.Utils.HttpHandler.PhysioCenter.AllRequestsHandler;
+import com.example.physio_plus_app.Utils.RequestParams;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,13 +26,17 @@ public class RequestEventR6 {
         String url = "https://physioplus.000webhostapp.com/R6/requestEvents.php?range_start="+ range_start +"&range_end="+range_end+"&status=UPCOMING";
 
         try {
-            OkHttpHandlerR6 okHttpHandler = new OkHttpHandlerR6();
-            this.events = okHttpHandler.reqEvents(url);
+//            OkHttpHandlerR6 okHttpHandler = new OkHttpHandlerR6();
+//            this.events = okHttpHandler.reqEvents(url);
+            this.events = AllRequestsHandler.request(
+                    new RequestParams()
+                            .add("range_start", range_start)
+                            .add("range_end", range_end)
+                            .add("status", "UPCOMING")
+            );
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-
         return events;
     }
 }

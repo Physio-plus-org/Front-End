@@ -67,19 +67,11 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.ServiceV
     @Override
     public ServiceAdapter.ServiceViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.main_psf_list, parent, false);
-        view.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (view.findViewById(R.id.code_field).getVisibility() == View.GONE && view.findViewById(R.id.desc_field).getVisibility() == View.GONE) {
-                    view.findViewById(R.id.code_field).setVisibility(View.VISIBLE);
-                    view.findViewById(R.id.desc_field).setVisibility(View.VISIBLE);
-                }else{
-                    view.findViewById(R.id.code_field).setVisibility(View.GONE);
-                    view.findViewById(R.id.desc_field).setVisibility(View.GONE);
-                }
-            }
+        ServiceViewHolder holder = new ServiceViewHolder(view);
+        holder.itemView.setOnClickListener(v -> {
+            holder.changeState();
         });
-        return new ServiceViewHolder(view);
+        return holder;
     }
 
     @Override
@@ -105,6 +97,7 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.ServiceV
         private final TextView description;
         private final TextView code;
         private final TextView cost;
+        private boolean gone;
 
         public ServiceViewHolder (@NonNull View itemView) {
             super(itemView);
@@ -113,6 +106,7 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.ServiceV
             code = itemView.findViewById(R.id.code_field);
             cost = itemView.findViewById(R.id.cost_field);
             description = itemView.findViewById(R.id.desc_field);
+            gone = itemView.getVisibility() == View.GONE;
         }
         public TextView getTitle() {
             return title;
@@ -125,6 +119,14 @@ public class ServiceAdapter extends RecyclerView.Adapter<ServiceAdapter.ServiceV
         }
         public TextView getCost() {
             return cost;
+        }
+        public boolean isGone() {
+            return gone;
+        }
+        public void changeState() {
+            gone = !gone;
+            code.setVisibility(gone ? View.GONE : View.VISIBLE);
+            description.setVisibility(gone ? View.GONE : View.VISIBLE);
         }
 
     }

@@ -7,8 +7,12 @@ public abstract class AppObserver {
     public static String getId() {
         return user.getId();
     }
-    public static void setLoggedUser(User loggedUser) {
-        user = loggedUser;
+    public static void setLoggedUser(User loggedUser) throws Exception {
+        if (loggedUser != null) {
+            user = loggedUser;
+        } else {
+            throw new Exception("Failed to connect user");
+        }
     }
 
     public static User getLoggedUser() {

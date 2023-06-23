@@ -124,8 +124,7 @@ public class R4 extends AppCompatActivity {
         goBackView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View goBackView) {
-                Intent intent = new Intent(R4.this, R5.class);
-                startActivity(intent);
+                finish();
             }
         });
 

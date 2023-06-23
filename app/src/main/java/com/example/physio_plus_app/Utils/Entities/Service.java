@@ -4,6 +4,8 @@ import android.util.Log;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -50,6 +52,12 @@ public class Service {
         return serviceDescription;
     }
     public double getCost() {return serviceCost;}
+
+    @NonNull
+    @Override
+    public String toString() {
+        return this.serviceTitle + " ("+this.serviceCode+") " + this.serviceCost + "€";
+    }
 
     public void print() {
         Log.e("service", serviceTitle+"|"+serviceCode+"|"+serviceCost+"|"+serviceDescription);

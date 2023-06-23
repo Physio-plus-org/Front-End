@@ -48,13 +48,13 @@ public class R8 extends AppCompatActivity {
     private TextView dateInfoTextView;
     private TextView personalNumberTextView;
     private Spinner servicesSpinner;
-    private ArrayAdapter<Service> dataAdapter;
+//    private ArrayAdapter<Service> dataAdapter;
+    private ServiceSpinnerAdapter dataAdapter;
    private final ArrayList<Service> servicesList = new ArrayList<>();
     private TextView notesTextView;
     private TextView dateTextView;
     private String patient_id;
     private Patient patient;
-    private final String urlRoot = "https://physioplus.000webhostapp.com/R8/";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -74,9 +74,10 @@ public class R8 extends AppCompatActivity {
         this.dateTextView = findViewById(R.id.date_text);
 
         this.servicesSpinner = findViewById(R.id.services);
-        this.dataAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, this.servicesList);
+//        this.dataAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, this.servicesList);
         /*this.dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);*/
         /*this.servicesSpinner.setAdapter(this.dataAdapter);*/
+        this.dataAdapter = new ServiceSpinnerAdapter(this, this.servicesList);
         this.servicesSpinner.setAdapter(
                 new NothingSelectedSpinnerAdapterR8(
                         this.dataAdapter,
@@ -85,13 +86,13 @@ public class R8 extends AppCompatActivity {
                         this
                 )
         );
-        Log.e("patient", patient_id);
         //ServerRequest
         try {
             DataBaseInitializationRequest();
             RaiseToast("Success");
         } catch (Exception e) {
             RaiseToast("Failed");
+            e.printStackTrace();
         }
 
         /* Layout obbjects */
@@ -149,20 +150,15 @@ public class R8 extends AppCompatActivity {
         dpDialog.show();
     }
 
-    protected void PatientInformationSetting(Patient patient) {
+    protected void PatientInformationSetting() {
         this.nameTextView.setText(patient.getFullName());
         this.personalNumberTextView.setText(patient.getIdNumber());
         this.addressTextView.setText(patient.getAddress());
         this.dateInfoTextView.setText(new SimpleDateFormat("dd/MM/yyyy", new Locale("greek")).format(new Date()));
 
     }
-    protected void PatientInitializationRequest() throws Exception {
-//        String url = this.urlRoot + "patientRequest.php";
-//        RequestParams params = new RequestParams();
-//        params.add("patient_id", patient_id);
-//        Patient patient = PatientHttpHandlerR8.request(url, params);
-//        if (patient == null) throw new Exception();
-        PatientInformationSetting(patient);
+    protected void PatientInitializationRequest(){
+        PatientInformationSetting();
     }
     protected void ServicesSpinnerPopulation(ArrayList<Service> services) {
         this.servicesList.clear();
@@ -170,7 +166,8 @@ public class R8 extends AppCompatActivity {
         this.dataAdapter.notifyDataSetChanged();
     }
     protected void ServicesInitializationRequest() throws Exception {
-        ArrayList<Service> services = AllServicesHandler.request();
+        ArrayList<Service> services = new ArrayList<>();
+        AllServicesHandler.request(services);
         ServicesSpinnerPopulation(services);
     }
     protected void DataBaseInitializationRequest() throws Exception {

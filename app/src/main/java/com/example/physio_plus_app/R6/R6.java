@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -165,7 +166,7 @@ public class R6 extends AppCompatActivity implements SelectListenerR6 {
 
 
         /* Network-Database oriented Objects */
-        client = new OkHttpClient();
+//        client = new OkHttpClient();
 
 
 
@@ -189,10 +190,13 @@ public class R6 extends AppCompatActivity implements SelectListenerR6 {
 
         List<EventR6> events;
         events = request.requestEvents(dates.get(0),dates.get(1));
-
-        RecyclerView recyclerView = findViewById(R.id.recyclerView);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
-        recyclerView.setAdapter(new MyAdapterR6(getApplicationContext(), events, this, bundle));
+        if (events == null) {
+            Toast.makeText(this, "No requests found", Toast.LENGTH_SHORT).show();
+        } else {
+            RecyclerView recyclerView = findViewById(R.id.recyclerView);
+            recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+            recyclerView.setAdapter(new MyAdapterR6(getApplicationContext(), events, this, bundle));
+        }
     }
 
     private void greekDateHandler(LocalDateTime dateTime){

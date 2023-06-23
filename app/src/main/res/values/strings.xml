@@ -260,4 +260,8 @@
     <string name="amka">AMKA</string>
     <string name="address">Address</string>
     <string name="backgournd_photo">backgournd_photo</string>
+    <string name="physio_center_name">physio_center_name</string>
+    <string name="total_center_cost">total_center_cost</string>
+    <string name="date_textView">date</string>
+    <string name="service_hint">service_hint</string>
 </resources>

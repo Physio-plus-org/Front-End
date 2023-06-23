@@ -10,7 +10,7 @@ import java.io.IOException;
 import okhttp3.FormBody;
 import okhttp3.RequestBody;
 
-public class PatientLoginHandler extends LoginHandler {
+public abstract class PatientLoginHandler extends LoginHandler {
     private static final String FILE_NAME = "readPatientid.php";
 
     public static Patient request(String taxText) {

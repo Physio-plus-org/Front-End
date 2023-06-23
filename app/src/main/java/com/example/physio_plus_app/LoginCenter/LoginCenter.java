@@ -35,7 +35,7 @@ public class LoginCenter extends AppCompatActivity {
             Intent intent = new Intent(getApplicationContext(), R6.class);
             startActivity(intent);
         } catch (Exception e) {
-            e.printStackTrace();
+            Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
         }
 
 
